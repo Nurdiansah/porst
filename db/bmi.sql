@@ -1,791 +1,41 @@
 -- phpMyAdmin SQL Dump
--- version 4.2.11
--- http://www.phpmyadmin.net
+-- version 4.9.5deb2
+-- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1
--- Generation Time: 15 Okt 2020 pada 05.21
--- Versi Server: 5.6.21
--- PHP Version: 5.6.3
+-- Host: localhost:3306
+-- Generation Time: Jan 07, 2021 at 01:11 PM
+-- Server version: 8.0.22-0ubuntu0.20.04.3
+-- PHP Version: 7.4.3
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
+START TRANSACTION;
 SET time_zone = "+00:00";
 
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8 */;
+/*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `ekanuri`
+-- Database: `bmi`
 --
 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `actual_jobordertruck`
+-- Table structure for table `actual_stevedoring`
 --
 
-CREATE TABLE IF NOT EXISTS `actual_jobordertruck` (
-`id_at` int(12) NOT NULL,
-  `time_at` datetime NOT NULL,
-  `deskripsi_cargo_at` text,
-  `id_djotruck` int(12) NOT NULL,
-  `id_jobordertruck` varchar(15) NOT NULL,
-  `nm_company_at` varchar(50) DEFAULT NULL,
-  `nm_barang_at` varchar(50) DEFAULT NULL,
-  `nm_kegiatan_at` varchar(15) DEFAULT NULL,
-  `production_at` varchar(15) DEFAULT NULL,
-  `no_po_at` varchar(15) DEFAULT NULL,
-  `p_cargo_at` decimal(6,2) NOT NULL,
-  `l_cargo_at` decimal(6,2) NOT NULL,
-  `t_cargo_at` decimal(6,2) NOT NULL,
-  `volume_cargo_at` decimal(6,2) NOT NULL,
-  `ton_cargo_at` decimal(6,2) NOT NULL,
-  `revton_cargo_at` decimal(6,2) NOT NULL,
-  `qty_cargo_at` int(11) NOT NULL,
-  `satuan_cargo_at` varchar(15) DEFAULT NULL,
-  `keterangan_at` varchar(50) DEFAULT NULL,
-  `status_cargo_at` int(11) DEFAULT '1'
-) ENGINE=InnoDB AUTO_INCREMENT=518 DEFAULT CHARSET=latin1;
-
---
--- Dumping data untuk tabel `actual_jobordertruck`
---
-
-INSERT INTO `actual_jobordertruck` (`id_at`, `time_at`, `deskripsi_cargo_at`, `id_djotruck`, `id_jobordertruck`, `nm_company_at`, `nm_barang_at`, `nm_kegiatan_at`, `production_at`, `no_po_at`, `p_cargo_at`, `l_cargo_at`, `t_cargo_at`, `volume_cargo_at`, `ton_cargo_at`, `revton_cargo_at`, `qty_cargo_at`, `satuan_cargo_at`, `keterangan_at`, `status_cargo_at`) VALUES
-(9, '2020-07-22 16:27:21', 'Offloading Medco', 1, 'JT00002', 'PT.ASW', 'Chemical', 'OFFLOADING', 'Production', '', '0.61', '0.63', '0.63', '1.92', '1.50', '1.92', 1, 'Unit', 'To Jetty', 1),
-(10, '2020-07-22 16:27:28', 'Offloading Medco', 4, 'JT00002', 'PT.ABC', 'Pallet', 'OFFLOADING', 'Production', '0001', '0.61', '0.61', '0.61', '1.80', '1.00', '1.80', 1, 'Unit', 'To Jetty', 1),
-(11, '2020-07-22 16:28:35', 'Offloading Medco', 3, 'JT00002', 'PT.ABC', 'Pallet', 'OFFLOADING', 'Production', '', '0.61', '0.62', '0.62', '1.86', '1.50', '1.86', 1, 'Unit', 'To Jetty', 1),
-(12, '2020-07-22 16:30:10', 'Offloading Medco', 4, 'JT00002', 'PT.ABC', 'Pallet', 'OFFLOADING', 'Production', '0001', '1.22', '1.21', '1.22', '1.80', '1.00', '1.80', 1, 'Unit', 'To Jetty', 1),
-(13, '2020-07-23 11:52:03', 'Offloading Medco', 1, 'JT00002', 'PT.ASW', 'Chemical', 'OFFLOADING', 'Production', '', '1.22', '1.25', '1.26', '1.92', '1.50', '1.92', 1, 'Unit', 'To Jetty', 1),
-(14, '2020-07-23 11:52:10', 'Offloading Medco', 2, 'JT00002', 'PT. Labror', 'Pallet', 'OFFLOADING', 'Production', '', '0.63', '0.63', '0.25', '39.07', '25.00', '39.07', 50, 'Unit', 'To Jetty', 1),
-(15, '2020-07-23 11:52:15', 'Offloading Medco', 3, 'JT00002', 'PT.ABC', 'Pallet', 'OFFLOADING', 'Production', '', '1.22', '1.23', '1.24', '1.86', '1.50', '1.86', 1, 'Unit', 'To Jetty', 1),
-(16, '2020-07-23 11:52:22', 'Offloading Medco', 2, 'JT00002', 'PT. Labror', 'Pallet', 'OFFLOADING', 'Production', '', '1.25', '1.25', '0.50', '39.07', '25.00', '39.07', 50, 'Unit', 'To Jetty', 1),
-(17, '2020-07-23 14:50:02', 'Offloading Premier', 5, 'JT00003', 'PT.ASW', 'Pallet', 'OFFLOADING', 'Production', '0001', '0.62', '0.60', '0.60', '1.77', '1.00', '1.77', 1, 'Unit', 'To Jetty', 1),
-(18, '2020-07-23 15:04:36', 'Offloading Premier', 5, 'JT00003', 'PT.ASW', 'Pallet', 'OFFLOADING', 'Production', '0001', '1.23', '1.20', '1.20', '1.77', '1.00', '1.77', 1, 'Unit', 'To Warehouse', 1),
-(19, '2020-07-23 15:49:16', 'Offloading Medco', 6, 'JT00001', 'PT.ASW', 'Pallet', 'OFFLOADING', 'Production', '0002', '0.24', '0.27', '0.29', '2.34', '3.60', '3.60', 1, 'Unit', 'To Jetty', 1),
-(20, '2020-07-23 15:52:39', 'Offloading Medco', 6, 'JT00001', 'PT.ASW', 'Pallet', 'OFFLOADING', 'Production', '0002', '0.61', '0.67', '0.72', '4.67', '7.20', '7.20', 2, 'Unit', 'To Warehouse', 1),
-(21, '2020-07-23 15:54:10', 'Offloading Medco', 6, 'JT00001', 'PT.ASW', 'Pallet', 'OFFLOADING', 'Production', '0002', '1.22', '1.33', '1.44', '4.67', '7.20', '7.20', 2, 'Unit', 'To Jetty', 1),
-(22, '2020-07-23 15:56:45', 'Loading Medco', 7, 'JT00001', 'PT.ASW', 'Chemical', 'LOADING', 'Production', '0001', '0.30', '0.30', '0.30', '3.38', '2.40', '3.38', 1, 'Unit', 'From Warehouse', 1),
-(23, '2020-07-23 17:55:23', 'Loading Medco', 7, 'JT00001', 'PT.ASW', 'Chemical', 'LOADING', 'Production', '0001', '0.75', '0.75', '0.75', '6.75', '4.80', '6.75', 2, 'Unit', 'From Jetty', 1),
-(24, '2020-07-23 17:55:51', 'Loading Medco', 7, 'JT00001', 'PT.ASW', 'Chemical', 'LOADING', 'Production', '0001', '1.50', '1.50', '1.50', '6.75', '4.80', '6.75', 2, 'Unit', 'From Jetty', 1),
-(25, '2020-07-27 12:45:29', 'Offloading Medco', 8, 'JT00001', 'PT.ABC', 'Chemical', 'OFFLOADING', 'Production', '0003', '1.22', '1.22', '1.22', '1.82', '1.00', '1.82', 1, 'Unit', 'To Jetty', 1),
-(26, '2020-07-27 12:46:06', 'Offloading Medco', 9, 'JT00001', 'PT.ABC', 'Chemical Drum', 'OFFLOADING', 'Production', '0001', '1.20', '1.20', '1.20', '1.73', '1.30', '1.73', 1, 'Pallet', 'To Jetty', 1),
-(27, '2020-07-27 12:46:27', 'Offloading Medco', 9, 'JT00001', 'PT.ABC', 'Chemical Drum', 'OFFLOADING', 'Production', '0001', '1.20', '1.20', '1.20', '3.46', '2.60', '3.46', 2, 'Pallet', 'To Jetty', 1),
-(28, '2020-07-27 12:47:24', 'Offloading Medco', 9, 'JT00001', 'PT.ABC', 'Chemical Drum', 'OFFLOADING', 'Production', '0001', '1.20', '1.20', '1.20', '3.46', '2.60', '3.46', 2, 'Pallet', 'To Jetty', 1),
-(29, '2020-07-27 12:47:28', 'Loading Medco', 10, 'JT00001', 'PT.ABC', 'Chemical', 'OFFLOADING', 'Production', '0002', '1.20', '1.20', '1.20', '1.73', '1.40', '1.73', 1, 'Pallet', 'To Jetty', 1),
-(30, '2020-07-27 12:47:32', 'Loading Medco', 10, 'JT00001', 'PT.ABC', 'Chemical', 'OFFLOADING', 'Production', '0002', '1.20', '1.20', '1.20', '3.45', '2.80', '3.45', 2, 'Pallet', 'To Jetty', 1),
-(31, '2020-08-05 11:17:23', 'Offloading Truck', 13, 'JT00005', 'Segara Permai', 'Liferaft', 'OFFLOADING', '', '001', '1.20', '1.20', '1.00', '1.44', '0.30', '1.44', 1, 'Palet', 'To Jetty', 1),
-(32, '2020-08-05 11:17:23', 'Offloading Truck', 13, 'JT00005', 'Segara Permai', 'Liferaft', 'OFFLOADING', '', '001', '1.20', '1.20', '1.00', '1.44', '0.30', '1.44', 1, 'Palet', 'To Jetty', 1),
-(33, '2020-08-05 11:17:47', 'Offloading Truck', 13, 'JT00005', 'Segara Permai', 'Liferaft', 'OFFLOADING', '', '001', '1.20', '1.20', '1.00', '1.44', '0.30', '1.44', 1, 'Palet', 'To Jetty', 1),
-(34, '2020-08-05 11:17:52', 'Offloading Truck', 13, 'JT00005', 'Segara Permai', 'Liferaft', 'OFFLOADING', '', '001', '1.20', '1.20', '1.00', '1.44', '0.30', '1.44', 1, 'Palet', 'To Jetty', 1),
-(35, '2020-08-05 11:17:58', 'Offloading Truck', 13, 'JT00005', 'Segara Permai', 'Liferaft', 'OFFLOADING', '', '001', '1.20', '1.20', '1.00', '1.44', '0.30', '1.44', 1, 'Palet', 'To Jetty', 1),
-(36, '2020-08-05 13:56:29', 'Offloading truck', 14, 'JT00006', 'Pt elnusa petrofin', 'Meditran oil', 'OFFLOADING', 'Production', '4400002054', '1.00', '1.00', '1.00', '5.00', '20.00', '20.00', 5, 'Pallet', 'To Warehouse', 1),
-(37, '2020-08-07 13:20:37', 'Offloading truck', 15, 'JT00007', 'Pt sulindo jaya abadi', 'Sparepart', 'OFFLOADING', 'Production', '12506/01/00010', '0.00', '0.00', '0.00', '0.00', '0.61', '0.61', 1, 'Wooden box', 'To Warehouse', 1),
-(38, '2020-08-07 13:20:55', 'Offloading truck', 15, 'JT00007', 'Pt sulindo jaya abadi', 'Sparepart', 'OFFLOADING', 'Production', '12506/01/00010', '0.00', '0.00', '0.00', '0.00', '0.61', '0.61', 1, 'Wooden box', 'To Warehouse', 1),
-(39, '2020-08-07 13:21:20', 'Offloading truck', 15, 'JT00007', 'Pt sulindo jaya abadi', 'Sparepart', 'OFFLOADING', 'Production', '12506/01/00010', '0.00', '0.00', '0.00', '0.00', '0.61', '0.61', 1, 'Wooden box', 'To Warehouse', 1),
-(40, '2020-08-07 13:21:27', 'Offloading truck', 15, 'JT00007', 'Pt sulindo jaya abadi', 'Sparepart', 'OFFLOADING', 'Production', '12506/01/00010', '0.00', '0.00', '0.00', '0.00', '0.61', '0.61', 1, 'Wooden box', 'To Warehouse', 1),
-(41, '2020-08-07 13:21:40', 'Offloading truck', 15, 'JT00007', 'Pt sulindo jaya abadi', 'Sparepart', 'OFFLOADING', 'Production', '12506/01/00010', '0.00', '0.00', '0.00', '0.00', '0.61', '0.61', 1, 'Wooden box', 'To Warehouse', 1),
-(42, '2020-08-07 15:21:27', 'Offloading truck', 16, 'JT00008', 'PT Shentek Teknika Indonesia', 'Plate mild steel', 'OFFLOADING', 'Production', '12490/01/00010', '2.00', '1.00', '0.00', '0.00', '2.10', '2.10', 3, 'Losse', 'To Warehouse', 1),
-(43, '2020-08-07 15:21:41', 'Offloading truck', 16, 'JT00008', 'PT Shentek Teknika Indonesia', 'Plate mild steel', 'OFFLOADING', 'Production', '12490/01/00010', '2.00', '1.00', '0.00', '0.00', '2.10', '2.10', 3, 'Losse', 'To Jetty', 1),
-(44, '2020-08-07 15:23:36', 'Offloading truck', 16, 'JT00008', 'PT Shentek Teknika Indonesia', 'Plate mild steel', 'OFFLOADING', 'Production', '12490/01/00010', '2.00', '1.00', '0.00', '0.00', '2.80', '2.80', 4, 'Losse', 'To Warehouse', 1),
-(45, '2020-08-07 17:49:15', 'Offloading truck', 17, 'JT00009', 'PT Shentek Teknika Indonesia', 'Beam steel', 'OFFLOADING', 'Production', '12490/01/00010', '12.00', '0.00', '0.00', '0.00', '2.00', '2.00', 4, 'Losse', 'To Yard', 1),
-(46, '2020-08-07 17:50:42', 'Offloading truck', 17, 'JT00009', 'PT Shentek Teknika Indonesia', 'Beam steel', 'OFFLOADING', 'Production', '12490/01/00010', '12.00', '0.00', '0.00', '0.00', '2.00', '2.00', 4, 'Losse', 'To Yard', 1),
-(47, '2020-08-10 10:15:57', 'Offloading Truck Premier Oil', 19, 'JT00011', 'Gearindo', 'W/Box', 'OFFLOADING', 'Production', '002', '0.62', '0.62', '0.83', '0.64', '0.40', '0.64', 2, 'W/Box', 'To Jetty', 1),
-(48, '2020-08-13 10:11:30', 'Offloading Premier', 11, 'JT00004', 'PT.ABC', 'Chemical Drum', 'OFFLOADING', 'Production', '0001', '1.20', '1.20', '1.20', '10.37', '7.80', '10.37', 6, 'Pallet', 'To Jetty', 1),
-(49, '2020-08-13 10:11:49', 'Offloading Premier', 12, 'JT00004', 'PT.ABC', 'Chemical Drum', 'OFFLOADING', 'Production', '0001', '1.20', '1.20', '1.20', '10.37', '7.80', '10.37', 6, 'Pallet', 'To Jetty', 1),
-(50, '2020-08-13 10:14:38', 'Off loading truck premier oil', 25, 'JT00014', 'PT.Mesitech', 'Compressor', 'OFFLOADING', 'Production', '008', '2.57', '1.80', '1.83', '42.33', '8.50', '42.33', 5, 'Unit', 'To Jetty', 1),
-(51, '2020-08-13 10:23:18', 'Off loading truck premier oil', 24, 'JT00013', 'PT.Mesitrch', 'Welding machine', 'OFFLOADING', '', '007', '2.00', '1.20', '1.80', '21.60', '6.50', '21.60', 5, 'Unit', 'To Jetty', 1),
-(52, '2020-08-13 10:25:33', 'Off loading truck premier oil', 24, 'JT00013', 'PT.Mesitrch', 'Welding machine', 'OFFLOADING', '', '007', '2.00', '1.20', '1.80', '21.60', '6.50', '21.60', 5, 'Unit', 'To Jetty', 1),
-(53, '2020-08-13 14:25:51', 'Off loading truck premier oil', 20, 'JT00012', 'PT.Pusuma', 'Pallet flang', 'OFFLOADING', 'Production', '003', '0.20', '0.15', '0.10', '0.00', '0.35', '0.35', 1, 'Pallet', 'To Jetty', 1),
-(54, '2020-08-13 14:26:14', 'Off loading truck premier oil', 20, 'JT00012', 'PT.Pusuma', 'Pallet flang', 'OFFLOADING', 'Production', '003', '0.20', '0.15', '0.10', '0.01', '0.35', '0.35', 1, 'Pallet', 'To Jetty', 1),
-(55, '2020-08-13 14:26:27', 'Off loading truck premier oil', 20, 'JT00012', 'PT.Pusuma', 'Pallet flang', 'OFFLOADING', 'Production', '003', '0.20', '0.15', '0.10', '0.01', '0.35', '0.35', 1, 'Pallet', 'To Jetty', 1),
-(56, '2020-08-14 09:56:59', 'Offloading truck', 26, 'JT00016', 'PT Ekajaya', 'Demulsifier', 'OFFLOADING', 'Production', '12531/01/00010', '1.00', '1.00', '1.00', '1.00', '0.80', '1.00', 1, 'Pallet', 'To Yard', 1),
-(57, '2020-08-14 09:57:49', 'Offloading truck', 26, 'JT00016', 'PT Ekajaya', 'Demulsifier', 'OFFLOADING', 'Production', '12531/01/00010', '1.00', '1.00', '1.00', '1.00', '0.80', '1.00', 1, 'Pallet', 'To Yard', 1),
-(58, '2020-08-14 09:58:27', 'Offloading truck', 26, 'JT00016', 'PT Ekajaya', 'Demulsifier', 'OFFLOADING', 'Production', '12531/01/00010', '1.00', '1.00', '1.00', '1.00', '0.80', '1.00', 1, 'Pallet', 'To Yard', 1),
-(59, '2020-08-14 09:59:20', 'Offloading truck', 26, 'JT00016', 'PT Ekajaya', 'Demulsifier', 'OFFLOADING', 'Production', '12531/01/00010', '1.00', '1.00', '1.00', '1.00', '0.80', '1.00', 1, 'Pallet', 'To Yard', 1),
-(60, '2020-08-14 10:00:01', 'Offloading truck', 26, 'JT00016', 'PT Ekajaya', 'Demulsifier', 'OFFLOADING', 'Production', '12531/01/00010', '1.00', '1.00', '1.00', '1.00', '0.80', '1.00', 1, 'Pallet', 'To Yard', 1),
-(61, '2020-08-14 10:01:24', 'Offloading truck', 26, 'JT00016', 'PT Ekajaya', 'Demulsifier', 'OFFLOADING', 'Production', '12531/01/00010', '1.00', '1.00', '1.00', '1.00', '0.80', '1.00', 1, 'Pallet', 'To Yard', 1),
-(62, '2020-08-14 10:01:43', 'Offloading truck', 26, 'JT00016', 'PT Ekajaya', 'Demulsifier', 'OFFLOADING', 'Production', '12531/01/00010', '1.00', '1.00', '1.00', '1.00', '0.80', '1.00', 1, 'Pallet', 'To Yard', 1),
-(63, '2020-08-14 11:31:14', 'Offloading truck', 27, 'JT00017', 'PT Stainless steel primavalve', 'Gate valve', 'OFFLOADING', 'Production', 'CO-20-05-0048', '1.00', '1.00', '1.00', '1.00', '1.00', '1.00', 1, 'Wooden box', 'To Warehouse', 1),
-(64, '2020-08-14 14:15:57', 'Offloading truck', 28, 'JT00018', 'PT Ardico pratama energi', 'H2S Scavenger', 'OFFLOADING', 'Production', '12495/01/00010', '1.00', '1.00', '1.00', '1.00', '0.80', '1.00', 1, 'Pallet', 'To Warehouse', 1),
-(65, '2020-08-14 14:17:19', 'Offloading truck', 28, 'JT00018', 'PT Ardico pratama energi', 'H2S Scavenger', 'OFFLOADING', 'Production', '12495/01/00010', '1.00', '1.00', '1.00', '1.00', '0.80', '1.00', 1, 'Pallet', 'To Warehouse', 1),
-(66, '2020-08-14 14:18:42', 'Offloading truck', 28, 'JT00018', 'PT Ardico pratama energi', 'H2S Scavenger', 'OFFLOADING', 'Production', '12495/01/00010', '1.00', '1.00', '1.00', '1.00', '0.80', '1.00', 1, 'Pallet', 'To Warehouse', 1),
-(67, '2020-08-14 14:19:50', 'Offloading truck', 28, 'JT00018', 'PT Ardico pratama energi', 'H2S Scavenger', 'OFFLOADING', 'Production', '12495/01/00010', '1.00', '1.00', '1.00', '1.00', '0.80', '1.00', 1, 'Pallet', 'To Warehouse', 1),
-(68, '2020-08-14 14:20:16', 'Offloading truck', 28, 'JT00018', 'PT Ardico pratama energi', 'H2S Scavenger', 'OFFLOADING', 'Production', '12495/01/00010', '1.00', '1.00', '1.00', '1.00', '0.80', '1.00', 1, 'Pallet', 'To Warehouse', 1),
-(69, '2020-08-14 14:20:31', 'Offloading truck', 28, 'JT00018', 'PT Ardico pratama energi', 'H2S Scavenger', 'OFFLOADING', 'Production', '12495/01/00010', '1.00', '1.00', '1.00', '1.00', '0.80', '1.00', 1, 'Pallet', 'To Warehouse', 1),
-(70, '2020-08-14 14:20:49', 'Offloading truck', 28, 'JT00018', 'PT Ardico pratama energi', 'H2S Scavenger', 'OFFLOADING', 'Production', '12495/01/00010', '1.00', '1.00', '1.00', '1.00', '0.80', '1.00', 1, 'Pallet', 'To Warehouse', 1),
-(71, '2020-08-18 13:41:00', 'Loading truck', 32, 'JT00019', 'PT Shaftindo energi ', 'Empty oxygen bottle', 'LOADING', 'Production', '4500004603', '1.00', '0.00', '2.00', '0.00', '0.80', '0.80', 1, 'Rack', 'From Warehouse', 1),
-(72, '2020-08-18 13:48:30', 'Loading truck', 29, 'JT00019', 'PT Shaftindo energi ', 'Spool', 'LOADING', 'Production', '4500004603', '4.00', '2.00', '0.00', '0.00', '1.20', '1.20', 1, 'Pallet', 'From Warehouse', 1),
-(73, '2020-08-18 13:52:27', 'Loading truck', 30, 'JT00019', 'PT Shaftindo energi ', 'Flange', 'OFFLOADING', 'Production', '4500004603', '0.00', '0.00', '0.00', '0.00', '0.33', '0.33', 1, 'Wooden box', 'To Warehouse', 1),
-(74, '2020-08-18 13:52:33', 'Loading truck', 31, 'JT00019', 'PT Shaftindo energi ', 'Ball valve', 'OFFLOADING', 'Production', '4500004603', '0.00', '0.00', '0.00', '0.00', '0.30', '0.30', 1, 'Wooden box', 'To Jetty', 1),
-(75, '2020-08-18 16:04:40', 'Offloading truck', 33, 'JT00020', 'PT Ida era baru', 'Sparepart', 'OFFLOADING', 'Production', '12464', '0.00', '0.00', '0.00', '0.00', '0.10', '0.10', 1, 'Wooden box', 'To Warehouse', 1),
-(76, '2020-08-18 16:04:57', 'Offloading truck', 33, 'JT00020', 'PT Ida era baru', 'Sparepart', 'OFFLOADING', 'Production', '12464', '0.00', '0.00', '0.00', '0.00', '0.10', '0.10', 1, 'Wooden box', 'To Warehouse', 1),
-(77, '2020-08-18 16:06:14', 'Offloading truck', 33, 'JT00020', 'PT Ida era baru', 'Sparepart', 'OFFLOADING', 'Production', '12464', '0.00', '0.00', '0.00', '0.00', '0.10', '0.10', 1, 'Wooden box', 'To Warehouse', 1),
-(78, '2020-08-18 16:07:05', 'Offloading truck', 33, 'JT00020', 'PT Ida era baru', 'Sparepart', 'OFFLOADING', 'Production', '12464', '0.00', '0.00', '0.00', '0.00', '0.10', '0.10', 1, 'Wooden box', 'To Warehouse', 1),
-(79, '2020-08-18 16:07:28', 'Offloading truck', 33, 'JT00020', 'PT Ida era baru', 'Sparepart', 'OFFLOADING', 'Production', '12464', '0.00', '0.00', '0.00', '0.00', '0.11', '0.11', 1, 'Wooden box', 'To Warehouse', 1),
-(80, '2020-08-18 16:07:39', 'Offloading truck', 33, 'JT00020', 'PT Ida era baru', 'Sparepart', 'OFFLOADING', 'Production', '12464', '0.00', '0.00', '0.00', '0.00', '0.11', '0.11', 1, 'Wooden box', 'To Warehouse', 1),
-(81, '2020-08-19 15:13:51', 'Offloading truck', 34, 'JT00021', 'PT Benvors sarana utama', 'Wellhead penetrator ', 'OFFLOADING', 'Production', '3000005', '1.00', '1.00', '0.00', '0.00', '1.30', '1.30', 2, 'Wooden box', 'To Warehouse', 1),
-(82, '2020-08-19 15:15:12', 'Offloading truck', 34, 'JT00021', 'PT Benvors sarana utama', 'Wellhead penetrator ', 'OFFLOADING', 'Production', '3000005', '1.00', '1.00', '0.00', '0.00', '0.65', '0.65', 1, 'Wooden box', 'To Warehouse', 1),
-(83, '2020-08-19 15:17:32', 'Offloading truck', 34, 'JT00021', 'PT Benvors sarana utama', 'Wellhead penetrator ', 'OFFLOADING', 'Production', '3000005', '1.00', '1.00', '0.00', '0.00', '1.30', '1.30', 2, 'Wooden box', 'To Warehouse', 1),
-(84, '2020-08-20 13:56:55', 'Offloading truck', 35, 'JT00022', 'PT Sucofindo', 'Kompresor', 'OFFLOADING', 'Production', '420000266', '3.00', '2.00', '2.00', '12.00', '0.60', '12.00', 1, 'Unit', 'To Warehouse', 1),
-(85, '2020-08-28 10:30:03', 'Offloading Premier', 36, 'JT00015', 'a', 'a', 'OFFLOADING', 'a', 'a', '2.00', '1.00', '1.00', '2.00', '3.00', '3.00', 1, 'Pallet', 'To Jetty', 1),
-(86, '2020-09-04 14:18:44', 'Offloading', 37, 'JT00023', 'Champions', 'IBC Tank', 'OFFLOADING', 'Production', '1500033333', '0.35', '0.35', '2.00', '0.24', '2.00', '2.00', 1, 'Unit', 'To Jetty', 1),
-(87, '2020-09-04 14:57:11', 'Loading Chemical drum PPLI', 38, 'JT00024', 'PPLI', 'Chemical Drum', 'LOADING', 'Drilling', '002', '1.22', '1.22', '1.00', '1.49', '0.80', '1.49', 1, 'pallet', 'From Jetty', 1),
-(88, '2020-09-04 14:57:56', 'Loading Chemical drum PPLI', 38, 'JT00024', 'PPLI', 'Chemical Drum', 'LOADING', 'Drilling', '002', '1.22', '1.22', '1.00', '1.49', '0.80', '1.49', 1, 'pallet', 'From Jetty', 1),
-(89, '2020-09-04 15:03:04', 'Loading Chemical drum PPLI', 38, 'JT00024', 'PPLI', 'Chemical Drum', 'LOADING', 'Drilling', '002', '1.22', '1.22', '1.00', '1.49', '0.80', '1.49', 1, 'pallet', 'From Jetty', 1),
-(90, '2020-09-04 15:03:13', 'Loading Chemical drum PPLI', 38, 'JT00024', 'PPLI', 'Chemical Drum', 'LOADING', 'Drilling', '002', '1.22', '1.22', '1.00', '1.49', '0.80', '1.49', 1, 'pallet', 'From Jetty', 1),
-(91, '2020-09-04 15:06:25', 'Offloading Premier', 36, 'JT00015', 'a', 'a', 'OFFLOADING', 'a', 'a', '2.00', '1.00', '1.00', '8.00', '12.00', '12.00', 4, 'Pallet', 'To Jetty', 1),
-(92, '2020-09-04 15:07:03', 'Off loading truck premier oil', 21, 'JT00012', 'PT Pusuma', 'Pallet Flang', 'OFFLOADING', 'Production', '004', '0.15', '0.12', '0.06', '0.00', '0.40', '0.40', 2, 'Pallet', 'To Jetty', 1),
-(93, '2020-09-04 15:07:08', 'Off loading ttuck premier oil', 22, 'JT00012', 'PT. Eskimo', 'Wodden box', 'OFFLOADING', 'Production', '005', '1.00', '0.50', '0.50', '0.25', '0.85', '0.85', 1, 'Boks', 'To Jetty', 1),
-(94, '2020-09-04 15:07:20', 'Off loading truck premier oil', 23, 'JT00012', 'PT.Wira trans', 'Wodden box', 'OFFLOADING', 'Production', '006', '1.00', '1.00', '0.50', '0.50', '0.09', '0.50', 1, 'Boks', 'To Jetty', 1),
-(95, '2020-09-04 15:07:44', 'Off loading truck', 18, 'JT00010', 'PT Gearindo', 'Wodden box', 'OFFLOADING', 'Production', '0001', '0.00', '0.00', '0.00', '0.00', '0.40', '0.40', 2, '', 'To Jetty', 1),
-(96, '2020-09-08 10:55:12', 'Offloading truck', 41, 'JT00025', 'Pt elnusa petrofin', 'Meditran oil', 'OFFLOADING', 'Production', '4400002059', '1.17', '1.17', '1.10', '1.51', '0.80', '1.51', 1, 'Pallet', 'To Warehouse', 1),
-(97, '2020-09-08 11:08:44', 'Offloading truck', 41, 'JT00025', 'Pt elnusa petrofin', 'Meditran oil', 'OFFLOADING', 'Production', '4400002059', '1.17', '1.17', '1.10', '1.51', '0.80', '1.51', 1, 'Pallet', 'To Warehouse', 1),
-(98, '2020-09-08 11:08:44', 'Offloading truck', 41, 'JT00025', 'Pt elnusa petrofin', 'Meditran oil', 'OFFLOADING', 'Production', '4400002059', '1.17', '1.17', '1.10', '1.51', '0.80', '1.51', 1, 'Pallet', 'To Warehouse', 1),
-(99, '2020-09-08 11:09:11', 'Offloading truck', 41, 'JT00025', 'Pt elnusa petrofin', 'Meditran oil', 'OFFLOADING', 'Production', '4400002059', '1.17', '1.17', '1.10', '1.51', '0.80', '1.51', 1, 'Pallet', 'To Warehouse', 1),
-(100, '2020-09-08 11:09:56', 'Offloading truck', 41, 'JT00025', 'Pt elnusa petrofin', 'Meditran oil', 'OFFLOADING', 'Production', '4400002059', '1.17', '1.17', '1.10', '1.51', '0.80', '1.51', 1, 'Pallet', 'To Warehouse', 1),
-(101, '2020-09-08 11:10:45', 'Offloading truck', 41, 'JT00025', 'Pt elnusa petrofin', 'Meditran oil', 'OFFLOADING', 'Production', '4400002059', '1.17', '1.17', '1.10', '1.51', '0.80', '1.51', 1, 'Pallet', 'To Warehouse', 1),
-(102, '2020-09-08 11:13:50', 'Offloading truck', 41, 'JT00025', 'Pt elnusa petrofin', 'Meditran oil', 'OFFLOADING', 'Production', '4400002059', '1.17', '1.17', '1.10', '1.51', '0.80', '1.51', 1, 'Pallet', 'To Warehouse', 1),
-(103, '2020-09-08 11:14:19', 'Offloading truck', 41, 'JT00025', 'Pt elnusa petrofin', 'Meditran oil', 'OFFLOADING', 'Production', '4400002059', '1.17', '1.17', '1.10', '1.51', '0.80', '1.51', 1, 'Pallet', 'To Warehouse', 1),
-(104, '2020-09-08 11:14:39', 'Offloading truck', 41, 'JT00025', 'Pt elnusa petrofin', 'Meditran oil', 'OFFLOADING', 'Production', '4400002059', '1.17', '1.17', '1.10', '1.51', '0.80', '1.51', 1, 'Pallet', 'To Warehouse', 1),
-(105, '2020-09-08 11:14:46', 'Offloading truck', 41, 'JT00025', 'Pt elnusa petrofin', 'Meditran oil', 'OFFLOADING', 'Production', '4400002059', '1.17', '1.17', '1.10', '1.51', '0.80', '1.51', 1, 'Pallet', 'To Jetty', 1),
-(106, '2020-09-09 13:05:26', 'Offloading truck', 45, 'JT00027', 'PT Anugerah inti mulia ', 'Ethylene glycol', 'OFFLOADING', 'Production', '4400002060', '1.17', '1.17', '1.10', '1.51', '0.90', '1.51', 1, 'Pallet', 'To Warehouse', 1),
-(107, '2020-09-09 13:06:34', 'Offloading truck', 45, 'JT00027', 'PT Anugerah inti mulia ', 'Ethylene glycol', 'OFFLOADING', 'Production', '4400002060', '1.17', '1.17', '1.10', '1.51', '0.90', '1.51', 1, 'Pallet', 'To Warehouse', 1),
-(108, '2020-09-09 13:08:57', 'Offloading truck', 45, 'JT00027', 'PT Anugerah inti mulia ', 'Ethylene glycol', 'OFFLOADING', 'Production', '4400002060', '1.17', '1.17', '1.10', '1.51', '0.90', '1.51', 1, 'Pallet', 'To Warehouse', 1),
-(109, '2020-09-09 13:11:07', 'Offloading truck', 45, 'JT00027', 'PT Anugerah inti mulia ', 'Ethylene glycol', 'OFFLOADING', 'Production', '4400002060', '1.17', '1.17', '1.10', '1.51', '0.90', '1.51', 1, 'Pallet', 'To Warehouse', 1),
-(110, '2020-09-09 13:12:43', 'Offloading truck', 45, 'JT00027', 'PT Anugerah inti mulia ', 'Ethylene glycol', 'OFFLOADING', 'Production', '4400002060', '1.17', '1.17', '1.10', '1.51', '0.90', '1.51', 1, 'Pallet', 'To Warehouse', 1),
-(111, '2020-09-10 13:05:50', 'Offloading truck', 46, 'JT00028', 'PT Petrolio Travolta', 'Toluene', 'OFFLOADING', 'Production', '4300007998', '1.17', '1.17', '1.10', '1.51', '0.80', '1.51', 1, 'Pallet', 'To Warehouse', 1),
-(112, '2020-09-10 13:14:43', 'Offloading truck', 46, 'JT00028', 'PT Petrolio Travolta', 'Toluene', 'OFFLOADING', 'Production', '4300007998', '1.17', '1.17', '1.10', '1.51', '0.80', '1.51', 1, 'Pallet', 'To Warehouse', 1),
-(113, '2020-09-10 13:15:05', 'Offloading truck', 46, 'JT00028', 'PT Petrolio Travolta', 'Toluene', 'OFFLOADING', 'Production', '4300007998', '1.17', '1.17', '1.10', '1.51', '0.80', '1.51', 1, 'Pallet', 'To Warehouse', 1),
-(114, '2020-09-10 14:06:15', 'Offloading truck', 47, 'JT00028', 'PT Shaftindo energi ', 'Cradle gas bottle', 'OFFLOADING', 'Production', 'Si 191 ctr 121', '1.18', '0.82', '2.01', '1.94', '0.30', '1.94', 1, 'Rack', 'To Warehouse', 1),
-(115, '2020-09-10 14:09:36', 'Offloading truck', 49, 'JT00028', 'PT Shaftindo energi ', 'Cradle gas bottle', 'OFFLOADING', 'Production', 'Si 191 ctr 121', '1.13', '0.82', '2.01', '1.86', '0.70', '1.86', 1, 'Rack', 'To Warehouse', 1),
-(116, '2020-09-10 14:11:11', 'Offloading truck', 48, 'JT00028', 'PT Shaftindo energi ', 'Cradle gas bottle', 'OFFLOADING', 'Production', 'Si 191 ctr 121', '0.63', '0.63', '1.91', '0.76', '0.37', '0.76', 1, 'Rack', 'To Warehouse', 1),
-(117, '2020-09-11 09:58:21', 'Loading truck eks KM Sokka', 50, 'JT00029', 'PT.PMB', 'Waste skipe', 'LOADING', 'Production', '007', '2.06', '1.60', '1.60', '31.64', '6.00', '31.64', 6, '', 'From Jetty', 1),
-(121, '2020-09-11 13:40:05', 'Loading truck eks KM Sokka', 52, 'JT00029', 'PT.PMB', 'Half Open Top 20 ft', 'LOADING', 'Production', '007', '6.00', '2.50', '1.60', '48.00', '3.40', '48.00', 2, 'Unit', 'From Jetty', 1),
-(122, '2020-09-11 13:45:16', 'Off loading truck', 53, 'JT00029', 'PT.PMB', 'Container 10 ft', 'OFFLOADING', 'Production', '007', '3.00', '2.50', '2.70', '20.25', '1.70', '20.25', 1, 'Unit', 'To Jetty', 1),
-(123, '2020-09-11 14:05:30', 'Loading truck eks KM Sokka', 54, 'JT00029', 'PT.PMB', 'Waste skipe', 'LOADING', 'Production', '007', '2.10', '1.60', '1.60', '32.26', '6.00', '32.26', 6, 'Unit', 'From Jetty', 1),
-(124, '2020-09-11 15:26:43', 'Off loading truck', 55, 'JT00029', 'PT.Defriwangga', 'Wodden box', 'OFFLOADING', 'Production', '004', '1.20', '1.20', '0.55', '1.58', '0.60', '1.58', 2, 'Boks', 'To Warehouse', 1),
-(125, '2020-09-11 16:20:27', 'Off loading truck', 56, 'JT00029', 'PT.Defriwangga', 'Wodden box', 'OFFLOADING', 'Production', '004', '1.20', '1.20', '0.55', '1.58', '0.60', '1.58', 2, 'Boks', 'To Jetty', 1),
-(126, '2020-09-11 16:20:31', 'Off loading truck', 57, 'JT00029', 'PT Conbit', 'Container 20 ft', 'OFFLOADING', 'Production', '005', '6.00', '2.50', '2.80', '42.00', '10.00', '42.00', 1, 'Unit', 'To Jetty', 1),
-(127, '2020-09-11 16:20:45', 'Off loading truck', 57, 'JT00029', 'PT Conbit', 'Container 20 ft', 'OFFLOADING', 'Production', '005', '6.00', '2.50', '2.80', '84.00', '20.00', '84.00', 2, 'Unit', 'To Jetty', 1),
-(128, '2020-09-11 19:27:38', 'Offloading truck', 58, 'JT00031', 'PT Citra duasejati', 'Reclosser', 'OFFLOADING', 'Production', '110000096', '0.85', '0.50', '1.00', '0.43', '0.83', '0.83', 1, 'Wooden box', 'To Warehouse', 1),
-(129, '2020-09-11 19:30:05', 'Offloading truck', 58, 'JT00031', 'PT Citra duasejati', 'Reclosser', 'OFFLOADING', 'Production', '110000096', '0.85', '0.50', '1.00', '0.43', '0.83', '0.83', 1, 'Wooden box', 'To Warehouse', 1),
-(130, '2020-09-11 19:31:42', 'Offloading truck', 58, 'JT00031', 'PT Citra duasejati', 'Reclosser', 'OFFLOADING', 'Production', '110000096', '0.85', '0.50', '1.00', '0.43', '0.83', '0.83', 1, 'Wooden box', 'To Warehouse', 1),
-(131, '2020-09-11 19:32:22', 'Offloading truck', 58, 'JT00031', 'PT Citra duasejati', 'Reclosser', 'OFFLOADING', 'Production', '110000096', '0.85', '0.50', '1.00', '0.43', '0.83', '0.83', 1, 'Wooden box', 'To Warehouse', 1),
-(132, '2020-09-11 19:33:15', 'Offloading truck', 58, 'JT00031', 'PT Citra duasejati', 'Reclosser', 'OFFLOADING', 'Production', '110000096', '0.85', '0.50', '1.00', '0.43', '0.83', '0.83', 1, 'Wooden box', 'To Warehouse', 1),
-(133, '2020-09-11 19:37:19', 'Offloading truck', 58, 'JT00031', 'PT Citra duasejati', 'Reclosser', 'OFFLOADING', 'Production', '110000096', '0.85', '0.50', '1.00', '0.43', '0.83', '0.83', 1, 'Wooden box', 'To Warehouse', 1),
-(134, '2020-09-11 19:39:02', 'Offloading truck', 58, 'JT00031', 'PT Citra duasejati', 'Reclosser', 'OFFLOADING', 'Production', '110000096', '0.85', '0.50', '1.00', '0.43', '0.83', '0.83', 1, 'Wooden box', 'To Warehouse', 1),
-(135, '2020-09-11 19:39:31', 'Offloading truck', 58, 'JT00031', 'PT Citra duasejati', 'Reclosser', 'OFFLOADING', 'Production', '110000096', '0.85', '0.50', '1.00', '0.43', '0.83', '0.83', 1, 'Wooden box', 'To Warehouse', 1),
-(136, '2020-09-11 19:41:45', 'Offloading truck', 59, 'JT00031', 'PT Citra duasejati', 'Reclosser', 'OFFLOADING', 'Production', '110000096', '1.35', '1.10', '1.52', '2.26', '3.52', '3.52', 1, 'Wooden box', 'To Warehouse', 1),
-(137, '2020-09-11 19:42:37', 'Offloading truck', 59, 'JT00031', 'PT Citra duasejati', 'Reclosser', 'OFFLOADING', 'Production', '110000096', '1.35', '1.10', '1.52', '2.26', '3.52', '3.52', 1, 'Wooden box', 'To Warehouse', 1),
-(138, '2020-09-11 19:44:13', 'Offloading truck', 59, 'JT00031', 'PT Citra duasejati', 'Reclosser', 'OFFLOADING', 'Production', '110000096', '1.35', '1.10', '1.52', '2.26', '3.52', '3.52', 1, 'Wooden box', 'To Warehouse', 1),
-(139, '2020-09-11 19:44:28', 'Offloading truck', 59, 'JT00031', 'PT Citra duasejati', 'Reclosser', 'OFFLOADING', 'Production', '110000096', '1.35', '1.10', '1.52', '2.26', '3.52', '3.52', 1, 'Wooden box', 'To Warehouse', 1),
-(140, '2020-09-11 19:45:42', 'Offloading truck', 59, 'JT00031', 'PT Citra duasejati', 'Reclosser', 'OFFLOADING', 'Production', '110000096', '1.35', '1.10', '1.52', '2.26', '3.52', '3.52', 1, 'Wooden box', 'To Warehouse', 1),
-(141, '2020-09-11 19:46:20', 'Offloading truck', 59, 'JT00031', 'PT Citra duasejati', 'Reclosser', 'OFFLOADING', 'Production', '110000096', '1.35', '1.10', '1.52', '2.26', '3.52', '3.52', 1, 'Wooden box', 'To Warehouse', 1),
-(142, '2020-09-11 19:47:29', 'Offloading truck', 59, 'JT00031', 'PT Citra duasejati', 'Reclosser', 'OFFLOADING', 'Production', '110000096', '1.35', '1.10', '1.52', '2.26', '3.52', '3.52', 1, 'Wooden box', 'To Warehouse', 1),
-(143, '2020-09-11 19:48:48', 'Offloading truck', 59, 'JT00031', 'PT Citra duasejati', 'Reclosser', 'OFFLOADING', 'Production', '110000096', '1.35', '1.10', '1.52', '2.26', '3.52', '3.52', 1, 'Wooden box', 'To Warehouse', 1),
-(144, '2020-09-12 13:53:10', 'Loading truck', 60, 'JT00032', 'PT Citra duasejati', 'Reclosser', 'LOADING', '', '110000096', '0.85', '0.50', '1.00', '0.43', '0.83', '0.83', 1, 'Wooden box', 'From Warehouse', 1),
-(145, '2020-09-12 13:54:12', 'Loading truck', 60, 'JT00032', 'PT Citra duasejati', 'Reclosser', 'LOADING', '', '110000096', '0.85', '0.50', '1.00', '0.43', '0.83', '0.83', 1, 'Wooden box', 'From Warehouse', 1),
-(146, '2020-09-12 13:55:43', 'Loading truck', 60, 'JT00032', 'PT Citra duasejati', 'Reclosser', 'LOADING', '', '110000096', '0.85', '0.50', '1.00', '0.43', '0.83', '0.83', 1, 'Wooden box', 'From Warehouse', 1),
-(147, '2020-09-12 13:56:29', 'Loading truck', 60, 'JT00032', 'PT Citra duasejati', 'Reclosser', 'LOADING', '', '110000096', '0.85', '0.50', '1.00', '0.43', '0.83', '0.83', 1, 'Wooden box', 'From Warehouse', 1),
-(148, '2020-09-12 13:57:48', 'Loading truck', 60, 'JT00032', 'PT Citra duasejati', 'Reclosser', 'LOADING', '', '110000096', '0.85', '0.50', '1.00', '0.43', '0.83', '0.83', 1, 'Wooden box', 'From Warehouse', 1),
-(149, '2020-09-12 14:03:06', 'Loading truck', 60, 'JT00032', 'PT Citra duasejati', 'Reclosser', 'LOADING', '', '110000096', '0.85', '0.50', '1.00', '0.43', '0.83', '0.83', 1, 'Wooden box', 'From Warehouse', 1),
-(150, '2020-09-12 14:04:13', 'Loading truck', 60, 'JT00032', 'PT Citra duasejati', 'Reclosser', 'LOADING', '', '110000096', '0.85', '0.50', '1.00', '0.43', '0.83', '0.83', 1, 'Wooden box', 'From Warehouse', 1),
-(151, '2020-09-12 14:05:24', 'Loading truck', 60, 'JT00032', 'PT Citra duasejati', 'Reclosser', 'LOADING', '', '110000096', '0.85', '0.50', '1.00', '0.43', '0.83', '0.83', 1, 'Wooden box', 'From Warehouse', 1),
-(152, '2020-09-12 14:06:16', 'Loading truck', 61, 'JT00032', 'PT Citra duasejati', 'Reclosser', 'LOADING', 'Production', '110000096', '1.35', '1.10', '1.52', '2.26', '3.52', '3.52', 1, 'Wooden box', 'From Warehouse', 1),
-(153, '2020-09-12 14:06:59', 'Loading truck', 61, 'JT00032', 'PT Citra duasejati', 'Reclosser', 'LOADING', 'Production', '110000096', '1.35', '1.10', '1.52', '2.26', '3.52', '3.52', 1, 'Wooden box', 'From Warehouse', 1),
-(154, '2020-09-12 14:07:23', 'Loading truck', 61, 'JT00032', 'PT Citra duasejati', 'Reclosser', 'LOADING', 'Production', '110000096', '1.35', '1.10', '1.52', '2.26', '3.52', '3.52', 1, 'Wooden box', 'From Warehouse', 1),
-(155, '2020-09-12 14:08:18', 'Loading truck', 61, 'JT00032', 'PT Citra duasejati', 'Reclosser', 'LOADING', 'Production', '110000096', '1.35', '1.10', '1.52', '2.26', '3.52', '3.52', 1, 'Wooden box', 'From Warehouse', 1),
-(156, '2020-09-12 14:09:15', 'Loading truck', 61, 'JT00032', 'PT Citra duasejati', 'Reclosser', 'LOADING', 'Production', '110000096', '1.35', '1.10', '1.52', '2.26', '3.52', '3.52', 1, 'Wooden box', 'From Warehouse', 1),
-(157, '2020-09-12 14:10:29', 'Loading truck', 61, 'JT00032', 'PT Citra duasejati', 'Reclosser', 'LOADING', 'Production', '110000096', '1.35', '1.10', '1.52', '2.26', '3.52', '3.52', 1, 'Wooden box', 'From Warehouse', 1),
-(158, '2020-09-12 14:12:17', 'Loading truck', 61, 'JT00032', 'PT Citra duasejati', 'Reclosser', 'LOADING', 'Production', '110000096', '1.35', '1.10', '1.52', '2.26', '3.52', '3.52', 1, 'Wooden box', 'From Warehouse', 1),
-(159, '2020-09-12 14:15:42', 'Loading truck', 61, 'JT00032', 'PT Citra duasejati', 'Reclosser', 'LOADING', 'Production', '110000096', '1.35', '1.10', '1.52', '2.26', '3.52', '3.52', 1, 'Wooden box', 'From Warehouse', 1),
-(160, '2020-09-15 10:55:22', 'Off loading truck 2 pallet drum oli', 62, 'JT00033', 'PT Warso darma utama', 'Oli', 'OFFLOADING', 'Production', '005', '1.20', '1.20', '1.00', '2.88', '0.40', '2.88', 2, 'Pallet', 'To Jetty', 1),
-(161, '2020-09-15 14:39:58', 'offloading truck', 63, 'JT00034', 'Pt Arindo surya global', 'fitting', 'OFFLOADING', 'production', '12584/01/010', '1.10', '0.90', '0.75', '0.75', '0.80', '0.80', 1, 'box', 'To Warehouse', 1),
-(162, '2020-09-15 14:41:42', 'offloading truck', 64, 'JT00034', 'Pt Arindo surya global', 'fitting', 'OFFLOADING', 'production', '12584/01/010', '0.80', '0.60', '1.75', '0.84', '0.36', '0.84', 1, 'box', 'To Warehouse', 1),
-(163, '2020-09-15 14:42:33', 'offloading truck', 63, 'JT00034', 'Pt Arindo surya global', 'fitting', 'OFFLOADING', 'production', '12584/01/010', '1.10', '0.90', '0.75', '0.75', '0.80', '0.80', 1, 'box', 'To Warehouse', 1),
-(164, '2020-09-15 14:43:59', 'offloading truck', 65, 'JT00034', 'Pt Arindo surya global', 'fitting', 'OFFLOADING', 'production', '12584/01/010', '0.80', '0.60', '0.35', '0.17', '0.11', '0.17', 1, 'pallet', 'To Warehouse', 1),
-(165, '2020-09-21 11:13:07', 'offloading truck', 68, 'JT00035', 'Pt duta marine', 'plat', 'OFFLOADING', 'production', 'Sj-0095', '1.50', '0.20', '0.40', '0.12', '0.30', '0.30', 1, 'pallet', 'To Warehouse', 1),
-(166, '2020-09-21 13:31:13', 'offloading truck', 70, 'JT00036', 'Benvors', 'Cable', 'OFFLOADING', '', '079', '1.20', '1.20', '0.90', '1.30', '0.15', '1.30', 1, 'pallet', 'To Warehouse', 1),
-(167, '2020-09-21 13:32:24', 'offloading truck', 70, 'JT00036', 'Benvors', 'Cable', 'OFFLOADING', '', '079', '1.20', '1.20', '0.90', '1.30', '0.15', '1.30', 1, 'pallet', 'To Warehouse', 1),
-(168, '2020-09-21 13:33:27', 'offloading truck', 70, 'JT00036', 'Benvors', 'Cable', 'OFFLOADING', '', '079', '1.20', '1.20', '0.90', '1.30', '0.15', '1.30', 1, 'pallet', 'To Warehouse', 1),
-(169, '2020-09-21 13:34:57', 'offloading truck', 70, 'JT00036', 'Benvors', 'Cable', 'OFFLOADING', '', '079', '1.20', '1.20', '0.90', '1.30', '0.15', '1.30', 1, 'pallet', 'To Warehouse', 1),
-(170, '2020-09-21 13:35:34', 'offloading truck', 69, 'JT00036', 'Benvors', 'sparepart', 'OFFLOADING', 'production', '078', '1.20', '0.80', '0.65', '0.62', '0.35', '0.62', 1, 'box', 'To Warehouse', 1),
-(171, '2020-09-21 13:35:58', 'offloading truck', 69, 'JT00036', 'Benvors', 'sparepart', 'OFFLOADING', 'production', '078', '1.20', '0.80', '0.65', '0.62', '0.35', '0.62', 1, 'box', 'To Warehouse', 1),
-(172, '2020-09-21 13:37:31', 'offloading truck', 69, 'JT00036', 'Benvors', 'sparepart', 'OFFLOADING', 'production', '078', '1.20', '0.80', '0.65', '0.62', '0.35', '0.62', 1, 'box', 'To Warehouse', 1),
-(173, '2020-09-21 13:40:40', 'offloading truck', 69, 'JT00036', 'Benvors', 'sparepart', 'OFFLOADING', 'production', '078', '1.20', '0.80', '0.65', '0.63', '0.35', '0.63', 1, 'box', 'To Warehouse', 1),
-(174, '2020-09-21 13:40:53', 'offloading truck', 69, 'JT00036', 'Benvors', 'sparepart', 'OFFLOADING', 'production', '078', '1.20', '0.80', '0.65', '0.63', '0.35', '0.63', 1, 'box', 'To Warehouse', 1),
-(175, '2020-09-21 13:42:02', 'offloading truck', 69, 'JT00036', 'Benvors', 'sparepart', 'OFFLOADING', 'production', '078', '1.20', '0.80', '0.65', '0.63', '0.35', '0.63', 1, 'box', 'To Warehouse', 1),
-(176, '2020-09-21 13:42:17', 'offloading truck', 69, 'JT00036', 'Benvors', 'sparepart', 'OFFLOADING', 'production', '078', '1.20', '0.80', '0.65', '0.63', '0.35', '0.63', 1, 'box', 'To Warehouse', 1),
-(177, '2020-09-21 13:42:55', 'offloading truck', 69, 'JT00036', 'Benvors', 'sparepart', 'OFFLOADING', 'production', '078', '1.20', '0.80', '0.65', '0.63', '0.35', '0.63', 1, 'box', 'To Warehouse', 1),
-(178, '2020-09-21 13:43:44', 'offloading truck', 69, 'JT00036', 'Benvors', 'sparepart', 'OFFLOADING', 'production', '078', '1.20', '0.80', '0.65', '0.63', '0.35', '0.63', 1, 'box', 'To Warehouse', 1),
-(179, '2020-09-21 13:44:18', 'offloading truck', 69, 'JT00036', 'Benvors', 'sparepart', 'OFFLOADING', 'production', '078', '1.20', '0.80', '0.65', '0.63', '0.35', '0.63', 1, 'box', 'To Warehouse', 1),
-(180, '2020-09-21 13:45:00', 'offloading truck', 69, 'JT00036', 'Benvors', 'sparepart', 'OFFLOADING', 'production', '078', '1.20', '0.80', '0.65', '0.63', '0.35', '0.63', 1, 'box', 'To Warehouse', 1),
-(181, '2020-09-21 13:45:18', 'offloading truck', 69, 'JT00036', 'Benvors', 'sparepart', 'OFFLOADING', 'production', '078', '1.20', '0.80', '0.65', '0.63', '0.35', '0.63', 1, 'box', 'To Warehouse', 1),
-(182, '2020-09-21 13:45:35', 'offloading truck', 69, 'JT00036', 'Benvors', 'sparepart', 'OFFLOADING', 'production', '078', '1.20', '0.80', '0.65', '0.63', '0.35', '0.63', 1, 'box', 'To Warehouse', 1),
-(183, '2020-09-21 13:45:56', 'offloading truck', 69, 'JT00036', 'Benvors', 'sparepart', 'OFFLOADING', 'production', '078', '1.20', '0.80', '0.65', '0.63', '0.35', '0.63', 1, 'box', 'To Warehouse', 1),
-(184, '2020-09-21 13:46:25', 'offloading truck', 69, 'JT00036', 'Benvors', 'sparepart', 'OFFLOADING', 'production', '078', '1.20', '0.80', '0.65', '0.63', '0.35', '0.63', 1, 'box', 'To Warehouse', 1),
-(185, '2020-09-21 15:22:13', 'offloading truck', 72, 'JT00036', 'PT Optima S Energi', 'pipa', 'OFFLOADING', 'production', '080', '6.00', '0.01', '0.01', '0.01', '1.52', '1.52', 19, 'joint', 'To Yard', 1),
-(186, '2020-09-21 15:23:19', 'offloading truck', 72, 'JT00036', 'PT Optima S Energi', 'pipa', 'OFFLOADING', 'production', '080', '6.00', '0.01', '0.01', '0.01', '1.52', '1.52', 19, 'joint', 'To Yard', 1),
-(187, '2020-09-21 15:25:46', 'offloading truck', 72, 'JT00036', 'PT Optima S Energi', 'pipa', 'OFFLOADING', 'production', '080', '6.00', '0.01', '0.01', '0.00', '0.08', '0.08', 1, 'joint', 'To Yard', 1),
-(188, '2020-09-21 15:26:19', 'offloading truck', 72, 'JT00036', 'PT Optima S Energi', 'pipa', 'OFFLOADING', 'production', '080', '6.00', '0.01', '0.01', '0.00', '0.08', '0.08', 1, 'joint', 'To Yard', 1),
-(189, '2020-09-21 15:27:05', 'offloading truck', 72, 'JT00036', 'PT Optima S Energi', 'pipa', 'OFFLOADING', 'production', '080', '6.00', '0.01', '0.01', '0.01', '1.52', '1.52', 19, 'joint', 'To Yard', 1),
-(190, '2020-09-21 15:28:32', 'offloading truck', 72, 'JT00036', 'PT Optima S Energi', 'pipa', 'OFFLOADING', 'production', '080', '6.00', '0.01', '0.01', '0.01', '1.52', '1.52', 19, 'joint', 'To Yard', 1),
-(191, '2020-09-21 15:33:48', 'offloading truck', 72, 'JT00036', 'PT Optima S Energi', 'pipa', 'OFFLOADING', 'production', '080', '6.00', '0.01', '0.01', '0.01', '1.52', '1.52', 19, 'joint', 'To Yard', 1),
-(192, '2020-09-21 15:35:13', 'offloading truck', 72, 'JT00036', 'PT Optima S Energi', 'pipa', 'OFFLOADING', 'production', '080', '6.00', '0.01', '0.01', '0.01', '1.52', '1.52', 19, 'joint', 'To Jetty', 1),
-(193, '2020-09-21 15:38:37', 'offloading truck', 72, 'JT00036', 'PT Optima S Energi', 'pipa', 'OFFLOADING', 'production', '080', '6.00', '0.01', '0.01', '0.01', '1.52', '1.52', 19, 'joint', 'To Yard', 1),
-(194, '2020-09-21 15:40:30', 'offloading truck', 72, 'JT00036', 'PT Optima S Energi', 'pipa', 'OFFLOADING', 'production', '080', '6.00', '0.01', '0.01', '0.01', '1.52', '1.52', 19, 'joint', 'To Yard', 1),
-(195, '2020-09-21 15:41:48', 'offloading truck', 72, 'JT00036', 'PT Optima S Energi', 'pipa', 'OFFLOADING', 'production', '080', '6.00', '0.01', '0.01', '0.02', '1.52', '1.52', 19, 'joint', 'To Yard', 1),
-(196, '2020-09-21 15:43:08', 'offloading truck', 72, 'JT00036', 'PT Optima S Energi', 'pipa', 'OFFLOADING', 'production', '080', '6.00', '0.01', '0.01', '0.01', '1.52', '1.52', 19, 'joint', 'To Yard', 1),
-(197, '2020-09-21 15:45:01', 'offloading truck', 72, 'JT00036', 'PT Optima S Energi', 'pipa', 'OFFLOADING', 'production', '080', '6.00', '0.01', '0.01', '0.01', '0.64', '0.64', 8, 'joint', 'To Yard', 1),
-(198, '2020-09-21 15:47:46', 'offloading truck', 71, 'JT00036', 'PT Optima S Energi', 'pipa', 'OFFLOADING', 'production', '080', '6.00', '0.03', '0.03', '0.02', '1.50', '1.50', 5, 'joint', 'To Yard', 1),
-(199, '2020-09-21 15:49:01', 'offloading truck', 71, 'JT00036', 'PT Optima S Energi', 'pipa', 'OFFLOADING', 'production', '080', '6.00', '0.03', '0.03', '0.02', '1.50', '1.50', 5, 'joint', 'To Yard', 1),
-(200, '2020-09-21 15:50:20', 'offloading truck', 71, 'JT00036', 'PT Optima S Energi', 'pipa', 'OFFLOADING', 'production', '080', '6.00', '0.03', '0.03', '0.02', '1.50', '1.50', 5, 'joint', 'To Yard', 1),
-(201, '2020-09-21 15:51:17', 'offloading truck', 71, 'JT00036', 'PT Optima S Energi', 'pipa', 'OFFLOADING', 'production', '080', '6.00', '0.03', '0.03', '0.02', '1.50', '1.50', 5, 'joint', 'To Yard', 1),
-(202, '2020-09-21 15:52:38', 'offloading truck', 71, 'JT00036', 'PT Optima S Energi', 'pipa', 'OFFLOADING', 'production', '080', '6.00', '0.03', '0.03', '0.02', '1.50', '1.50', 5, 'joint', 'To Yard', 1),
-(203, '2020-09-21 15:54:04', 'offloading truck', 71, 'JT00036', 'PT Optima S Energi', 'pipa', 'OFFLOADING', 'production', '080', '6.00', '0.03', '0.03', '0.02', '1.50', '1.50', 5, 'joint', 'To Yard', 1),
-(204, '2020-09-21 15:55:10', 'offloading truck', 71, 'JT00036', 'PT Optima S Energi', 'pipa', 'OFFLOADING', 'production', '080', '6.00', '0.03', '0.03', '0.02', '1.50', '1.50', 5, 'joint', 'To Yard', 1),
-(205, '2020-09-21 15:56:46', 'offloading truck', 71, 'JT00036', 'PT Optima S Energi', 'pipa', 'OFFLOADING', 'production', '080', '6.00', '0.03', '0.03', '0.02', '1.50', '1.50', 5, 'joint', 'To Yard', 1),
-(206, '2020-09-21 15:57:15', 'offloading truck', 71, 'JT00036', 'PT Optima S Energi', 'pipa', 'OFFLOADING', 'production', '080', '6.00', '0.03', '0.03', '0.02', '1.50', '1.50', 5, 'joint', 'To Yard', 1),
-(207, '2020-09-21 15:58:33', 'offloading truck', 71, 'JT00036', 'PT Optima S Energi', 'pipa', 'OFFLOADING', 'production', '080', '6.00', '0.03', '0.03', '0.00', '0.30', '0.30', 1, 'joint', 'To Yard', 1),
-(208, '2020-09-21 15:59:03', 'offloading truck', 71, 'JT00036', 'PT Optima S Energi', 'pipa', 'OFFLOADING', 'production', '080', '6.00', '0.03', '0.03', '0.01', '1.20', '1.20', 4, 'joint', 'To Yard', 1),
-(209, '2020-09-21 16:00:16', 'offloading truck', 71, 'JT00036', 'PT Optima S Energi', 'pipa', 'OFFLOADING', 'production', '080', '6.00', '0.03', '0.03', '0.02', '1.50', '1.50', 5, 'joint', 'To Yard', 1),
-(210, '2020-09-21 16:01:18', 'offloading truck', 71, 'JT00036', 'PT Optima S Energi', 'pipa', 'OFFLOADING', 'production', '080', '6.00', '0.03', '0.03', '0.00', '0.30', '0.30', 1, 'joint', 'To Yard', 1),
-(211, '2020-09-21 16:01:43', 'offloading truck', 71, 'JT00036', 'PT Optima S Energi', 'pipa', 'OFFLOADING', 'production', '080', '6.00', '0.03', '0.03', '0.02', '1.20', '1.20', 4, 'joint', 'To Yard', 1),
-(212, '2020-09-22 10:19:19', 'Off loading truck', 76, 'JT00037', 'PT.Multi Karya Logam', 'Wodden box', 'OFFLOADING', 'Production', '430008002', '0.72', '0.42', '0.56', '0.17', '0.08', '0.17', 1, 'Boks', 'To Jetty', 1),
-(213, '2020-09-22 10:21:13', 'Off loading truck', 77, 'JT00037', 'PT.Multi Karya Logam', 'AC', 'OFFLOADING', 'Production', '430008002', '0.78', '0.54', '0.50', '0.42', '0.12', '0.42', 2, 'Unit', 'To Jetty', 1),
-(214, '2020-09-22 10:32:25', 'Off loading truck premier oil', 78, 'JT00038', 'PT Warso darma utama', 'Drum oli', 'OFFLOADING', 'Production', '004', '1.20', '1.20', '1.00', '4.32', '1.80', '4.32', 3, '', 'To Warehouse', 1),
-(215, '2020-09-22 10:48:38', 'Off loading truck', 73, 'JT00037', 'PT.Schlumberger', '', 'OFFLOADING', '', '4200002636 (KH-', '2.43', '0.83', '0.35', '0.71', '0.41', '0.71', 1, 'Boks', 'To Yard', 1),
-(216, '2020-09-22 10:49:41', 'Loading truck', 75, 'JT00037', 'PT.Schlumberger', 'Wodden box', 'OFFLOADING', 'Production', '4200002636 (KH-', '1.80', '0.40', '0.50', '0.36', '0.22', '0.36', 1, 'Boks', 'To Jetty', 1),
-(217, '2020-09-22 10:49:48', 'Loading truck', 75, 'JT00037', 'PT.Schlumberger', 'Wodden box', 'OFFLOADING', 'Production', '4200002636 (KH-', '1.80', '0.40', '0.50', '0.00', '0.00', '0.00', 1, 'Boks', 'To Yard', 1),
-(218, '2020-09-22 10:49:55', 'Loading truck', 75, 'JT00037', 'PT.Schlumberger', 'Wodden box', 'OFFLOADING', 'Production', '4200002636 (KH-', '1.80', '0.40', '0.50', '0.00', '0.00', '0.00', 1, 'Boks', 'To Yard', 1),
-(219, '2020-09-22 10:49:58', 'Loading truck', 75, 'JT00037', 'PT.Schlumberger', 'Wodden box', 'OFFLOADING', 'Production', '4200002636 (KH-', '1.80', '0.40', '0.50', '0.00', '0.00', '0.00', 1, 'Boks', 'To Yard', 1),
-(220, '2020-09-22 10:50:53', 'Off loading truck', 74, 'JT00037', 'PT.Schlumberger', 'Wodden box', 'OFFLOADING', 'Production', '4200002636 (KH-', '5.60', '0.45', '0.52', '1.31', '0.13', '1.31', 1, 'Boks', 'To Yard', 1),
-(221, '2020-09-22 10:50:56', 'Off loading truck', 74, 'JT00037', 'PT.Schlumberger', 'Wodden box', 'OFFLOADING', 'Production', '4200002636 (KH-', '5.60', '0.45', '0.52', '0.00', '0.00', '0.00', 1, 'Boks', 'To Yard', 1),
-(222, '2020-09-22 10:54:59', 'Off loading truck', 79, 'JT00037', 'PT.Schlumberger', 'Wodden box', 'OFFLOADING', 'Drilling', '4200002636 (KH-', '4.56', '0.43', '0.47', '0.92', '0.13', '0.92', 1, 'Boks', 'To Jetty', 1),
-(223, '2020-09-22 10:57:43', 'Off loading truck', 80, 'JT00037', 'PT.Schlumberger', '', 'OFFLOADING', '', '4200002636 (KH-', '6.00', '1.10', '0.40', '2.64', '0.60', '2.64', 1, 'Pallet', 'To Jetty', 1),
-(224, '2020-09-22 11:06:21', 'Off loading truck', 81, 'JT00037', 'PT.Schlumberger', 'Wodden box', 'OFFLOADING', '', '4200002636 (KH-', '2.60', '0.96', '0.75', '1.87', '0.20', '1.87', 1, 'Boks', 'To Jetty', 1),
-(225, '2020-09-22 11:08:12', 'Off loading truck', 82, 'JT00037', 'PT.Schlumberger', 'Tubing', 'OFFLOADING', 'Drilling', '4200002636 (KH-', '4.70', '1.10', '0.40', '2.07', '0.40', '2.07', 1, 'Pallet', 'To Jetty', 1),
-(226, '2020-09-22 11:11:09', 'Off loading truck', 83, 'JT00037', 'PT.Schlumberger', 'Wodden box', 'OFFLOADING', 'Drilling', '4200002636 (KH-', '1.00', '0.78', '0.55', '0.43', '0.12', '0.43', 1, 'Boks', 'To Yard', 1),
-(227, '2020-09-22 13:57:33', 'Off loading truck premier oil', 84, 'JT00038', 'PT.Karya Energy', 'Wodden box', 'OFFLOADING', 'Production', '007', '1.20', '0.60', '0.90', '0.65', '0.95', '0.95', 1, 'Boks', 'To Warehouse', 1),
-(228, '2020-09-22 14:00:19', 'Off loading truck premier oil', 85, 'JT00038', 'PT.Karya Energy', 'Sling wire', 'OFFLOADING', 'Production', '007', '1.00', '0.60', '0.60', '0.36', '0.08', '0.36', 1, 'Pallet', 'To Warehouse', 1),
-(229, '2020-09-22 14:02:06', 'Off loading truck premier oil', 86, 'JT00038', 'PT.Karya Energy', 'Wodden box', 'OFFLOADING', 'Production', '007', '0.50', '0.50', '0.80', '0.20', '0.04', '0.20', 1, 'Boks', 'To Warehouse', 1),
-(230, '2020-09-22 14:05:36', 'Off loading truck premier oil', 87, 'JT00038', 'PT.Karya Energy', 'Majun', 'OFFLOADING', 'Production', '007', '1.20', '1.20', '0.80', '6.91', '1.20', '6.91', 6, 'Pallet', 'To Warehouse', 1),
-(231, '2020-09-22 14:09:20', 'Off loading truck premier oil', 87, 'JT00038', 'PT.Karya Energy', 'Majun', 'OFFLOADING', 'Production', '007', '1.20', '1.20', '0.80', '6.91', '1.20', '6.91', 6, 'Pallet', 'To Warehouse', 1),
-(232, '2020-09-23 09:12:54', 'offloading truck', 91, 'JT00039', 'Eskimo', 'sparepart', 'OFFLOADING', '', '0001', '3.13', '0.41', '0.04', '0.06', '0.18', '0.18', 1, 'box', 'To Warehouse', 1),
-(233, '2020-09-23 09:16:17', 'offloading truck', 89, 'JT00039', 'Eskimo', 'sparepart', 'OFFLOADING', 'production', '0001', '1.00', '1.00', '0.09', '0.09', '0.23', '0.23', 1, 'pallet', 'To Warehouse', 1),
-(234, '2020-09-23 09:24:27', 'offloading truck', 89, 'JT00039', 'Eskimo', 'sparepart', 'OFFLOADING', 'production', '0001', '1.00', '1.00', '0.09', '0.09', '0.23', '0.23', 1, 'pallet', 'To Warehouse', 1),
-(235, '2020-09-23 09:24:55', 'offloading truck', 88, 'JT00039', 'Eskimo', 'sparepart', 'OFFLOADING', 'production', '0001', '1.25', '1.07', '1.00', '1.34', '0.03', '1.34', 1, 'box', 'To Warehouse', 1),
-(236, '2020-09-23 09:26:14', 'offloading truck', 90, 'JT00039', 'Eskimo', 'sparepart', 'OFFLOADING', 'production', '0001', '0.10', '0.05', '0.05', '0.00', '0.30', '0.30', 1, 'box', 'To Warehouse', 1),
-(237, '2020-09-23 09:27:03', 'offloading truck', 92, 'JT00039', 'Eskimo', 'sparepart', 'OFFLOADING', 'production', '0001', '3.00', '0.03', '0.04', '0.00', '0.12', '0.12', 1, 'box', 'To Warehouse', 1),
-(238, '2020-09-23 09:33:19', 'offloading truck', 94, 'JT00039', 'Eskimo', 'sparepart', 'OFFLOADING', '', '0001', '1.27', '1.10', '0.07', '0.10', '0.02', '0.10', 1, 'box', 'To Warehouse', 1),
-(239, '2020-09-23 09:33:28', 'offloading truck', 94, 'JT00039', 'Eskimo', 'sparepart', 'OFFLOADING', '', '0001', '1.27', '1.10', '0.07', '0.10', '0.02', '0.10', 1, 'box', 'To Warehouse', 1),
-(240, '2020-09-23 09:34:17', 'offloading truck', 93, 'JT00039', 'Eskimo', 'sparepart', 'OFFLOADING', 'production', '0001', '1.27', '1.15', '0.55', '0.80', '0.30', '0.80', 1, 'box', 'To Warehouse', 1),
-(241, '2020-09-23 09:35:11', 'offloading truck', 89, 'JT00039', 'Eskimo', 'sparepart', 'OFFLOADING', 'production', '0001', '1.00', '1.00', '0.09', '0.09', '0.23', '0.23', 1, 'pallet', 'To Warehouse', 1),
-(242, '2020-09-23 09:36:20', 'offloading truck', 89, 'JT00039', 'Eskimo', 'sparepart', 'OFFLOADING', 'production', '0001', '1.00', '1.00', '0.09', '0.09', '0.23', '0.23', 1, 'pallet', 'To Warehouse', 1),
-(243, '2020-09-23 09:37:09', 'offloading truck', 89, 'JT00039', 'Eskimo', 'sparepart', 'OFFLOADING', 'production', '0001', '1.00', '1.00', '0.09', '0.09', '0.23', '0.23', 1, 'pallet', 'To Warehouse', 1),
-(244, '2020-09-23 09:38:25', 'offloading truck', 93, 'JT00039', 'Eskimo', 'sparepart', 'OFFLOADING', 'production', '0001', '1.27', '1.15', '0.55', '0.80', '0.30', '0.80', 1, 'box', 'To Warehouse', 1),
-(245, '2020-09-23 09:38:58', 'offloading truck', 93, 'JT00039', 'Eskimo', 'sparepart', 'OFFLOADING', 'production', '0001', '1.27', '1.15', '0.55', '0.81', '0.30', '0.81', 1, 'box', 'To Warehouse', 1),
-(246, '2020-09-23 09:41:45', 'offloading truck', 93, 'JT00039', 'Eskimo', 'sparepart', 'OFFLOADING', 'production', '0001', '1.27', '1.15', '0.55', '0.81', '0.30', '0.81', 1, 'box', 'To Warehouse', 1);
-INSERT INTO `actual_jobordertruck` (`id_at`, `time_at`, `deskripsi_cargo_at`, `id_djotruck`, `id_jobordertruck`, `nm_company_at`, `nm_barang_at`, `nm_kegiatan_at`, `production_at`, `no_po_at`, `p_cargo_at`, `l_cargo_at`, `t_cargo_at`, `volume_cargo_at`, `ton_cargo_at`, `revton_cargo_at`, `qty_cargo_at`, `satuan_cargo_at`, `keterangan_at`, `status_cargo_at`) VALUES
-(247, '2020-09-23 09:42:21', 'offloading truck', 93, 'JT00039', 'Eskimo', 'sparepart', 'OFFLOADING', 'production', '0001', '1.27', '1.15', '0.55', '0.81', '0.30', '0.81', 1, 'box', 'To Warehouse', 1),
-(248, '2020-09-23 09:43:50', 'offloading truck', 93, 'JT00039', 'Eskimo', 'sparepart', 'OFFLOADING', 'production', '0001', '1.27', '1.15', '0.55', '0.81', '0.30', '0.81', 1, 'box', 'To Warehouse', 1),
-(249, '2020-09-23 09:45:39', 'offloading truck', 93, 'JT00039', 'Eskimo', 'sparepart', 'OFFLOADING', 'production', '0001', '1.27', '1.15', '0.55', '0.81', '0.30', '0.81', 1, 'box', 'To Warehouse', 1),
-(250, '2020-09-23 09:46:47', 'offloading truck', 93, 'JT00039', 'Eskimo', 'sparepart', 'OFFLOADING', 'production', '0001', '1.27', '1.15', '0.55', '0.81', '0.30', '0.81', 1, 'box', 'To Warehouse', 1),
-(251, '2020-09-23 13:31:52', 'offloading truck', 95, 'JT00039', 'PT Tekindomas niagatama', 'majun', 'OFFLOADING', 'production', '03', '1.20', '1.20', '0.07', '0.09', '0.05', '0.09', 1, 'pallet', 'To Warehouse', 1),
-(252, '2020-09-23 13:34:08', 'offloading truck', 96, 'JT00039', 'PT Tekindomas niagatama', 'OIL ', 'OFFLOADING', 'production', '03', '1.20', '1.20', '1.10', '1.58', '0.80', '1.58', 1, 'pallet', 'To Warehouse', 1),
-(253, '2020-09-23 13:34:20', 'offloading truck', 97, 'JT00039', 'PT Tekindomas niagatama', 'Oil ', 'OFFLOADING', '', '03', '1.20', '0.06', '0.06', '0.00', '0.40', '0.40', 1, 'pallet', 'To Warehouse', 1),
-(254, '2020-09-23 14:27:25', 'offloading truck', 98, 'JT00040', 'PT EON chemical', 'chemical', 'OFFLOADING', 'production', '02/12', '1.20', '1.20', '1.10', '1.58', '0.65', '1.58', 1, 'pallet', 'To Warehouse', 1),
-(255, '2020-09-23 14:30:25', 'offloading truck', 98, 'JT00040', 'PT EON chemical', 'chemical', 'OFFLOADING', 'production', '02/12', '1.20', '1.20', '1.10', '1.59', '0.65', '1.59', 1, 'pallet', 'To Warehouse', 1),
-(256, '2020-09-23 14:30:45', 'offloading truck', 98, 'JT00040', 'PT EON chemical', 'chemical', 'OFFLOADING', 'production', '02/12', '1.20', '1.20', '1.10', '1.59', '0.65', '1.59', 1, 'pallet', 'To Warehouse', 1),
-(257, '2020-09-23 14:30:55', 'offloading truck', 98, 'JT00040', 'PT EON chemical', 'chemical', 'OFFLOADING', 'production', '02/12', '1.20', '1.20', '1.10', '1.59', '0.65', '1.59', 1, 'pallet', 'To Warehouse', 1),
-(258, '2020-09-23 14:31:04', 'offloading truck', 98, 'JT00040', 'PT EON chemical', 'chemical', 'OFFLOADING', 'production', '02/12', '1.20', '1.20', '1.10', '1.59', '0.65', '1.59', 1, 'pallet', 'To Warehouse', 1),
-(259, '2020-09-23 14:32:08', 'offloading truck', 98, 'JT00040', 'PT EON chemical', 'chemical', 'OFFLOADING', 'production', '02/12', '1.20', '1.20', '1.10', '1.59', '0.65', '1.59', 1, 'pallet', 'To Warehouse', 1),
-(260, '2020-09-23 14:32:21', 'offloading truck', 98, 'JT00040', 'PT EON chemical', 'chemical', 'OFFLOADING', 'production', '02/12', '1.20', '1.20', '1.10', '1.59', '0.65', '1.59', 1, 'pallet', 'To Warehouse', 1),
-(261, '2020-09-24 11:47:49', 'Offloading truck', 100, 'JT00041', 'PT Firtech inti karya', 'Black pipe', 'OFFLOADING', 'Production', '12599', '6.00', '0.01', '0.01', '0.00', '0.12', '0.12', 3, 'Joint', 'To Yard', 1),
-(262, '2020-09-24 11:48:26', 'Offloading truck', 99, 'JT00041', 'PT Firtech inti karya', 'Black pipe', 'OFFLOADING', 'Production', '12599', '6.00', '0.08', '0.08', '0.51', '0.15', '0.51', 15, 'Joint', 'To Yard', 1),
-(263, '2020-09-24 12:07:36', 'Offloading truck', 99, 'JT00041', 'PT Firtech inti karya', 'Black pipe', 'OFFLOADING', 'Production', '12599', '6.00', '0.08', '0.08', '0.63', '0.19', '0.63', 19, 'Joint', 'To Yard', 1),
-(264, '2020-09-24 13:52:09', 'Loading truck', 101, 'JT00041', 'PT mesindo', 'Generator rotor', 'LOADING', 'Production', '12', '2.00', '1.00', '0.09', '0.18', '1.50', '1.50', 1, 'Wooden box', 'From Warehouse', 1),
-(265, '2020-09-24 14:01:02', 'Offloading truck', 102, 'JT00041', 'PT EON chemical', 'chemical', 'OFFLOADING', 'Production', '45', '1.20', '1.20', '0.07', '0.10', '0.80', '0.80', 1, 'Pallet', 'To Warehouse', 1),
-(266, '2020-09-25 10:44:28', 'Offloading truck', 103, 'JT00042', 'PT linto', 'Filter', 'OFFLOADING', 'Production', '420043830', '1.20', '1.20', '1.40', '2.02', '0.05', '2.02', 1, 'Pallet', 'To Warehouse', 1),
-(267, '2020-09-25 10:45:22', 'Offloading truck', 103, 'JT00042', 'PT linto', 'Filter', 'OFFLOADING', 'Production', '420043830', '1.20', '1.20', '1.40', '2.02', '0.05', '2.02', 1, 'Pallet', 'To Warehouse', 1),
-(268, '2020-09-25 10:46:49', 'Offloading truck', 103, 'JT00042', 'PT linto', 'Filter', 'OFFLOADING', 'Production', '420043830', '1.20', '1.20', '1.40', '2.02', '0.05', '2.02', 1, 'Pallet', 'To Warehouse', 1),
-(269, '2020-09-25 10:47:21', 'Offloading truck', 103, 'JT00042', 'PT linto', 'Filter', 'OFFLOADING', 'Production', '420043830', '1.20', '1.20', '1.40', '2.02', '0.05', '2.02', 1, 'Pallet', 'To Warehouse', 1),
-(270, '2020-09-25 10:47:42', 'Offloading truck', 103, 'JT00042', 'PT linto', 'Filter', 'OFFLOADING', 'Production', '420043830', '1.20', '1.20', '1.40', '2.02', '0.05', '2.02', 1, 'Pallet', 'To Warehouse', 1),
-(271, '2020-09-25 10:56:11', 'Offloading truck', 104, 'JT00042', 'PT linto', 'Filter', 'OFFLOADING', 'Production', '4210043832', '1.20', '1.20', '1.40', '2.02', '0.05', '2.02', 1, 'Pallet', 'To Jetty', 1),
-(272, '2020-09-25 10:56:32', 'Offloading truck', 104, 'JT00042', 'PT linto', 'Filter', 'OFFLOADING', 'Production', '4210043832', '1.20', '1.20', '1.40', '2.02', '0.05', '2.02', 1, 'Pallet', 'To Warehouse', 1),
-(273, '2020-09-25 10:57:08', 'Offloading truck', 104, 'JT00042', 'PT linto', 'Filter', 'OFFLOADING', 'Production', '4210043832', '1.20', '1.20', '1.40', '2.02', '0.05', '2.02', 1, 'Pallet', 'To Warehouse', 1),
-(274, '2020-09-25 10:57:37', 'Offloading truck', 104, 'JT00042', 'PT linto', 'Filter', 'OFFLOADING', 'Production', '4210043832', '1.20', '1.20', '1.40', '2.02', '0.05', '2.02', 1, 'Pallet', 'To Warehouse', 1),
-(275, '2020-09-25 10:58:17', 'Offloading truck', 104, 'JT00042', 'PT linto', 'Filter', 'OFFLOADING', 'Production', '4210043832', '1.20', '1.20', '1.40', '2.02', '0.05', '2.02', 1, 'Pallet', 'To Warehouse', 1),
-(276, '2020-09-25 10:58:49', 'Offloading truck', 104, 'JT00042', 'PT linto', 'Filter', 'OFFLOADING', 'Production', '4210043832', '1.20', '1.20', '1.40', '2.02', '0.05', '2.02', 1, 'Pallet', 'To Warehouse', 1),
-(277, '2020-09-25 10:59:04', 'Offloading truck', 105, 'JT00042', 'Pt aft', 'Sparepart', 'OFFLOADING', 'Production', '4410045905', '0.80', '0.80', '1.15', '0.74', '0.07', '0.74', 1, 'Woden box', 'To Warehouse', 1),
-(278, '2020-09-25 11:00:00', 'Offloading truck', 106, 'JT00042', 'PT luas birus', 'To tank', 'OFFLOADING', 'Production', '4210043889', '1.25', '1.10', '1.90', '2.61', '2.60', '2.61', 1, 'Unit', 'To Yard', 1),
-(279, '2020-09-25 11:00:37', 'Offloading truck', 106, 'JT00042', 'PT luas birus', 'To tank', 'OFFLOADING', 'Production', '4210043889', '1.25', '1.10', '1.90', '2.61', '2.60', '2.61', 1, 'Unit', 'To Jetty', 1),
-(280, '2020-09-25 11:01:08', 'Offloading truck', 106, 'JT00042', 'PT luas birus', 'To tank', 'OFFLOADING', 'Production', '4210043889', '1.25', '1.10', '1.90', '2.61', '2.60', '2.61', 1, 'Unit', 'To Yard', 1),
-(281, '2020-09-25 11:01:43', 'Offloading truck', 106, 'JT00042', 'PT luas birus', 'To tank', 'OFFLOADING', 'Production', '4210043889', '1.25', '1.10', '1.90', '2.61', '2.60', '2.61', 1, 'Unit', 'To Yard', 1),
-(282, '2020-09-25 11:02:17', 'Offloading truck', 106, 'JT00042', 'PT luas birus', 'To tank', 'OFFLOADING', 'Production', '4210043889', '1.25', '1.10', '1.90', '2.61', '2.60', '2.61', 1, 'Unit', 'To Yard', 1),
-(283, '2020-09-25 11:02:55', 'Offloading truck', 106, 'JT00042', 'PT luas birus', 'To tank', 'OFFLOADING', 'Production', '4210043889', '1.25', '1.10', '1.90', '2.61', '2.60', '2.61', 1, 'Unit', 'To Yard', 1),
-(284, '2020-09-25 11:03:37', 'Offloading truck', 106, 'JT00042', 'PT luas birus', 'To tank', 'OFFLOADING', 'Production', '4210043889', '1.25', '1.10', '1.90', '2.61', '2.60', '2.61', 1, 'Unit', 'To Yard', 1),
-(285, '2020-09-25 11:04:16', 'Offloading truck', 106, 'JT00042', 'PT luas birus', 'To tank', 'OFFLOADING', 'Production', '4210043889', '1.25', '1.10', '1.90', '2.62', '2.60', '2.62', 1, 'Unit', 'To Yard', 1),
-(286, '2020-09-25 11:05:08', 'Offloading truck', 106, 'JT00042', 'PT luas birus', 'To tank', 'OFFLOADING', 'Production', '4210043889', '1.25', '1.10', '1.90', '2.62', '2.60', '2.62', 1, 'Unit', 'To Yard', 1),
-(287, '2020-09-25 11:07:29', 'Offloading truck', 106, 'JT00042', 'PT luas birus', 'To tank', 'OFFLOADING', 'Production', '4210043889', '1.25', '1.10', '1.90', '2.62', '2.60', '2.62', 1, 'Unit', 'To Yard', 1),
-(288, '2020-09-25 11:08:00', 'Offloading truck', 106, 'JT00042', 'PT luas birus', 'To tank', 'OFFLOADING', 'Production', '4210043889', '1.25', '1.10', '1.90', '2.62', '2.60', '2.62', 1, 'Unit', 'To Yard', 1),
-(289, '2020-09-25 11:08:42', 'Offloading truck', 106, 'JT00042', 'PT luas birus', 'To tank', 'OFFLOADING', 'Production', '4210043889', '1.25', '1.10', '1.90', '2.62', '2.60', '2.62', 1, 'Unit', 'To Yard', 1),
-(290, '2020-09-25 11:09:12', 'Offloading truck', 106, 'JT00042', 'PT luas birus', 'To tank', 'OFFLOADING', 'Production', '4210043889', '1.25', '1.10', '1.90', '2.62', '2.60', '2.62', 1, 'Unit', 'To Yard', 1),
-(291, '2020-09-25 13:04:45', 'Offloading truck', 107, 'JT00042', 'PT indo cool', 'Sparepart', 'OFFLOADING', 'Production', 'So', '2.55', '2.00', '0.65', '3.31', '2.41', '3.31', 1, 'Box', 'To Warehouse', 1),
-(292, '2020-09-25 13:05:15', 'Offloading truck', 108, 'JT00042', 'Pt pgp', 'Cassing 9 5/8', 'OFFLOADING', 'Production', 'So', '3.00', '0.80', '0.80', '1.92', '0.45', '1.92', 1, 'Bendel', 'To Jetty', 1),
-(293, '2020-09-25 13:05:57', 'Offloading truck', 109, 'JT00042', 'Pt pgp', 'Cassing 9 5/8', 'OFFLOADING', 'Production', 'So', '6.00', '0.27', '0.27', '0.44', '0.30', '0.44', 1, 'Batang', 'To Jetty', 1),
-(294, '2020-09-25 13:06:37', 'Offloading truck', 109, 'JT00042', 'Pt pgp', 'Cassing 9 5/8', 'OFFLOADING', 'Production', 'So', '6.00', '0.27', '0.27', '0.44', '0.30', '0.44', 1, 'Batang', 'To Jetty', 1),
-(295, '2020-09-25 13:07:26', 'Offloading truck', 110, 'JT00042', 'Pt pgp', 'Cassing 9 5/8', 'OFFLOADING', '', 'So', '3.00', '0.27', '0.27', '0.22', '0.15', '0.22', 1, 'Batang', 'To Jetty', 1),
-(296, '2020-09-25 13:08:24', 'Offloading truck', 111, 'JT00042', 'Pt pgp', 'Cassing 9 5/8', 'OFFLOADING', '', 'So', '4.00', '0.27', '0.27', '0.29', '0.20', '0.29', 1, 'Batang', 'To Jetty', 1),
-(297, '2020-09-25 13:09:30', 'Offloading truck', 110, 'JT00042', 'Pt pgp', 'Cassing 9 5/8', 'OFFLOADING', '', 'So', '3.00', '0.27', '0.27', '0.22', '0.15', '0.22', 1, 'Batang', 'To Jetty', 1),
-(298, '2020-09-25 13:10:08', 'Offloading truck', 110, 'JT00042', 'Pt pgp', 'Cassing 9 5/8', 'OFFLOADING', '', 'So', '3.00', '0.27', '0.27', '0.22', '0.15', '0.22', 1, 'Batang', 'To Jetty', 1),
-(299, '2020-09-25 13:31:13', 'Loading truk', 113, 'JT00042', 'Pt trias', 'Batre', 'LOADING', 'Production', 'Rijek', '1.15', '1.15', '0.95', '1.26', '1.25', '1.26', 1, 'Peti', 'From Warehouse', 1),
-(300, '2020-09-25 13:32:22', 'Loading truk', 113, 'JT00042', 'Pt trias', 'Batre', 'LOADING', 'Production', 'Rijek', '1.15', '1.15', '0.95', '1.26', '1.25', '1.26', 1, 'Peti', 'From Warehouse', 1),
-(301, '2020-09-25 13:34:12', 'Loading truk', 113, 'JT00042', 'Pt trias', 'Batre', 'LOADING', 'Production', 'Rijek', '1.15', '1.15', '0.95', '1.26', '1.25', '1.26', 1, 'Peti', 'From Warehouse', 1),
-(302, '2020-09-25 13:35:16', 'Loading truk', 113, 'JT00042', 'Pt trias', 'Batre', 'LOADING', 'Production', 'Rijek', '1.15', '1.15', '0.95', '1.26', '1.25', '1.26', 1, 'Peti', 'From Warehouse', 1),
-(303, '2020-09-25 13:36:36', 'Loading truk', 113, 'JT00042', 'Pt trias', 'Batre', 'LOADING', 'Production', 'Rijek', '1.15', '1.15', '0.95', '1.26', '1.25', '1.26', 1, 'Peti', 'From Warehouse', 1),
-(304, '2020-09-25 14:16:18', 'Loading truk', 114, 'JT00042', 'Pt segara permai', 'Afar', 'LOADING', 'Production', '1500034761', '0.95', '0.95', '1.50', '1.35', '0.10', '1.35', 1, 'Woden crat', 'From Yard', 1),
-(305, '2020-09-25 14:16:56', 'Loading truk', 115, 'JT00042', 'Pt segara permai', 'Liferaft', 'OFFLOADING', 'Production', '1500031150', '1.70', '0.80', '0.90', '1.22', '0.05', '1.22', 1, 'Woden crat', 'To Yard', 1),
-(306, '2020-09-25 14:52:04', 'offloading truck', 116, 'JT00044', 'PT Dwiprangga', 'sparepart', 'OFFLOADING', 'production', '11', '1.10', '1.10', '0.06', '0.08', '0.30', '0.30', 1, 'pallet', 'To Warehouse', 1),
-(307, '2020-09-25 14:53:19', 'offloading truck', 116, 'JT00044', 'PT Dwiprangga', 'sparepart', 'OFFLOADING', 'production', '11', '1.10', '1.10', '0.06', '0.08', '0.30', '0.30', 1, 'pallet', 'To Warehouse', 1),
-(308, '2020-09-25 14:54:42', 'offloading truck', 117, 'JT00044', 'PT Titian', 'sparepart', 'OFFLOADING', 'production', '12', '1.20', '1.00', '1.00', '1.20', '0.50', '1.20', 1, 'pallet', 'To Warehouse', 1),
-(309, '2020-09-25 14:59:29', 'offloading truck', 123, 'JT00044', 'PT Mesitech', 'sparepart', 'OFFLOADING', '', '61', '3.30', '1.23', '1.35', '5.48', '0.58', '5.48', 1, 'box', 'To Warehouse', 1),
-(310, '2020-09-25 14:59:42', 'offloading truck', 122, 'JT00044', 'PT Mesitech', 'sparepart', 'OFFLOADING', '', '60', '3.24', '0.92', '0.98', '2.92', '0.31', '2.92', 1, 'box', 'To Warehouse', 1),
-(311, '2020-09-25 15:05:16', 'offloading truck', 118, 'JT00044', 'PT Mesitech', 'sparepart', 'OFFLOADING', 'production', '56', '0.71', '0.71', '0.60', '0.30', '0.07', '0.30', 1, 'box', 'To Warehouse', 1),
-(312, '2020-09-25 15:06:19', 'offloading truck', 119, 'JT00044', 'PT Mesitech', 'sparepart', 'OFFLOADING', 'production', '57', '1.00', '1.00', '0.60', '0.60', '0.30', '0.60', 1, 'box', 'To Warehouse', 1),
-(313, '2020-09-25 15:08:04', 'offloading truck', 120, 'JT00044', 'PT Mesitech', 'sparepart', 'OFFLOADING', 'production', '58', '2.41', '0.82', '0.94', '1.86', '0.23', '1.86', 1, 'box', 'To Warehouse', 1),
-(314, '2020-09-25 15:08:30', 'offloading truck', 121, 'JT00044', 'PT Mesitech', 'sparepart', 'OFFLOADING', 'production', '59', '2.41', '0.92', '0.95', '2.11', '0.33', '2.11', 1, 'box', 'To Warehouse', 1),
-(315, '2020-09-25 15:23:36', 'Loading truk', 112, 'JT00042', 'Pt trias', 'Batre', 'LOADING', 'Production', 'Rijek', '1.15', '1.15', '0.95', '1.26', '0.00', '1.26', 1, 'Peti', 'From Warehouse', 1),
-(316, '2020-09-25 15:24:04', 'Loading truk', 112, 'JT00042', 'Pt trias', 'Batre', 'LOADING', 'Production', 'Rijek', '1.15', '1.15', '0.95', '1.26', '0.00', '1.26', 1, 'Peti', 'From Warehouse', 1),
-(317, '2020-09-25 15:24:22', 'Loading truk', 112, 'JT00042', 'Pt trias', 'Batre', 'LOADING', 'Production', 'Rijek', '1.15', '1.15', '0.95', '1.26', '0.00', '1.26', 1, 'Peti', 'From Warehouse', 1),
-(318, '2020-09-25 15:24:42', 'Loading truk', 112, 'JT00042', 'Pt trias', 'Batre', 'LOADING', 'Production', 'Rijek', '1.15', '1.15', '0.95', '1.26', '0.00', '1.26', 1, 'Peti', 'From Warehouse', 1),
-(319, '2020-09-25 15:24:58', 'Loading truk', 112, 'JT00042', 'Pt trias', 'Batre', 'LOADING', 'Production', 'Rijek', '1.15', '1.15', '0.95', '1.26', '0.00', '1.26', 1, 'Peti', 'From Warehouse', 1),
-(320, '2020-09-25 15:37:27', 'offloading truck', 124, 'JT00044', 'PT Mesitech', 'welding machine', 'OFFLOADING', 'production', '62', '1.20', '2.00', '2.00', '4.80', '0.50', '4.80', 1, 'unit', 'To Yard', 1),
-(321, '2020-09-25 15:37:54', 'offloading truck', 124, 'JT00044', 'PT Mesitech', 'welding machine', 'OFFLOADING', 'production', '62', '1.20', '2.00', '2.00', '4.80', '0.50', '4.80', 1, 'unit', 'To Yard', 1),
-(322, '2020-09-25 15:38:10', 'offloading truck', 124, 'JT00044', 'PT Mesitech', 'welding machine', 'OFFLOADING', 'production', '62', '1.20', '2.00', '2.00', '4.80', '0.50', '4.80', 1, 'unit', 'To Yard', 1),
-(323, '2020-09-28 09:39:42', 'Loading truck', 125, 'JT00045', 'PT Trafindo', 'Trafo ', 'OFFLOADING', 'Production', 'Voy 21', '1.35', '1.75', '1.60', '3.78', '2.50', '3.78', 1, 'Unit', 'To Trucking', 1),
-(324, '2020-09-28 09:44:02', 'Loading truck', 125, 'JT00045', 'PT Trafindo', 'Trafo ', 'OFFLOADING', 'Production', 'Voy 21', '1.35', '1.75', '1.60', '3.78', '2.50', '3.78', 1, 'Unit', 'To Trucking', 1),
-(325, '2020-09-28 09:45:21', 'Loading truck', 125, 'JT00045', 'PT Trafindo', 'Trafo ', 'OFFLOADING', 'Production', 'Voy 21', '1.35', '1.75', '1.60', '3.78', '2.50', '3.78', 1, 'Unit', 'To Trucking', 1),
-(326, '2020-09-28 09:45:34', 'Loading truck', 125, 'JT00045', 'PT Trafindo', 'Trafo ', 'OFFLOADING', 'Production', 'Voy 21', '1.35', '1.75', '1.60', '3.78', '2.50', '3.78', 1, 'Unit', 'To Trucking', 1),
-(327, '2020-09-28 09:59:36', 'Loading truck', 125, 'JT00045', 'PT Trafindo', 'Trafo ', 'OFFLOADING', 'Production', 'Voy 21', '1.35', '1.75', '1.60', '3.78', '2.50', '3.78', 1, 'Unit', 'To Trucking', 1),
-(328, '2020-09-28 10:10:54', 'Loading truck', 125, 'JT00045', 'PT Trafindo', 'Trafo ', 'OFFLOADING', 'Production', 'Voy 21', '1.35', '1.75', '1.60', '3.78', '2.50', '3.78', 1, 'Unit', 'To Trucking', 1),
-(329, '2020-09-28 10:11:29', 'Loading truck', 125, 'JT00045', 'PT Trafindo', 'Trafo ', 'OFFLOADING', 'Production', 'Voy 21', '1.35', '1.75', '1.60', '3.78', '2.50', '3.78', 1, 'Unit', 'To Trucking', 1),
-(330, '2020-09-28 10:25:10', 'Loading truck', 125, 'JT00045', 'PT Trafindo', 'Trafo ', 'OFFLOADING', 'Production', 'Voy 21', '1.35', '1.75', '1.60', '3.78', '2.50', '3.78', 1, 'Unit', 'To Trucking', 1),
-(331, '2020-09-28 10:29:52', 'Loading truck', 125, 'JT00045', 'PT Trafindo', 'Trafo ', 'OFFLOADING', 'Production', 'Voy 21', '1.35', '1.75', '1.60', '3.78', '2.50', '3.78', 1, 'Unit', 'To Trucking', 1),
-(332, '2020-09-28 10:31:32', 'Loading truck', 125, 'JT00045', 'PT Trafindo', 'Trafo ', 'OFFLOADING', 'Production', 'Voy 21', '1.35', '1.75', '1.60', '3.78', '2.50', '3.78', 1, 'Unit', 'To Trucking', 1),
-(333, '2020-09-28 10:36:08', 'Loading truck', 125, 'JT00045', 'PT Trafindo', 'Trafo ', 'OFFLOADING', 'Production', 'Voy 21', '1.35', '1.75', '1.60', '3.78', '2.50', '3.78', 1, 'Unit', 'To Trucking', 1),
-(334, '2020-09-28 10:37:18', 'Loading truck', 125, 'JT00045', 'PT Trafindo', 'Trafo ', 'OFFLOADING', 'Production', 'Voy 21', '1.35', '1.75', '1.60', '3.78', '2.50', '3.78', 1, 'Unit', 'To Trucking', 1),
-(335, '2020-09-28 16:17:00', 'Offloading truck', 126, 'JT00045', 'PT Wanda jumbo cable ', 'Flat esp cable', 'OFFLOADING', 'Production', '124', '2.13', '2.06', '2.00', '8.78', '4.00', '8.78', 1, 'Unit', 'To Yard', 1),
-(337, '2020-09-28 16:18:22', 'Offloading truck', 126, 'JT00045', 'PT Wanda jumbo cable ', 'Flat esp cable', 'OFFLOADING', 'Production', '124', '2.13', '2.06', '2.00', '8.78', '4.00', '8.78', 1, 'Unit', 'To Yard', 1),
-(338, '2020-09-28 16:18:39', 'Offloading truck', 126, 'JT00045', 'PT Wanda jumbo cable ', 'Flat esp cable', 'OFFLOADING', 'Production', '124', '2.13', '2.06', '2.00', '8.78', '4.00', '8.78', 1, 'Unit', 'To Yard', 1),
-(339, '2020-09-28 16:25:28', 'Offloading truck', 127, 'JT00045', 'PT Wanda jumbo cable ', 'Flat esp cable', 'OFFLOADING', 'Production', '2', '0.90', '1.30', '1.22', '1.43', '1.00', '1.43', 1, 'Unit', 'To Yard', 1),
-(340, '2020-09-28 16:25:36', 'Offloading truck', 126, 'JT00045', 'PT Wanda jumbo cable ', 'Flat esp cable', 'OFFLOADING', 'Production', '124', '2.13', '2.06', '2.00', '8.78', '4.00', '8.78', 1, 'Unit', 'To Yard', 1),
-(341, '2020-09-28 16:28:29', 'Offloading truck', 126, 'JT00045', 'PT Wanda jumbo cable ', 'Flat esp cable', 'OFFLOADING', 'Production', '124', '2.13', '2.06', '2.00', '8.78', '4.00', '8.78', 1, 'Unit', 'To Yard', 1),
-(342, '2020-09-28 16:29:53', 'Offloading truck', 126, 'JT00045', 'PT Wanda jumbo cable ', 'Flat esp cable', 'OFFLOADING', 'Production', '124', '2.13', '2.06', '2.00', '8.78', '4.00', '8.78', 1, 'Unit', 'To Yard', 1),
-(343, '2020-09-28 16:33:31', 'Offloading truck', 126, 'JT00045', 'PT Wanda jumbo cable ', 'Flat esp cable', 'OFFLOADING', 'Production', '124', '2.13', '2.06', '2.00', '8.78', '4.00', '8.78', 1, 'Unit', 'To Yard', 1),
-(344, '2020-09-28 16:34:35', 'Offloading truck', 126, 'JT00045', 'PT Wanda jumbo cable ', 'Flat esp cable', 'OFFLOADING', 'Production', '124', '2.13', '2.06', '2.00', '8.78', '4.00', '8.78', 1, 'Unit', 'To Yard', 1),
-(345, '2020-09-28 16:34:47', 'Offloading truck', 126, 'JT00045', 'PT Wanda jumbo cable ', 'Flat esp cable', 'OFFLOADING', 'Production', '124', '2.13', '2.06', '2.00', '8.78', '4.00', '8.78', 1, 'Unit', 'To Yard', 1),
-(346, '2020-09-28 16:34:54', 'Offloading truck', 126, 'JT00045', 'PT Wanda jumbo cable ', 'Flat esp cable', 'OFFLOADING', 'Production', '124', '2.13', '2.06', '2.00', '8.78', '4.00', '8.78', 1, 'Unit', 'To Yard', 1),
-(347, '2020-09-29 13:39:45', 'Offloading truck', 128, 'JT00046', 'PT EON chemical', 'chemical', 'OFFLOADING', 'Production', '21', '1.20', '1.20', '1.15', '1.66', '0.80', '1.66', 1, 'Pallet', 'To Warehouse', 1),
-(348, '2020-09-29 13:41:13', 'Offloading truck', 128, 'JT00046', 'PT EON chemical', 'chemical', 'OFFLOADING', 'Production', '21', '1.20', '1.20', '1.15', '1.66', '0.80', '1.66', 1, 'Pallet', 'To Warehouse', 1),
-(349, '2020-09-29 13:41:14', 'Offloading truck', 128, 'JT00046', 'PT EON chemical', 'chemical', 'OFFLOADING', 'Production', '21', '1.20', '1.20', '1.15', '1.66', '0.80', '1.66', 1, 'Pallet', 'To Warehouse', 1),
-(350, '2020-09-29 13:44:15', 'Offloading truck', 128, 'JT00046', 'PT EON chemical', 'chemical', 'OFFLOADING', 'Production', '21', '1.20', '1.20', '1.15', '1.66', '0.80', '1.66', 1, 'Pallet', 'To Warehouse', 1),
-(351, '2020-09-29 13:44:30', 'Offloading truck', 128, 'JT00046', 'PT EON chemical', 'chemical', 'OFFLOADING', 'Production', '21', '1.20', '1.20', '1.15', '1.66', '0.80', '1.66', 1, 'Pallet', 'To Warehouse', 1),
-(352, '2020-09-29 13:48:59', 'Loading truck', 129, 'JT00046', 'PT mesindo', 'Generator rotor', 'OFFLOADING', 'Production', '12490/01/00010', '1.30', '1.00', '1.20', '1.56', '2.00', '2.00', 1, 'Wooden box', 'To Trucking', 1),
-(353, '2020-09-29 13:49:06', 'Loading truck', 129, 'JT00046', 'PT mesindo', 'Generator rotor', 'OFFLOADING', 'Production', '12490/01/00010', '1.30', '1.00', '1.20', '1.56', '2.00', '2.00', 1, 'Wooden box', 'To Trucking', 1),
-(354, '2020-10-01 11:10:36', 'Offloading truck', 130, 'JT00047', 'PT ASABA', 'Mesin fotocopy', 'OFFLOADING', 'Production', '32', '0.81', '0.72', '1.17', '0.68', '0.15', '0.68', 1, 'Pallet', 'To Warehouse', 1),
-(355, '2020-10-01 11:12:40', 'Offloading truck', 130, 'JT00047', 'PT ASABA', 'Mesin fotocopy', 'OFFLOADING', 'Production', '32', '0.81', '0.72', '1.17', '0.68', '0.15', '0.68', 1, 'Pallet', 'To Warehouse', 1),
-(356, '2020-10-01 11:14:55', 'Offloading truck', 131, 'JT00047', 'PT ASABA', 'Sparepart', 'OFFLOADING', 'Production', '33', '0.76', '0.68', '1.50', '0.78', '0.20', '0.78', 1, 'Wooden box', 'To Warehouse', 1),
-(357, '2020-10-01 11:15:28', 'Offloading truck', 131, 'JT00047', 'PT ASABA', 'Sparepart', 'OFFLOADING', 'Production', '33', '0.76', '0.68', '1.50', '0.78', '0.20', '0.78', 1, 'Wooden box', 'To Warehouse', 1),
-(358, '2020-10-01 11:16:17', 'Offloading truck', 131, 'JT00047', 'PT ASABA', 'Sparepart', 'OFFLOADING', 'Production', '33', '0.76', '0.68', '1.50', '0.78', '0.20', '0.78', 1, 'Wooden box', 'To Warehouse', 1),
-(359, '2020-10-01 11:17:08', 'Offloading truck', 131, 'JT00047', 'PT ASABA', 'Sparepart', 'OFFLOADING', 'Production', '33', '0.76', '0.68', '1.50', '0.78', '0.20', '0.78', 1, 'Wooden box', 'To Warehouse', 1),
-(360, '2020-10-01 11:21:17', 'Offloading truck', 131, 'JT00047', 'PT ASABA', 'Sparepart', 'OFFLOADING', 'Production', '33', '0.76', '0.68', '1.50', '0.78', '0.20', '0.78', 1, 'Wooden box', 'To Warehouse', 1),
-(361, '2020-10-01 11:21:51', 'Offloading truck', 131, 'JT00047', 'PT ASABA', 'Sparepart', 'OFFLOADING', 'Production', '33', '0.76', '0.68', '1.50', '0.78', '0.20', '0.78', 1, 'Wooden box', 'To Warehouse', 1),
-(362, '2020-10-01 13:53:18', 'Off loading truck', 132, 'JT00048', 'PT.Pakarti Tirto Agung', 'KG COS Pump', 'OFFLOADING', 'Production', '415/PTA/DO/X/20', '4.80', '0.50', '0.70', '1.68', '0.80', '1.68', 1, 'Boks', 'To Jetty', 1),
-(363, '2020-10-02 10:33:10', 'offloading truck', 133, 'JT00049', 'PT Gatra kilang persada', 'sparepart', 'OFFLOADING', 'production', '006', '2.35', '0.75', '0.75', '1.32', '1.00', '1.32', 1, 'box', 'To Warehouse', 1),
-(364, '2020-10-02 10:34:15', 'offloading truck', 133, 'JT00049', 'PT Gatra kilang persada', 'sparepart', 'OFFLOADING', 'production', '006', '2.35', '0.75', '0.75', '1.32', '1.00', '1.32', 1, 'box', 'To Warehouse', 1),
-(365, '2020-10-02 13:44:21', 'Offloading truck', 134, 'JT00049', 'PT Optima sumber energi', 'Pipa ', 'OFFLOADING', 'Production', '34', '6.00', '0.45', '0.45', '1.22', '1.50', '1.50', 1, 'Bandle', 'To Yard', 1),
-(366, '2020-10-02 13:47:10', 'Offloading truck', 134, 'JT00049', 'PT Optima sumber energi', 'Pipa ', 'OFFLOADING', 'Production', '34', '6.00', '0.45', '0.45', '1.22', '1.50', '1.50', 1, 'Bandle', 'To Yard', 1),
-(367, '2020-10-02 13:52:01', 'Offloading truck', 134, 'JT00049', 'PT Optima sumber energi', 'Pipa ', 'OFFLOADING', 'Production', '34', '6.00', '0.45', '0.45', '1.22', '1.50', '1.50', 1, 'Bandle', 'To Yard', 1),
-(368, '2020-10-02 13:52:32', 'Offloading truck', 134, 'JT00049', 'PT Optima sumber energi', 'Pipa ', 'OFFLOADING', 'Production', '34', '6.00', '0.45', '0.45', '1.22', '1.50', '1.50', 1, 'Bandle', 'To Yard', 1),
-(369, '2020-10-02 14:02:26', 'offloading truck', 135, 'JT00050', 'PT maste jaya jakarta', 'Apar', 'OFFLOADING', 'production', '54', '1.07', '0.80', '1.45', '1.24', '0.25', '1.24', 1, 'box', 'To Warehouse', 1),
-(370, '2020-10-02 14:33:19', 'offloading truck', 136, 'JT00050', 'PT maste jaya jakarta', 'Apar', 'OFFLOADING', 'production', '54', '1.07', '0.80', '1.45', '1.24', '0.25', '1.24', 1, 'box', 'To Yard', 1),
-(371, '2020-10-02 15:09:13', 'Offloading truck', 138, 'JT00049', 'PT Sillo Maritime perdana', 'Consumable', 'OFFLOADING', 'Production', '712', '1.13', '1.13', '0.95', '1.21', '0.20', '1.21', 1, 'Pallet', 'To Yard', 1),
-(372, '2020-10-02 15:09:19', 'Offloading truck', 137, 'JT00049', 'PT Sillo Maritime perdana', 'Consumable', 'OFFLOADING', 'Production', '217', '1.13', '1.03', '2.06', '2.40', '0.20', '2.40', 1, 'Pallet', 'To Warehouse', 1),
-(373, '2020-10-02 15:19:18', 'offloading truck', 139, 'JT00051', 'PT Shell Indonesia', 'OIL  drum', 'OFFLOADING', 'production', '4210043923', '1.22', '1.22', '1.05', '1.56', '0.55', '1.56', 1, 'pallet', 'To Yard', 1),
-(374, '2020-10-02 15:19:34', 'offloading truck', 140, 'JT00051', 'PT Altus logistic servis indonesia', 'sparepart', 'OFFLOADING', 'production', '21', '0.90', '0.50', '0.60', '0.27', '0.05', '0.27', 1, 'box', 'To Warehouse', 1),
-(375, '2020-10-02 15:21:10', 'offloading truck', 141, 'JT00051', 'PT Luas birus utama', 'Totank', 'OFFLOADING', 'production', '4210043883', '1.25', '1.10', '1.92', '2.64', '2.50', '2.64', 1, 'unit', 'To Warehouse', 1),
-(376, '2020-10-02 15:29:08', 'offloading truck', 141, 'JT00051', 'PT Luas birus utama', 'Totank', 'OFFLOADING', 'production', '4210043883', '1.25', '1.10', '1.92', '2.64', '2.50', '2.64', 1, 'unit', 'To Warehouse', 1),
-(377, '2020-10-05 12:09:13', 'Offloading truck', 142, 'JT00052', 'PT cakra', 'Sparepart', 'OFFLOADING', 'Production', '4410045949', '6.00', '0.40', '0.35', '0.84', '0.08', '0.84', 1, 'Woden box', 'To Jetty', 1),
-(378, '2020-10-05 13:01:11', 'Loading truk', 144, 'JT00053', 'PT pao', 'Container 20" Open top ', 'LOADING', 'Production', 'Aoru 3600913', '6.00', '2.50', '2.50', '37.50', '5.00', '37.50', 1, 'Unit', 'From Jetty', 1),
-(379, '2020-10-05 13:07:13', 'Offloading truck', 145, 'JT00053', 'PT pao', 'Basket', 'OFFLOADING', 'Production', 'Oegu 2437063', '6.00', '2.50', '1.30', '19.50', '3.00', '19.50', 1, 'Unit', 'To Jetty', 1),
-(380, '2020-10-05 13:08:09', 'Loading truk', 143, 'JT00052', 'PT prima', 'Sparepart', 'LOADING', 'Production', '1500033669', '1.30', '0.62', '0.60', '0.49', '0.10', '0.49', 1, 'Box', 'From Jetty', 1),
-(381, '2020-10-05 13:08:38', 'Loading truk', 143, 'JT00052', 'PT prima', 'Sparepart', 'LOADING', 'Production', '1500033669', '1.30', '0.62', '0.60', '0.49', '0.10', '0.49', 1, 'Box', 'From Jetty', 1),
-(382, '2020-10-05 13:48:47', 'offloading truck', 146, 'JT00054', 'PT Shaftindo Energi', 'spool', 'OFFLOADING', 'production', '082', '5.33', '2.05', '1.05', '11.47', '1.20', '11.47', 1, 'pallet', 'To Warehouse', 1),
-(383, '2020-10-05 13:57:07', 'offloading truck', 147, 'JT00054', 'PT Shaftindo Energi', 'spool', 'OFFLOADING', 'production', '082', '1.90', '1.20', '0.95', '2.17', '0.43', '2.17', 1, 'pallet', 'To Warehouse', 1),
-(384, '2020-10-05 14:01:47', 'offloading truck', 148, 'JT00054', 'PT Shaftindo Energi', 'sparepart', 'OFFLOADING', 'production', '082', '0.82', '0.82', '0.78', '0.52', '0.36', '0.52', 1, 'box', 'To Warehouse', 1),
-(385, '2020-10-05 14:21:44', 'Loading truk', 149, 'JT00053', 'PT pao', 'Container 20" Open top ', 'LOADING', 'Production', 'Oegu 2501882', '6.00', '2.50', '2.50', '37.50', '3.45', '37.50', 1, 'Unit', 'From Yard', 1),
-(386, '2020-10-05 15:26:36', 'Offloading truck', 150, 'JT00054', 'Pt sepetra', 'Preon gajah', 'OFFLOADING', 'Production', '4410045920', '1.22', '1.22', '1.99', '2.96', '1.18', '2.96', 1, 'Unit', 'To Yard', 1),
-(387, '2020-10-05 15:28:33', 'Offloading truck', 151, 'JT00054', 'Pt segara permai', 'Afar', 'OFFLOADING', 'Production', '1', '1.50', '0.70', '0.80', '0.84', '0.35', '0.84', 1, 'Woden crat', 'To Yard', 1),
-(388, '2020-10-05 15:28:51', 'Offloading truck', 151, 'JT00054', 'Pt segara permai', 'Afar', 'OFFLOADING', 'Production', '1', '1.50', '0.70', '0.80', '0.84', '0.35', '0.84', 1, 'Woden crat', 'To Jetty', 1),
-(389, '2020-10-05 15:30:15', 'Offloading truck', 152, 'JT00054', 'Pt depriwaga', 'Sling', 'OFFLOADING', 'Production', 'So', '1.20', '1.20', '0.40', '0.58', '0.04', '0.58', 1, 'Pallet', 'To Jetty', 1),
-(390, '2020-10-05 15:30:27', 'Offloading truck', 152, 'JT00054', 'Pt depriwaga', 'Sling', 'OFFLOADING', 'Production', 'So', '1.20', '1.20', '0.40', '0.58', '0.04', '0.58', 1, 'Pallet', 'To Jetty', 1),
-(391, '2020-10-05 15:30:30', 'Offloading truck', 152, 'JT00054', 'Pt depriwaga', 'Sling', 'OFFLOADING', 'Production', 'So', '1.20', '1.20', '0.40', '0.58', '0.04', '0.58', 1, 'Pallet', 'To Jetty', 1),
-(392, '2020-10-06 09:30:49', 'Loading truck', 153, 'JT00056', 'PT PSU', 'Dry container', 'LOADING', 'Production', '124', '6.05', '2.42', '2.58', '37.78', '3.50', '37.78', 1, 'Unit', 'From Warehouse', 1),
-(393, '2020-10-06 09:32:09', 'Loading truck', 153, 'JT00056', 'PT PSU', 'Dry container', 'LOADING', 'Production', '124', '6.05', '2.42', '2.58', '37.78', '3.50', '37.78', 1, 'Unit', 'From Warehouse', 1),
-(394, '2020-10-06 09:32:09', 'Loading truck', 153, 'JT00056', 'PT PSU', 'Dry container', 'LOADING', 'Production', '124', '6.05', '2.42', '2.58', '0.00', '0.00', '0.00', 1, 'Unit', 'From Warehouse', 1),
-(395, '2020-10-06 09:32:15', 'Loading truck', 153, 'JT00056', 'PT PSU', 'Dry container', 'LOADING', 'Production', '124', '6.05', '2.42', '2.58', '0.00', '0.00', '0.00', 1, 'Unit', 'From Trucking', 1),
-(396, '2020-10-06 10:29:35', 'Offloading truck', 157, 'JT00057', 'Pt Sempana', 'Tangga', 'OFFLOADING', '', '129', '4.10', '1.07', '0.68', '2.98', '1.44', '2.98', 1, 'Wooden box', 'To Warehouse', 1),
-(397, '2020-10-06 10:31:04', 'Offloading truck', 156, 'JT00057', 'Pt Sempana', 'Tangga', 'OFFLOADING', 'Production', '23', '1.01', '0.56', '0.67', '0.38', '0.31', '0.38', 1, 'Wooden box', 'To Warehouse', 1),
-(398, '2020-10-06 10:32:42', 'Offloading truck', 156, 'JT00057', 'Pt Sempana', 'Tangga', 'OFFLOADING', 'Production', '23', '1.01', '0.56', '0.67', '0.38', '0.31', '0.38', 1, 'Wooden box', 'To Warehouse', 1),
-(399, '2020-10-06 10:33:15', 'Loading truk', 154, 'JT00055', 'Pt Pacific Asianindo Offshore', 'Opentop con-20ft', 'LOADING', 'Production', 'So', '6.00', '2.50', '2.50', '37.50', '2.50', '37.50', 1, 'Unit', 'From Yard', 1),
-(400, '2020-10-06 10:33:36', 'Offloading truck', 155, 'JT00057', 'Pt Sempana', 'Tangga', 'OFFLOADING', 'Production', '128', '4.10', '1.07', '0.85', '3.73', '1.74', '3.73', 1, 'Wooden box', 'To Warehouse', 1),
-(401, '2020-10-06 10:36:38', 'Offloading truck', 155, 'JT00057', 'Pt Sempana', 'Tangga', 'OFFLOADING', 'Production', '128', '4.10', '1.07', '0.85', '3.73', '1.74', '3.73', 1, 'Wooden box', 'To Warehouse', 1),
-(402, '2020-10-06 10:36:46', 'Offloading truck', 155, 'JT00057', 'Pt Sempana', 'Tangga', 'OFFLOADING', 'Production', '128', '4.10', '1.07', '0.85', '3.73', '1.74', '3.73', 1, 'Wooden box', 'To Warehouse', 1),
-(403, '2020-10-06 10:37:15', 'Loading truck', 158, 'JT00056', 'PT PSU', 'Container 20 feet', 'OFFLOADING', 'Production', '237', '6.05', '2.42', '2.42', '35.43', '3.50', '35.43', 1, 'Unit', 'To Trucking', 1),
-(404, '2020-10-06 10:38:59', 'Loading truck', 158, 'JT00056', 'PT PSU', 'Container 20 feet', 'OFFLOADING', 'Production', '237', '6.05', '2.42', '2.42', '35.43', '3.50', '35.43', 1, 'Unit', 'To Trucking', 1),
-(405, '2020-10-06 10:40:12', 'Loading truck', 158, 'JT00056', 'PT PSU', 'Container 20 feet', 'OFFLOADING', 'Production', '237', '6.05', '2.42', '2.42', '35.43', '3.50', '35.43', 1, 'Unit', 'To Trucking', 1),
-(406, '2020-10-06 10:40:44', 'Loading truck', 158, 'JT00056', 'PT PSU', 'Container 20 feet', 'OFFLOADING', 'Production', '237', '6.05', '2.42', '2.42', '35.43', '3.50', '35.43', 1, 'Unit', 'To Trucking', 1),
-(407, '2020-10-06 13:34:24', 'Offloading truck', 159, 'JT00056', 'PT Benvors sarana utama', 'Bop', 'OFFLOADING', 'Production', '321', '0.60', '0.90', '0.80', '0.43', '0.80', '0.80', 1, 'Unit', 'To Yard', 1),
-(408, '2020-10-06 13:37:21', 'Offloading truck', 160, 'JT00056', 'PT Benvors sarana utama', 'Bop', 'OFFLOADING', 'Production', '23', '0.90', '0.90', '1.05', '0.85', '0.90', '0.90', 1, 'Unit', 'To Yard', 1),
-(409, '2020-10-06 13:59:01', 'Loading truck', 161, 'JT00056', 'PT COSL', 'Basket tubing', 'OFFLOADING', 'Production', '76', '6.50', '0.90', '0.85', '4.97', '3.80', '4.97', 1, 'Unit', 'To Trucking', 1),
-(410, '2020-10-06 14:02:43', 'Loading truck', 163, 'JT00056', 'PT COSL', 'Basket oil drum', 'OFFLOADING', 'Production', '89', '1.40', '1.40', '0.95', '1.86', '1.50', '1.86', 1, 'Unit', 'To Trucking', 1),
-(411, '2020-10-06 14:03:57', 'Loading truck', 162, 'JT00056', 'PT COSL', 'Drum sling', 'OFFLOADING', 'Production', '344', '1.00', '0.85', '0.95', '0.81', '3.00', '3.00', 1, 'Unit', 'To Trucking', 1),
-(412, '2020-10-06 14:07:51', 'Loading truck', 164, 'JT00056', 'PT COSL', 'Compresor', 'OFFLOADING', 'Production', '231', '1.40', '0.50', '0.98', '0.69', '1.00', '1.00', 1, 'Unit', 'To Trucking', 1),
-(413, '2020-10-06 14:10:03', 'Loading truck', 165, 'JT00056', 'PT COSL', 'Steel box', 'LOADING', 'Production', '65', '2.20', '0.97', '0.99', '2.11', '1.30', '2.11', 1, 'Unit', 'From Warehouse', 1),
-(414, '2020-10-06 14:26:01', 'Loading truck', 166, 'JT00056', 'PT PSU', 'Container 20 feet', 'LOADING', 'Production', '21', '6.00', '2.42', '2.58', '37.46', '3.50', '37.46', 1, 'Unit', 'From Jetty', 1),
-(415, '2020-10-06 14:31:28', 'Loading truck', 166, 'JT00056', 'PT PSU', 'Container 20 feet', 'LOADING', 'Production', '21', '6.00', '2.42', '2.58', '37.46', '3.50', '37.46', 1, 'Unit', 'From Yard', 1),
-(416, '2020-10-06 14:38:20', 'Loading truck', 166, 'JT00056', 'PT PSU', 'Container 20 feet', 'LOADING', 'Production', '21', '6.00', '2.42', '2.58', '37.47', '3.50', '37.47', 1, 'Unit', 'From Yard', 1),
-(417, '2020-10-06 14:39:39', 'Loading truck', 166, 'JT00056', 'PT PSU', 'Container 20 feet', 'LOADING', 'Production', '21', '6.00', '2.42', '2.58', '37.47', '3.50', '37.47', 1, 'Unit', 'From Yard', 1),
-(418, '2020-10-06 15:05:11', 'Loading truck', 167, 'JT00056', 'PT COSL', 'Bunker explosive', 'LOADING', 'Production', '67', '0.95', '0.87', '2.00', '1.65', '0.50', '1.65', 1, 'Unit', 'From Warehouse', 1),
-(419, '2020-10-06 15:05:27', 'Loading truck', 167, 'JT00056', 'PT COSL', 'Bunker explosive', 'LOADING', 'Production', '67', '0.95', '0.87', '2.00', '1.66', '0.50', '1.66', 1, 'Unit', 'From Warehouse', 1),
-(420, '2020-10-06 15:06:00', 'Loading truck', 167, 'JT00056', 'PT COSL', 'Bunker explosive', 'LOADING', 'Production', '67', '0.95', '0.87', '2.00', '1.66', '0.50', '1.66', 1, 'Unit', 'From Yard', 1),
-(421, '2020-10-06 15:38:40', 'Loading truck', 168, 'JT00059', 'PT COSL', 'Batch mixer', 'LOADING', 'Production', '236', '6.00', '2.56', '2.70', '41.47', '15.00', '41.47', 1, 'Unit', 'From Jetty', 1),
-(422, '2020-10-06 15:49:56', 'Loading truck', 171, 'JT00059', 'PT COSL', 'Container 20 feet', 'LOADING', 'Production', '328', '6.00', '2.42', '2.56', '37.17', '8.00', '37.17', 1, 'Unit', 'From Jetty', 1),
-(423, '2020-10-06 15:53:19', 'Loading truck', 172, 'JT00059', 'PT COSL', 'Air compresor', 'LOADING', 'Production', '34', '6.21', '2.00', '2.80', '34.78', '7.00', '34.78', 1, 'Unit', 'From Jetty', 1),
-(424, '2020-10-06 16:04:45', 'Offloading truck', 174, 'JT00058', 'PT Shaftindo energi ', 'Spool', 'OFFLOADING', 'Production', '124', '1.17', '1.17', '0.85', '1.16', '0.45', '1.16', 1, 'Pallet', 'To Warehouse', 1),
-(425, '2020-10-06 16:05:48', 'Offloading truck', 173, 'JT00058', 'PT Shaftindo energi ', 'Spool', 'OFFLOADING', 'Production', '109', '4.70', '1.96', '1.45', '13.36', '0.40', '13.36', 1, 'Pallet', 'To Warehouse', 1),
-(426, '2020-10-06 16:28:41', 'Loading truck', 177, 'JT00056', 'PT PSU', 'Container 20 feet', 'LOADING', 'Production', '712', '6.00', '2.42', '2.56', '37.17', '3.50', '37.17', 1, 'Unit', 'From Jetty', 1),
-(427, '2020-10-06 16:29:31', 'Loading truck', 177, 'JT00056', 'PT PSU', 'Container 20 feet', 'LOADING', 'Production', '712', '6.00', '2.42', '2.56', '37.17', '3.50', '37.17', 1, 'Unit', 'From Jetty', 1),
-(428, '2020-10-06 16:29:32', 'Loading truck', 177, 'JT00056', 'PT PSU', 'Container 20 feet', 'LOADING', 'Production', '712', '6.00', '2.42', '2.56', '0.00', '0.00', '0.00', 1, 'Unit', 'From Jetty', 1),
-(429, '2020-10-06 16:30:00', 'Offloading truck', 175, 'JT00055', 'PT Wifgasindo Dinamika', 'Sparepart', 'OFFLOADING', 'Production', '4210043108', '0.70', '0.60', '0.60', '0.25', '0.37', '0.37', 1, 'Box', 'To Warehouse', 1),
-(430, '2020-10-06 16:30:15', 'Offloading truck', 176, 'JT00055', 'PT Wifgasindo Dinamika', 'Sparepart', 'OFFLOADING', 'Production', '4210043142', '100.00', '0.73', '0.63', '45.99', '0.40', '45.99', 1, 'Box', 'To Warehouse', 1),
-(431, '2020-10-07 14:09:57', 'Offloading truck', 178, 'JT00060', 'PT wiguna', 'Wayer sling', 'OFFLOADING', 'Production', '4210043483', '1.20', '1.20', '0.95', '1.37', '0.65', '1.37', 1, 'Pallet', 'To Yard', 1),
-(432, '2020-10-07 14:11:39', 'Offloading truck', 179, 'JT00060', 'PT mandala', 'Cemical', 'OFFLOADING', 'Production', '4210043878', '1.40', '1.80', '0.80', '2.02', '0.10', '2.02', 1, 'Woden crat', 'To Yard', 1),
-(433, '2020-10-07 14:12:44', 'Offloading truck', 180, 'JT00060', 'PT mitra', 'Besi siku', 'OFFLOADING', 'Production', '4410045972', '6.00', '0.10', '0.15', '0.09', '0.03', '0.09', 1, 'Pallet', 'To Jetty', 1),
-(434, '2020-10-07 14:13:02', 'Offloading truck', 180, 'JT00060', 'PT mitra', 'Besi siku', 'OFFLOADING', 'Production', '4410045972', '6.00', '0.10', '0.15', '0.09', '0.03', '0.09', 1, 'Pallet', 'To Jetty', 1),
-(435, '2020-10-07 14:46:16', 'Offloading truck', 181, 'JT00060', 'PT luas birus', 'To tank', 'OFFLOADING', 'Production', '4210043930', '1.25', '1.10', '1.90', '2.61', '2.03', '2.61', 1, 'Unit', 'To Yard', 1),
-(436, '2020-10-07 14:46:35', 'Offloading truck', 181, 'JT00060', 'PT luas birus', 'To tank', 'OFFLOADING', 'Production', '4210043930', '1.25', '1.10', '1.90', '2.61', '2.03', '2.61', 1, 'Unit', 'To Jetty', 1),
-(437, '2020-10-07 14:47:08', 'Loading truk', 182, 'JT00060', 'PT luas birus', 'To tank', 'LOADING', 'Production', 'Lbu 2019- 0010', '1.25', '1.10', '1.90', '2.61', '0.30', '2.61', 1, 'Unit', 'From Yard', 1),
-(438, '2020-10-07 14:47:41', 'Loading truk', 183, 'JT00060', 'PT luas birus', 'To tank', 'LOADING', 'Production', 'Lbu TT 224', '1.25', '1.10', '1.90', '2.61', '0.30', '2.61', 1, 'Unit', 'From Yard', 1),
-(439, '2020-10-07 14:48:41', 'Loading truk', 184, 'JT00060', 'PT luas birus', 'To tank', 'LOADING', 'Production', 'Ohf 723', '1.25', '1.10', '1.90', '2.61', '0.30', '2.61', 1, 'Unit', 'From Yard', 1),
-(440, '2020-10-07 14:49:29', 'Loading truk', 185, 'JT00060', 'PT luas birus', 'To tank', 'LOADING', 'Production', 'Tb  TT 078', '1.25', '1.10', '1.90', '2.61', '0.30', '2.61', 1, 'Unit', 'From Yard', 1),
-(441, '2020-10-08 11:34:21', 'Offloading truck', 186, 'JT00061', 'PT ppli', 'Container 20"', 'OFFLOADING', 'Driling', 'OEGU 0006046', '6.00', '2.50', '2.50', '37.50', '2.50', '37.50', 1, 'Unit', 'To Jetty', 1),
-(442, '2020-10-08 11:34:47', 'Offloading truck', 187, 'JT00061', 'PT ppli', 'Container 10"', 'OFFLOADING', 'Driling', 'OEGU 0006133', '3.00', '2.50', '2.50', '18.75', '1.25', '18.75', 1, 'Unit', 'To Jetty', 1),
-(443, '2020-10-08 13:11:37', 'Offloading truck', 188, 'JT00062', 'Pt yuvaika esa', 'Sparepart', 'OFFLOADING', 'Production', '4410045493', '0.65', '0.65', '0.75', '0.32', '0.07', '0.32', 1, 'Woden box', 'To Yard', 1),
-(444, '2020-10-08 13:12:11', 'Loading truk', 189, 'JT00062', 'Pt panah jaya', 'Claim', 'LOADING', 'Production', '1300014716', '1.20', '1.20', '0.85', '1.23', '1.00', '1.23', 1, 'Pallet', 'From Warehouse', 1),
-(445, '2020-10-08 13:12:32', 'Loading truk', 189, 'JT00062', 'Pt panah jaya', 'Claim', 'LOADING', 'Production', '1300014716', '1.20', '1.20', '0.85', '1.23', '1.00', '1.23', 1, 'Pallet', 'From Warehouse', 1),
-(446, '2020-10-08 13:12:56', 'Offloading truck', 190, 'JT00062', 'Pt kwality', 'Kabel', 'OFFLOADING', 'Production', '4410045973', '1.00', '1.00', '0.70', '0.70', '0.50', '0.70', 1, 'Pallet', 'To Yard', 1),
-(447, '2020-10-08 13:13:11', 'Offloading truck', 191, 'JT00062', 'PT Akral', 'Tambang', 'OFFLOADING', 'Production', '4410045991', '1.20', '1.20', '1.10', '1.59', '0.05', '1.59', 1, 'Pallet', 'To Yard', 1),
-(448, '2020-10-08 13:13:35', 'Offloading truck', 191, 'JT00062', 'PT Akral', 'Tambang', 'OFFLOADING', 'Production', '4410045991', '1.20', '1.20', '1.10', '1.59', '0.05', '1.59', 1, 'Pallet', 'To Yard', 1),
-(449, '2020-10-09 09:55:42', 'Offloading truck', 193, 'JT00064', 'Pt wintermar', 'Oli', 'OFFLOADING', 'Production', '1', '1.20', '1.20', '1.10', '1.59', '1.00', '1.59', 1, 'Pallet', 'To Yard', 1),
-(450, '2020-10-09 09:57:04', 'Offloading truck', 193, 'JT00064', 'Pt wintermar', 'Oli', 'OFFLOADING', 'Production', '1', '1.20', '1.20', '1.10', '1.59', '1.00', '1.59', 1, 'Pallet', 'To Yard', 1),
-(451, '2020-10-09 09:57:59', 'Offloading truck', 194, 'JT00064', 'Pt sincerty', 'Sparepart', 'OFFLOADING', 'Production', '4410046013', '1.32', '0.70', '0.75', '0.70', '0.33', '0.70', 1, 'Woden box', 'To Yard', 1),
-(452, '2020-10-09 09:58:54', 'Offloading truck', 194, 'JT00064', 'Pt sincerty', 'Sparepart', 'OFFLOADING', 'Production', '4410046013', '1.32', '0.70', '0.75', '0.70', '0.33', '0.70', 1, 'Woden box', 'To Yard', 1),
-(453, '2020-10-09 10:10:52', 'Loading truck eks KM Sokka', 192, 'JT00063', 'PT Devriwangga', 'Countainer 10 ft', 'LOADING', 'Production', '0002', '3.00', '2.50', '2.80', '21.00', '4.50', '21.00', 1, 'Unit', 'From Jetty', 1),
-(454, '2020-10-09 10:34:05', 'Loading truck', 195, 'JT00065', 'PT Serena', 'Bak sampah', 'LOADING', 'Production', '0001', '7.00', '2.50', '1.25', '21.88', '3.50', '21.88', 1, 'Unit', 'From Yard', 1),
-(455, '2020-10-09 13:28:39', 'Offloading truck', 196, 'JT00064', 'PT somba', 'Terpal', 'OFFLOADING', 'Production', '4210043455', '1.20', '1.20', '0.60', '0.86', '0.50', '0.86', 1, 'Pallet', 'To Yard', 1),
-(456, '2020-10-09 13:29:15', 'Offloading truck', 198, 'JT00064', 'Pt buntur raja', 'Terpal', 'OFFLOADING', 'Production', '4210043819', '1.20', '1.20', '0.80', '1.15', '0.30', '1.15', 1, 'Pallet', 'To Yard', 1),
-(457, '2020-10-09 13:29:43', 'Offloading truck', 198, 'JT00064', 'Pt buntur raja', 'Terpal', 'OFFLOADING', 'Production', '4210043819', '1.20', '1.20', '0.80', '1.15', '0.30', '1.15', 1, 'Pallet', 'To Yard', 1),
-(458, '2020-10-09 13:49:21', 'Offloading truck', 199, 'JT00064', 'Pt trias', 'Sparepart', 'OFFLOADING', 'Production', '4410042510', '4.50', '0.90', '1.05', '4.25', '1.80', '4.25', 1, 'Box', 'To Yard', 1),
-(459, '2020-10-09 13:50:01', 'Offloading truck', 200, 'JT00064', 'Pt trias', 'Sparepart', 'OFFLOADING', 'Production', '4410042510', '1.30', '0.70', '0.75', '0.68', '0.50', '0.68', 1, 'Box', 'To Yard', 1),
-(460, '2020-10-09 14:01:59', 'Loading truck eks KM Sokka', 197, 'JT00063', 'PT PMB', 'Countainer 10 ft', 'LOADING', 'Production', '0001', '3.00', '2.50', '2.80', '21.00', '2.40', '21.00', 1, 'Unit', 'From Jetty', 1),
-(461, '2020-10-09 14:16:26', 'Off loading truck', 201, 'JT00063', 'PT Kota Minyak', 'W/ box', 'OFFLOADING', 'Production', '0001', '2.50', '1.40', '1.25', '61.25', '4.20', '61.25', 14, 'Box', 'To Yard', 1),
-(462, '2020-10-09 14:36:12', 'Off loading truck', 202, 'JT00063', 'PT Kota Minyak', 'W/ box', 'OFFLOADING', 'Production', '0001', '1.40', '1.40', '1.00', '3.92', '0.29', '3.92', 2, 'Box', 'To Yard', 1),
-(463, '2020-10-09 14:56:52', 'Offloading truck', 203, 'JT00064', 'Pt sepetra', 'Preon gajah', 'OFFLOADING', 'Production', '4210043976', '1.22', '1.22', '1.99', '2.96', '1.19', '2.96', 1, 'Unit', 'To Yard', 1),
-(464, '2020-10-09 14:57:12', 'Offloading truck', 203, 'JT00064', 'Pt sepetra', 'Preon gajah', 'OFFLOADING', 'Production', '4210043976', '1.22', '1.22', '1.99', '2.96', '1.19', '2.96', 1, 'Unit', 'To Yard', 1),
-(465, '2020-10-09 14:57:46', 'Offloading truck', 204, 'JT00064', 'Pt ckb', 'Ban', 'OFFLOADING', 'Production', '1', '0.95', '0.80', '0.85', '0.65', '0.10', '0.65', 1, 'Woden crat', 'To Yard', 1),
-(466, '2020-10-09 14:58:15', 'Offloading truck', 204, 'JT00064', 'Pt ckb', 'Ban', 'OFFLOADING', 'Production', '1', '0.95', '0.80', '0.85', '0.65', '0.10', '0.65', 1, 'Woden crat', 'To Yard', 1),
-(467, '2020-10-10 10:28:38', 'Loading truck', 205, 'JT00066', 'PT aneka gas', 'Cradle gas bottle', 'LOADING', 'Production', '23', '1.05', '1.05', '2.10', '2.32', '1.00', '2.32', 1, 'Rack', 'From Yard', 1),
-(468, '2020-10-10 10:30:15', 'Loading truck', 205, 'JT00066', 'PT aneka gas', 'Cradle gas bottle', 'LOADING', 'Production', '23', '1.05', '1.05', '2.10', '2.32', '1.00', '2.32', 1, 'Rack', 'From Yard', 1),
-(469, '2020-10-10 10:30:26', 'Loading truck', 206, 'JT00066', 'PT aneka gas', 'Cradle gas bottle', 'LOADING', 'Production', '34', '1.20', '1.15', '1.85', '2.55', '1.00', '2.55', 1, 'Rack', 'From Yard', 1),
-(470, '2020-10-10 10:30:53', 'Loading truck', 205, 'JT00066', 'PT aneka gas', 'Cradle gas bottle', 'LOADING', 'Production', '23', '1.05', '1.05', '2.10', '2.32', '1.00', '2.32', 1, 'Rack', 'From Yard', 1),
-(471, '2020-10-10 19:16:30', 'Loading truck', 206, 'JT00066', 'PT aneka gas', 'Cradle gas bottle', 'LOADING', 'Production', '34', '1.20', '1.15', '1.85', '7.66', '3.00', '7.66', 3, 'Rack', 'From Yard', 1),
-(472, '2020-10-10 19:16:37', 'Loading truck', 205, 'JT00066', 'PT aneka gas', 'Cradle gas bottle', 'LOADING', 'Production', '23', '1.05', '1.05', '2.10', '2.32', '1.00', '2.32', 1, 'Rack', 'From Yard', 1),
-(473, '2020-10-12 09:47:02', 'Loading truck', 207, 'JT00067', 'Pt Schlumberger', 'Reda pump', 'LOADING', 'Production', '45', '10.00', '0.32', '0.30', '0.96', '1.00', '1.00', 1, 'Unit', 'From Yard', 1),
-(474, '2020-10-12 09:47:39', 'Loading truck', 207, 'JT00067', 'Pt Schlumberger', 'Reda pump', 'LOADING', 'Production', '45', '10.00', '0.32', '0.30', '0.96', '1.00', '1.00', 1, 'Unit', 'From Yard', 1),
-(475, '2020-10-12 09:48:15', 'Loading truck', 207, 'JT00067', 'Pt Schlumberger', 'Reda pump', 'LOADING', 'Production', '45', '10.00', '0.32', '0.30', '0.96', '1.00', '1.00', 1, 'Unit', 'From Yard', 1),
-(476, '2020-10-12 09:52:16', 'Loading truck', 208, 'JT00067', 'Pt Schlumberger', 'Reda pump', 'LOADING', 'Production', '76', '7.00', '0.32', '0.30', '2.69', '2.00', '2.69', 4, 'Unit', 'From Yard', 1),
-(477, '2020-10-12 10:00:25', 'Loading truck', 208, 'JT00067', 'Pt Schlumberger', 'Reda pump', 'LOADING', 'Production', '76', '7.00', '0.32', '0.30', '0.67', '0.50', '0.67', 1, 'Unit', 'From Yard', 1),
-(478, '2020-10-12 10:00:39', 'Loading truck', 208, 'JT00067', 'Pt Schlumberger', 'Reda pump', 'LOADING', 'Production', '76', '7.00', '0.32', '0.30', '0.67', '0.50', '0.67', 1, 'Unit', 'From Yard', 1),
-(479, '2020-10-12 10:01:08', 'Loading truck', 209, 'JT00067', 'Pt Schlumberger', 'Reda pump', 'LOADING', 'Production', '21', '4.00', '0.32', '0.30', '0.39', '0.25', '0.39', 1, 'Unit', 'From Yard', 1),
-(480, '2020-10-12 10:01:31', 'Loading truck', 209, 'JT00067', 'Pt Schlumberger', 'Reda pump', 'LOADING', 'Production', '21', '4.00', '0.32', '0.30', '0.39', '0.25', '0.39', 1, 'Unit', 'From Yard', 1),
-(481, '2020-10-12 10:03:19', 'Loading truck', 209, 'JT00067', 'Pt Schlumberger', 'Reda pump', 'LOADING', 'Production', '21', '4.00', '0.32', '0.30', '0.39', '0.25', '0.39', 1, 'Unit', 'From Yard', 1),
-(483, '2020-10-12 10:46:41', 'Offloading truck', 210, 'JT00068', 'PT Samoedera', 'My sella oil', 'OFFLOADING', 'Production', '4400002063', '1.17', '1.17', '1.10', '1.51', '0.80', '1.51', 1, 'Pallet', 'To Warehouse', 1),
-(484, '2020-10-12 10:46:56', 'Offloading truck', 210, 'JT00068', 'PT Samoedera', 'My sella oil', 'OFFLOADING', 'Production', '4400002063', '1.17', '1.17', '1.10', '1.51', '0.80', '1.51', 1, 'Pallet', 'To Warehouse', 1),
-(485, '2020-10-12 10:47:11', 'Offloading truck', 210, 'JT00068', 'PT Samoedera', 'My sella oil', 'OFFLOADING', 'Production', '4400002063', '1.17', '1.17', '1.10', '1.51', '0.80', '1.51', 1, 'Pallet', 'To Warehouse', 1),
-(486, '2020-10-12 10:47:43', 'Offloading truck', 210, 'JT00068', 'PT Samoedera', 'My sella oil', 'OFFLOADING', 'Production', '4400002063', '1.17', '1.17', '1.10', '1.51', '0.80', '1.51', 1, 'Pallet', 'To Warehouse', 1),
-(487, '2020-10-12 10:58:26', 'Offloading truck', 210, 'JT00068', 'PT Samoedera', 'My sella oil', 'OFFLOADING', 'Production', '4400002063', '1.17', '1.17', '1.10', '1.51', '0.80', '1.51', 1, 'Pallet', 'To Warehouse', 1),
-(488, '2020-10-12 10:58:36', 'Offloading truck', 210, 'JT00068', 'PT Samoedera', 'My sella oil', 'OFFLOADING', 'Production', '4400002063', '1.17', '1.17', '1.10', '1.51', '0.80', '1.51', 1, 'Pallet', 'To Warehouse', 1);
-INSERT INTO `actual_jobordertruck` (`id_at`, `time_at`, `deskripsi_cargo_at`, `id_djotruck`, `id_jobordertruck`, `nm_company_at`, `nm_barang_at`, `nm_kegiatan_at`, `production_at`, `no_po_at`, `p_cargo_at`, `l_cargo_at`, `t_cargo_at`, `volume_cargo_at`, `ton_cargo_at`, `revton_cargo_at`, `qty_cargo_at`, `satuan_cargo_at`, `keterangan_at`, `status_cargo_at`) VALUES
-(489, '2020-10-12 10:58:49', 'Offloading truck', 210, 'JT00068', 'PT Samoedera', 'My sella oil', 'OFFLOADING', 'Production', '4400002063', '1.17', '1.17', '1.10', '1.51', '0.80', '1.51', 1, 'Pallet', 'To Warehouse', 1),
-(490, '2020-10-12 11:19:23', 'Offloading truck', 212, 'JT00070', 'PT manggala', 'Sparepart', 'OFFLOADING', 'Production', '44100448341', '1.30', '0.90', '0.40', '0.47', '0.13', '0.47', 1, 'Peti', 'To Yard', 1),
-(491, '2020-10-12 11:22:00', 'Offloading truck', 214, 'JT00070', 'PT manggala', 'Sparepart', 'OFFLOADING', '', '4410044401', '1.30', '0.90', '0.80', '0.94', '0.13', '0.94', 1, 'Peti', 'To Yard', 1),
-(492, '2020-10-12 13:44:20', 'Off loading truck', 215, 'JT00069', 'PT ATW', 'W/ box', 'OFFLOADING', 'Production', '0004', '1.13', '1.00', '1.43', '1.62', '0.23', '1.62', 1, 'Box', 'To Warehouse', 1),
-(493, '2020-10-12 13:44:26', 'Off loading truck', 216, 'JT00069', 'PT ATW', 'W/ box', 'OFFLOADING', 'Production', '0004', '1.24', '1.00', '0.54', '0.67', '0.09', '0.67', 1, 'Box', 'To Warehouse', 1),
-(494, '2020-10-12 13:44:33', 'Off loading truck', 217, 'JT00069', 'PT ATW', 'W/ box', 'OFFLOADING', 'Production', '0004', '0.70', '0.70', '0.70', '0.34', '0.09', '0.34', 1, 'Box', 'To Warehouse', 1),
-(495, '2020-10-12 13:45:32', 'Off loading truck', 218, 'JT00069', 'PT Muramah', 'W/ box', 'OFFLOADING', 'Production', '0005', '1.85', '1.05', '0.60', '1.17', '0.09', '1.17', 1, 'Box', 'To Warehouse', 1),
-(496, '2020-10-12 13:46:13', 'Loading truk', 213, 'JT00070', 'Pt segara permai', 'Liferaft', 'OFFLOADING', 'Production', '1', '1.70', '0.70', '0.80', '0.95', '0.25', '0.95', 1, 'Woden crat', 'To Yard', 1),
-(497, '2020-10-12 13:46:40', 'Loading truk', 213, 'JT00070', 'Pt segara permai', 'Liferaft', 'OFFLOADING', 'Production', '1', '1.70', '0.70', '0.80', '0.95', '0.25', '0.95', 1, 'Woden crat', 'To Yard', 1),
-(498, '2020-10-12 13:48:06', 'Loading truk', 213, 'JT00070', 'Pt segara permai', 'Liferaft', 'OFFLOADING', 'Production', '1', '1.70', '0.70', '0.80', '0.95', '0.25', '0.95', 1, 'Woden crat', 'To Yard', 1),
-(499, '2020-10-12 13:48:24', 'Loading truk', 213, 'JT00070', 'Pt segara permai', 'Liferaft', 'OFFLOADING', 'Production', '1', '1.70', '0.70', '0.80', '0.95', '0.25', '0.95', 1, 'Woden crat', 'To Yard', 1),
-(500, '2020-10-12 13:49:08', 'Loading truk', 213, 'JT00070', 'Pt segara permai', 'Liferaft', 'OFFLOADING', 'Production', '1', '1.70', '0.70', '0.80', '0.95', '0.25', '0.95', 1, 'Woden crat', 'To Yard', 1),
-(501, '2020-10-12 13:49:48', 'Loading truk', 213, 'JT00070', 'Pt segara permai', 'Liferaft', 'OFFLOADING', 'Production', '1', '1.70', '0.70', '0.80', '0.96', '0.25', '0.96', 1, 'Woden crat', 'To Yard', 1),
-(502, '2020-10-12 13:50:26', 'Loading truk', 213, 'JT00070', 'Pt segara permai', 'Liferaft', 'OFFLOADING', 'Production', '1', '1.70', '0.70', '0.80', '0.96', '0.25', '0.96', 1, 'Woden crat', 'To Yard', 1),
-(503, '2020-10-12 13:51:10', 'Loading truk', 213, 'JT00070', 'Pt segara permai', 'Liferaft', 'OFFLOADING', 'Production', '1', '1.70', '0.70', '0.80', '0.96', '0.25', '0.96', 1, 'Woden crat', 'To Yard', 1),
-(504, '2020-10-12 13:51:28', 'Loading truk', 213, 'JT00070', 'Pt segara permai', 'Liferaft', 'OFFLOADING', 'Production', '1', '1.70', '0.70', '0.80', '0.96', '0.25', '0.96', 1, 'Woden crat', 'To Yard', 1),
-(505, '2020-10-12 14:31:25', 'Loading truck', 209, 'JT00067', 'Pt Schlumberger', 'Reda pump', 'LOADING', 'Production', '21', '4.00', '0.32', '0.30', '0.39', '0.25', '0.39', 1, 'Unit', 'From Yard', 1),
-(506, '2020-10-12 14:36:34', 'Loading truck', 219, 'JT00071', 'Pt Schlumberger', 'Roll Cable', 'LOADING', 'Production', '12', '2.00', '1.95', '1.95', '7.60', '11.00', '11.00', 1, 'Unit', 'From Yard', 1),
-(507, '2020-10-12 14:41:43', 'Loading truck eks KM Sokka', 220, 'JT00069', 'PT Champion', 'To tank', 'LOADING', 'Production', '0004', '1.40', '1.40', '2.60', '5.10', '1.25', '5.10', 1, 'Unit', 'From Yard', 1),
-(508, '2020-10-12 14:44:03', 'Loading truck', 219, 'JT00071', 'Pt Schlumberger', 'Roll Cable', 'LOADING', 'Production', '12', '2.00', '1.95', '1.95', '7.61', '11.00', '11.00', 1, 'Unit', 'From Yard', 1),
-(509, '2020-10-12 14:57:23', 'Loading truck', 219, 'JT00071', 'Pt Schlumberger', 'Roll Cable', 'LOADING', 'Production', '12', '2.00', '1.95', '1.95', '7.61', '11.00', '11.00', 1, 'Unit', 'From Yard', 1),
-(510, '2020-10-12 15:00:23', 'Offloading truck', 211, 'JT00068', 'PT Samoedera', 'My sella oil', 'OFFLOADING', 'Production', '4400002063', '1.17', '1.17', '1.10', '1.51', '0.80', '1.51', 1, 'Pallet', 'To Warehouse', 1),
-(511, '2020-10-12 15:00:32', 'Offloading truck', 211, 'JT00068', 'PT Samoedera', 'My sella oil', 'OFFLOADING', 'Production', '4400002063', '1.17', '1.17', '1.10', '1.51', '0.80', '1.51', 1, 'Pallet', 'To Warehouse', 1),
-(512, '2020-10-12 15:01:34', 'Offloading truck', 211, 'JT00068', 'PT Samoedera', 'My sella oil', 'OFFLOADING', 'Production', '4400002063', '1.17', '1.17', '1.10', '1.51', '0.80', '1.51', 1, 'Pallet', 'To Warehouse', 1),
-(513, '2020-10-12 15:01:41', 'Offloading truck', 211, 'JT00068', 'PT Samoedera', 'My sella oil', 'OFFLOADING', 'Production', '4400002063', '1.17', '1.17', '1.10', '1.51', '0.80', '1.51', 1, 'Pallet', 'To Warehouse', 1),
-(514, '2020-10-12 15:01:46', 'Offloading truck', 211, 'JT00068', 'PT Samoedera', 'My sella oil', 'OFFLOADING', 'Production', '4400002063', '1.17', '1.17', '1.10', '1.51', '0.80', '1.51', 1, 'Pallet', 'To Warehouse', 1),
-(515, '2020-10-12 15:01:56', 'Offloading truck', 211, 'JT00068', 'PT Samoedera', 'My sella oil', 'OFFLOADING', 'Production', '4400002063', '1.17', '1.17', '1.10', '1.51', '0.80', '1.51', 1, 'Pallet', 'To Warehouse', 1),
-(516, '2020-10-12 15:02:08', 'Offloading truck', 211, 'JT00068', 'PT Samoedera', 'My sella oil', 'OFFLOADING', 'Production', '4400002063', '1.17', '1.17', '1.10', '1.51', '0.80', '1.51', 1, 'Pallet', 'To Warehouse', 1),
-(517, '2020-10-15 09:49:26', 'Off loading truck premier oil', 221, 'JT00073', 'PT.PMB', 'Half Open Top 10 ft', 'LOADING', 'Production', '007', '3.00', '2.50', '1.25', '46.88', '6.25', '46.88', 5, 'Unit', 'From Yard', 1);
-
--- --------------------------------------------------------
-
---
--- Struktur dari tabel `actual_moving`
---
-
-CREATE TABLE IF NOT EXISTS `actual_moving` (
-`id_as` int(12) NOT NULL,
-  `time_as` datetime NOT NULL,
-  `deskripsi_cargo_as` text,
-  `id_cargo` int(12) NOT NULL,
-  `id_moving` varchar(15) NOT NULL,
-  `nm_company_as` varchar(50) DEFAULT NULL,
-  `nm_barang_as` varchar(50) DEFAULT NULL,
-  `nm_kegiatan_as` varchar(15) DEFAULT NULL,
-  `production_as` varchar(15) DEFAULT NULL,
-  `no_po_as` varchar(15) DEFAULT NULL,
-  `p_cargo_as` decimal(6,2) NOT NULL,
-  `l_cargo_as` decimal(6,2) NOT NULL,
-  `t_cargo_as` decimal(6,2) NOT NULL,
-  `volume_cargo_as` decimal(6,2) NOT NULL,
-  `ton_cargo_as` decimal(6,2) NOT NULL,
-  `revton_cargo_as` decimal(6,2) NOT NULL,
-  `qty_cargo_as` int(11) NOT NULL,
-  `satuan_cargo_as` varchar(15) DEFAULT NULL,
-  `keterangan_as` varchar(50) DEFAULT NULL,
-  `lokasi_awal` text,
-  `lokasi_akhir` text,
-  `status_cargo_as` int(11) DEFAULT '1'
-) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=latin1;
-
---
--- Dumping data untuk tabel `actual_moving`
---
-
-INSERT INTO `actual_moving` (`id_as`, `time_as`, `deskripsi_cargo_as`, `id_cargo`, `id_moving`, `nm_company_as`, `nm_barang_as`, `nm_kegiatan_as`, `production_as`, `no_po_as`, `p_cargo_as`, `l_cargo_as`, `t_cargo_as`, `volume_cargo_as`, `ton_cargo_as`, `revton_cargo_as`, `qty_cargo_as`, `satuan_cargo_as`, `keterangan_as`, `lokasi_awal`, `lokasi_akhir`, `status_cargo_as`) VALUES
-(12, '2020-07-29 16:57:13', 'Internal Moving PHE', 5, 'TR00001', 'PT.ABC', 'Chemical Drum', NULL, 'Production', '0001', '1.20', '1.20', '1.20', '1.73', '1.30', '1.73', 1, 'Unit', NULL, 'Yard', 'Warehouse 1', 1),
-(13, '2020-07-29 16:57:47', 'Internal Moving PHE', 5, 'TR00001', 'PT.ABC', 'Chemical Drum', NULL, 'Production', '0001', '1.20', '1.20', '1.20', '1.73', '1.30', '1.73', 1, 'Unit', NULL, 'Yard', 'Warehouse 1', 1),
-(14, '2020-07-29 16:57:53', 'Internal Moving PHE', 5, 'TR00001', 'PT.ABC', 'Chemical Drum', NULL, 'Production', '0001', '1.20', '1.20', '1.20', '1.73', '1.30', '1.73', 1, 'Unit', NULL, 'Yard', 'Warehouse 2', 1),
-(15, '2020-07-29 16:58:01', 'Internal Moving PHE', 5, 'TR00001', 'PT.ABC', 'Chemical Drum', NULL, 'Production', '0001', '1.20', '1.20', '1.20', '5.18', '3.90', '5.18', 3, 'Unit', NULL, 'Yard', 'Warehouse 2', 1),
-(16, '2020-09-04 15:09:31', 'Internal Moving Star Energy', 6, 'TR00002', 'PT.ABC', 'Chemical Drum', NULL, 'Production', '0001', '1.20', '1.20', '1.20', '10.37', '7.80', '10.37', 6, 'Pallet', NULL, 'yard', 'warehouse', 1);
-
--- --------------------------------------------------------
-
---
--- Struktur dari tabel `actual_stacking`
---
-
-CREATE TABLE IF NOT EXISTS `actual_stacking` (
-`id_as` int(12) NOT NULL,
-  `time_as` datetime NOT NULL,
-  `deskripsi_cargo_as` text,
-  `id_cargo` int(12) NOT NULL,
-  `id_stacking` varchar(15) NOT NULL,
-  `nm_company_as` varchar(50) DEFAULT NULL,
-  `nm_barang_as` varchar(50) DEFAULT NULL,
-  `nm_kegiatan_as` varchar(15) DEFAULT NULL,
-  `production_as` varchar(15) DEFAULT NULL,
-  `no_po_as` varchar(15) DEFAULT NULL,
-  `p_cargo_as` decimal(6,2) NOT NULL,
-  `l_cargo_as` decimal(6,2) NOT NULL,
-  `t_cargo_as` decimal(6,2) NOT NULL,
-  `volume_cargo_as` decimal(6,2) NOT NULL,
-  `ton_cargo_as` decimal(6,2) NOT NULL,
-  `revton_cargo_as` decimal(6,2) NOT NULL,
-  `qty_cargo_as` int(11) NOT NULL,
-  `satuan_cargo_as` varchar(15) DEFAULT NULL,
-  `keterangan_as` varchar(50) DEFAULT NULL,
-  `lokasi_awal` text,
-  `lokasi_akhir` text,
-  `status_cargo_as` int(11) DEFAULT '1'
-) ENGINE=InnoDB AUTO_INCREMENT=134 DEFAULT CHARSET=latin1;
-
---
--- Dumping data untuk tabel `actual_stacking`
---
-
-INSERT INTO `actual_stacking` (`id_as`, `time_as`, `deskripsi_cargo_as`, `id_cargo`, `id_stacking`, `nm_company_as`, `nm_barang_as`, `nm_kegiatan_as`, `production_as`, `no_po_as`, `p_cargo_as`, `l_cargo_as`, `t_cargo_as`, `volume_cargo_as`, `ton_cargo_as`, `revton_cargo_as`, `qty_cargo_as`, `satuan_cargo_as`, `keterangan_as`, `lokasi_awal`, `lokasi_akhir`, `status_cargo_as`) VALUES
-(1, '2020-07-28 13:21:01', 'Stacking Medco', 1, 'ST00001', 'PT.ASW', 'Chemical Drum', NULL, 'Production', '0002', '1.20', '1.20', '1.20', '1.73', '1.30', '1.73', 1, 'Pallet', NULL, 'Yard', 'Warehouse 1', 1),
-(2, '2020-07-28 13:33:07', 'Stacking Medco', 1, 'ST00001', 'PT.ASW', 'Chemical Drum', NULL, 'Production', '0002', '1.20', '1.20', '1.20', '1.73', '1.30', '1.73', 1, 'Pallet', NULL, 'Yard', 'Warehouse 1', 1),
-(3, '2020-07-28 13:33:16', 'Stacking Medco', 1, 'ST00001', 'PT.ASW', 'Chemical Drum', NULL, 'Production', '0002', '1.20', '1.20', '1.20', '1.73', '1.30', '1.73', 1, 'Pallet', NULL, 'Yard', 'Warehouse 1', 1),
-(4, '2020-07-28 13:36:18', 'Stacking Medco', 2, 'ST00001', 'PT.ABC', 'Chemical Drum', NULL, 'Production', '0001', '1.20', '1.20', '1.20', '1.73', '1.30', '1.73', 1, 'Pallet', NULL, 'Yard', 'Warehouse 1', 1),
-(5, '2020-07-28 13:36:31', 'Stacking Medco', 2, 'ST00001', 'PT.ABC', 'Chemical Drum', NULL, 'Production', '0001', '1.20', '1.20', '1.20', '1.73', '1.30', '1.73', 1, 'Pallet', NULL, 'Yard', 'Warehouse 2', 1),
-(6, '2020-07-28 13:36:39', 'Stacking Medco', 2, 'ST00001', 'PT.ABC', 'Chemical Drum', NULL, 'Production', '0001', '1.20', '1.20', '1.20', '1.73', '1.30', '1.73', 1, 'Pallet', NULL, 'Yard', 'Warehouse 2', 1),
-(7, '2020-07-28 13:36:47', 'Stacking Medco', 2, 'ST00001', 'PT.ABC', 'Chemical Drum', NULL, 'Production', '0001', '1.20', '1.20', '1.20', '1.73', '1.30', '1.73', 1, 'Pallet', NULL, 'Yard', 'Warehouse 1', 1),
-(8, '2020-07-28 13:36:53', 'Stacking Medco', 2, 'ST00001', 'PT.ABC', 'Chemical Drum', NULL, 'Production', '0001', '1.20', '1.20', '1.20', '1.73', '1.30', '1.73', 1, 'Pallet', NULL, 'Yard', 'Warehouse 1', 1),
-(9, '2020-07-28 13:48:58', 'Stacking Medco', 3, 'ST00001', 'PT.ABC', 'Chemical Drum', NULL, 'Production', '0001', '1.20', '1.20', '1.20', '1.73', '1.20', '1.73', 1, 'Pallet', NULL, 'Yard', 'Warehouse 1', 1),
-(10, '2020-07-28 13:49:10', 'Stacking Medco', 3, 'ST00001', 'PT.ABC', 'Chemical Drum', NULL, 'Production', '0001', '1.20', '1.20', '1.20', '3.45', '2.40', '3.45', 2, 'Pallet', NULL, 'Yard', 'Warehouse 1', 1),
-(11, '2020-07-28 14:51:36', 'Stacking Star Energy', 4, 'ST00002', 'PT.ABC', 'Chemical Drum', NULL, 'Production', '0001', '1.20', '1.20', '1.20', '1.73', '1.50', '1.73', 1, 'Unit', NULL, 'Jetty', 'Warehouse 1', 1),
-(12, '2020-07-29 16:53:41', 'Stacking Star Energy', 4, 'ST00002', 'PT.ABC', 'Chemical Drum', NULL, 'Production', '0001', '1.20', '1.20', '1.20', '1.73', '1.50', '1.73', 1, 'Unit', NULL, 'Yard', 'Warehouse 1', 1),
-(13, '2020-08-06 10:26:24', 'Stacking material', 5, 'ST00003', 'Pt elnusa petrofin', 'Meditran oil', NULL, 'Production', '4400002054', '1.00', '1.00', '1.00', '1.00', '0.80', '1.00', 1, 'Pallet', NULL, 'Yard ', 'Gudang', 1),
-(14, '2020-08-06 10:27:35', 'Stacking material', 5, 'ST00003', 'Pt elnusa petrofin', 'Meditran oil', NULL, 'Production', '4400002054', '1.00', '1.00', '1.00', '1.00', '0.80', '1.00', 1, 'Pallet', NULL, 'Yard ', 'Gudang', 1),
-(15, '2020-08-06 10:27:35', 'Stacking material', 5, 'ST00003', 'Pt elnusa petrofin', 'Meditran oil', NULL, 'Production', '4400002054', '1.00', '1.00', '1.00', '1.00', '0.80', '1.00', 1, 'Pallet', NULL, 'Yard ', 'Gudang', 1),
-(16, '2020-08-06 10:27:56', 'Stacking material', 5, 'ST00003', 'Pt elnusa petrofin', 'Meditran oil', NULL, 'Production', '4400002054', '1.00', '1.00', '1.00', '1.00', '0.80', '1.00', 1, 'Pallet', NULL, 'Yard ', 'Gudang', 1),
-(17, '2020-08-06 10:28:23', 'Stacking material', 5, 'ST00003', 'Pt elnusa petrofin', 'Meditran oil', NULL, 'Production', '4400002054', '1.00', '1.00', '1.00', '1.00', '0.80', '1.00', 1, 'Pallet', NULL, 'Yard ', 'Gudang', 1),
-(18, '2020-09-04 15:08:50', 'Stacking Star Energy', 4, 'ST00002', 'PT.ABC', 'Chemical Drum', NULL, 'Production', '0001', '1.20', '1.20', '1.20', '1.73', '1.50', '1.73', 1, 'Unit', NULL, 'yard', 'warehouse', 1),
-(19, '2020-09-16 08:54:03', 'stacking material', 12, 'ST00006', 'Petrogas', 'chemical', NULL, 'production', '01/100', '1.20', '1.20', '1.10', '1.58', '0.80', '1.58', 1, 'pallet', NULL, 'Open yard', 'chemical storage', 1),
-(20, '2020-09-16 08:56:53', 'stacking material', 12, 'ST00006', 'Petrogas', 'chemical', NULL, 'production', '01/100', '1.20', '1.20', '1.10', '1.58', '0.80', '1.58', 1, 'pallet', NULL, 'Open yard', 'chemical storage', 1),
-(21, '2020-09-16 08:59:03', 'stacking material', 12, 'ST00006', 'Petrogas', 'chemical', NULL, 'production', '01/100', '1.20', '1.20', '1.10', '1.59', '0.80', '1.59', 1, 'pallet', NULL, 'Open yard', 'chemical storage', 1),
-(22, '2020-09-16 09:04:49', 'stacking material', 12, 'ST00006', 'Petrogas', 'chemical', NULL, 'production', '01/100', '1.20', '1.20', '1.10', '1.59', '0.80', '1.59', 1, 'pallet', NULL, 'Open yard', 'chemical storage', 1),
-(23, '2020-09-16 09:10:03', 'stacking material', 12, 'ST00006', 'Petrogas', 'chemical', NULL, 'production', '01/100', '1.20', '1.20', '1.10', '1.59', '0.80', '1.59', 1, 'pallet', NULL, 'Open yard', 'chemical storage', 1),
-(24, '2020-09-16 09:10:19', 'stacking material', 12, 'ST00006', 'Petrogas', 'chemical', NULL, 'production', '01/100', '1.20', '1.20', '1.10', '1.59', '0.80', '1.59', 1, 'pallet', NULL, 'Open yard', 'chemical storage', 1),
-(25, '2020-09-16 09:11:01', 'stacking material', 12, 'ST00006', 'Petrogas', 'chemical', NULL, 'production', '01/100', '1.20', '1.20', '1.10', '1.59', '0.80', '1.59', 1, 'pallet', NULL, 'Open yard', 'chemical storage', 1),
-(26, '2020-09-16 09:11:46', 'stacking material', 12, 'ST00006', 'Petrogas', 'chemical', NULL, 'production', '01/100', '1.20', '1.20', '1.10', '1.59', '0.80', '1.59', 1, 'pallet', NULL, 'Open yard', 'chemical storage', 1),
-(27, '2020-09-16 09:12:38', 'stacking material', 12, 'ST00006', 'Petrogas', 'chemical', NULL, 'production', '01/100', '1.20', '1.20', '1.10', '1.59', '0.80', '1.59', 1, 'pallet', NULL, 'Open yard', 'chemical storage', 1),
-(28, '2020-09-16 09:13:07', 'stacking material', 12, 'ST00006', 'Petrogas', 'chemical', NULL, 'production', '01/100', '1.20', '1.20', '1.10', '1.59', '0.80', '1.59', 1, 'pallet', NULL, 'Open yard', 'chemical storage', 1),
-(29, '2020-09-16 09:13:48', 'stacking material', 12, 'ST00006', 'Petrogas', 'chemical', NULL, 'production', '01/100', '1.20', '1.20', '1.10', '1.59', '0.80', '1.59', 1, 'pallet', NULL, 'Open yard', 'chemical storage', 1),
-(30, '2020-09-16 09:13:58', 'stacking material', 12, 'ST00006', 'Petrogas', 'chemical', NULL, 'production', '01/100', '1.20', '1.20', '1.10', '1.59', '0.80', '1.59', 1, 'pallet', NULL, 'Open yard', 'chemical storage', 1),
-(31, '2020-09-16 09:53:53', 'stacking material', 13, 'ST00006', 'Petrogas', 'cable roll', NULL, 'production', '02/20', '2.05', '2.05', '2.00', '8.40', '4.00', '8.40', 1, 'pallet', NULL, 'Jetty', 'openyard', 1),
-(32, '2020-09-16 09:58:09', 'stacking material', 13, 'ST00006', 'Petrogas', 'cable roll', NULL, 'production', '02/20', '2.05', '2.05', '2.00', '8.41', '4.00', '8.41', 1, 'pallet', NULL, 'Jetty', 'openyard', 1),
-(33, '2020-09-16 09:59:06', 'stacking material', 13, 'ST00006', 'Petrogas', 'cable roll', NULL, 'production', '02/20', '2.05', '2.05', '2.00', '8.41', '4.00', '8.41', 1, 'pallet', NULL, 'Jetty', 'openyard', 1),
-(34, '2020-09-17 09:02:26', 'stacking material', 14, 'ST00007', 'Petrogas', 'Generator', NULL, 'production', '03/02', '1.30', '0.95', '1.10', '1.36', '1.50', '1.50', 1, 'box', NULL, 'Open yard', 'warehouse', 1),
-(35, '2020-09-17 09:09:06', 'stacking material', 14, 'ST00007', 'Petrogas', 'Generator', NULL, 'production', '03/02', '1.30', '0.95', '1.10', '1.36', '1.50', '1.50', 1, 'box', NULL, 'Open yard', 'warehouse', 1),
-(36, '2020-09-17 09:10:30', 'stacking material', 14, 'ST00007', 'Petrogas', 'Generator', NULL, 'production', '03/02', '1.30', '0.95', '1.10', '1.36', '1.50', '1.50', 1, 'box', NULL, 'Open yard', 'warehouse', 1),
-(37, '2020-09-17 09:10:31', 'stacking material', 14, 'ST00007', 'Petrogas', 'Generator', NULL, 'production', '03/02', '1.30', '0.95', '1.10', '1.36', '1.50', '1.50', 1, 'box', NULL, 'Open yard', 'warehouse', 1),
-(38, '2020-09-17 09:11:07', 'stacking material', 14, 'ST00007', 'Petrogas', 'Generator', NULL, 'production', '03/02', '1.30', '0.95', '1.10', '1.36', '1.50', '1.50', 1, 'box', NULL, 'Open yard', 'warehouse', 1),
-(39, '2020-09-17 09:11:38', 'stacking material', 14, 'ST00007', 'Petrogas', 'Generator', NULL, 'production', '03/02', '1.30', '0.95', '1.10', '1.36', '1.50', '1.50', 1, 'box', NULL, 'Open yard', 'warehouse', 1),
-(40, '2020-09-17 09:30:26', 'stacking material', 16, 'ST00008', 'Petrogas', 'container 20 feet', NULL, 'production', '05/02', '6.00', '2.50', '2.50', '37.50', '2.50', '37.50', 1, 'unit', NULL, 'B3 storage', 'openyard', 1),
-(41, '2020-09-17 09:33:10', 'stacking material', 16, 'ST00008', 'Petrogas', 'container 20 feet', NULL, 'production', '05/02', '6.00', '2.50', '2.50', '37.50', '2.50', '37.50', 1, 'unit', NULL, 'B3 storage', 'openyard', 1),
-(42, '2020-09-17 09:42:35', 'stacking material', 15, 'ST00008', 'Petrogas', 'BOP', NULL, 'production', '04/02', '2.00', '1.00', '1.00', '2.00', '5.30', '5.30', 1, 'unit', NULL, 'Open yard', 'yard kj1', 1),
-(43, '2020-09-17 09:46:03', 'stacking material', 17, 'ST00007', 'Petrogas', 'chemical', NULL, 'production', '06/02', '1.20', '1.20', '1.10', '1.59', '0.80', '1.59', 1, 'pallet', NULL, 'Open yard', 'chemical storage', 1),
-(44, '2020-09-17 09:50:20', 'stacking material', 17, 'ST00007', 'Petrogas', 'chemical', NULL, 'production', '06/02', '1.20', '1.20', '1.10', '1.59', '0.80', '1.59', 1, 'pallet', NULL, 'Open yard', 'chemical storage', 1),
-(45, '2020-09-17 09:51:00', 'stacking material', 17, 'ST00007', 'Petrogas', 'chemical', NULL, 'production', '06/02', '1.20', '1.20', '1.10', '1.59', '0.80', '1.59', 1, 'pallet', NULL, 'Open yard', 'chemical storage', 1),
-(46, '2020-09-17 09:51:51', 'stacking material', 17, 'ST00007', 'Petrogas', 'chemical', NULL, 'production', '06/02', '1.20', '1.20', '1.10', '1.59', '0.80', '1.59', 1, 'pallet', NULL, 'Open yard', 'chemical storage', 1),
-(47, '2020-09-17 10:59:42', 'Segergasi material eks KM Sokka', 6, 'ST00004', 'PT Premier Oil', 'Half Open Top 20 ft', NULL, 'Production', '004', '6.00', '2.50', '1.30', '19.50', '3.50', '19.50', 1, 'Unit', NULL, 'Jetty', 'Warehouse 1', 1),
-(48, '2020-09-17 11:00:02', 'Segergasi material eks KM Sokka', 6, 'ST00004', 'PT Premier Oil', 'Half Open Top 20 ft', NULL, 'Production', '004', '6.00', '2.50', '1.30', '58.50', '10.50', '58.50', 3, 'Unit', NULL, 'Jetty', 'Warehouse 1', 1),
-(49, '2020-09-17 11:00:16', 'Loading truck', 7, 'ST00004', 'PT.Mesitech', 'Compressor', NULL, 'Production', '0001', '2.50', '1.50', '1.60', '6.00', '2.80', '6.00', 1, 'Unit', NULL, 'Jetty', 'Warehouse 1', 1),
-(50, '2020-09-17 11:00:28', 'Loading truck', 8, 'ST00004', 'PT.BennLine', 'Half Open Top 20 ft', NULL, 'Production', '0001', '6.00', '2.50', '1.30', '39.00', '7.00', '39.00', 2, 'Unit', NULL, 'Jetty', 'Warehouse 1', 1),
-(51, '2020-09-17 11:00:42', 'Loading truck', 9, 'ST00004', 'PT.Mesitech', 'Compressor', NULL, 'Production', '0001', '2.50', '1.50', '1.60', '30.00', '14.00', '30.00', 5, 'Unit', NULL, 'Jetty', 'Warehouse 1', 1),
-(52, '2020-09-17 11:00:59', 'Segergasi material eks KM Sokka', 10, 'ST00004', 'PT.Premier Oil', 'Half Open Top 20 ft', NULL, 'Production', '0001', '6.00', '2.50', '1.30', '39.00', '5.40', '39.00', 2, 'Unit', NULL, 'Jetty', 'Warehouse 1', 1),
-(53, '2020-09-21 09:03:51', 'stacking material', 18, 'ST00009', 'Petrogas', 'chemical', NULL, 'production', '07/20', '1.20', '1.20', '1.10', '1.59', '0.35', '1.59', 1, 'pallet', NULL, 'B3 storage', 'yard kj1', 1),
-(54, '2020-09-21 09:06:43', 'stacking material', 18, 'ST00009', 'Petrogas', 'chemical', NULL, 'production', '07/20', '1.20', '1.20', '1.10', '1.59', '0.35', '1.59', 1, 'pallet', NULL, 'B3 storage', 'yard kj1', 1),
-(55, '2020-09-21 09:12:29', 'stacking material', 18, 'ST00009', 'Petrogas', 'chemical', NULL, 'production', '07/20', '1.20', '1.20', '1.10', '1.59', '0.35', '1.59', 1, 'pallet', NULL, 'B3 storage', 'yard kj1', 1),
-(56, '2020-09-21 09:22:34', 'stacking material', 18, 'ST00009', 'Petrogas', 'chemical', NULL, 'production', '07/20', '1.20', '1.20', '1.10', '1.59', '0.35', '1.59', 1, 'pallet', NULL, 'B3 storage', 'yard kj1', 1),
-(57, '2020-09-21 09:25:34', 'stacking material', 19, 'ST00009', 'Petrogas', 'freek', NULL, 'production', '08/20', '1.20', '1.20', '0.80', '1.15', '0.25', '1.15', 1, 'pallet', NULL, 'B3 storage', 'yard kj1', 1),
-(58, '2020-09-21 09:34:36', 'stacking material', 19, 'ST00009', 'Petrogas', 'freek', NULL, 'production', '08/20', '1.20', '1.20', '0.80', '1.15', '0.25', '1.15', 1, 'pallet', NULL, 'B3 storage', 'yard kj1', 1),
-(59, '2020-09-22 14:06:03', 'Stacking material', 20, 'ST00010', 'Petrogas', 'Sparepart', NULL, 'Production', 'Voy 21', '1.20', '1.20', '0.09', '0.13', '0.45', '0.45', 1, 'Wooden box', NULL, 'B3 storage', 'Yard kj 1', 1),
-(60, '2020-09-22 14:06:23', 'Stacking material', 20, 'ST00010', 'Petrogas', 'Sparepart', NULL, 'Production', 'Voy 21', '1.20', '1.20', '0.09', '0.13', '0.45', '0.45', 1, 'Wooden box', NULL, 'B3 storage', 'Yard kj 1', 1),
-(61, '2020-09-22 14:07:57', 'Stacking material', 20, 'ST00010', 'Petrogas', 'Sparepart', NULL, 'Production', 'Voy 21', '1.20', '1.20', '0.09', '0.13', '0.45', '0.45', 1, 'Wooden box', NULL, 'B3 storage', 'Yard kj 1', 1),
-(62, '2020-09-23 08:23:43', 'stacking material', 22, 'ST00011', 'Premier Oil', 'Half open top 20 ft', NULL, 'production', '02', '6.00', '2.42', '1.30', '18.88', '1.50', '18.88', 1, 'unit', NULL, 'Open yard', 'yard kj1', 1),
-(63, '2020-09-23 08:26:50', 'stacking material', 21, 'ST00011', 'Premier Oil', 'open top 10 ft', NULL, 'production', '01', '3.00', '2.42', '1.30', '9.44', '1.30', '9.44', 1, 'unit', NULL, 'Open yard', 'yard kj1', 1),
-(64, '2020-09-23 08:30:52', 'stacking material', 21, 'ST00011', 'Premier Oil', 'open top 10 ft', NULL, 'production', '01', '3.00', '2.42', '1.30', '9.44', '1.30', '9.44', 1, 'unit', NULL, 'Open yard', 'yard kj1', 1),
-(65, '2020-09-23 08:33:49', 'stacking material', 21, 'ST00011', 'Premier Oil', 'open top 10 ft', NULL, 'production', '01', '3.00', '2.42', '1.30', '9.44', '1.30', '9.44', 1, 'unit', NULL, 'Open yard', 'yard kj1', 1),
-(66, '2020-09-23 08:35:57', 'stacking material', 21, 'ST00011', 'Premier Oil', 'open top 10 ft', NULL, 'production', '01', '3.00', '2.42', '1.30', '9.44', '1.30', '9.44', 1, 'unit', NULL, 'Open yard', 'yard kj1', 1),
-(67, '2020-09-23 08:37:55', 'stacking material', 21, 'ST00011', 'Premier Oil', 'open top 10 ft', NULL, 'production', '01', '3.00', '2.42', '1.30', '9.44', '1.30', '9.44', 1, 'unit', NULL, 'Open yard', 'yard kj1', 1),
-(68, '2020-09-23 08:38:30', 'stacking material', 21, 'ST00011', 'Premier Oil', 'open top 10 ft', NULL, 'production', '01', '3.00', '2.42', '1.30', '9.44', '1.30', '9.44', 1, 'unit', NULL, 'Open yard', 'yard kj1', 1),
-(69, '2020-09-23 08:39:12', 'stacking material', 21, 'ST00011', 'Premier Oil', 'open top 10 ft', NULL, 'production', '01', '3.00', '2.42', '1.30', '9.44', '1.30', '9.44', 1, 'unit', NULL, 'Open yard', 'yard kj1', 1),
-(70, '2020-09-23 08:45:50', 'stacking material', 23, 'ST00011', 'Premier Oil', 'sparepart', NULL, 'production', '03', '1.10', '1.10', '0.09', '0.11', '0.50', '0.50', 1, 'box', NULL, 'Warehouse', 'openyard', 1),
-(71, '2020-09-23 08:46:41', 'stacking material', 23, 'ST00011', 'Premier Oil', 'sparepart', NULL, 'production', '03', '1.10', '1.10', '0.09', '0.11', '0.50', '0.50', 1, 'box', NULL, 'Warehouse', 'openyard', 1),
-(72, '2020-09-23 10:43:12', 'stacking material', 24, 'ST00011', 'Premier Oil', 'open top 10 ft', NULL, 'production', '0001', '3.00', '2.40', '1.30', '9.36', '2.00', '9.36', 1, 'unit', NULL, 'Open yard', 'yard kj1', 1),
-(73, '2020-09-23 10:46:47', 'stacking material', 25, 'ST00011', 'Premier Oil', 'Half open top 20 ft', NULL, 'production', '02', '6.00', '2.40', '1.30', '18.72', '3.00', '18.72', 1, 'unit', NULL, 'Open yard', 'yard kj1', 1),
-(74, '2020-09-23 10:49:20', 'stacking material', 24, 'ST00011', 'Premier Oil', 'open top 10 ft', NULL, 'production', '0001', '3.00', '2.40', '1.30', '9.36', '2.00', '9.36', 1, 'unit', NULL, 'Jetty', 'openyard', 1),
-(75, '2020-09-23 10:54:29', 'stacking material', 25, 'ST00011', 'Premier Oil', 'Half open top 20 ft', NULL, 'production', '02', '6.00', '2.40', '1.30', '18.72', '3.00', '18.72', 1, 'unit', NULL, 'Open yard', 'yard kj1', 1),
-(76, '2020-09-23 13:42:34', 'stacking material', 26, 'ST00011', 'Premier Oil', 'Half open top 20 ft', NULL, 'production', '02', '6.00', '2.42', '1.30', '18.88', '2.50', '18.88', 1, 'unit', NULL, 'Open yard', 'jetty', 1),
-(77, '2020-09-23 15:10:54', 'stacking material', 27, 'ST00011', 'Premier Oil', 'open top 10 ft', NULL, 'production', '03', '3.00', '2.40', '1.30', '9.36', '1.50', '9.36', 1, 'unit', NULL, 'Open yard', 'jetty', 1),
-(78, '2020-09-23 16:08:53', 'stacking material', 27, 'ST00011', 'Premier Oil', 'open top 10 ft', NULL, 'production', '03', '3.00', '2.40', '1.30', '9.36', '1.50', '9.36', 1, 'unit', NULL, 'Yard ', 'Jetty', 1),
-(79, '2020-09-23 16:09:04', 'stacking material', 27, 'ST00011', 'Premier Oil', 'open top 10 ft', NULL, 'production', '03', '3.00', '2.40', '1.30', '9.36', '1.50', '9.36', 1, 'unit', NULL, 'Yard ', 'Jetty', 1),
-(80, '2020-09-25 10:48:05', 'Stacking material', 28, 'ST00012', 'Star energi', 'Oxygen, acetylene', NULL, 'Production', '140', '0.80', '0.60', '2.00', '0.96', '1.50', '1.50', 1, 'Rack', NULL, 'Yard ', 'Gudang', 1),
-(81, '2020-09-25 10:48:35', 'Stacking material', 28, 'ST00012', 'Star energi', 'Oxygen, acetylene', NULL, 'Production', '140', '0.80', '0.60', '2.00', '0.96', '1.50', '1.50', 1, 'Rack', NULL, 'Yard ', 'Gudang', 1),
-(82, '2020-09-25 11:39:00', 'Stacking material', 28, 'ST00012', 'Star energi', 'Oxygen, acetylene', NULL, 'Production', '140', '0.80', '0.60', '2.00', '0.96', '1.50', '1.50', 1, 'Rack', NULL, 'Yard ', 'Yard kj 1', 1),
-(83, '2020-09-25 11:39:00', 'Stacking material', 28, 'ST00012', 'Star energi', 'Oxygen, acetylene', NULL, 'Production', '140', '0.80', '0.60', '2.00', '0.96', '1.50', '1.50', 1, 'Rack', NULL, 'Yard ', 'Yard kj 1', 1),
-(84, '2020-09-25 11:40:09', 'Stacking material', 28, 'ST00012', 'Star energi', 'Oxygen, acetylene', NULL, 'Production', '140', '0.80', '0.60', '2.00', '0.96', '1.50', '1.50', 1, 'Rack', NULL, 'Yard ', 'Yard kj 1', 1),
-(85, '2020-09-25 11:40:14', 'Stacking material', 28, 'ST00012', 'Star energi', 'Oxygen, acetylene', NULL, 'Production', '140', '0.80', '0.60', '2.00', '0.00', '0.00', '0.00', 1, 'Rack', NULL, 'Yard ', 'Yard kj 1', 1),
-(86, '2020-09-25 14:44:29', 'stacking material', 29, 'ST00012', 'Star energi', 'half open top 10 feet', NULL, 'production', '09', '3.00', '2.42', '1.30', '9.44', '3.00', '9.44', 1, 'unit', NULL, 'Warehouse', 'openyard', 1),
-(87, '2020-10-01 14:16:19', 'Stacking material', 30, 'ST00013', 'PT.Schlumberger', 'Tubing', NULL, 'Drilling', '430008002', '1.85', '1.20', '1.00', '2.22', '0.80', '2.22', 1, 'Boks', NULL, 'Open yard', 'Ware house', 1),
-(88, '2020-10-01 14:20:44', 'Stacking material star energy', 31, 'ST00013', 'PT.Schlumberger', 'Tubing', NULL, 'Drilling', '430008002', '2.90', '1.10', '1.00', '3.19', '0.90', '3.19', 1, 'Boks', NULL, 'Open yard', 'Ware house', 1),
-(89, '2020-10-01 14:26:27', 'Stacking material star energy', 32, 'ST00013', 'PT.Schlumberger', 'Tubing', NULL, 'Drilling', '430008002', '2.40', '0.88', '0.35', '0.74', '0.40', '0.74', 1, 'Boks', NULL, 'Open yard', 'Ware house', 1),
-(90, '2020-10-01 14:29:10', 'Stacking material star energy', 33, 'ST00013', 'PT.Schlumberger', 'Tubing', NULL, 'Drilling', '430008002', '1.40', '0.51', '0.32', '0.23', '0.32', '0.32', 1, 'Boks', NULL, 'Open yard', 'Ware house', 1),
-(91, '2020-10-01 14:30:20', 'Stacking material star energy', 34, 'ST00013', 'PT.Schlumberger', 'Tubing', NULL, 'Drilling', '430008002', '1.52', '0.39', '0.26', '0.15', '0.13', '0.15', 1, 'Boks', NULL, 'Open yard', 'Ware house', 1),
-(92, '2020-10-01 14:34:30', 'Stacking material star energy', 35, 'ST00013', 'PT.Schlumberger', 'Tubing', NULL, 'Drilling', '430008002', '1.07', '0.77', '0.53', '0.44', '0.23', '0.44', 1, 'Boks', NULL, 'Open yard', 'Ware house', 1),
-(93, '2020-10-01 14:36:06', 'Stacking material star energy', 36, 'ST00013', 'PT.Schlumberger', 'Tubing', NULL, 'Drilling', '430008002', '1.80', '0.40', '0.46', '0.33', '0.30', '0.33', 1, 'Boks', NULL, 'Open yard', 'Ware house', 1),
-(94, '2020-10-05 17:41:52', 'Stacking material', 37, 'ST00014', 'Pt star energi', 'Life raft ', NULL, 'Production', '081', '1.20', '0.90', '0.80', '0.87', '0.40', '0.87', 1, 'Pallet', NULL, 'Yard ', 'Gudang', 1),
-(95, '2020-10-05 17:45:59', 'Stacking material', 37, 'ST00014', 'Pt star energi', 'Life raft ', NULL, 'Production', '081', '1.20', '0.90', '0.80', '0.87', '0.40', '0.87', 1, 'Pallet', NULL, 'Yard ', 'Gudang', 1),
-(96, '2020-10-05 17:46:03', 'Stacking material', 37, 'ST00014', 'Pt star energi', 'Life raft ', NULL, 'Production', '081', '1.20', '0.90', '0.80', '0.87', '0.40', '0.87', 1, 'Pallet', NULL, 'Yard ', 'Gudang', 1),
-(97, '2020-10-05 17:49:16', 'Stacking material', 37, 'ST00014', 'Pt star energi', 'Life raft ', NULL, 'Production', '081', '1.20', '0.90', '0.80', '0.87', '0.40', '0.87', 1, 'Pallet', NULL, 'Yard ', 'Gudang', 1),
-(98, '2020-10-05 17:49:33', 'Stacking material', 38, 'ST00014', 'Pt star energi', 'Cooler', NULL, 'Production', '2308', '7.40', '1.10', '1.20', '9.77', '6.50', '9.77', 1, 'Unit', NULL, 'Yard ', 'Gudang', 1),
-(99, '2020-10-06 10:43:36', 'Stacking material', 39, 'ST00015', 'Pt star energi', 'Open top 10 feet', NULL, 'Production', '457', '3.00', '2.42', '1.30', '9.44', '1.50', '9.44', 1, 'Unit', NULL, 'Yard ', 'Gudang', 1),
-(100, '2020-10-06 11:05:13', 'Stacking material', 39, 'ST00015', 'Pt star energi', 'Open top 10 feet', NULL, 'Production', '457', '3.00', '2.42', '1.30', '9.44', '1.50', '9.44', 1, 'Unit', NULL, 'Yard ', 'Yard kj 1', 1),
-(101, '2020-10-06 11:37:57', 'Stacking material', 40, 'ST00015', 'Pt star energi', 'SE 7 ,container 20 feet', NULL, 'Production', '34', '6.05', '2.42', '2.58', '37.77', '3.00', '37.77', 1, 'Unit', NULL, 'B3 storage ', 'Gudang', 1),
-(102, '2020-10-06 14:40:15', 'Stacking material', 41, 'ST00015', 'Pt star energi', 'Spool', NULL, 'Production', '073', '2.40', '1.20', '0.56', '1.61', '3.00', '3.00', 1, 'Pallet', NULL, 'Yard ', 'Gudang', 1),
-(103, '2020-10-06 14:45:23', 'Stacking material', 41, 'ST00015', 'Pt star energi', 'Spool', NULL, 'Production', '073', '2.40', '1.20', '0.56', '1.61', '3.00', '3.00', 1, 'Pallet', NULL, 'Yard ', 'Gudang', 1),
-(104, '2020-10-06 14:55:26', 'Stacking material', 41, 'ST00015', 'Pt star energi', 'Spool', NULL, 'Production', '073', '2.40', '1.20', '0.56', '1.62', '3.00', '3.00', 1, 'Pallet', NULL, 'Yard ', 'Gudang', 1),
-(105, '2020-10-06 16:24:28', 'Stacking material', 41, 'ST00015', 'Pt star energi', 'Spool', NULL, 'Production', '073', '2.40', '1.20', '0.56', '1.62', '3.00', '3.00', 1, 'Pallet', NULL, 'Yard ', 'Gudang', 1),
-(106, '2020-10-09 09:22:10', 'Stacking material/ segregasi material eks KM Sokka', 42, 'ST00016', 'Premier oil', 'Half open top 10 ft', NULL, 'Production', '001', '3.00', '2.50', '125.00', '937.50', '1.30', '937.50', 1, 'Unit', NULL, 'Jetty area', 'Open yard', 1),
-(107, '2020-10-09 10:14:10', 'Stacking material/ segregasi material eks KM Sokka', 44, 'ST00017', 'Star energy', 'Half open top 20 ft', NULL, 'Production', '0002', '6.00', '2.50', '1.25', '18.75', '2.30', '18.75', 1, 'Unit', NULL, 'Open yard', 'Open yard', 1),
-(108, '2020-10-09 10:35:28', 'Stacking material/ segregasi material eks KM Sokka', 45, 'ST00017', 'Star energy', 'Half open top 10 ft', NULL, 'Production', '001', '3.00', '2.50', '1.20', '9.00', '1.30', '9.00', 1, 'Unit', NULL, 'Open yard', 'Open yard', 1),
-(109, '2020-10-09 10:36:52', 'Stacking material/ segregasi material eks KM Sokka', 42, 'ST00016', 'Premier oil', 'Half open top 10 ft', NULL, 'Production', '001', '3.00', '2.50', '125.00', '937.50', '1.30', '937.50', 1, 'Unit', NULL, 'Jetty area', 'Open yard', 1),
-(110, '2020-10-09 10:37:10', 'Stacking material/ segregasi material eks KM Sokka', 43, 'ST00016', 'Premier oil', 'Half open top 20 ft', NULL, 'Production', '001', '6.00', '2.50', '1.20', '18.00', '2.20', '18.00', 1, 'Unit', NULL, 'Jetty area', 'Open yard', 1),
-(111, '2020-10-09 13:24:09', 'Stacking material/ segregasi material eks KM Sokka', 46, 'ST00016', 'Premier oil', 'Half open top 20 ft', NULL, 'Production', '0001', '3.00', '2.50', '1.25', '9.38', '2.30', '9.38', 1, 'Unit', NULL, 'Jetty area', 'Open yard', 1),
-(112, '2020-10-09 13:45:19', 'Stacing material', 47, 'ST00017', 'Star energy', 'Compressor', NULL, 'Production', '0001', '2.70', '2.00', '1.60', '8.64', '2.30', '8.64', 1, 'Unit', NULL, 'Open yard', 'Open yard', 1),
-(113, '2020-10-09 14:45:32', 'Stacking material/ segregasi material eks KM Sokka', 42, 'ST00016', 'Premier oil', 'Half open top 10 ft', NULL, 'Production', '001', '3.00', '2.50', '125.00', '937.50', '1.30', '937.50', 1, 'Unit', NULL, 'Jetty area', 'Open yard', 1),
-(114, '2020-10-09 14:58:02', 'Stacking material/ segregasi material eks KM Sokka', 42, 'ST00016', 'Premier oil', 'Half open top 10 ft', NULL, 'Production', '001', '3.00', '2.50', '125.00', '937.50', '1.30', '937.50', 1, 'Unit', NULL, 'Jetty area', 'Open yard', 1),
-(115, '2020-10-09 15:51:57', 'Stacking material/ segregasi material eks KM Sokka', 42, 'ST00016', 'Premier oil', 'Half open top 10 ft', NULL, 'Production', '001', '3.00', '2.50', '125.00', '937.50', '1.30', '937.50', 1, 'Unit', NULL, 'Jetty area', 'Open yard', 1),
-(116, '2020-10-10 09:26:17', 'Stacking material', 48, 'ST00018', 'PT Petrogas', 'Container 20 feet', NULL, 'Production', '213', '6.00', '2.45', '2.45', '36.02', '4.00', '36.02', 1, 'Unit', NULL, 'Yard ', 'Jetty', 1),
-(117, '2020-10-12 09:10:45', 'Stacking n shifting material premier oil', 49, 'ST00019', 'Premier oil', 'Oli', NULL, 'Production', '0001', '1.20', '1.20', '1.00', '4.32', '2.40', '4.32', 3, 'Pallet', NULL, 'Ware house', 'Open yard', 1),
-(118, '2020-10-12 10:25:24', 'Stuffing material ,prepare cargo KM Sokka', 51, 'ST00019', 'Premier oil', 'Half open top 20 ft', NULL, 'Production', '0001', '6.00', '2.00', '1.20', '14.40', '2.80', '14.40', 1, 'Unit', NULL, 'Jetty area', 'Jetty area', 1),
-(119, '2020-10-12 10:29:18', 'Stuffing material ,prepare cargo KM Sokka', 51, 'ST00019', 'Premier oil', 'Half open top 20 ft', NULL, 'Production', '0001', '6.00', '2.00', '1.20', '14.40', '2.80', '14.40', 1, 'Unit', NULL, 'Jetty area', 'Jetty area', 1),
-(120, '2020-10-12 11:00:03', 'Stacking material', 50, 'ST00020', 'PT Petrogas', 'Container 20 feet', NULL, 'Production', '21', '6.00', '2.42', '2.50', '36.30', '4.50', '36.30', 1, 'Unit', NULL, 'Yard ', 'Jetty', 1),
-(122, '2020-10-12 13:55:47', 'Stufing', 53, 'ST00021', 'Medco', 'Container 10"', NULL, '', 'OEGU 0006133', '3.00', '2.50', '2.50', '18.75', '4.00', '18.75', 1, 'Unit', NULL, 'Gudang', 'Jetty', 1),
-(123, '2020-10-12 13:56:07', 'Stufing', 52, 'ST00021', 'Medco', 'Container 20"', NULL, '', 'OEGU 0006046', '6.00', '2.50', '2.50', '37.50', '6.00', '37.50', 1, 'Unit', NULL, 'Gudang', 'Jetty', 1),
-(124, '2020-10-12 14:08:00', 'Stacking material/ segregasi material eks KM Sokka', 54, 'ST00019', 'Premier oil', 'Container 6 ft', NULL, 'Production', '0001', '1.90', '1.60', '2.80', '8.51', '1.45', '8.51', 1, 'Unit', NULL, 'Open yard', 'Open yard', 1),
-(125, '2020-10-12 14:18:01', 'Stacking material/ segregasi material eks KM Sokka', 54, 'ST00019', 'Premier oil', 'Container 6 ft', NULL, 'Production', '0001', '1.90', '1.60', '2.80', '8.51', '1.45', '8.51', 1, 'Unit', NULL, 'Open yard', 'Open yard', 1),
-(126, '2020-10-12 14:18:16', 'Stacking material/ segregasi material eks KM Sokka', 54, 'ST00019', 'Premier oil', 'Container 6 ft', NULL, 'Production', '0001', '1.90', '1.60', '2.80', '8.52', '1.45', '8.52', 1, 'Unit', NULL, 'Open yard', 'Open yard', 1),
-(127, '2020-10-12 14:18:36', 'Stacking material/ segregasi material eks KM Sokka', 54, 'ST00019', 'Premier oil', 'Container 6 ft', NULL, 'Production', '0001', '1.90', '1.60', '2.80', '8.52', '1.45', '8.52', 1, 'Unit', NULL, 'Open yard', 'Open yard', 1),
-(128, '2020-10-13 10:47:25', 'Stacking material', 55, 'ST00022', 'PT Petrogas', 'Container 20 feet', NULL, 'Production', '32', '6.05', '2.42', '2.58', '37.77', '2.00', '37.77', 1, 'Unit', NULL, 'Yard ', 'Jetty', 1),
-(129, '2020-10-14 10:13:55', 'Stacking n shifting material premier oil', 56, 'ST00023', 'Premier oil', 'Chemical', NULL, 'Production', '0006', '1.20', '1.20', '1.10', '3.17', '1.60', '3.17', 2, 'Pallet', NULL, 'Ware house', 'Ware house', 1),
-(130, '2020-10-14 10:18:34', 'Stacking n shifting material premier oil', 56, 'ST00023', 'Premier oil', 'Chemical', NULL, 'Production', '0006', '1.20', '1.20', '1.10', '6.34', '3.20', '6.34', 4, 'Pallet', NULL, 'Ware house', 'Ware house', 1),
-(131, '2020-10-14 10:37:02', 'Stacking n shifting material premier oil', 56, 'ST00023', 'Premier oil', 'Chemical', NULL, 'Production', '0006', '1.20', '1.20', '1.10', '9.50', '4.80', '9.50', 6, 'Pallet', NULL, 'Open yard', 'Ware house', 1),
-(132, '2020-10-14 10:42:42', 'Stacking n shifting material premier oil', 56, 'ST00023', 'Premier oil', 'Chemical', NULL, 'Production', '0006', '1.20', '1.20', '1.10', '6.34', '3.20', '6.34', 4, 'Pallet', NULL, 'Ware house', 'Ware house', 1),
-(133, '2020-10-14 10:45:18', 'Stacking n shifting material premier oil', 56, 'ST00023', 'Premier oil', 'Chemical', NULL, 'Production', '0006', '1.20', '1.20', '1.10', '6.34', '3.20', '6.34', 4, 'Pallet', NULL, 'Ware house', 'Ware house', 1);
-
--- --------------------------------------------------------
-
---
--- Struktur dari tabel `actual_stevedoring`
---
-
-CREATE TABLE IF NOT EXISTS `actual_stevedoring` (
-`id_as` bigint(20) NOT NULL,
+CREATE TABLE `actual_stevedoring` (
+  `id_as` bigint NOT NULL,
   `id_joborder` varchar(15) NOT NULL,
   `id_cargo` varchar(15) DEFAULT NULL,
   `id_jenis` varchar(15) NOT NULL,
   `time_as` datetime NOT NULL,
   `doc_no_as` varchar(15) NOT NULL,
-  `qty_as` int(5) NOT NULL,
+  `qty_as` int NOT NULL,
   `rincian_cargo` varchar(250) NOT NULL,
   `m3_as` decimal(6,2) NOT NULL,
   `ton_as` decimal(6,2) NOT NULL,
@@ -793,10 +43,10 @@ CREATE TABLE IF NOT EXISTS `actual_stevedoring` (
   `remarks_as` varchar(50) DEFAULT NULL,
   `row_version` varchar(15) NOT NULL,
   `keterangan` varchar(50) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=1596 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data untuk tabel `actual_stevedoring`
+-- Dumping data for table `actual_stevedoring`
 --
 
 INSERT INTO `actual_stevedoring` (`id_as`, `id_joborder`, `id_cargo`, `id_jenis`, `time_as`, `doc_no_as`, `qty_as`, `rincian_cargo`, `m3_as`, `ton_as`, `revton_as`, `remarks_as`, `row_version`, `keterangan`) VALUES
@@ -953,7 +203,7 @@ INSERT INTO `actual_stevedoring` (`id_as`, `id_joborder`, `id_cargo`, `id_jenis`
 (155, 'JV00011', NULL, '71', '2020-07-11 14:30:49', '1500033272', 1, 'Tower Lamp', '1.50', '0.25', '1.50', 'CKB', '1', 'To Yard'),
 (156, 'JV00011', NULL, '69', '2020-07-11 14:31:06', '1500033272', 1, 'Sling Bekas', '0.72', '0.17', '0.72', 'CKB', '1', 'To Yard'),
 (157, 'JV00011', NULL, '69', '2020-07-11 14:33:42', '1500033272', 2, 'Sling Bekas', '1.44', '0.33', '1.44', 'CKB', '1', 'To Yard'),
-(158, 'JV00011', NULL, '84', '2020-07-11 14:35:41', '00000', 1, 'Pipe Casing 10"x 2.5M , 4 Joint', '1.42', '1.50', '1.50', 'Baroid', '1', 'To Yard'),
+(158, 'JV00011', NULL, '84', '2020-07-11 14:35:41', '00000', 1, 'Pipe Casing 10\"x 2.5M , 4 Joint', '1.42', '1.50', '1.50', 'Baroid', '1', 'To Yard'),
 (159, 'JV00011', NULL, '83', '2020-07-11 14:37:27', '00000', 1, 'Housing Auger , Greeting 3 Ea', '1.57', '1.00', '1.57', 'Baroid', '1', 'To Yard'),
 (160, 'JV00011', NULL, '89', '2020-07-11 14:39:20', '00000', 1, 'Feed Pump , Red Colour 13426444', '1.30', '1.00', '1.30', 'Baroid', '1', 'To Yard'),
 (161, 'JV00011', NULL, '70', '2020-07-11 14:42:13', '1500033272', 1, 'Ban Bekas', '1.00', '0.07', '1.00', 'CKB', '1', 'To Yard'),
@@ -1043,9 +293,9 @@ INSERT INTO `actual_stevedoring` (`id_as`, `id_joborder`, `id_cargo`, `id_jenis`
 (245, 'JV00012', NULL, '125', '2020-07-16 15:04:03', '00002', 1, 'Mini Container c/o Coring Equipment', '17.50', '3.50', '17.50', 'NOV', '1', 'To Jetty'),
 (246, 'JV00012', NULL, '10', '2020-07-16 15:04:31', '1500033433', 1, 'Argon For Refill', '4.05', '1.50', '4.05', 'Medco Energi', '1', 'To Jetty'),
 (247, 'JV00012', NULL, '113', '2020-07-16 15:05:55', '1500032849', 1, 'Material Gas Booster 1Bh/Box', '13.50', '4.00', '13.50', 'Sembodo Suroso', '1', 'To Jetty'),
-(248, 'JV00012', NULL, '115', '2020-07-16 15:06:55', '1300014948', 1, 'Connector 3/8" Tube OD X 1/2" MNPT 316', '0.00', '0.03', '0.03', 'Medco Energi', '1', 'To Jetty'),
-(249, 'JV00012', NULL, '127', '2020-07-16 15:08:16', '34934421', 1, 'Drilling JAR 7" SN.3493442-1', '0.30', '1.00', '1.00', 'Baker Huges', '1', 'To Jetty'),
-(250, 'JV00012', NULL, '127', '2020-07-16 15:08:31', '1703790', 1, 'Drilling JAR 7" SN.1703790-1', '0.30', '1.00', '1.00', 'Baker Huges', '1', 'To Jetty'),
+(248, 'JV00012', NULL, '115', '2020-07-16 15:06:55', '1300014948', 1, 'Connector 3/8\" Tube OD X 1/2\" MNPT 316', '0.00', '0.03', '0.03', 'Medco Energi', '1', 'To Jetty'),
+(249, 'JV00012', NULL, '127', '2020-07-16 15:08:16', '34934421', 1, 'Drilling JAR 7\" SN.3493442-1', '0.30', '1.00', '1.00', 'Baker Huges', '1', 'To Jetty'),
+(250, 'JV00012', NULL, '127', '2020-07-16 15:08:31', '1703790', 1, 'Drilling JAR 7\" SN.1703790-1', '0.30', '1.00', '1.00', 'Baker Huges', '1', 'To Jetty'),
 (251, 'JV00012', NULL, '103', '2020-07-16 15:09:05', '1500033088', 1, '20 Ea Firex Dry Powder (Hydrtest)', '1.73', '0.10', '1.73', 'Segara Permai', '3', 'To Jetty'),
 (252, 'JV00012', NULL, '112', '2020-07-16 15:09:28', '1500032962', 1, 'Liferaft Capasitas 25 Pax', '1.44', '0.30', '1.44', 'Medco Energi', '1', 'To Jetty'),
 (253, 'JV00012', NULL, '106', '2020-07-16 15:09:53', '1500033435', 1, '10FT Close TOP ISO Container OEGU 0006133', '18.75', '3.00', '18.75', 'Medco Energi', '1', 'To Jetty'),
@@ -1108,34 +358,34 @@ INSERT INTO `actual_stevedoring` (`id_as`, `id_joborder`, `id_cargo`, `id_jenis`
 (323, 'JV00013', NULL, '29', '2020-07-21 20:51:00', '00027', 1, 'D145A (424 gal)', '1.44', '0.50', '1.44', 'Dowel Schlumberger', '1', 'From Yard'),
 (324, 'JV00013', NULL, '29', '2020-07-21 20:52:16', '00027', 1, 'D145A (424 gal)', '1.44', '0.50', '1.44', 'Dowel Schlumberger', '1', 'From Yard'),
 (325, 'JV00013', NULL, '29', '2020-07-21 20:54:01', '00025', 1, 'D066 (30 BE)', '1.44', '1.00', '1.44', 'Dowel Schlumberger', '1', 'From Yard'),
-(326, 'JV00013', NULL, '139', '2020-07-21 21:05:13', '00010', 4, 'Casing 9-5/8"', '3.16', '3.50', '3.50', 'PPLi', '3', 'From Trucking'),
-(327, 'JV00013', NULL, '139', '2020-07-21 21:19:11', '00010', 3, 'Casing 9-5/8"', '2.37', '2.63', '2.63', 'PPLi', '3', 'From Trucking'),
-(328, 'JV00013', NULL, '139', '2020-07-21 21:23:53', '00010', 1, 'Casing 9-5/8"', '0.79', '0.88', '0.88', 'PPLi', '3', 'From Trucking'),
-(329, 'JV00013', NULL, '139', '2020-07-21 21:28:35', '00010', 3, 'Casing 9-5/8"', '2.37', '2.63', '2.63', 'PPLi', '3', 'From Trucking'),
-(330, 'JV00013', NULL, '139', '2020-07-21 21:32:45', '00010', 3, 'Casing 9-5/8"', '2.37', '2.63', '2.63', 'PPLi', '3', 'From Trucking'),
-(331, 'JV00013', NULL, '139', '2020-07-21 21:39:13', '00010', 2, 'Casing 9-5/8"', '1.58', '1.75', '1.75', 'PPLi', '3', 'From Trucking'),
-(332, 'JV00013', NULL, '139', '2020-07-21 21:44:39', '00010', 3, 'Casing 9-5/8"', '2.37', '2.63', '2.63', 'PPLi', '3', 'From Trucking'),
-(333, 'JV00013', NULL, '139', '2020-07-21 21:48:16', '00010', 3, 'Casing 9-5/8"', '2.37', '2.63', '2.63', 'PPLi', '3', 'From Trucking'),
-(334, 'JV00013', NULL, '139', '2020-07-21 21:52:38', '00010', 2, 'Casing 9-5/8"', '1.58', '1.75', '1.75', 'PPLi', '3', 'From Trucking'),
-(335, 'JV00013', NULL, '139', '2020-07-21 21:57:08', '00010', 3, 'Casing 9-5/8"', '2.37', '2.63', '2.63', 'PPLi', '3', 'From Trucking'),
-(336, 'JV00013', NULL, '139', '2020-07-21 22:01:00', '00010', 1, 'Casing 9-5/8"', '0.79', '0.88', '0.88', 'PPLi', '3', 'From Trucking'),
-(337, 'JV00013', NULL, '139', '2020-07-21 22:11:49', '00010', 3, 'Casing 9-5/8"', '2.37', '2.63', '2.63', 'PPLi', '3', 'From Trucking'),
-(338, 'JV00013', NULL, '139', '2020-07-21 22:15:36', '00010', 1, 'Casing 9-5/8"', '0.79', '0.88', '0.88', 'PPLi', '3', 'From Trucking'),
-(339, 'JV00013', NULL, '139', '2020-07-21 22:22:07', '00010', 3, 'Casing 9-5/8"', '2.37', '2.63', '2.63', 'PPLi', '3', 'From Trucking'),
-(340, 'JV00013', NULL, '139', '2020-07-21 22:26:13', '00010', 3, 'Casing 9-5/8"', '2.37', '2.63', '2.63', 'PPLi', '3', 'From Trucking'),
-(341, 'JV00013', NULL, '139', '2020-07-21 22:31:19', '00010', 2, 'Casing 9-5/8"', '1.58', '1.75', '1.75', 'PPLi', '3', 'From Trucking'),
-(342, 'JV00013', NULL, '139', '2020-07-21 22:37:04', '00010', 3, 'Casing 9-5/8"', '2.37', '2.63', '2.63', 'PPLi', '3', 'From Trucking'),
-(343, 'JV00013', NULL, '139', '2020-07-21 22:42:12', '00010', 3, 'Casing 9-5/8"', '2.37', '2.63', '2.63', 'PPLi', '3', 'From Trucking'),
-(344, 'JV00013', NULL, '139', '2020-07-21 22:45:37', '00010', 2, 'Casing 9-5/8"', '1.58', '1.75', '1.75', 'PPLi', '3', 'From Trucking'),
-(345, 'JV00013', NULL, '139', '2020-07-21 22:49:21', '00010', 3, 'Casing 9-5/8"', '2.37', '2.63', '2.63', 'PPLi', '3', 'From Trucking'),
-(346, 'JV00013', NULL, '139', '2020-07-21 22:53:26', '00010', 3, 'Casing 9-5/8"', '2.37', '2.63', '2.63', 'PPLi', '3', 'From Trucking'),
-(347, 'JV00013', NULL, '139', '2020-07-21 22:57:01', '00010', 2, 'Casing 9-5/8"', '1.58', '1.75', '1.75', 'PPLi', '3', 'From Trucking'),
-(348, 'JV00013', NULL, '139', '2020-07-21 23:06:58', '00010', 3, 'Casing 9-5/8"', '2.37', '2.63', '2.63', 'PPLi', '3', 'From Trucking'),
-(349, 'JV00013', NULL, '139', '2020-07-21 23:13:27', '00010', 3, 'Casing 9-5/8"', '2.37', '2.63', '2.63', 'PPLi', '3', 'From Trucking'),
-(350, 'JV00013', NULL, '139', '2020-07-21 23:17:17', '00010', 2, 'Casing 9-5/8"', '1.58', '1.75', '1.75', 'PPLi', '3', 'From Trucking'),
-(351, 'JV00013', NULL, '139', '2020-07-21 23:23:54', '00010', 3, 'Casing 9-5/8"', '2.37', '2.63', '2.63', 'PPLi', '3', 'From Trucking'),
-(352, 'JV00013', NULL, '139', '2020-07-21 23:28:34', '00010', 3, 'Casing 9-5/8"', '2.37', '2.63', '2.63', 'PPLi', '3', 'From Trucking'),
-(353, 'JV00013', NULL, '139', '2020-07-21 23:31:51', '00010', 1, 'Casing 9-5/8"', '0.79', '0.88', '0.88', 'PPLi', '3', 'From Trucking'),
+(326, 'JV00013', NULL, '139', '2020-07-21 21:05:13', '00010', 4, 'Casing 9-5/8\"', '3.16', '3.50', '3.50', 'PPLi', '3', 'From Trucking'),
+(327, 'JV00013', NULL, '139', '2020-07-21 21:19:11', '00010', 3, 'Casing 9-5/8\"', '2.37', '2.63', '2.63', 'PPLi', '3', 'From Trucking'),
+(328, 'JV00013', NULL, '139', '2020-07-21 21:23:53', '00010', 1, 'Casing 9-5/8\"', '0.79', '0.88', '0.88', 'PPLi', '3', 'From Trucking'),
+(329, 'JV00013', NULL, '139', '2020-07-21 21:28:35', '00010', 3, 'Casing 9-5/8\"', '2.37', '2.63', '2.63', 'PPLi', '3', 'From Trucking'),
+(330, 'JV00013', NULL, '139', '2020-07-21 21:32:45', '00010', 3, 'Casing 9-5/8\"', '2.37', '2.63', '2.63', 'PPLi', '3', 'From Trucking'),
+(331, 'JV00013', NULL, '139', '2020-07-21 21:39:13', '00010', 2, 'Casing 9-5/8\"', '1.58', '1.75', '1.75', 'PPLi', '3', 'From Trucking'),
+(332, 'JV00013', NULL, '139', '2020-07-21 21:44:39', '00010', 3, 'Casing 9-5/8\"', '2.37', '2.63', '2.63', 'PPLi', '3', 'From Trucking'),
+(333, 'JV00013', NULL, '139', '2020-07-21 21:48:16', '00010', 3, 'Casing 9-5/8\"', '2.37', '2.63', '2.63', 'PPLi', '3', 'From Trucking'),
+(334, 'JV00013', NULL, '139', '2020-07-21 21:52:38', '00010', 2, 'Casing 9-5/8\"', '1.58', '1.75', '1.75', 'PPLi', '3', 'From Trucking'),
+(335, 'JV00013', NULL, '139', '2020-07-21 21:57:08', '00010', 3, 'Casing 9-5/8\"', '2.37', '2.63', '2.63', 'PPLi', '3', 'From Trucking'),
+(336, 'JV00013', NULL, '139', '2020-07-21 22:01:00', '00010', 1, 'Casing 9-5/8\"', '0.79', '0.88', '0.88', 'PPLi', '3', 'From Trucking'),
+(337, 'JV00013', NULL, '139', '2020-07-21 22:11:49', '00010', 3, 'Casing 9-5/8\"', '2.37', '2.63', '2.63', 'PPLi', '3', 'From Trucking'),
+(338, 'JV00013', NULL, '139', '2020-07-21 22:15:36', '00010', 1, 'Casing 9-5/8\"', '0.79', '0.88', '0.88', 'PPLi', '3', 'From Trucking'),
+(339, 'JV00013', NULL, '139', '2020-07-21 22:22:07', '00010', 3, 'Casing 9-5/8\"', '2.37', '2.63', '2.63', 'PPLi', '3', 'From Trucking'),
+(340, 'JV00013', NULL, '139', '2020-07-21 22:26:13', '00010', 3, 'Casing 9-5/8\"', '2.37', '2.63', '2.63', 'PPLi', '3', 'From Trucking'),
+(341, 'JV00013', NULL, '139', '2020-07-21 22:31:19', '00010', 2, 'Casing 9-5/8\"', '1.58', '1.75', '1.75', 'PPLi', '3', 'From Trucking'),
+(342, 'JV00013', NULL, '139', '2020-07-21 22:37:04', '00010', 3, 'Casing 9-5/8\"', '2.37', '2.63', '2.63', 'PPLi', '3', 'From Trucking'),
+(343, 'JV00013', NULL, '139', '2020-07-21 22:42:12', '00010', 3, 'Casing 9-5/8\"', '2.37', '2.63', '2.63', 'PPLi', '3', 'From Trucking'),
+(344, 'JV00013', NULL, '139', '2020-07-21 22:45:37', '00010', 2, 'Casing 9-5/8\"', '1.58', '1.75', '1.75', 'PPLi', '3', 'From Trucking'),
+(345, 'JV00013', NULL, '139', '2020-07-21 22:49:21', '00010', 3, 'Casing 9-5/8\"', '2.37', '2.63', '2.63', 'PPLi', '3', 'From Trucking'),
+(346, 'JV00013', NULL, '139', '2020-07-21 22:53:26', '00010', 3, 'Casing 9-5/8\"', '2.37', '2.63', '2.63', 'PPLi', '3', 'From Trucking'),
+(347, 'JV00013', NULL, '139', '2020-07-21 22:57:01', '00010', 2, 'Casing 9-5/8\"', '1.58', '1.75', '1.75', 'PPLi', '3', 'From Trucking'),
+(348, 'JV00013', NULL, '139', '2020-07-21 23:06:58', '00010', 3, 'Casing 9-5/8\"', '2.37', '2.63', '2.63', 'PPLi', '3', 'From Trucking'),
+(349, 'JV00013', NULL, '139', '2020-07-21 23:13:27', '00010', 3, 'Casing 9-5/8\"', '2.37', '2.63', '2.63', 'PPLi', '3', 'From Trucking'),
+(350, 'JV00013', NULL, '139', '2020-07-21 23:17:17', '00010', 2, 'Casing 9-5/8\"', '1.58', '1.75', '1.75', 'PPLi', '3', 'From Trucking'),
+(351, 'JV00013', NULL, '139', '2020-07-21 23:23:54', '00010', 3, 'Casing 9-5/8\"', '2.37', '2.63', '2.63', 'PPLi', '3', 'From Trucking'),
+(352, 'JV00013', NULL, '139', '2020-07-21 23:28:34', '00010', 3, 'Casing 9-5/8\"', '2.37', '2.63', '2.63', 'PPLi', '3', 'From Trucking'),
+(353, 'JV00013', NULL, '139', '2020-07-21 23:31:51', '00010', 1, 'Casing 9-5/8\"', '0.79', '0.88', '0.88', 'PPLi', '3', 'From Trucking'),
 (354, 'JV00013', NULL, '29', '2020-07-22 08:34:25', '00038', 2, 'NaCL', '2.88', '2.00', '2.88', 'Halliburton', '2', 'From Trucking'),
 (355, 'JV00013', NULL, '29', '2020-07-22 08:44:07', '00038', 1, 'NaCL', '1.44', '1.00', '1.44', 'Halliburton', '2', 'From Trucking');
 INSERT INTO `actual_stevedoring` (`id_as`, `id_joborder`, `id_cargo`, `id_jenis`, `time_as`, `doc_no_as`, `qty_as`, `rincian_cargo`, `m3_as`, `ton_as`, `revton_as`, `remarks_as`, `row_version`, `keterangan`) VALUES
@@ -1150,8 +400,8 @@ INSERT INTO `actual_stevedoring` (`id_as`, `id_joborder`, `id_cargo`, `id_jenis`
 (364, 'JV00013', NULL, '29', '2020-07-22 10:48:25', '00039', 10, 'NaCL', '14.40', '10.00', '14.40', 'Halliburton', '2', 'From Trucking'),
 (365, 'JV00013', NULL, '29', '2020-07-22 11:05:46', '00039', 10, 'NaCL', '14.40', '10.00', '14.40', 'Halliburton', '2', 'From Trucking'),
 (366, 'JV00013', NULL, '29', '2020-07-22 11:22:42', '00039', 15, 'NaCL', '21.60', '15.00', '21.60', 'Halliburton', '2', 'From Trucking'),
-(367, 'JV00013', NULL, '139', '2020-07-22 13:22:11', '00010', 41, 'Casing 9-5/8"', '32.39', '35.88', '35.88', 'PPLi', '3', 'From Trucking'),
-(368, 'JV00013', NULL, '138', '2020-07-22 13:22:41', '00009', 36, 'Casing 13-3/8"', '60.48', '72.73', '72.73', 'PPLi', '1', 'From Trucking'),
+(367, 'JV00013', NULL, '139', '2020-07-22 13:22:11', '00010', 41, 'Casing 9-5/8\"', '32.39', '35.88', '35.88', 'PPLi', '3', 'From Trucking'),
+(368, 'JV00013', NULL, '138', '2020-07-22 13:22:41', '00009', 36, 'Casing 13-3/8\"', '60.48', '72.73', '72.73', 'PPLi', '1', 'From Trucking'),
 (369, 'JV00013', NULL, '29', '2020-07-22 13:31:49', '00039', 1, 'NaCL', '1.44', '1.00', '1.44', 'Halliburton', '3', 'From Jetty'),
 (370, 'JV00013', NULL, '29', '2020-07-22 13:35:23', '00039', 1, 'NaCL', '1.44', '1.00', '1.44', 'Halliburton', '3', 'From Jetty'),
 (371, 'JV00013', NULL, '29', '2020-07-22 13:36:57', '00039', 1, 'NaCL', '1.44', '1.00', '1.44', 'Halliburton', '3', 'From Jetty'),
@@ -1169,81 +419,81 @@ INSERT INTO `actual_stevedoring` (`id_as`, `id_joborder`, `id_cargo`, `id_jenis`
 (383, 'JV00013', NULL, '29', '2020-07-22 13:52:33', '00039', 1, 'NaCL', '1.44', '1.00', '1.44', 'Halliburton', '3', 'From Jetty'),
 (384, 'JV00013', NULL, '29', '2020-07-22 13:54:08', '00039', 1, 'NaCL', '1.44', '1.00', '1.44', 'Halliburton', '3', 'From Jetty'),
 (385, 'JV00013', NULL, '29', '2020-07-22 13:55:35', '00039', 1, 'NaCL', '1.44', '1.00', '1.44', 'Halliburton', '3', 'From Jetty'),
-(386, 'JV00013', NULL, '138', '2020-07-22 14:06:16', '00009', 2, 'Casing 13-3/8"', '3.36', '4.04', '4.04', 'PPLi', '1', 'From Jetty'),
-(387, 'JV00013', NULL, '138', '2020-07-22 14:27:36', '00009', 2, 'Casing 13-3/8"', '3.36', '4.04', '4.04', 'PPLi', '1', 'From Jetty'),
-(388, 'JV00013', NULL, '138', '2020-07-22 14:32:24', '00009', 2, 'Casing 13-3/8"', '3.36', '4.04', '4.04', 'PPLi', '1', 'From Jetty'),
-(389, 'JV00013', NULL, '138', '2020-07-22 14:48:25', '00009', 2, 'Casing 13-3/8"', '3.36', '4.04', '4.04', 'PPLi', '1', 'From Jetty'),
-(390, 'JV00013', NULL, '138', '2020-07-22 14:52:56', '00009', 1, 'Casing 13-3/8"', '1.68', '2.02', '2.02', 'PPLi', '1', 'From Jetty'),
-(391, 'JV00013', NULL, '138', '2020-07-22 14:56:51', '00009', 2, 'Casing 13-3/8"', '3.36', '4.04', '4.04', 'PPLi', '1', 'From Jetty'),
-(392, 'JV00013', NULL, '138', '2020-07-22 15:02:54', '00009', 2, 'Casing 13-3/8"', '3.36', '4.04', '4.04', 'PPLi', '1', 'From Jetty'),
-(393, 'JV00013', NULL, '138', '2020-07-22 15:07:57', '00009', 2, 'Casing 13-3/8"', '3.36', '4.04', '4.04', 'PPLi', '1', 'From Jetty'),
-(394, 'JV00013', NULL, '138', '2020-07-22 15:11:06', '00009', 2, 'Casing 13-3/8"', '3.36', '4.04', '4.04', 'PPLi', '1', 'From Jetty'),
-(395, 'JV00013', NULL, '138', '2020-07-22 15:15:22', '00009', 2, 'Casing 13-3/8"', '3.36', '4.04', '4.04', 'PPLi', '1', 'From Jetty'),
-(396, 'JV00013', NULL, '138', '2020-07-22 15:21:18', '00009', 2, 'Casing 13-3/8"', '3.36', '4.04', '4.04', 'PPLi', '1', 'From Jetty'),
-(397, 'JV00013', NULL, '138', '2020-07-22 15:27:13', '00009', 2, 'Casing 13-3/8"', '3.36', '4.04', '4.04', 'PPLi', '1', 'From Jetty'),
-(398, 'JV00013', NULL, '138', '2020-07-22 15:32:01', '00009', 3, 'Casing 13-3/8"', '5.04', '6.06', '6.06', 'PPLi', '1', 'From Jetty'),
-(399, 'JV00013', NULL, '138', '2020-07-22 15:48:34', '00009', 1, 'Casing 13-3/8"', '1.68', '2.02', '2.02', 'PPLi', '1', 'From Jetty'),
-(400, 'JV00013', NULL, '138', '2020-07-22 15:52:36', '00009', 3, 'Casing 13-3/8"', '5.04', '6.06', '6.06', 'PPLi', '1', 'From Jetty'),
-(401, 'JV00013', NULL, '138', '2020-07-22 15:57:22', '00009', 3, 'Casing 13-3/8"', '5.04', '6.06', '6.06', 'PPLi', '1', 'From Jetty'),
-(402, 'JV00013', NULL, '138', '2020-07-22 16:00:15', '00009', 3, 'Casing 13-3/8"', '5.04', '6.06', '6.06', 'PPLi', '1', 'From Jetty'),
-(403, 'JV00013', NULL, '138', '2020-07-22 16:04:00', '00009', 3, 'Casing 13-3/8"', '5.04', '6.06', '6.06', 'PPLi', '1', 'From Jetty'),
-(404, 'JV00013', NULL, '138', '2020-07-22 16:07:43', '00009', 3, 'Casing 13-3/8"', '5.04', '6.06', '6.06', 'PPLi', '1', 'From Jetty'),
-(405, 'JV00013', NULL, '138', '2020-07-22 16:12:13', '00009', 1, 'Casing 13-3/8"', '1.68', '2.02', '2.02', 'PPLi', '1', 'From Jetty'),
-(406, 'JV00013', NULL, '138', '2020-07-22 16:15:56', '00009', 3, 'Casing 13-3/8"', '5.04', '6.06', '6.06', 'PPLi', '1', 'From Jetty'),
-(407, 'JV00013', NULL, '138', '2020-07-22 16:19:11', '00009', 2, 'Casing 13-3/8"', '3.36', '4.04', '4.04', 'PPLi', '1', 'From Jetty'),
-(408, 'JV00013', NULL, '138', '2020-07-22 16:22:37', '00009', 2, 'Casing 13-3/8"', '3.36', '4.04', '4.04', 'PPLi', '1', 'From Jetty'),
-(409, 'JV00013', NULL, '138', '2020-07-22 16:26:31', '00009', 3, 'Casing 13-3/8"', '5.04', '6.06', '6.06', 'PPLi', '1', 'From Jetty'),
-(410, 'JV00013', NULL, '138', '2020-07-22 16:30:44', '00009', 3, 'Casing 13-3/8"', '5.04', '6.06', '6.06', 'PPLi', '1', 'From Jetty'),
-(411, 'JV00013', NULL, '138', '2020-07-22 16:33:43', '00009', 3, 'Casing 13-3/8"', '5.04', '6.06', '6.06', 'PPLi', '1', 'From Jetty'),
-(412, 'JV00013', NULL, '138', '2020-07-22 16:36:57', '00009', 1, 'Casing 13-3/8"', '1.68', '2.02', '2.02', 'PPLi', '1', 'From Jetty'),
-(413, 'JV00013', NULL, '138', '2020-07-22 16:40:45', '00009', 3, 'Casing 13-3/8"', '5.04', '6.06', '6.06', 'PPLi', '1', 'From Jetty'),
-(414, 'JV00013', NULL, '138', '2020-07-22 16:45:14', '00009', 3, 'Casing 13-3/8"', '5.04', '6.06', '6.06', 'PPLi', '1', 'From Jetty'),
-(415, 'JV00013', NULL, '138', '2020-07-22 16:48:48', '00009', 3, 'Casing 13-3/8"', '5.04', '6.06', '6.06', 'PPLi', '1', 'From Jetty'),
-(416, 'JV00013', NULL, '138', '2020-07-22 16:55:11', '00009', 3, 'Casing 13-3/8"', '5.04', '6.06', '6.06', 'PPLi', '1', 'From Jetty'),
-(417, 'JV00013', NULL, '138', '2020-07-22 17:00:03', '00009', 3, 'Casing 13-3/8"', '5.04', '6.06', '6.06', 'PPLi', '1', 'From Jetty'),
-(418, 'JV00013', NULL, '138', '2020-07-22 17:03:20', '00009', 2, 'Casing 13-3/8"', '3.36', '4.04', '4.04', 'PPLi', '1', 'From Jetty'),
-(419, 'JV00013', NULL, '138', '2020-07-22 17:07:08', '00009', 3, 'Casing 13-3/8"', '5.04', '6.06', '6.06', 'PPLi', '1', 'From Jetty'),
-(420, 'JV00013', NULL, '138', '2020-07-22 17:10:32', '00009', 2, 'Casing 13-3/8"', '3.36', '4.04', '4.04', 'PPLi', '1', 'From Jetty'),
-(421, 'JV00013', NULL, '138', '2020-07-22 17:15:34', '00009', 3, 'Casing 13-3/8"', '5.04', '6.07', '6.07', 'PPLi', '1', 'From Jetty'),
-(422, 'JV00013', NULL, '138', '2020-07-22 17:16:52', '00009', 3, 'Casing 13-3/8"', '5.04', '6.06', '6.06', 'PPLi', '1', 'From Jetty'),
-(423, 'JV00013', NULL, '138', '2020-07-22 17:22:23', '00009', 2, 'Casing 13-3/8"', '3.36', '4.04', '4.04', 'PPLi', '1', 'From Jetty'),
-(424, 'JV00013', NULL, '138', '2020-07-22 20:15:53', '00009', 3, 'Casing 13-3/8"', '5.04', '6.07', '6.07', 'PPLi', '1', 'From Jetty'),
-(425, 'JV00013', NULL, '138', '2020-07-22 20:21:57', '00009', 2, 'Casing 13-3/8"', '3.36', '4.04', '4.04', 'PPLi', '1', 'From Jetty'),
-(426, 'JV00013', NULL, '138', '2020-07-22 20:25:49', '00009', 3, 'Casing 13-3/8"', '5.04', '6.07', '6.07', 'PPLi', '1', 'From Jetty'),
-(427, 'JV00013', NULL, '138', '2020-07-22 20:31:14', '00009', 2, 'Casing 13-3/8"', '3.36', '4.04', '4.04', 'PPLi', '1', 'From Jetty'),
-(428, 'JV00013', NULL, '138', '2020-07-22 20:35:52', '00009', 2, 'Casing 13-3/8"', '3.36', '4.04', '4.04', 'PPLi', '1', 'From Jetty'),
-(429, 'JV00013', NULL, '138', '2020-07-22 20:39:36', '00009', 2, 'Casing 13-3/8"', '3.36', '4.04', '4.04', 'PPLi', '1', 'From Jetty'),
-(430, 'JV00013', NULL, '138', '2020-07-22 20:43:10', '00009', 3, 'Casing 13-3/8"', '5.04', '6.07', '6.07', 'PPLi', '1', 'From Jetty'),
-(431, 'JV00013', NULL, '138', '2020-07-22 20:47:01', '00009', 3, 'Casing 13-3/8"', '5.04', '6.07', '6.07', 'PPLi', '1', 'From Jetty'),
-(432, 'JV00013', NULL, '138', '2020-07-22 20:50:48', '00009', 1, 'Casing 13-3/8"', '1.68', '2.02', '2.02', 'PPLi', '1', 'From Jetty'),
-(433, 'JV00013', NULL, '139', '2020-07-22 22:29:55', '00010', 3, 'Casing 9-5/8"', '2.37', '2.63', '2.63', 'PPLi', '3', 'From Jetty'),
-(434, 'JV00013', NULL, '139', '2020-07-22 22:36:18', '00010', 3, 'Casing 9-5/8"', '2.37', '2.63', '2.63', 'PPLi', '3', 'From Jetty'),
-(435, 'JV00013', NULL, '139', '2020-07-22 22:41:24', '00010', 3, 'Casing 9-5/8"', '2.37', '2.63', '2.63', 'PPLi', '3', 'From Jetty'),
-(436, 'JV00013', NULL, '139', '2020-07-22 22:46:34', '00010', 3, 'Casing 9-5/8"', '2.37', '2.63', '2.63', 'PPLi', '3', 'From Jetty'),
-(437, 'JV00013', NULL, '139', '2020-07-22 22:51:58', '00010', 3, 'Casing 9-5/8"', '2.37', '2.63', '2.63', 'PPLi', '3', 'From Jetty'),
-(438, 'JV00013', NULL, '139', '2020-07-22 22:56:35', '00010', 3, 'Casing 9-5/8"', '2.37', '2.63', '2.63', 'PPLi', '3', 'From Jetty'),
-(439, 'JV00013', NULL, '139', '2020-07-22 23:00:46', '00010', 3, 'Casing 9-5/8"', '2.37', '2.63', '2.63', 'PPLi', '3', 'From Jetty'),
-(440, 'JV00013', NULL, '139', '2020-07-22 23:05:30', '00010', 3, 'Casing 9-5/8"', '2.37', '2.63', '2.63', 'PPLi', '3', 'From Jetty'),
-(441, 'JV00013', NULL, '139', '2020-07-22 23:10:19', '00010', 3, 'Casing 9-5/8"', '2.37', '2.63', '2.63', 'PPLi', '3', 'From Jetty'),
-(442, 'JV00013', NULL, '139', '2020-07-22 23:15:59', '00010', 1, 'Casing 9-5/8"', '0.79', '0.88', '0.88', 'PPLi', '3', 'From Jetty'),
-(443, 'JV00013', NULL, '139', '2020-07-22 23:19:52', '00010', 3, 'Casing 9-5/8"', '2.37', '2.63', '2.63', 'PPLi', '3', 'From Jetty'),
-(444, 'JV00013', NULL, '139', '2020-07-22 23:24:05', '00010', 3, 'Casing 9-5/8"', '2.37', '2.63', '2.63', 'PPLi', '3', 'From Jetty'),
-(445, 'JV00013', NULL, '139', '2020-07-23 08:45:57', '00010', 6, 'Casing 9-5/8"', '4.74', '5.25', '5.25', 'PPLi', '3', 'From Yard'),
-(446, 'JV00013', NULL, '139', '2020-07-23 09:07:24', '00010', 10, 'Casing 9-5/8"', '7.90', '8.75', '8.75', 'PPLi', '3', 'From Jetty'),
-(447, 'JV00013', NULL, '139', '2020-07-23 09:36:15', '00010', 19, 'Casing 9-5/8"', '15.01', '16.63', '16.63', 'PPLi', '3', 'From Jetty'),
-(448, 'JV00013', NULL, '133', '2020-07-23 10:08:24', '00001', 3, 'Conductor 30"', '23.04', '8.35', '23.04', 'SAKA', '1', 'From Trucking'),
-(449, 'JV00013', NULL, '133', '2020-07-23 10:09:39', '00001', 3, 'Conductor 30"', '23.04', '8.35', '23.04', 'SAKA', '1', 'From Trucking'),
-(450, 'JV00013', NULL, '133', '2020-07-23 10:10:25', '00001', 3, 'Conductor 30"', '23.04', '8.35', '23.04', 'SAKA', '1', 'From Trucking'),
-(451, 'JV00013', NULL, '139', '2020-07-23 13:26:06', '00010', 71, 'Casing 9-5/8"', '56.09', '62.13', '62.13', 'PPLi', '3', 'From Jetty'),
-(452, 'JV00013', NULL, '140', '2020-07-23 14:02:51', '00011', 3, 'Pup Joint 4-1/2" TS Blue', '3.27', '1.26', '3.27', 'Terubuk', '1', 'From Jetty'),
-(453, 'JV00013', NULL, '139', '2020-07-23 14:03:25', '00010', 3, 'Casing 9-5/8"', '2.37', '2.63', '2.63', 'PPLi', '3', 'From Jetty'),
-(454, 'JV00013', NULL, '139', '2020-07-23 14:12:35', '00010', 2, 'Casing 9-5/8"', '1.58', '1.75', '1.75', 'PPLi', '3', 'From Jetty'),
-(455, 'JV00013', NULL, '139', '2020-07-23 14:16:11', '00010', 1, 'Casing 9-5/8"', '0.79', '0.88', '0.88', 'PPLi', '3', 'From Jetty'),
-(456, 'JV00013', NULL, '139', '2020-07-23 14:19:59', '00010', 1, 'Casing 9-5/8"', '0.79', '0.88', '0.88', 'PPLi', '3', 'From Jetty'),
-(457, 'JV00013', NULL, '139', '2020-07-23 14:24:08', '00010', 2, 'Casing 9-5/8"', '1.58', '1.75', '1.75', 'PPLi', '3', 'From Jetty'),
-(458, 'JV00013', NULL, '139', '2020-07-23 14:28:08', '00010', 1, 'Casing 9-5/8"', '0.79', '0.88', '0.88', 'PPLi', '3', 'From Jetty'),
-(459, 'JV00013', NULL, '139', '2020-07-23 14:32:02', '00010', 2, 'Casing 9-5/8"', '1.58', '1.75', '1.75', 'PPLi', '3', 'From Jetty'),
-(460, 'JV00013', NULL, '139', '2020-07-23 14:35:23', '00010', 1, 'Casing 9-5/8"', '0.79', '0.88', '0.88', 'PPLi', '3', 'From Jetty'),
+(386, 'JV00013', NULL, '138', '2020-07-22 14:06:16', '00009', 2, 'Casing 13-3/8\"', '3.36', '4.04', '4.04', 'PPLi', '1', 'From Jetty'),
+(387, 'JV00013', NULL, '138', '2020-07-22 14:27:36', '00009', 2, 'Casing 13-3/8\"', '3.36', '4.04', '4.04', 'PPLi', '1', 'From Jetty'),
+(388, 'JV00013', NULL, '138', '2020-07-22 14:32:24', '00009', 2, 'Casing 13-3/8\"', '3.36', '4.04', '4.04', 'PPLi', '1', 'From Jetty'),
+(389, 'JV00013', NULL, '138', '2020-07-22 14:48:25', '00009', 2, 'Casing 13-3/8\"', '3.36', '4.04', '4.04', 'PPLi', '1', 'From Jetty'),
+(390, 'JV00013', NULL, '138', '2020-07-22 14:52:56', '00009', 1, 'Casing 13-3/8\"', '1.68', '2.02', '2.02', 'PPLi', '1', 'From Jetty'),
+(391, 'JV00013', NULL, '138', '2020-07-22 14:56:51', '00009', 2, 'Casing 13-3/8\"', '3.36', '4.04', '4.04', 'PPLi', '1', 'From Jetty'),
+(392, 'JV00013', NULL, '138', '2020-07-22 15:02:54', '00009', 2, 'Casing 13-3/8\"', '3.36', '4.04', '4.04', 'PPLi', '1', 'From Jetty'),
+(393, 'JV00013', NULL, '138', '2020-07-22 15:07:57', '00009', 2, 'Casing 13-3/8\"', '3.36', '4.04', '4.04', 'PPLi', '1', 'From Jetty'),
+(394, 'JV00013', NULL, '138', '2020-07-22 15:11:06', '00009', 2, 'Casing 13-3/8\"', '3.36', '4.04', '4.04', 'PPLi', '1', 'From Jetty'),
+(395, 'JV00013', NULL, '138', '2020-07-22 15:15:22', '00009', 2, 'Casing 13-3/8\"', '3.36', '4.04', '4.04', 'PPLi', '1', 'From Jetty'),
+(396, 'JV00013', NULL, '138', '2020-07-22 15:21:18', '00009', 2, 'Casing 13-3/8\"', '3.36', '4.04', '4.04', 'PPLi', '1', 'From Jetty'),
+(397, 'JV00013', NULL, '138', '2020-07-22 15:27:13', '00009', 2, 'Casing 13-3/8\"', '3.36', '4.04', '4.04', 'PPLi', '1', 'From Jetty'),
+(398, 'JV00013', NULL, '138', '2020-07-22 15:32:01', '00009', 3, 'Casing 13-3/8\"', '5.04', '6.06', '6.06', 'PPLi', '1', 'From Jetty'),
+(399, 'JV00013', NULL, '138', '2020-07-22 15:48:34', '00009', 1, 'Casing 13-3/8\"', '1.68', '2.02', '2.02', 'PPLi', '1', 'From Jetty'),
+(400, 'JV00013', NULL, '138', '2020-07-22 15:52:36', '00009', 3, 'Casing 13-3/8\"', '5.04', '6.06', '6.06', 'PPLi', '1', 'From Jetty'),
+(401, 'JV00013', NULL, '138', '2020-07-22 15:57:22', '00009', 3, 'Casing 13-3/8\"', '5.04', '6.06', '6.06', 'PPLi', '1', 'From Jetty'),
+(402, 'JV00013', NULL, '138', '2020-07-22 16:00:15', '00009', 3, 'Casing 13-3/8\"', '5.04', '6.06', '6.06', 'PPLi', '1', 'From Jetty'),
+(403, 'JV00013', NULL, '138', '2020-07-22 16:04:00', '00009', 3, 'Casing 13-3/8\"', '5.04', '6.06', '6.06', 'PPLi', '1', 'From Jetty'),
+(404, 'JV00013', NULL, '138', '2020-07-22 16:07:43', '00009', 3, 'Casing 13-3/8\"', '5.04', '6.06', '6.06', 'PPLi', '1', 'From Jetty'),
+(405, 'JV00013', NULL, '138', '2020-07-22 16:12:13', '00009', 1, 'Casing 13-3/8\"', '1.68', '2.02', '2.02', 'PPLi', '1', 'From Jetty'),
+(406, 'JV00013', NULL, '138', '2020-07-22 16:15:56', '00009', 3, 'Casing 13-3/8\"', '5.04', '6.06', '6.06', 'PPLi', '1', 'From Jetty'),
+(407, 'JV00013', NULL, '138', '2020-07-22 16:19:11', '00009', 2, 'Casing 13-3/8\"', '3.36', '4.04', '4.04', 'PPLi', '1', 'From Jetty'),
+(408, 'JV00013', NULL, '138', '2020-07-22 16:22:37', '00009', 2, 'Casing 13-3/8\"', '3.36', '4.04', '4.04', 'PPLi', '1', 'From Jetty'),
+(409, 'JV00013', NULL, '138', '2020-07-22 16:26:31', '00009', 3, 'Casing 13-3/8\"', '5.04', '6.06', '6.06', 'PPLi', '1', 'From Jetty'),
+(410, 'JV00013', NULL, '138', '2020-07-22 16:30:44', '00009', 3, 'Casing 13-3/8\"', '5.04', '6.06', '6.06', 'PPLi', '1', 'From Jetty'),
+(411, 'JV00013', NULL, '138', '2020-07-22 16:33:43', '00009', 3, 'Casing 13-3/8\"', '5.04', '6.06', '6.06', 'PPLi', '1', 'From Jetty'),
+(412, 'JV00013', NULL, '138', '2020-07-22 16:36:57', '00009', 1, 'Casing 13-3/8\"', '1.68', '2.02', '2.02', 'PPLi', '1', 'From Jetty'),
+(413, 'JV00013', NULL, '138', '2020-07-22 16:40:45', '00009', 3, 'Casing 13-3/8\"', '5.04', '6.06', '6.06', 'PPLi', '1', 'From Jetty'),
+(414, 'JV00013', NULL, '138', '2020-07-22 16:45:14', '00009', 3, 'Casing 13-3/8\"', '5.04', '6.06', '6.06', 'PPLi', '1', 'From Jetty'),
+(415, 'JV00013', NULL, '138', '2020-07-22 16:48:48', '00009', 3, 'Casing 13-3/8\"', '5.04', '6.06', '6.06', 'PPLi', '1', 'From Jetty'),
+(416, 'JV00013', NULL, '138', '2020-07-22 16:55:11', '00009', 3, 'Casing 13-3/8\"', '5.04', '6.06', '6.06', 'PPLi', '1', 'From Jetty'),
+(417, 'JV00013', NULL, '138', '2020-07-22 17:00:03', '00009', 3, 'Casing 13-3/8\"', '5.04', '6.06', '6.06', 'PPLi', '1', 'From Jetty'),
+(418, 'JV00013', NULL, '138', '2020-07-22 17:03:20', '00009', 2, 'Casing 13-3/8\"', '3.36', '4.04', '4.04', 'PPLi', '1', 'From Jetty'),
+(419, 'JV00013', NULL, '138', '2020-07-22 17:07:08', '00009', 3, 'Casing 13-3/8\"', '5.04', '6.06', '6.06', 'PPLi', '1', 'From Jetty'),
+(420, 'JV00013', NULL, '138', '2020-07-22 17:10:32', '00009', 2, 'Casing 13-3/8\"', '3.36', '4.04', '4.04', 'PPLi', '1', 'From Jetty'),
+(421, 'JV00013', NULL, '138', '2020-07-22 17:15:34', '00009', 3, 'Casing 13-3/8\"', '5.04', '6.07', '6.07', 'PPLi', '1', 'From Jetty'),
+(422, 'JV00013', NULL, '138', '2020-07-22 17:16:52', '00009', 3, 'Casing 13-3/8\"', '5.04', '6.06', '6.06', 'PPLi', '1', 'From Jetty'),
+(423, 'JV00013', NULL, '138', '2020-07-22 17:22:23', '00009', 2, 'Casing 13-3/8\"', '3.36', '4.04', '4.04', 'PPLi', '1', 'From Jetty'),
+(424, 'JV00013', NULL, '138', '2020-07-22 20:15:53', '00009', 3, 'Casing 13-3/8\"', '5.04', '6.07', '6.07', 'PPLi', '1', 'From Jetty'),
+(425, 'JV00013', NULL, '138', '2020-07-22 20:21:57', '00009', 2, 'Casing 13-3/8\"', '3.36', '4.04', '4.04', 'PPLi', '1', 'From Jetty'),
+(426, 'JV00013', NULL, '138', '2020-07-22 20:25:49', '00009', 3, 'Casing 13-3/8\"', '5.04', '6.07', '6.07', 'PPLi', '1', 'From Jetty'),
+(427, 'JV00013', NULL, '138', '2020-07-22 20:31:14', '00009', 2, 'Casing 13-3/8\"', '3.36', '4.04', '4.04', 'PPLi', '1', 'From Jetty'),
+(428, 'JV00013', NULL, '138', '2020-07-22 20:35:52', '00009', 2, 'Casing 13-3/8\"', '3.36', '4.04', '4.04', 'PPLi', '1', 'From Jetty'),
+(429, 'JV00013', NULL, '138', '2020-07-22 20:39:36', '00009', 2, 'Casing 13-3/8\"', '3.36', '4.04', '4.04', 'PPLi', '1', 'From Jetty'),
+(430, 'JV00013', NULL, '138', '2020-07-22 20:43:10', '00009', 3, 'Casing 13-3/8\"', '5.04', '6.07', '6.07', 'PPLi', '1', 'From Jetty'),
+(431, 'JV00013', NULL, '138', '2020-07-22 20:47:01', '00009', 3, 'Casing 13-3/8\"', '5.04', '6.07', '6.07', 'PPLi', '1', 'From Jetty'),
+(432, 'JV00013', NULL, '138', '2020-07-22 20:50:48', '00009', 1, 'Casing 13-3/8\"', '1.68', '2.02', '2.02', 'PPLi', '1', 'From Jetty'),
+(433, 'JV00013', NULL, '139', '2020-07-22 22:29:55', '00010', 3, 'Casing 9-5/8\"', '2.37', '2.63', '2.63', 'PPLi', '3', 'From Jetty'),
+(434, 'JV00013', NULL, '139', '2020-07-22 22:36:18', '00010', 3, 'Casing 9-5/8\"', '2.37', '2.63', '2.63', 'PPLi', '3', 'From Jetty'),
+(435, 'JV00013', NULL, '139', '2020-07-22 22:41:24', '00010', 3, 'Casing 9-5/8\"', '2.37', '2.63', '2.63', 'PPLi', '3', 'From Jetty'),
+(436, 'JV00013', NULL, '139', '2020-07-22 22:46:34', '00010', 3, 'Casing 9-5/8\"', '2.37', '2.63', '2.63', 'PPLi', '3', 'From Jetty'),
+(437, 'JV00013', NULL, '139', '2020-07-22 22:51:58', '00010', 3, 'Casing 9-5/8\"', '2.37', '2.63', '2.63', 'PPLi', '3', 'From Jetty'),
+(438, 'JV00013', NULL, '139', '2020-07-22 22:56:35', '00010', 3, 'Casing 9-5/8\"', '2.37', '2.63', '2.63', 'PPLi', '3', 'From Jetty'),
+(439, 'JV00013', NULL, '139', '2020-07-22 23:00:46', '00010', 3, 'Casing 9-5/8\"', '2.37', '2.63', '2.63', 'PPLi', '3', 'From Jetty'),
+(440, 'JV00013', NULL, '139', '2020-07-22 23:05:30', '00010', 3, 'Casing 9-5/8\"', '2.37', '2.63', '2.63', 'PPLi', '3', 'From Jetty'),
+(441, 'JV00013', NULL, '139', '2020-07-22 23:10:19', '00010', 3, 'Casing 9-5/8\"', '2.37', '2.63', '2.63', 'PPLi', '3', 'From Jetty'),
+(442, 'JV00013', NULL, '139', '2020-07-22 23:15:59', '00010', 1, 'Casing 9-5/8\"', '0.79', '0.88', '0.88', 'PPLi', '3', 'From Jetty'),
+(443, 'JV00013', NULL, '139', '2020-07-22 23:19:52', '00010', 3, 'Casing 9-5/8\"', '2.37', '2.63', '2.63', 'PPLi', '3', 'From Jetty'),
+(444, 'JV00013', NULL, '139', '2020-07-22 23:24:05', '00010', 3, 'Casing 9-5/8\"', '2.37', '2.63', '2.63', 'PPLi', '3', 'From Jetty'),
+(445, 'JV00013', NULL, '139', '2020-07-23 08:45:57', '00010', 6, 'Casing 9-5/8\"', '4.74', '5.25', '5.25', 'PPLi', '3', 'From Yard'),
+(446, 'JV00013', NULL, '139', '2020-07-23 09:07:24', '00010', 10, 'Casing 9-5/8\"', '7.90', '8.75', '8.75', 'PPLi', '3', 'From Jetty'),
+(447, 'JV00013', NULL, '139', '2020-07-23 09:36:15', '00010', 19, 'Casing 9-5/8\"', '15.01', '16.63', '16.63', 'PPLi', '3', 'From Jetty'),
+(448, 'JV00013', NULL, '133', '2020-07-23 10:08:24', '00001', 3, 'Conductor 30\"', '23.04', '8.35', '23.04', 'SAKA', '1', 'From Trucking'),
+(449, 'JV00013', NULL, '133', '2020-07-23 10:09:39', '00001', 3, 'Conductor 30\"', '23.04', '8.35', '23.04', 'SAKA', '1', 'From Trucking'),
+(450, 'JV00013', NULL, '133', '2020-07-23 10:10:25', '00001', 3, 'Conductor 30\"', '23.04', '8.35', '23.04', 'SAKA', '1', 'From Trucking'),
+(451, 'JV00013', NULL, '139', '2020-07-23 13:26:06', '00010', 71, 'Casing 9-5/8\"', '56.09', '62.13', '62.13', 'PPLi', '3', 'From Jetty'),
+(452, 'JV00013', NULL, '140', '2020-07-23 14:02:51', '00011', 3, 'Pup Joint 4-1/2\" TS Blue', '3.27', '1.26', '3.27', 'Terubuk', '1', 'From Jetty'),
+(453, 'JV00013', NULL, '139', '2020-07-23 14:03:25', '00010', 3, 'Casing 9-5/8\"', '2.37', '2.63', '2.63', 'PPLi', '3', 'From Jetty'),
+(454, 'JV00013', NULL, '139', '2020-07-23 14:12:35', '00010', 2, 'Casing 9-5/8\"', '1.58', '1.75', '1.75', 'PPLi', '3', 'From Jetty'),
+(455, 'JV00013', NULL, '139', '2020-07-23 14:16:11', '00010', 1, 'Casing 9-5/8\"', '0.79', '0.88', '0.88', 'PPLi', '3', 'From Jetty'),
+(456, 'JV00013', NULL, '139', '2020-07-23 14:19:59', '00010', 1, 'Casing 9-5/8\"', '0.79', '0.88', '0.88', 'PPLi', '3', 'From Jetty'),
+(457, 'JV00013', NULL, '139', '2020-07-23 14:24:08', '00010', 2, 'Casing 9-5/8\"', '1.58', '1.75', '1.75', 'PPLi', '3', 'From Jetty'),
+(458, 'JV00013', NULL, '139', '2020-07-23 14:28:08', '00010', 1, 'Casing 9-5/8\"', '0.79', '0.88', '0.88', 'PPLi', '3', 'From Jetty'),
+(459, 'JV00013', NULL, '139', '2020-07-23 14:32:02', '00010', 2, 'Casing 9-5/8\"', '1.58', '1.75', '1.75', 'PPLi', '3', 'From Jetty'),
+(460, 'JV00013', NULL, '139', '2020-07-23 14:35:23', '00010', 1, 'Casing 9-5/8\"', '0.79', '0.88', '0.88', 'PPLi', '3', 'From Jetty'),
 (461, 'JV00013', NULL, '137', '2020-07-23 15:08:05', '00008', 1, 'Cutting Skip', '6.36', '1.00', '6.36', 'PPLi', '1', 'From Yard'),
 (462, 'JV00013', NULL, '137', '2020-07-23 15:14:24', '00008', 1, 'Cutting Skip', '6.36', '1.00', '6.36', 'PPLi', '1', 'From Yard'),
 (463, 'JV00013', NULL, '137', '2020-07-23 15:16:17', '00008', 1, 'Cutting Skip', '6.36', '1.00', '6.36', 'PPLi', '1', 'From Yard'),
@@ -1304,18 +554,18 @@ INSERT INTO `actual_stevedoring` (`id_as`, `id_joborder`, `id_cargo`, `id_jenis`
 (518, 'JV00013', NULL, '149', '2020-07-24 15:57:32', '00018', 1, 'Offshore Basket 13.3 SNTBA', '22.48', '12.00', '22.48', 'Terubuk', '1', 'From Jetty'),
 (519, 'JV00013', NULL, '152', '2020-07-24 16:06:53', '00030', 1, 'Offshore Basket Aoru', '6.39', '6.00', '6.39', 'Dowel Schlumberger', '1', 'From Jetty'),
 (520, 'JV00013', NULL, '137', '2020-07-24 16:24:28', '00008', 1, 'Cutting Skip', '6.36', '1.00', '6.36', 'PPLi', '1', 'From Yard'),
-(521, 'JV00013', NULL, '133', '2020-07-24 16:33:25', '00001', 1, 'Conductor 30"', '7.68', '2.78', '7.68', 'SAKA', '1', 'From Jetty'),
-(522, 'JV00013', NULL, '133', '2020-07-24 16:44:48', '00001', 1, 'Conductor 30"', '7.68', '2.78', '7.68', 'SAKA', '1', 'From Jetty'),
-(523, 'JV00013', NULL, '133', '2020-07-24 16:53:29', '00001', 1, 'Conductor 30"', '7.68', '2.78', '7.68', 'SAKA', '1', 'From Jetty'),
-(524, 'JV00013', NULL, '133', '2020-07-28 08:23:48', '00001', 11, 'Conductor 30"', '84.48', '30.61', '84.48', 'SAKA', '1', 'Not Available'),
+(521, 'JV00013', NULL, '133', '2020-07-24 16:33:25', '00001', 1, 'Conductor 30\"', '7.68', '2.78', '7.68', 'SAKA', '1', 'From Jetty'),
+(522, 'JV00013', NULL, '133', '2020-07-24 16:44:48', '00001', 1, 'Conductor 30\"', '7.68', '2.78', '7.68', 'SAKA', '1', 'From Jetty'),
+(523, 'JV00013', NULL, '133', '2020-07-24 16:53:29', '00001', 1, 'Conductor 30\"', '7.68', '2.78', '7.68', 'SAKA', '1', 'From Jetty'),
+(524, 'JV00013', NULL, '133', '2020-07-28 08:23:48', '00001', 11, 'Conductor 30\"', '84.48', '30.61', '84.48', 'SAKA', '1', 'Not Available'),
 (525, 'JV00013', NULL, '135', '2020-07-28 08:25:09', '00003', 4, 'Propane Rack', '7.52', '1.50', '7.52', 'Testing', '1', 'Not Available'),
 (526, 'JV00013', NULL, '136', '2020-07-28 08:25:34', '00005', 1, 'Radio Active Source', '6.75', '2.00', '6.75', 'Anadril', '1', 'Not Available'),
 (527, 'JV00013', NULL, '137', '2020-07-28 08:25:48', '00008', 14, 'Cutting Skip', '89.04', '14.00', '89.04', 'PPLi', '1', 'Not Available'),
-(528, 'JV00013', NULL, '142', '2020-07-28 08:26:03', '00012', 2, 'Pup Joint 4-1/2" Vam Top', '2.12', '1.26', '2.12', 'Terubuk', '1', 'Not Available'),
+(528, 'JV00013', NULL, '142', '2020-07-28 08:26:03', '00012', 2, 'Pup Joint 4-1/2\" Vam Top', '2.12', '1.26', '2.12', 'Terubuk', '1', 'Not Available'),
 (529, 'JV00013', NULL, '141', '2020-07-28 08:26:18', '00013', 38, 'Tubing Claim Protector', '37.62', '0.59', '37.62', 'Terubuk', '1', 'Not Available'),
 (530, 'JV00013', NULL, '144', '2020-07-28 08:26:44', '00014', 8, 'RE-Entry Guide\r\n\r\n\r\n', '0.96', '0.06', '0.96', 'Terubuk', '1', 'Not Available'),
 (531, 'JV00013', NULL, '145', '2020-07-28 08:27:04', '00015', 8, 'W/O Replacement DTD', '8.72', '0.15', '8.72', 'Terubuk', '1', 'Not Available'),
-(532, 'JV00013', NULL, '146', '2020-07-28 08:28:05', '00016', 1, 'Assy 4-1/2" ', '0.75', '0.24', '0.75', 'Terubuk', '1', 'Not Available'),
+(532, 'JV00013', NULL, '146', '2020-07-28 08:28:05', '00016', 1, 'Assy 4-1/2\" ', '0.75', '0.24', '0.75', 'Terubuk', '1', 'Not Available'),
 (533, 'JV00013', NULL, '148', '2020-07-28 08:29:09', '00017', 2, 'Packer VGP ', '1.48', '0.20', '1.48', 'Terubuk', '1', 'Not Available'),
 (534, 'JV00013', NULL, '150', '2020-07-28 08:30:08', '00019', 1, 'Sea Container , Jack Baker + Fishing Tools', '38.70', '12.00', '38.70', 'Terubuk', '1', 'Not Available'),
 (535, 'JV00013', NULL, '151', '2020-07-28 08:30:37', '00020', 6, '20FT Open Top Container ', '207.36', '15.00', '207.36', 'Terubuk', '1', 'Not Available'),
@@ -1582,7 +832,7 @@ INSERT INTO `actual_stevedoring` (`id_as`, `id_joborder`, `id_cargo`, `id_jenis`
 (795, 'JV00019', 'IC000458', '37', '2020-08-15 02:03:40', '1500033715', 1, 'Viking Liferaft 25 DKF + SN 12455376', '1.70', '0.90', '1.70', 'Segara Permai', '1', 'To Jetty'),
 (796, 'JV00019', 'IC000519', '108', '2020-08-15 02:05:09', '1500034064', 1, 'Liferaft Ex Belanak SN : 4582700300037', '1.00', '0.20', '1.00', 'Segara Permai', '1', 'To Jetty'),
 (797, 'JV00019', 'IC000518', '108', '2020-08-15 02:05:21', '1500034064', 1, 'Liferaft Ex Belanak SN : 2045601500278', '1.00', '0.20', '1.00', 'Segara Permai', '1', 'To Jetty'),
-(798, 'JV00019', 'IC000520', '173', '2020-08-15 02:08:49', '1500034148', 1, 'Gun Clamp Consist : 2-7/8" 30FT', '3.00', '1.00', '3.00', 'Heru Wicaksono', '1', 'To Jetty'),
+(798, 'JV00019', 'IC000520', '173', '2020-08-15 02:08:49', '1500034148', 1, 'Gun Clamp Consist : 2-7/8\" 30FT', '3.00', '1.00', '3.00', 'Heru Wicaksono', '1', 'To Jetty'),
 (799, 'JV00019', 'IC000479', '26', '2020-08-15 02:12:12', '1500033635', 1, 'Half Container 10FT SN.SFHH 3156', '10.43', '2.50', '10.43', 'Vantage  ', '1', 'To Jetty'),
 (800, 'JV00019', 'IC000488', '159', '2020-08-15 02:16:08', '1500034150', 1, 'Basket AORU 4300227', '5.82', '4.00', '5.82', 'Dowell', '1', 'To Jetty'),
 (801, 'JV00019', 'IC000456', '37', '2020-08-15 02:19:57', '1500033715', 1, 'Viking Liferaft 25 DK + SN 11178432', '1.70', '0.90', '1.70', 'Segara Permai', '1', 'To Jetty'),
@@ -1594,7 +844,7 @@ INSERT INTO `actual_stevedoring` (`id_as`, `id_joborder`, `id_cargo`, `id_jenis`
 (807, 'JV00019', 'IC000508', '147', '2020-08-15 02:32:32', '103280-348', 1, 'Power Pack lamor for multi skimmer', '1.59', '1.00', '1.59', 'OSCT', '1', 'To Jetty'),
 (808, 'JV00019', 'IC000489', '109', '2020-08-15 02:32:45', '1500034150', 2, 'D-066', '2.42', '2.00', '2.42', 'Dowell', '1', 'To Jetty'),
 (809, 'JV00019', 'IC000489', '109', '2020-08-15 02:34:49', '1500034150', 2, 'D-066', '2.42', '2.00', '2.42', 'Dowell', '1', 'To Jetty'),
-(810, 'JV00019', 'IC000521', '174', '2020-08-15 02:36:37', '1500034148', 1, 'Gun 1.56" 10FT , GUn 2-7/8" 1FT', '0.50', '1.00', '1.00', 'Heru Wicaksono', '1', 'To Jetty'),
+(810, 'JV00019', 'IC000521', '174', '2020-08-15 02:36:37', '1500034148', 1, 'Gun 1.56\" 10FT , GUn 2-7/8\" 1FT', '0.50', '1.00', '1.00', 'Heru Wicaksono', '1', 'To Jetty'),
 (811, 'JV00019', 'IC000489', '109', '2020-08-15 02:38:20', '1500034150', 2, 'D-066', '2.42', '2.00', '2.42', 'Dowell', '1', 'To Jetty'),
 (812, 'JV00019', 'IC000489', '109', '2020-08-15 02:40:33', '1500034150', 2, 'D-066', '2.42', '2.00', '2.42', 'Dowell', '1', 'To Jetty'),
 (813, 'JV00019', 'IC000489', '109', '2020-08-15 02:41:54', '1500034150', 2, 'D-066', '2.42', '2.00', '2.42', 'Dowell', '1', 'To Jetty'),
@@ -1621,8 +871,8 @@ INSERT INTO `actual_stevedoring` (`id_as`, `id_joborder`, `id_cargo`, `id_jenis`
 (834, 'JV00020', 'IC000578', '65', '2020-08-21 02:28:28', '1021376', 1, 'Empty 20FT Container CCLU 1021376', '38.30', '3.50', '38.30', 'Vantage Drilling', '1', 'To Jetty'),
 (835, 'JV00020', 'IC000576', '65', '2020-08-21 02:31:46', '1511593', 1, 'Empty 20FT Dry Container ', '38.30', '4.00', '38.30', 'Vantage Drilling', '1', 'To Jetty'),
 (836, 'JV00020', 'IC000556', '65', '2020-08-21 02:35:05', '1500043284', 1, '20FT Container CRLU 3117666', '38.30', '3.50', '38.30', 'GDSK', '1', 'To Jetty'),
-(837, 'JV00020', 'IC000583', '189', '2020-08-21 02:41:21', '0004', 1, 'Petroguard 2-3/8" 13 Jts', '2.00', '2.00', '2.00', 'Halliburton', '1', 'To Jetty'),
-(838, 'JV00020', 'IC000582', '189', '2020-08-21 02:45:53', '0003', 1, 'Petroguard Adv Mesh 2-3/8" 13 Jts', '2.00', '2.00', '2.00', 'Halliburton', '1', 'To Jetty'),
+(837, 'JV00020', 'IC000583', '189', '2020-08-21 02:41:21', '0004', 1, 'Petroguard 2-3/8\" 13 Jts', '2.00', '2.00', '2.00', 'Halliburton', '1', 'To Jetty'),
+(838, 'JV00020', 'IC000582', '189', '2020-08-21 02:45:53', '0003', 1, 'Petroguard Adv Mesh 2-3/8\" 13 Jts', '2.00', '2.00', '2.00', 'Halliburton', '1', 'To Jetty'),
 (839, 'JV00020', 'IC000571', '34', '2020-08-21 02:52:09', 'TD-CB-13-0', 1, 'Offshore Basket TD-CB-13-005', '18.72', '11.00', '18.72', 'Baker Hughes', '1', 'To Jetty'),
 (840, 'JV00020', 'IC000573', '34', '2020-08-21 02:56:56', 'TD-CB-13-0', 1, 'Offshore Basket TD-CB-13-010', '18.72', '12.00', '18.72', 'Baker Hughes', '1', 'To Jetty'),
 (841, 'JV00020', 'IC000572', '34', '2020-08-21 03:02:33', 'TD-CB-13-0', 1, 'Offshore Basket TD-CB-13-009', '18.72', '9.00', '18.72', 'Baker Hughes', '1', 'To Jetty'),
@@ -1659,7 +909,7 @@ INSERT INTO `actual_stevedoring` (`id_as`, `id_joborder`, `id_cargo`, `id_jenis`
 (872, 'JV00020', 'IC000568', '26', '2020-08-21 09:00:15', '3157', 1, 'Empty Offshore Basket FSHH 3157', '8.90', '2.10', '8.90', 'Vantage Drilling', '1', 'To Jetty'),
 (873, 'JV00020', 'IC000581', '188', '2020-08-21 09:04:23', '3301466', 1, '6M Opentop Container for grease', '18.97', '4.00', '18.97', 'SLB', '1', 'To Jetty'),
 (874, 'JV00020', 'IC000522', '175', '2020-08-21 09:06:15', '1500033669', 2, 'Material Retrofit Ex Battery Charger', '0.40', '2.00', '2.00', 'Shaftindo Jkt', '1', 'To Jetty'),
-(875, 'JV00020', 'IC000523', '177', '2020-08-21 09:07:53', '1500034136', 1, '1.6"3 Way Control Valve 8-TCV-7005', '0.35', '2.00', '2.00', 'Dnow', '1', 'To Jetty'),
+(875, 'JV00020', 'IC000523', '177', '2020-08-21 09:07:53', '1500034136', 1, '1.6\"3 Way Control Valve 8-TCV-7005', '0.35', '2.00', '2.00', 'Dnow', '1', 'To Jetty'),
 (876, 'JV00020', 'IC000549', '181', '2020-08-21 09:11:59', '1500034094', 1, 'Flow Meter weight 50 kg', '0.02', '0.05', '0.05', 'Barakuda', '1', 'To Jetty'),
 (877, 'JV00020', 'IC000562', '149', '2020-08-21 09:14:22', '1500034351', 1, 'Welding Habitat', '2.30', '0.40', '2.30', 'Chas', '1', 'To Jetty'),
 (878, 'JV00020', 'IC000559', '7', '2020-08-21 09:17:49', '0006154', 1, '10FT Container OEGU', '18.90', '3.00', '18.90', 'Medco', '1', 'To Jetty'),
@@ -1677,8 +927,8 @@ INSERT INTO `actual_stevedoring` (`id_as`, `id_joborder`, `id_cargo`, `id_jenis`
 (890, 'JV00020', 'IC000532', '178', '2020-08-21 09:48:28', '1500034116', 1, 'Cylinder Rack SN KWS GBR 83', '2.88', '1.50', '2.88', 'Sarku', '1', 'To Jetty'),
 (891, 'JV00020', 'IC000547', '61', '2020-08-21 09:48:42', '2019 - 002', 1, 'Empty Tote Tank Ex Chemical S-9284', '2.39', '0.30', '2.39', 'LBU', '1', 'To Jetty'),
 (892, 'JV00020', 'IC000565', '184', '2020-08-21 09:48:52', '16622', 1, 'Cylinder Rack BSSL 16622', '3.33', '2.00', '3.33', 'Vantage Drilling', '1', 'To Jetty'),
-(893, 'JV00020', 'IC000577', '186', '2020-08-21 09:49:40', '1300015464', 1, 'Casing 13-3/8" ', '1.98', '2.60', '2.60', 'Medco', '1', 'To Jetty'),
-(894, 'JV00020', 'IC000577', '186', '2020-08-21 09:52:44', '1300015464', 1, 'Casing 13-3/8" ', '1.98', '2.60', '2.60', 'Medco', '1', 'To Jetty'),
+(893, 'JV00020', 'IC000577', '186', '2020-08-21 09:49:40', '1300015464', 1, 'Casing 13-3/8\" ', '1.98', '2.60', '2.60', 'Medco', '1', 'To Jetty'),
+(894, 'JV00020', 'IC000577', '186', '2020-08-21 09:52:44', '1300015464', 1, 'Casing 13-3/8\" ', '1.98', '2.60', '2.60', 'Medco', '1', 'To Jetty'),
 (895, 'JV00022', 'IC000633', '181', '2020-08-23 08:32:28', '001', 1, 'Hand Carry', '0.00', '0.01', '0.01', 'Star Energy', '1', 'To Warehouse'),
 (896, 'JV00021', 'IC000622', '193', '2020-08-23 08:32:53', '8-001', 1, 'Cylinder Rack R-POI-8-001', '1.56', '0.50', '1.56', 'Ex FPSO', '1', 'To Yard'),
 (897, 'JV00022', 'IC000630', '13', '2020-08-23 08:33:59', 'SE KH-09', 1, 'Empty Bottle Hellium Rack', '3.60', '0.50', '3.60', 'Star Energy', '1', 'To Jetty'),
@@ -1924,8 +1174,8 @@ INSERT INTO `actual_stevedoring` (`id_as`, `id_joborder`, `id_cargo`, `id_jenis`
 (1136, 'JV00027', 'IC000781', '211', '2020-09-10 11:41:27', '1500034402', 1, '20FT Container H 271 C/W Lifting Set', '38.44', '10.00', '38.44', 'Istana Karang Laut', '1', 'To Trucking'),
 (1137, 'JV00027', 'IC000799', '219', '2020-09-10 13:39:29', '1500034873', 1, '10.3 M Offshore Basket SN B.1014', '17.67', '11.50', '17.67', 'Halliburton', '1', 'To Jetty'),
 (1138, 'JV00027', 'IC000798', '219', '2020-09-10 13:46:16', '1500034873', 1, '10.3 M Offshore Basket SN AORU 1030262', '17.67', '9.50', '17.67', 'Halliburton', '1', 'To Jetty'),
-(1139, 'JV00027', 'IC000809', '240', '2020-09-10 14:01:27', '1500034935', 3, 'Tubing Seamselss 4-1/2"', '0.36', '10.50', '10.50', 'Medco Energi', '1', 'To Jetty'),
-(1140, 'JV00027', 'IC000829', '244', '2020-09-10 14:17:14', '1500035027', 3, 'Drill Pipe 5-1/2"  Inches For Inspect (36 joint)', '0.60', '10.30', '10.30', 'Vantage  ', '1', 'To Jetty'),
+(1139, 'JV00027', 'IC000809', '240', '2020-09-10 14:01:27', '1500034935', 3, 'Tubing Seamselss 4-1/2\"', '0.36', '10.50', '10.50', 'Medco Energi', '1', 'To Jetty'),
+(1140, 'JV00027', 'IC000829', '244', '2020-09-10 14:17:14', '1500035027', 3, 'Drill Pipe 5-1/2\"  Inches For Inspect (36 joint)', '0.60', '10.30', '10.30', 'Vantage  ', '1', 'To Jetty'),
 (1141, 'JV00027', 'IC000796', '238', '2020-09-10 14:33:37', '1500034569', 1, 'Half Container 20FT.SN AORU 4602103', '21.06', '12.00', '21.06', 'ALTUS', '1', 'To Jetty'),
 (1142, 'JV00027', 'IC000808', '187', '2020-09-10 14:40:09', '1500034954', 1, '20FT Basket AORU 4602398', '21.14', '5.50', '21.14', 'Solar Alert', '1', 'To Jetty'),
 (1143, 'JV00027', 'IC000794', '211', '2020-09-10 14:46:23', '1500034787', 1, '20FT Open Top Container H-337', '38.44', '10.00', '38.44', 'Ferdy Saputra', '1', 'To Jetty'),
@@ -1982,7 +1232,7 @@ INSERT INTO `actual_stevedoring` (`id_as`, `id_joborder`, `id_cargo`, `id_jenis`
 (1194, 'JV00028', 'IC000894', '109', '2020-09-26 14:26:54', '1500035417', 3, 'Domestic Waste', '3.63', '0.90', '3.63', 'Medco Energi', '1', 'To Yard'),
 (1195, 'JV00028', 'IC000909', '280', '2020-09-26 14:30:57', '1500035359', 1, 'Air Compressor Atlas Copco', '28.41', '8.00', '28.41', 'Halliburton', '1', 'To Jetty'),
 (1196, 'JV00028', 'IC000931', '29', '2020-09-26 14:37:15', '0010', 1, 'D 081', '1.44', '0.50', '1.44', 'Dowell', '1', 'To Yard'),
-(1197, 'JV00028', 'IC000930', '287', '2020-09-26 14:40:49', '4303376', 1, '9-5/8" DHT Basket AORU 4303376', '10.43', '4.00', '10.43', 'Dowell', '1', 'To Yard'),
+(1197, 'JV00028', 'IC000930', '287', '2020-09-26 14:40:49', '4303376', 1, '9-5/8\" DHT Basket AORU 4303376', '10.43', '4.00', '10.43', 'Dowell', '1', 'To Yard'),
 (1198, 'JV00028', 'IC000929', '286', '2020-09-26 14:46:22', '1500035470', 1, 'Acetylene', '2.41', '0.50', '2.41', 'HOT HED', '1', 'To Yard'),
 (1199, 'JV00028', 'IC000927', '285', '2020-09-26 14:46:44', '1500035470', 1, 'Offshore Box SN TB Copi 003', '1.16', '1.00', '1.16', 'HOT HED', '1', 'To Yard'),
 (1200, 'JV00028', 'IC000928', '286', '2020-09-26 14:49:23', '1500035470', 1, 'Oxygen Rack SN AR Copi 001', '2.41', '1.50', '2.41', 'HOT HED', '1', 'To Yard'),
@@ -2027,8 +1277,8 @@ INSERT INTO `actual_stevedoring` (`id_as`, `id_joborder`, `id_cargo`, `id_jenis`
 (1239, 'JV00028', 'IC000917', '108', '2020-09-26 20:18:58', '0001', 1, 'Barablend 65740', '1.00', '1.00', '1.00', 'Halliburton', '1', 'To Yard'),
 (1240, 'JV00028', 'IC000921', '108', '2020-09-26 20:20:26', '0005', 1, 'Nutshell Medium', '1.00', '2.00', '2.00', 'Halliburton', '1', 'To Yard'),
 (1241, 'JV00028', 'IC000920', '108', '2020-09-26 20:20:49', '0004', 1, 'Nutshell Coarse', '1.00', '2.00', '2.00', 'Halliburton', '1', 'To Yard'),
-(1242, 'JV00028', 'IC000913', '283', '2020-09-26 20:29:48', '1500035401', 1, 'Tenda GCI 1388 13-3/8" CTU Conductor', '0.73', '0.50', '0.73', 'Altus', '1', 'To Yard'),
-(1243, 'JV00028', 'IC000914', '284', '2020-09-26 20:30:07', '1500035401', 1, 'Tenda 13-3/8" CTU Insert Bushing', '0.72', '0.50', '0.72', 'Altus', '1', 'To Yard'),
+(1242, 'JV00028', 'IC000913', '283', '2020-09-26 20:29:48', '1500035401', 1, 'Tenda GCI 1388 13-3/8\" CTU Conductor', '0.73', '0.50', '0.73', 'Altus', '1', 'To Yard'),
+(1243, 'JV00028', 'IC000914', '284', '2020-09-26 20:30:07', '1500035401', 1, 'Tenda 13-3/8\" CTU Insert Bushing', '0.72', '0.50', '0.72', 'Altus', '1', 'To Yard'),
 (1244, 'JV00028', 'IC000862', '258', '2020-09-26 20:39:50', '1500035105', 1, 'Camera Radography', '0.10', '0.10', '0.10', 'Spektra', '1', 'To Yard'),
 (1245, 'JV00028', 'IC000865', '269', '2020-09-26 20:40:56', '1500035067', 1, 'HOT HED Habitat Box Filled SN.HB Copi 001', '7.49', '1.50', '7.49', 'HOT HED', '1', 'To Yard'),
 (1246, 'JV00028', 'IC000869', '262', '2020-09-26 20:41:11', '1500035334', 1, 'Aircraft (Life Raft)', '0.97', '0.20', '0.97', 'Travira Air', '1', 'To Yard'),
@@ -2058,9 +1308,9 @@ INSERT INTO `actual_stevedoring` (`id_as`, `id_joborder`, `id_cargo`, `id_jenis`
 (1270, 'JV00028', 'IC000889', '290', '2020-09-26 21:14:13', '1500035181', 1, 'Tool Box SN.TB COPI 007', '2.40', '2.20', '2.40', 'HOT HED', '1', 'To Yard'),
 (1271, 'JV00028', 'IC000856', '61', '2020-09-26 21:17:19', '1500034899', 1, 'Empty Tote Tank S 9282', '2.39', '0.30', '2.39', 'LBU', '1', 'To Yard'),
 (1272, 'JV00028', 'IC000857', '61', '2020-09-26 21:17:35', '1500034899', 1, 'Empty Tote Tank S 965ND', '2.39', '0.30', '2.39', 'LBU', '1', 'To Yard'),
-(1273, 'JV00028', 'IC000850', '255', '2020-09-26 21:32:29', '1300015663', 25, 'Tubing 2-7/8" , 6-5# , GR-J-55 , EUE,R2 (3 Rack)', '1.00', '2.21', '2.21', 'PT.Selaraya Merangin Dua', '1', 'To Jetty'),
-(1274, 'JV00028', 'IC000850', '255', '2020-09-26 21:34:35', '1300015663', 25, 'Tubing 2-7/8" , 6-5# , GR-J-55 , EUE,R2 (3 Rack)', '1.00', '2.22', '2.22', 'PT.Selaraya Merangin Dua', '1', 'To Jetty'),
-(1275, 'JV00028', 'IC000850', '255', '2020-09-26 21:38:35', '1300015663', 20, 'Tubing 2-7/8" , 6-5# , GR-J-55 , EUE,R2 (3 Rack)', '0.80', '1.77', '1.77', 'PT.Selaraya Merangin Dua', '1', 'To Jetty'),
+(1273, 'JV00028', 'IC000850', '255', '2020-09-26 21:32:29', '1300015663', 25, 'Tubing 2-7/8\" , 6-5# , GR-J-55 , EUE,R2 (3 Rack)', '1.00', '2.21', '2.21', 'PT.Selaraya Merangin Dua', '1', 'To Jetty'),
+(1274, 'JV00028', 'IC000850', '255', '2020-09-26 21:34:35', '1300015663', 25, 'Tubing 2-7/8\" , 6-5# , GR-J-55 , EUE,R2 (3 Rack)', '1.00', '2.22', '2.22', 'PT.Selaraya Merangin Dua', '1', 'To Jetty'),
+(1275, 'JV00028', 'IC000850', '255', '2020-09-26 21:38:35', '1300015663', 20, 'Tubing 2-7/8\" , 6-5# , GR-J-55 , EUE,R2 (3 Rack)', '0.80', '1.77', '1.77', 'PT.Selaraya Merangin Dua', '1', 'To Jetty'),
 (1276, 'JV00029', 'IC000976', '40', '2020-10-08 08:52:33', 'OEGU-10094', 1, '10FT Freezer Food Container ', '19.13', '3.00', '19.13', 'Premier Oil', '1', 'To Yard'),
 (1277, 'JV00029', 'IC000981', '41', '2020-10-08 08:53:49', 'OEGU-12005', 1, '10FT Dry Food Container ', '18.01', '2.40', '18.01', 'BBS', '1', 'To Yard'),
 (1278, 'JV00029', 'IC000983', '307', '2020-10-08 08:55:16', 'OEGU-12015', 1, '10FT Food Container', '18.31', '3.00', '18.31', 'BBS', '1', 'To Yard'),
@@ -2381,107 +1631,390 @@ INSERT INTO `actual_stevedoring` (`id_as`, `id_joborder`, `id_cargo`, `id_jenis`
 (1592, 'JV00031', 'IC001114', '332', '2020-10-14 16:49:59', '1500035886', 1, '10 inch Jose Cutting Dryer', '0.72', '1.50', '1.50', 'Baroid', '1', 'To Jetty'),
 (1593, 'JV00031', 'IC001117', '334', '2020-10-14 16:50:10', '1500035904', 1, 'Baroid BBS Holding Tank', '3.60', '0.75', '3.60', 'Baroid', '1', 'To Jetty'),
 (1594, 'JV00031', 'IC001115', '332', '2020-10-14 16:50:18', '1500035691', 1, 'Cutting Dryer Hopper', '0.72', '0.50', '0.72', 'Baroid', '1', 'To Jetty'),
-(1595, 'JV00031', 'IC001116', '333', '2020-10-14 17:11:11', '1500035904', 1, 'Baroid BBS Panel', '0.85', '1.50', '1.50', 'Baroid', '1', 'To Jetty');
+(1595, 'JV00031', 'IC001116', '333', '2020-10-14 17:11:11', '1500035904', 1, 'Baroid BBS Panel', '0.85', '1.50', '1.50', 'Baroid', '1', 'To Jetty'),
+(1596, 'JV00032', 'IC001146', '354', '2020-10-21 10:05:33', '0011', 2, 'Cable Clamp Protector', '1.36', '0.01', '1.36', 'Petrogas', '1', 'From Jetty'),
+(1597, 'JV00032', 'IC001146', '354', '2020-10-21 10:05:52', '0011', 2, 'Cable Clamp Protector', '1.36', '0.01', '1.36', 'Petrogas', '1', 'From Jetty'),
+(1598, 'JV00032', 'IC001146', '354', '2020-10-21 10:08:16', '0011', 2, 'Cable Clamp Protector', '1.36', '0.01', '1.36', 'Petrogas', '1', 'From Jetty'),
+(1599, 'JV00032', 'IC001146', '354', '2020-10-21 10:08:58', '0011', 2, 'Cable Clamp Protector', '1.36', '0.01', '1.36', 'Petrogas', '1', 'From Jetty'),
+(1600, 'JV00032', 'IC001146', '354', '2020-10-21 10:09:31', '0011', 2, 'Cable Clamp Protector', '1.36', '0.01', '1.36', 'Petrogas', '1', 'From Jetty'),
+(1601, 'JV00032', 'IC001146', '354', '2020-10-21 10:11:08', '0011', 2, 'Cable Clamp Protector', '1.36', '0.01', '1.36', 'Petrogas', '1', 'From Jetty'),
+(1602, 'JV00032', 'IC001146', '354', '2020-10-21 10:17:32', '0011', 2, 'Cable Clamp Protector', '1.36', '0.01', '1.36', 'Petrogas', '1', 'From Jetty'),
+(1603, 'JV00032', 'IC001146', '354', '2020-10-21 10:21:49', '0011', 2, 'Cable Clamp Protector', '1.36', '0.02', '1.36', 'Petrogas', '1', 'From Jetty'),
+(1604, 'JV00032', 'IC001146', '354', '2020-10-21 10:35:12', '0011', 2, 'Cable Clamp Protector', '1.36', '0.02', '1.36', 'Petrogas', '1', 'From Jetty'),
+(1605, 'JV00032', 'IC001146', '354', '2020-10-21 11:03:09', '0011', 2, 'Cable Clamp Protector', '1.36', '0.02', '1.36', 'Petrogas', '1', 'From Jetty'),
+(1606, 'JV00032', 'IC001146', '354', '2020-10-21 11:03:20', '0011', 2, 'Cable Clamp Protector', '1.36', '0.02', '1.36', 'Petrogas', '1', 'From Jetty'),
+(1607, 'JV00032', 'IC001146', '354', '2020-10-21 11:03:30', '0011', 2, 'Cable Clamp Protector', '1.36', '0.02', '1.36', 'Petrogas', '1', 'From Jetty'),
+(1608, 'JV00032', 'IC001146', '354', '2020-10-21 11:04:12', '0011', 2, 'Cable Clamp Protector', '1.36', '0.02', '1.36', 'Petrogas', '1', 'From Jetty'),
+(1609, 'JV00032', 'IC001139', '347', '2020-10-21 11:18:47', '0004', 1, 'Tubing Head', '1.04', '0.05', '1.04', 'Petrogas', '1', 'From Jetty'),
+(1610, 'JV00032', 'IC001137', '345', '2020-10-21 11:18:57', '0002', 1, 'Kompon', '1.58', '0.04', '1.58', 'Petrogas', '1', 'From Jetty'),
+(1611, 'JV00032', 'IC001148', '356', '2020-10-21 11:19:16', '0013', 2, 'Cable Clamp Protector ', '1.34', '0.02', '1.34', 'Petrogas', '1', 'From Jetty'),
+(1612, 'JV00032', 'IC001147', '355', '2020-10-21 11:35:39', '0012', 2, 'Cable Clamp Protector', '1.10', '0.02', '1.10', 'Petrogas', '1', 'From Jetty'),
+(1613, 'JV00032', 'IC001137', '345', '2020-10-21 11:45:10', '0002', 4, 'Kompon', '6.32', '0.16', '6.32', 'Petrogas', '1', 'From Jetty'),
+(1614, 'JV00032', 'IC001147', '355', '2020-10-21 11:45:30', '0012', 2, 'Cable Clamp Protector', '1.10', '0.02', '1.10', 'Petrogas', '1', 'From Jetty'),
+(1615, 'JV00032', 'IC001145', '353', '2020-10-21 13:53:16', '0010', 1, 'X Maxtree', '2.00', '0.30', '2.00', 'Petrogas', '1', 'From Jetty'),
+(1616, 'JV00032', 'IC001147', '355', '2020-10-21 13:54:08', '0012', 2, 'Cable Clamp Protector', '1.10', '0.02', '1.10', 'Petrogas', '1', 'From Jetty'),
+(1617, 'JV00032', 'IC001147', '355', '2020-10-21 14:00:28', '0012', 2, 'Cable Clamp Protector', '1.10', '0.02', '1.10', 'Petrogas', '1', 'From Jetty'),
+(1618, 'JV00032', 'IC001151', '245', '2020-10-21 14:04:45', '0040', 1, 'Tong sampah', '0.30', '0.03', '0.30', 'Petrogas', '2', 'From Jetty'),
+(1619, 'JV00032', 'IC001151', '245', '2020-10-21 14:05:09', '0040', 2, 'Tong sampah', '0.60', '0.07', '0.60', 'Petrogas', '2', 'From Jetty'),
+(1620, 'JV00032', 'IC001152', '103', '2020-10-21 14:10:34', '00039', 2, 'Acrilix ', '3.46', '0.09', '3.46', 'Petrogas', '2', 'From Jetty'),
+(1621, 'JV00032', 'IC001146', '354', '2020-10-21 14:16:03', '0011', 2, 'Cable Clamp Protector', '1.36', '0.02', '1.36', 'Petrogas', '1', 'From Jetty'),
+(1622, 'JV00032', 'IC001146', '354', '2020-10-21 14:30:10', '0011', 2, 'Cable Clamp Protector', '1.36', '0.02', '1.36', 'Petrogas', '1', 'From Yard'),
+(1623, 'JV00032', 'IC001152', '103', '2020-10-21 14:51:52', '00039', 2, 'Acrilix ', '3.46', '0.09', '3.46', 'Petrogas', '2', 'From Jetty'),
+(1624, 'JV00032', 'IC001152', '103', '2020-10-21 14:52:01', '00039', 3, 'Acrilix ', '5.19', '0.14', '5.19', 'Petrogas', '2', 'From Jetty'),
+(1625, 'JV00032', 'IC001152', '103', '2020-10-21 14:52:18', '00039', 2, 'Acrilix ', '3.46', '0.10', '3.46', 'Petrogas', '2', 'From Jetty'),
+(1626, 'JV00032', 'IC001152', '103', '2020-10-21 14:53:13', '00039', 2, 'Acrilix ', '3.46', '0.10', '3.46', 'Petrogas', '2', 'From Jetty'),
+(1627, 'JV00032', 'IC001152', '103', '2020-10-21 15:06:06', '00039', 2, 'Acrilix ', '3.46', '0.10', '3.46', 'Petrogas', '2', 'From Jetty'),
+(1628, 'JV00032', 'IC001152', '103', '2020-10-21 15:06:18', '00039', 2, 'Acrilix ', '3.46', '0.10', '3.46', 'Petrogas', '2', 'From Jetty'),
+(1629, 'JV00032', 'IC001179', '251', '2020-10-21 15:12:38', '00039', 1, 'Mesin compresor', '0.10', '3.00', '3.00', 'Slickbar', '2', 'From Jetty'),
+(1630, 'JV00032', 'IC001143', '351', '2020-10-21 15:12:55', '0008', 2, 'Vacum Circuit Braker', '23.10', '1.00', '23.10', 'Petrogas', '1', 'From Jetty'),
+(1631, 'JV00032', 'IC001138', '346', '2020-10-21 15:13:06', '0003', 2, 'Tubing Head', '1.14', '0.08', '1.14', 'Petrogas', '1', 'From Jetty'),
+(1632, 'JV00032', 'IC001141', '349', '2020-10-21 15:13:32', '0006', 2, 'Reel cable', '17.56', '0.35', '17.56', 'Petrogas', '1', 'From Jetty'),
+(1633, 'JV00032', 'IC001138', '346', '2020-10-21 15:47:48', '0003', 1, 'Tubing Head', '0.57', '0.04', '0.57', 'Petrogas', '1', 'From Jetty'),
+(1634, 'JV00032', 'IC001138', '346', '2020-10-21 15:48:00', '0003', 2, 'Tubing Head', '1.14', '0.08', '1.14', 'Petrogas', '1', 'From Jetty'),
+(1635, 'JV00032', 'IC001138', '346', '2020-10-21 15:48:20', '0003', 2, 'Tubing Head', '1.14', '0.08', '1.14', 'Petrogas', '1', 'From Jetty'),
+(1636, 'JV00032', 'IC001145', '353', '2020-10-21 15:49:04', '0010', 1, 'X Maxtree', '2.00', '0.30', '2.00', 'Petrogas', '1', 'From Jetty'),
+(1637, 'JV00032', 'IC001138', '346', '2020-10-21 15:49:18', '0003', 2, 'Tubing Head', '1.14', '0.08', '1.14', 'Petrogas', '1', 'From Jetty'),
+(1638, 'JV00032', 'IC001138', '346', '2020-10-21 16:01:04', '0003', 2, 'Tubing Head', '1.14', '0.08', '1.14', 'Petrogas', '1', 'From Jetty'),
+(1639, 'JV00032', 'IC001138', '346', '2020-10-21 16:30:16', '0003', 2, 'Tubing Head', '1.14', '0.08', '1.14', 'Petrogas', '1', 'From Jetty'),
+(1640, 'JV00032', 'IC001140', '348', '2020-10-21 16:30:37', '0005', 2, 'Tubing Head', '3.18', '0.10', '3.18', 'Petrogas', '1', 'From Jetty'),
+(1641, 'JV00032', 'IC001138', '346', '2020-10-21 16:30:48', '0003', 2, 'Tubing Head', '1.14', '0.08', '1.14', 'Petrogas', '1', 'From Jetty'),
+(1642, 'JV00032', 'IC001139', '347', '2020-10-21 16:31:00', '0004', 1, 'Tubing Head', '1.04', '0.05', '1.04', 'Petrogas', '1', 'From Jetty'),
+(1643, 'JV00032', 'IC001149', '344', '2020-10-21 17:15:42', '0014', 2, 'Dry Container 20FT', '75.54', '5.14', '75.54', 'Petrogas', '1', 'From Jetty'),
+(1644, 'JV00032', 'IC001149', '344', '2020-10-21 17:16:02', '0014', 1, 'Dry Container 20FT', '37.77', '2.57', '37.77', 'Petrogas', '1', 'From Jetty'),
+(1645, 'JV00032', 'IC001144', '352', '2020-10-21 17:16:15', '0009', 1, 'X Maxtree', '0.81', '8.60', '8.60', 'Petrogas', '1', 'From Jetty'),
+(1646, 'JV00032', 'IC001149', '344', '2020-10-21 21:53:53', '0014', 1, 'Dry Container 20FT', '37.77', '2.57', '37.77', 'Petrogas', '1', 'From Jetty'),
+(1647, 'JV00032', 'IC001149', '344', '2020-10-21 21:54:24', '0014', 1, 'Dry Container 20FT', '37.77', '2.57', '37.77', 'Petrogas', '1', 'From Jetty'),
+(1648, 'JV00032', 'IC001206', '36', '2020-10-21 21:54:31', '0022', 1, 'Demulsifier', '1.73', '0.07', '1.73', 'Eon chemical', '2', 'From Jetty'),
+(1649, 'JV00032', 'IC001206', '36', '2020-10-21 21:54:52', '0022', 1, 'Demulsifier', '1.73', '0.07', '1.73', 'Eon chemical', '2', 'From Jetty'),
+(1650, 'JV00032', 'IC001206', '36', '2020-10-21 22:01:57', '0022', 1, 'Demulsifier', '1.73', '0.07', '1.73', 'Eon chemical', '2', 'From Jetty'),
+(1651, 'JV00032', 'IC001206', '36', '2020-10-21 22:02:32', '0022', 1, 'Demulsifier', '1.73', '0.07', '1.73', 'Eon chemical', '2', 'From Jetty'),
+(1652, 'JV00032', 'IC001206', '36', '2020-10-21 22:02:59', '0022', 1, 'Demulsifier', '1.73', '0.07', '1.73', 'Eon chemical', '2', 'From Jetty'),
+(1653, 'JV00032', 'IC001206', '36', '2020-10-21 22:03:08', '0022', 1, 'Demulsifier', '1.73', '0.07', '1.73', 'Eon chemical', '2', 'From Jetty'),
+(1654, 'JV00032', 'IC001206', '36', '2020-10-21 22:03:55', '0022', 1, 'Demulsifier', '1.73', '0.07', '1.73', 'Eon chemical', '2', 'From Jetty'),
+(1655, 'JV00032', 'IC001206', '36', '2020-10-21 22:04:37', '0022', 1, 'Demulsifier', '1.73', '0.07', '1.73', 'Eon chemical', '2', 'From Jetty'),
+(1656, 'JV00032', 'IC001206', '36', '2020-10-21 22:04:54', '0022', 1, 'Demulsifier', '1.73', '0.07', '1.73', 'Eon chemical', '2', 'From Jetty'),
+(1657, 'JV00032', 'IC001206', '36', '2020-10-21 22:05:16', '0022', 1, 'Demulsifier', '1.73', '0.07', '1.73', 'Eon chemical', '2', 'From Jetty'),
+(1658, 'JV00032', 'IC001206', '36', '2020-10-21 22:08:07', '0022', 1, 'Demulsifier', '1.73', '0.07', '1.73', 'Eon chemical', '2', 'From Jetty'),
+(1659, 'JV00032', 'IC001206', '36', '2020-10-21 22:08:16', '0022', 1, 'Demulsifier', '1.73', '0.07', '1.73', 'Eon chemical', '2', 'From Jetty'),
+(1660, 'JV00032', 'IC001207', '96', '2020-10-21 22:21:17', '0040', 1, 'Sparepart', '0.18', '0.90', '0.90', 'Petrogas', '2', 'From Jetty'),
+(1661, 'JV00032', 'IC001208', '96', '2020-10-21 22:23:37', '0040', 1, 'Consumable', '0.18', '0.70', '0.70', 'Silo maritim', '2', 'From Jetty'),
+(1662, 'JV00032', 'IC001209', '200', '2020-10-21 22:33:40', '0022', 1, 'Sparepart', '0.60', '0.70', '0.70', 'Petrogas', '2', 'From Jetty'),
+(1663, 'JV00032', 'IC001210', '251', '2020-10-21 22:49:17', '0040', 1, 'Compresor', '0.10', '1.00', '1.00', 'Petrogas', '2', 'From Jetty'),
+(1664, 'JV00032', 'IC001211', '89', '2020-10-21 22:56:42', '0040', 1, 'BOP', '1.20', '1.50', '1.50', 'Petrogas', '2', 'From Jetty'),
+(1665, 'JV00032', 'IC001141', '349', '2020-10-21 23:09:56', '0006', 1, 'Reel cable', '8.78', '0.18', '8.78', 'Petrogas', '1', 'From Jetty');
+INSERT INTO `actual_stevedoring` (`id_as`, `id_joborder`, `id_cargo`, `id_jenis`, `time_as`, `doc_no_as`, `qty_as`, `rincian_cargo`, `m3_as`, `ton_as`, `revton_as`, `remarks_as`, `row_version`, `keterangan`) VALUES
+(1666, 'JV00032', 'IC001141', '349', '2020-10-21 23:19:39', '0006', 1, 'Reel cable', '8.78', '0.18', '8.78', 'Petrogas', '1', 'From Jetty'),
+(1667, 'JV00032', 'IC001141', '349', '2020-10-21 23:32:58', '0006', 1, 'Reel cable', '8.78', '0.18', '8.78', 'Petrogas', '1', 'From Jetty'),
+(1668, 'JV00032', 'IC001141', '349', '2020-10-21 23:58:03', '0006', 1, 'Reel cable', '8.78', '0.18', '8.78', 'Petrogas', '1', 'From Jetty'),
+(1669, 'JV00032', 'IC001141', '349', '2020-10-22 03:36:00', '0006', 1, 'Reel cable', '8.78', '0.18', '8.78', 'Petrogas', '1', 'From Jetty'),
+(1670, 'JV00032', 'IC001141', '349', '2020-10-22 03:36:16', '0006', 1, 'Reel cable', '8.78', '0.18', '8.78', 'Petrogas', '1', 'From Jetty'),
+(1671, 'JV00032', 'IC001149', '344', '2020-10-22 03:36:31', '0014', 1, 'Dry Container 20FT', '37.77', '2.58', '37.77', 'Petrogas', '1', 'From Jetty'),
+(1672, 'JV00032', 'IC001149', '344', '2020-10-22 03:36:49', '0014', 1, 'Dry Container 20FT', '37.77', '2.58', '37.77', 'Petrogas', '1', 'From Jetty'),
+(1673, 'JV00032', 'IC001150', '344', '2020-10-22 03:37:28', '0015', 1, 'Reefeer Container 20FT', '37.77', '4.50', '37.77', 'Petrogas', '1', 'From Jetty'),
+(1674, 'JV00032', 'IC001150', '344', '2020-10-22 03:37:44', '0015', 1, 'Reefeer Container 20FT', '37.77', '4.50', '37.77', 'Petrogas', '1', 'From Jetty'),
+(1675, 'JV00032', 'IC001212', '313', '2020-10-22 03:43:08', '0040', 1, 'Sparepart', '1.00', '1.25', '1.25', 'Petrogas', '2', 'From Jetty'),
+(1676, 'JV00032', 'IC001212', '313', '2020-10-22 03:43:20', '0040', 1, 'Sparepart', '1.00', '1.25', '1.25', 'Petrogas', '2', 'From Jetty'),
+(1677, 'JV00032', 'IC001136', '344', '2020-10-22 03:43:34', '0001', 1, 'Container 20FT PBL', '37.77', '2.00', '37.77', 'Petrogas', '1', 'From Jetty'),
+(1678, 'JV00032', 'IC001136', '344', '2020-10-22 03:47:18', '0001', 1, 'Container 20FT PBL', '37.77', '2.00', '37.77', 'Petrogas', '1', 'From Jetty'),
+(1679, 'JV00032', 'IC001146', '354', '2020-10-22 03:47:28', '0011', 1, 'Cable Clamp Protector', '0.68', '0.01', '0.68', 'Petrogas', '1', 'From Jetty'),
+(1680, 'JV00032', 'IC001146', '354', '2020-10-22 03:47:36', '0011', 1, 'Cable Clamp Protector', '0.68', '0.01', '0.68', 'Petrogas', '1', 'From Jetty'),
+(1681, 'JV00032', 'IC001146', '354', '2020-10-22 03:47:45', '0011', 1, 'Cable Clamp Protector', '0.68', '0.01', '0.68', 'Petrogas', '1', 'From Jetty'),
+(1682, 'JV00032', 'IC001146', '354', '2020-10-22 03:50:49', '0011', 1, 'Cable Clamp Protector', '0.68', '0.01', '0.68', 'Petrogas', '1', 'From Jetty'),
+(1683, 'JV00032', 'IC001146', '354', '2020-10-22 03:50:59', '0011', 1, 'Cable Clamp Protector', '0.68', '0.01', '0.68', 'Petrogas', '1', 'From Jetty'),
+(1684, 'JV00032', 'IC001146', '354', '2020-10-22 03:51:08', '0011', 1, 'Cable Clamp Protector', '0.68', '0.01', '0.68', 'Petrogas', '1', 'From Jetty'),
+(1685, 'JV00032', 'IC001146', '354', '2020-10-22 03:51:20', '0011', 1, 'Cable Clamp Protector', '0.68', '0.01', '0.68', 'Petrogas', '1', 'From Jetty'),
+(1686, 'JV00032', 'IC001146', '354', '2020-10-22 03:51:39', '0011', 1, 'Cable Clamp Protector', '0.68', '0.01', '0.68', 'Petrogas', '1', 'From Jetty'),
+(1687, 'JV00032', 'IC001150', '344', '2020-10-22 08:48:09', '0015', 1, 'Reefeer Container 20FT', '37.77', '4.50', '37.77', 'Petrogas', '1', 'From Jetty'),
+(1688, 'JV00032', 'IC001142', '350', '2020-10-22 08:48:40', '0007', 1, 'Reel Cable', '1.43', '2.30', '2.30', 'Petrogas', '1', 'From Jetty'),
+(1689, 'JV00032', 'IC001150', '344', '2020-10-22 08:57:54', '0015', 1, 'Reefeer Container 20FT', '37.77', '4.50', '37.77', 'Petrogas', '1', 'From Jetty'),
+(1690, 'JV00032', 'IC001215', '352', '2020-10-22 09:00:30', '0040', 1, 'BOP', '0.81', '7.00', '7.00', 'Petrogas', '2', 'From Jetty'),
+(1691, 'JV00033', 'IC001180', '230', '2020-10-22 09:08:59', 'OEGU 14366', 1, '10FT Half Opentop Container OEGU 1436648', '9.56', '2.20', '9.56', 'PMB', '1', 'To Yard'),
+(1692, 'JV00034', 'IC001205', '54', '2020-10-22 09:10:38', 'SE - 12', 1, 'Half Opentop Container 10FT', '9.44', '1.50', '9.44', 'Star Energy', '1', 'To Yard'),
+(1693, 'JV00033', 'IC001156', '132', '2020-10-22 09:12:42', 'FEL-278', 1, 'Waste Skip ', '4.88', '1.60', '4.88', 'Premier Oil', '1', 'To Yard'),
+(1694, 'JV00033', 'IC001153', '359', '2020-10-22 09:15:37', '04-12-28-7', 1, 'Casing', '0.39', '0.54', '0.54', 'Premier Oil', '1', 'To Jetty'),
+(1695, 'JV00033', 'IC001154', '360', '2020-10-22 09:18:34', '00001', 1, 'Casing1', '0.69', '0.87', '0.87', 'Premier Oil', '1', 'To Jetty'),
+(1696, 'JV00033', 'IC001155', '360', '2020-10-22 09:18:50', '00002', 1, 'Casing2', '0.69', '0.87', '0.87', 'Premier Oil', '1', 'To Jetty'),
+(1697, 'JV00032', 'IC001141', '349', '2020-10-22 09:21:45', '0006', 1, 'Reel cable', '8.78', '0.18', '8.78', 'Petrogas', '1', 'From Jetty'),
+(1698, 'JV00033', 'IC001171', '232', '2020-10-22 09:22:53', 'OEG 244437', 1, '20FT Half Opentop Container ', '18.97', '2.70', '18.97', 'PMB', '1', 'To Jetty'),
+(1699, 'JV00033', 'IC001190', '365', '2020-10-22 09:29:08', 'OEGU 28800', 1, '28 Half Opentop Container OEGU 288002', '26.78', '7.80', '26.78', 'PMB', '1', 'To Jetty'),
+(1700, 'JV00033', 'IC001196', '366', '2020-10-22 09:34:14', 'KWS-GBR-12', 1, 'Cylinder Rack ID : KWS-GBR-122', '1.13', '0.30', '1.13', 'Arkadia', '1', 'To Yard'),
+(1701, 'JV00033', 'IC001192', '364', '2020-10-22 09:35:35', 'R POI-16-0', 1, 'Cylinder Rack R POI-16-010', '2.97', '0.35', '2.97', 'Premier Oil', '1', 'To Yard'),
+(1702, 'JV00033', 'IC001195', '22', '2020-10-22 09:36:46', 'R-POI-16-1', 1, 'Cylinder Rack R-POI-16-15', '2.99', '1.20', '2.99', 'Premier Oil', '1', 'To Yard'),
+(1703, 'JV00033', 'IC001193', '22', '2020-10-22 09:39:23', 'R-16-19', 1, 'Cylinder Rack Nitrogen R-16-19', '2.99', '1.50', '2.99', 'Arkadia', '1', 'To Yard'),
+(1704, 'JV00032', 'IC001141', '349', '2020-10-22 09:41:25', '0006', 1, 'Reel cable', '8.78', '0.18', '8.78', 'Petrogas', '1', 'From Jetty'),
+(1705, 'JV00034', 'IC001202', '177', '2020-10-22 09:42:00', 'R - C6 - 3', 1, 'Empty Oxygen Bottle : 001 017', '1.40', '0.70', '1.40', 'Duta Marine', '1', 'To Yard'),
+(1706, 'JV00033', 'IC001194', '22', '2020-10-22 09:43:24', 'R-POI-16-1', 1, 'Cylinder Rack R-POI-16-13', '2.99', '1.50', '2.99', 'Premier Oil', '1', 'To Yard'),
+(1707, 'JV00033', 'IC001157', '364', '2020-10-22 09:46:14', 'ID 05', 1, 'Cylinder Rack ID 05 ', '2.97', '0.35', '2.97', 'Premier Oil', '1', 'To Yard'),
+(1708, 'JV00034', 'IC001201', '177', '2020-10-22 09:47:34', 'R - 6C - 5', 1, 'Empty Oxygen Bottle : 008 031', '1.40', '0.70', '1.40', 'Duta Marine', '1', 'To Yard'),
+(1709, 'JV00034', 'IC001203', '177', '2020-10-22 09:49:28', 'R - 4C - 4', 1, 'Empty Argo & Nitrogen', '1.40', '0.70', '1.40', 'Duta Marine', '1', 'To Yard'),
+(1710, 'JV00034', 'IC001204', '177', '2020-10-22 09:50:53', 'R - 6C - 2', 1, 'Empty CO2 & Argon ', '1.40', '0.70', '1.40', 'Duta Marine', '1', 'To Yard'),
+(1711, 'JV00033', 'IC001191', '45', '2020-10-22 09:52:31', 'OHF 1213', 1, 'Empty Tote Tank OHF - 1213', '5.05', '1.40', '5.05', 'Premier Oil', '1', 'To Yard'),
+(1712, 'JV00033', 'IC001169', '362', '2020-10-22 09:56:14', 'OEG 697628', 1, 'Mini Container 697628', '8.75', '1.57', '8.75', 'Premier Oil', '1', 'To Yard'),
+(1713, 'JV00033', 'IC001183', '188', '2020-10-22 09:57:40', 'OEGU 14419', 1, 'Empty From FPSO OEGU 1441921', '9.38', '1.38', '9.38', 'Premier Oil', '1', 'To Yard'),
+(1714, 'JV00033', 'IC001182', '188', '2020-10-22 10:02:27', 'OEGU 14389', 1, 'Opentop Container  OEGU 1438980', '9.38', '1.60', '9.38', 'Premier Oil', '1', 'To Yard'),
+(1715, 'JV00033', 'IC001186', '188', '2020-10-22 10:03:27', 'OEGU 14421', 1, 'Cable Ex MERU For Junk', '9.38', '1.50', '9.38', 'Premier Oil', '1', 'To Jetty'),
+(1716, 'JV00033', 'IC001176', '188', '2020-10-22 10:06:52', 'OEG 143663', 1, 'Opentop Container OEGU 1436632', '9.38', '1.50', '9.38', 'PMB', '1', 'To Jetty'),
+(1717, 'JV00033', 'IC001178', '43', '2020-10-22 10:08:44', 'OEGU 14362', 1, '10FT Half Opentop Container OEGU 1436231', '9.34', '2.20', '9.34', 'PMB', '1', 'To Jetty'),
+(1718, 'JV00032', 'IC001214', '84', '2020-10-22 10:09:04', '0040', 3, 'Pipa', '4.26', '0.01', '4.26', 'PIL', '2', 'From Jetty'),
+(1719, 'JV00033', 'IC001185', '43', '2020-10-22 10:12:25', 'OEGU 14421', 1, '10FT Half Opentop Container OEGU 1442147', '9.34', '2.30', '9.34', 'PMB', '1', 'To Yard'),
+(1720, 'JV00032', 'IC001214', '84', '2020-10-22 10:12:56', '0040', 3, 'Pipa', '4.26', '0.01', '4.26', 'PIL', '2', 'From Jetty'),
+(1721, 'JV00033', 'IC001184', '188', '2020-10-22 10:16:10', 'OEGU 14421', 1, 'Cable Ex MERU For Junk', '9.38', '1.50', '9.38', 'Premier Oil', '1', 'To Jetty'),
+(1722, 'JV00033', 'IC001181', '230', '2020-10-22 10:16:36', 'OEGU 14374', 1, '10FT Half Opentop Container', '9.56', '1.40', '9.56', 'PMB', '1', 'To Jetty'),
+(1723, 'JV00033', 'IC001188', '232', '2020-10-22 10:21:55', 'OEGU 24457', 1, '20FT Half Opentop Container OEGU 2445768', '18.97', '2.57', '18.97', 'Premier Oil', '1', 'To Jetty'),
+(1724, 'JV00033', 'IC001187', '232', '2020-10-22 10:25:02', 'OEGU 24441', 1, '20FT Half Opentop Container OEGU 2444165', '18.97', '3.00', '18.97', 'PMB', '1', 'To Jetty'),
+(1725, 'JV00032', 'IC001214', '84', '2020-10-22 10:26:05', '0040', 3, 'Pipa', '4.26', '0.01', '4.26', 'PIL', '2', 'From Jetty'),
+(1726, 'JV00033', 'IC001189', '232', '2020-10-22 10:30:16', 'OEGU 24471', 1, '20FT Half Opentop Container OEGU 2447164', '18.97', '2.20', '18.97', 'PMB', '1', 'To Yard'),
+(1727, 'JV00033', 'IC001177', '232', '2020-10-22 10:33:26', 'OEG 244571', 1, '20FT Half Opentop COntainer OEGU 2445710', '18.97', '3.10', '18.97', 'PMB', '1', 'To Yard'),
+(1728, 'JV00034', 'IC001197', '344', '2020-10-22 10:36:23', 'TRDU 55287', 1, 'Dry Container 20FT', '37.77', '3.65', '37.77', 'Baasithu Boga Service', '1', 'To Jetty'),
+(1729, 'JV00034', 'IC001198', '344', '2020-10-22 10:41:11', 'ZONA 31579', 1, 'Reefer Container 20FT', '37.77', '3.65', '37.77', 'Baasithu Boga Service', '1', 'To Jetty'),
+(1730, 'JV00034', 'IC001200', '344', '2020-10-22 10:46:35', 'ZONA 31653', 1, 'Dry Container 20FT', '37.77', '3.65', '37.77', 'Baasithu Boga Service', '1', 'To Jetty'),
+(1731, 'JV00032', 'IC001214', '84', '2020-10-22 10:47:17', '0040', 3, 'Pipa', '4.26', '0.01', '4.26', 'PIL', '2', 'From Jetty'),
+(1732, 'JV00032', 'IC001214', '84', '2020-10-22 10:47:44', '0040', 3, 'Pipa', '4.26', '0.01', '4.26', 'PIL', '2', 'From Jetty'),
+(1733, 'JV00032', 'IC001214', '84', '2020-10-22 10:48:09', '0040', 3, 'Pipa', '4.26', '0.01', '4.26', 'PIL', '2', 'From Jetty'),
+(1734, 'JV00032', 'IC001214', '84', '2020-10-22 10:48:41', '0040', 3, 'Pipa', '4.26', '0.01', '4.26', 'PIL', '2', 'From Jetty'),
+(1735, 'JV00034', 'IC001199', '344', '2020-10-22 10:49:36', 'ZONA 28949', 1, 'Reefer Container 20FT', '37.77', '3.65', '37.77', 'Baasithu Boga Service', '1', 'To Jetty'),
+(1736, 'JV00032', 'IC001214', '84', '2020-10-22 10:51:38', '0040', 3, 'Pipa', '4.26', '0.01', '4.26', 'PIL', '2', 'From Jetty'),
+(1737, 'JV00033', 'IC001162', '362', '2020-10-22 10:53:25', 'OEG 690602', 1, 'Mini Container OEG 690602', '8.75', '1.60', '8.75', 'Premier Oil', '1', 'To Yard'),
+(1738, 'JV00033', 'IC001167', '362', '2020-10-22 10:55:06', 'OEG 697025', 1, 'Empty Mini Container OEG 697008', '8.75', '2.00', '8.75', 'Premier Oil', '1', 'To Yard'),
+(1739, 'JV00033', 'IC001161', '362', '2020-10-22 10:57:07', 'OEG 690597', 1, 'Mini Container OEG 690597', '8.75', '1.60', '8.75', 'Premier Oil', '1', 'To Yard'),
+(1740, 'JV00033', 'IC001160', '362', '2020-10-22 10:59:04', 'OEG 690592', 1, 'Mini Container OEG 690592', '8.75', '1.50', '8.75', 'Premier Oil', '1', 'To Yard'),
+(1741, 'JV00033', 'IC001159', '362', '2020-10-22 11:04:01', 'OEG 690582', 1, 'Empty Mini Container OEG 690582', '8.75', '1.57', '8.75', 'Premier Oil', '1', 'To Yard'),
+(1742, 'JV00033', 'IC001158', '362', '2020-10-22 11:06:33', 'OEG 690573', 1, 'Empty Mini Container OEG 630573', '8.75', '1.57', '8.75', 'Premier Oil', '1', 'To Yard'),
+(1743, 'JV00033', 'IC001166', '362', '2020-10-22 11:08:48', 'OEG 697008', 1, 'Empty Mini Container OEG 697008', '8.75', '1.57', '8.75', 'Premier Oil', '1', 'To Yard'),
+(1744, 'JV00033', 'IC001170', '362', '2020-10-22 11:11:07', 'OEG 697655', 1, 'Mini Container OEG 697655', '8.75', '1.60', '8.75', 'Premier Oil', '1', 'To Yard'),
+(1745, 'JV00033', 'IC001168', '362', '2020-10-22 11:13:40', 'OEG 697610', 1, 'Mini Container OEG 697610', '8.75', '1.62', '8.75', 'Premier Oil', '1', 'To Yard'),
+(1746, 'JV00033', 'IC001172', '362', '2020-10-22 11:17:37', 'OEG 690575', 1, 'Mini Container OEG 690575', '8.75', '2.20', '8.75', 'PMB', '1', 'To Yard'),
+(1747, 'JV00032', 'IC001213', '84', '2020-10-22 11:20:47', '0040', 3, 'Pipa ', '4.26', '0.25', '4.26', 'Petrogas', '2', 'From Jetty'),
+(1748, 'JV00032', 'IC001214', '84', '2020-10-22 11:21:08', '0040', 3, 'Pipa', '4.26', '0.01', '4.26', 'PIL', '2', 'From Jetty'),
+(1749, 'JV00032', 'IC001214', '84', '2020-10-22 11:21:24', '0040', 3, 'Pipa', '4.26', '0.01', '4.26', 'PIL', '2', 'From Jetty'),
+(1750, 'JV00033', 'IC001165', '362', '2020-10-22 11:21:42', 'OEG 696999', 1, 'Empty Mini Container OEG 696999', '8.75', '1.57', '8.75', 'Premier Oil', '1', 'To Yard'),
+(1751, 'JV00033', 'IC001174', '362', '2020-10-22 11:22:26', 'OEG 690600', 1, 'Mini Container OEG 690600', '8.75', '1.50', '8.75', 'PMB', '1', 'To Yard'),
+(1752, 'JV00033', 'IC001173', '362', '2020-10-22 11:23:00', 'OEG 690594', 1, 'Mini Container OEG 690594', '8.75', '1.50', '8.75', 'PMB', '1', 'To Yard'),
+(1753, 'JV00033', 'IC001164', '362', '2020-10-22 11:23:55', 'OEG 696968', 1, 'Mini Container OEG 696968', '8.75', '1.60', '8.75', 'Premier Oil', '1', 'To Yard'),
+(1754, 'JV00033', 'IC001163', '362', '2020-10-22 11:25:11', 'OEG 690605', 1, 'Mini Container OEG 690605', '8.75', '1.57', '8.75', 'Premier Oil', '1', 'To Yard'),
+(1755, 'JV00033', 'IC001175', '362', '2020-10-22 11:25:55', 'OEG 696997', 1, 'MIni Container OEG 696997', '8.75', '1.50', '8.75', 'PMB', '1', 'To Yard'),
+(1756, 'JV00032', 'IC001214', '84', '2020-10-22 11:27:34', '0040', 3, 'Pipa', '4.26', '0.01', '4.26', 'PIL', '2', 'From Jetty'),
+(1757, 'JV00032', 'IC001214', '84', '2020-10-22 11:47:52', '0040', 10, 'Pipa', '14.20', '0.05', '14.20', 'PIL', '2', 'From Jetty'),
+(1758, 'JV00032', 'IC001214', '84', '2020-10-22 13:45:05', '0040', 3, 'Pipa', '4.26', '0.01', '4.26', 'PIL', '2', 'From Jetty'),
+(1759, 'JV00032', 'IC001214', '84', '2020-10-22 13:45:26', '0040', 3, 'Pipa', '4.26', '0.02', '4.26', 'PIL', '2', 'From Jetty'),
+(1760, 'JV00032', 'IC001214', '84', '2020-10-22 13:45:38', '0040', 3, 'Pipa', '4.26', '0.02', '4.26', 'PIL', '2', 'From Jetty'),
+(1761, 'JV00032', 'IC001214', '84', '2020-10-22 13:49:22', '0040', 3, 'Pipa', '4.26', '0.02', '4.26', 'PIL', '2', 'From Jetty'),
+(1762, 'JV00032', 'IC001214', '84', '2020-10-22 13:49:31', '0040', 3, 'Pipa', '4.26', '0.02', '4.26', 'PIL', '2', 'From Jetty'),
+(1763, 'JV00032', 'IC001214', '84', '2020-10-22 13:49:43', '0040', 2, 'Pipa', '2.84', '0.01', '2.84', 'PIL', '2', 'From Jetty'),
+(1764, 'JV00032', 'IC001213', '84', '2020-10-22 14:05:21', '0040', 2, 'Pipa ', '2.84', '0.17', '2.84', 'Petrogas', '2', 'From Jetty'),
+(1765, 'JV00032', 'IC001213', '84', '2020-10-22 14:08:21', '0040', 2, 'Pipa ', '2.84', '0.17', '2.84', 'Petrogas', '2', 'From Jetty'),
+(1766, 'JV00032', 'IC001213', '84', '2020-10-22 14:14:01', '0040', 2, 'Pipa ', '2.84', '0.17', '2.84', 'Petrogas', '2', 'From Jetty'),
+(1767, 'JV00032', 'IC001213', '84', '2020-10-22 14:32:27', '0040', 2, 'Pipa ', '2.84', '0.16', '2.84', 'Petrogas', '2', 'From Jetty'),
+(1768, 'JV00032', 'IC001213', '84', '2020-10-22 14:32:43', '0040', 2, 'Pipa ', '2.84', '0.17', '2.84', 'Petrogas', '2', 'From Jetty'),
+(1769, 'JV00032', 'IC001213', '84', '2020-10-22 14:47:01', '0040', 2, 'Pipa ', '2.84', '0.16', '2.84', 'Petrogas', '2', 'From Jetty'),
+(1770, 'JV00032', 'IC001213', '84', '2020-10-22 15:07:23', '0040', 3, 'Pipa ', '4.26', '0.25', '4.26', 'Petrogas', '2', 'From Jetty'),
+(1771, 'JV00032', 'IC001217', '195', '2020-10-22 15:42:41', '0040', 2, 'Scafolding', '4.20', '0.09', '4.20', 'Petrogas', '2', 'From Jetty'),
+(1772, 'JV00032', 'IC001217', '195', '2020-10-22 15:42:51', '0040', 2, 'Scafolding', '4.20', '0.08', '4.20', 'Petrogas', '2', 'From Jetty'),
+(1773, 'JV00032', 'IC001217', '195', '2020-10-22 15:43:03', '0040', 3, 'Scafolding', '6.30', '0.13', '6.30', 'Petrogas', '2', 'From Jetty'),
+(1774, 'JV00032', 'IC001216', '96', '2020-10-22 15:46:50', '0040', 1, 'Consumable', '0.18', '0.03', '0.18', 'Petrogas', '2', 'From Jetty'),
+(1775, 'JV00032', 'IC001216', '96', '2020-10-22 15:50:27', '0040', 1, 'Consumable', '0.18', '0.03', '0.18', 'Petrogas', '2', 'From Jetty'),
+(1776, 'JV00032', 'IC001216', '96', '2020-10-22 15:54:12', '0040', 1, 'Consumable', '0.18', '0.03', '0.18', 'Petrogas', '2', 'From Jetty'),
+(1777, 'JV00032', 'IC001216', '96', '2020-10-22 16:13:51', '0040', 1, 'Consumable', '0.18', '0.03', '0.18', 'Petrogas', '2', 'From Jetty'),
+(1778, 'JV00032', 'IC001216', '96', '2020-10-22 16:17:29', '0040', 1, 'Consumable', '0.18', '0.03', '0.18', 'Petrogas', '2', 'From Jetty'),
+(1779, 'JV00032', 'IC001216', '96', '2020-10-22 16:23:58', '0040', 1, 'Consumable', '0.18', '0.03', '0.18', 'Petrogas', '2', 'From Jetty'),
+(1780, 'JV00032', 'IC001216', '96', '2020-10-22 16:24:10', '0040', 1, 'Consumable', '0.18', '0.03', '0.18', 'Petrogas', '2', 'From Jetty'),
+(1781, 'JV00032', 'IC001216', '96', '2020-10-22 16:24:21', '0040', 1, 'Consumable', '0.18', '0.03', '0.18', 'Petrogas', '2', 'From Jetty'),
+(1782, 'JV00032', 'IC001216', '96', '2020-10-22 16:24:28', '0040', 1, 'Consumable', '0.18', '0.03', '0.18', 'Petrogas', '2', 'From Jetty'),
+(1783, 'JV00032', 'IC001216', '96', '2020-10-22 16:24:36', '0040', 1, 'Consumable', '0.18', '0.03', '0.18', 'Petrogas', '2', 'From Jetty'),
+(1784, 'JV00032', 'IC001218', '142', '2020-10-22 16:34:17', '0040', 1, 'Oxygen , acetylene', '1.01', '0.20', '1.01', 'Aneka gas', '2', 'From Jetty'),
+(1785, 'JV00032', 'IC001218', '142', '2020-10-22 16:34:26', '0040', 1, 'Oxygen , acetylene', '1.01', '0.20', '1.01', 'Aneka gas', '2', 'From Jetty'),
+(1786, 'JV00032', 'IC001218', '142', '2020-10-22 18:29:09', '0040', 1, 'Oxygen , acetylene', '1.01', '0.20', '1.01', 'Aneka gas', '2', 'From Jetty'),
+(1787, 'JV00032', 'IC001218', '142', '2020-10-22 18:29:14', '0040', 1, 'Oxygen , acetylene', '1.01', '0.20', '1.01', 'Aneka gas', '2', 'From Jetty'),
+(1788, 'JV00032', 'IC001218', '142', '2020-10-22 18:29:21', '0040', 1, 'Oxygen , acetylene', '1.01', '0.20', '1.01', 'Aneka gas', '2', 'From Jetty'),
+(1789, 'JV00032', 'IC001218', '142', '2020-10-22 18:29:32', '0040', 1, 'Oxygen , acetylene', '1.01', '0.20', '1.01', 'Aneka gas', '2', 'From Jetty'),
+(1790, 'JV00032', 'IC001141', '349', '2020-10-22 18:29:43', '0006', 3, 'Reel cable', '26.34', '0.53', '26.34', 'Petrogas', '1', 'From Jetty'),
+(1791, 'JV00035', 'IC001247', '201', '2020-10-31 08:08:47', 'TAHU 70206', 1, 'Empty Food Stuff Container TAHU 7020662\r\n', '38.30', '2.50', '38.30', 'GDSK', '1', 'To Jetty'),
+(1792, 'JV00035', 'IC001242', '201', '2020-10-31 08:10:43', 'DVRU 57527', 1, 'Empty Food Stuff Container DVRU 5752702\r\n', '38.30', '3.00', '38.30', 'GDSK', '1', 'To Jetty'),
+(1793, 'JV00035', 'IC001260', '27', '2020-10-31 08:13:09', '1500036192', 1, '20FT Opentop Container H 340\r\n', '39.92', '6.00', '39.92', 'Sarku', '1', 'To Jetty'),
+(1794, 'JV00035', 'IC001244', '201', '2020-10-31 08:28:24', 'FSCU 52050', 1, 'Empty Food Stuff Container FSCU 5205070\r\n', '38.30', '3.00', '38.30', 'GDSK', '1', 'To Jetty'),
+(1795, 'JV00035', 'IC001311', '201', '2020-10-31 08:32:25', 'CCLU 10381', 1, '20\" Reef Container SN.CCLU 1038152\r\n', '38.30', '3.00', '38.30', 'Vantage', '1', 'To Jetty'),
+(1796, 'JV00035', 'IC001251', '211', '2020-10-31 08:34:10', 'FSOT 6077', 1, 'Empty 20FT Container FSOT 6077\r\n', '38.44', '5.00', '38.44', 'Mesitech Mitra', '1', 'To Yard'),
+(1797, 'JV00035', 'IC001249', '201', '2020-10-31 08:41:15', 'NYKU 75410', 1, 'Empty Food Stuff Container NYKU 7541095\r\n', '38.30', '3.00', '38.30', 'GDSK', '1', 'To Jetty'),
+(1798, 'JV00035', 'IC001250', '201', '2020-10-31 08:42:17', 'CNHU 80260', 1, 'Empty Food Stuff Container CNHU 8026028\r\n', '38.30', '3.00', '38.30', 'GDSK', '1', 'To Jetty'),
+(1799, 'JV00035', 'IC001243', '201', '2020-10-31 08:45:08', 'CCLU 10278', 1, 'Empty Food Stuff Container CCLU 1027862\r\n', '38.30', '3.00', '38.30', 'GDSK', '1', 'To Jetty'),
+(1800, 'JV00035', 'IC001245', '201', '2020-10-31 08:49:00', 'NYKU 75466', 1, 'Empty Food Stuff Container NYKU 7546651\r\n', '38.30', '3.00', '38.30', 'GDSK', '1', 'To Jetty'),
+(1801, 'JV00035', 'IC001310', '7', '2020-10-31 08:54:40', '1500036479', 1, 'Half Basket 20FT , OEGU 2438645\r\n', '18.90', '2.75', '18.90', 'Solar Energy', '1', 'To Yard'),
+(1802, 'JV00035', 'IC001253', '201', '2020-10-31 08:58:20', '1500036415', 1, '20FT opentop Container OEGU 2502765\r\n', '38.30', '3.45', '38.30', 'PMB', '1', 'To Yard'),
+(1803, 'JV00035', 'IC001236', '108', '2020-10-31 09:07:09', '1500036367', 16, '150 Jumbo Bag\r\n', '16.00', '4.80', '16.00', 'PPLi', '1', 'To Yard'),
+(1804, 'JV00035', 'IC001236', '108', '2020-10-31 09:07:54', '1500036367', 16, '150 Jumbo Bag\r\n', '16.00', '4.80', '16.00', 'PPLi', '1', 'To Yard'),
+(1805, 'JV00035', 'IC001236', '108', '2020-10-31 09:12:32', '1500036367', 16, '150 Jumbo Bag\r\n', '16.00', '4.80', '16.00', 'PPLi', '1', 'To Yard'),
+(1806, 'JV00035', 'IC001236', '108', '2020-10-31 09:16:14', '1500036367', 16, '150 Jumbo Bag\r\n', '16.00', '4.80', '16.00', 'PPLi', '1', 'To Yard'),
+(1807, 'JV00035', 'IC001236', '108', '2020-10-31 09:20:27', '1500036367', 16, '150 Jumbo Bag\r\n', '16.00', '4.80', '16.00', 'PPLi', '1', 'To Yard'),
+(1808, 'JV00035', 'IC001236', '108', '2020-10-31 09:24:33', '1500036367', 10, '150 Jumbo Bag\r\n', '10.00', '3.00', '10.00', 'PPLi', '1', 'To Yard'),
+(1809, 'JV00035', 'IC001236', '108', '2020-10-31 09:26:08', '1500036367', 10, '150 Jumbo Bag\r\n', '10.00', '3.00', '10.00', 'PPLi', '1', 'To Yard'),
+(1810, 'JV00035', 'IC001259', '27', '2020-10-31 09:34:54', '1500036192', 1, '20FT Opentop Container H 272\r\n', '39.92', '10.00', '39.92', 'Sarku', '1', 'To Yard'),
+(1811, 'JV00035', 'IC001308', '7', '2020-10-31 13:35:49', 'AORU 23000', 1, '10FT Container AORU 23000207\r\n', '18.90', '2.50', '18.90', 'Vantage', '1', 'To Yard'),
+(1812, 'JV00035', 'IC001313', '380', '2020-10-31 13:37:41', '1500036134', 1, 'Combo Winch Unit SN.12365542\r\n', '14.90', '7.00', '14.90', 'Halliburton', '1', 'To Jetty'),
+(1813, 'JV00035', 'IC001318', '383', '2020-10-31 13:39:53', '1500036134', 1, 'Power Pack SN.103238 SAP 12611498\r\n', '7.02', '5.00', '7.02', 'Halliburton', '1', 'To Jetty'),
+(1814, 'JV00035', 'IC001314', '380', '2020-10-31 13:43:19', '1500036134', 1, 'Multi Split C Long cabin SN.103386 SAP 12611497\r\n', '14.90', '8.00', '14.90', 'Halliburton', '1', 'To Jetty'),
+(1815, 'JV00035', 'IC001246', '201', '2020-10-31 13:47:55', 'TAHU 70206', 1, 'Empty Food Stuff Container TAHU 7020699\r\n', '38.30', '2.50', '38.30', 'GDSK', '1', 'To Trucking'),
+(1816, 'JV00035', 'IC001248', '7', '2020-10-31 13:51:42', 'CNHU 80288', 1, 'Empty Food Stuff Container CNHU 8028890\r\n', '18.90', '2.00', '18.90', 'GDSK', '1', 'To Jetty'),
+(1817, 'JV00035', 'IC001304', '375', '2020-10-31 13:57:36', '1500036427', 1, 'Transport Frame SN.HPS-001\r\n', '3.51', '5.00', '5.00', 'Nabors', '1', 'To Yard'),
+(1818, 'JV00035', 'IC001263', '45', '2020-10-31 13:59:54', '1500036401', 1, 'Empty Tote Tank Ex Chemical , S-9653 , TD-TT-550-045\r\n', '5.05', '0.50', '5.05', 'LBU', '1', 'To Yard'),
+(1819, 'JV00035', 'IC001262', '61', '2020-10-31 14:01:33', '1500036401', 1, 'Empty Tote Tank Ex Chemical , S-965ND , LBU-2019-0021\r\n', '2.39', '0.50', '2.39', 'LBU', '1', 'To Yard'),
+(1820, 'JV00035', 'IC001317', '108', '2020-10-31 14:03:53', '1500036134', 1, 'Basket TB 1134 04\r\n', '1.00', '1.50', '1.50', 'Halliburton', '1', 'To Yard'),
+(1821, 'JV00035', 'IC001309', '379', '2020-10-31 14:07:42', 'BSL 405', 1, 'Tank BSL 405\r\n', '12.88', '2.50', '12.88', 'Vantage', '1', 'To Yard'),
+(1822, 'JV00035', 'IC001315', '381', '2020-10-31 14:08:32', '1500036134', 1, 'Container 8FT Doghouse SN.109461464\r\n', '13.82', '4.00', '13.82', 'Halliburton', '1', 'To Yard'),
+(1823, 'JV00035', 'IC001258', '27', '2020-10-31 14:12:57', '1500036238', 1, '20FT Half Container AORU 4600163\r\n', '39.92', '7.00', '39.92', 'PT.Aneka Gas', '1', 'To Trucking'),
+(1824, 'JV00035', 'IC001261', '43', '2020-10-31 14:21:43', '1500036196', 1, '10FT Half Container SN , HOP-03/C10/08/09\r\n', '9.34', '4.00', '9.34', 'Sarku', '1', 'To Yard'),
+(1825, 'JV00035', 'IC001269', '287', '2020-10-31 14:23:27', 'AORU 43004', 1, 'Basket AORU 4300459\r\n', '10.43', '5.00', '10.43', 'Dowell Schlumberger', '1', 'To Yard'),
+(1826, 'JV00035', 'IC001241', '7', '2020-10-31 14:25:55', '1500036367', 1, '10FT Close TOP DNV Container OEGU 1201113\r\n', '18.90', '5.00', '18.90', 'PPLi', '1', 'To Yard'),
+(1827, 'JV00035', 'IC001316', '382', '2020-10-31 14:27:45', '1500036134', 1, '10FT Opentop Container SN.AORU 3301492\r\n', '19.70', '5.00', '19.70', 'Halliburton', '1', 'To Yard'),
+(1828, 'JV00035', 'IC001264', '190', '2020-10-31 14:32:19', 'OEGU 24440', 1, '20FT HH Basket OEGU 2444041\r\n', '18.93', '11.50', '18.93', 'Solar Energy', '1', 'To Jetty'),
+(1829, 'JV00035', 'IC001239', '7', '2020-10-31 14:40:00', '1500036367', 1, '10FT Close TOP Iso Container OEGU 0006180\r\n', '18.90', '5.00', '18.90', 'PPLi', '1', 'To Jetty'),
+(1830, 'JV00035', 'IC001240', '7', '2020-10-31 14:43:13', '1500036367', 1, '10FT Close TOP Iso Container OEGU 0005986\r\n', '18.90', '4.50', '18.90', 'PPLi', '1', 'To Jetty'),
+(1831, 'JV00035', 'IC001238', '201', '2020-10-31 14:50:11', '1500036354', 1, '20FT Close TOP Iso Container OEGU 0005965\r\n', '38.30', '12.00', '38.30', 'PPLi', '1', 'To Jetty'),
+(1832, 'JV00035', 'IC001237', '201', '2020-10-31 14:54:20', '1500036354', 1, '20FT Close TOP Iso Container OEGU 0006033\r\n', '38.30', '8.00', '38.30', 'PPLi', '1', 'To Jetty'),
+(1833, 'JV00035', 'IC001297', '241', '2020-10-31 15:08:01', '1500036200', 1, 'Cutting Skip SN.CMS 0051\r\n', '6.23', '6.00', '6.23', 'PPLi', '1', 'To Jetty'),
+(1834, 'JV00035', 'IC001291', '241', '2020-10-31 15:12:20', '1500036198', 1, 'Cutting Skip SN.LCK 141\r\n', '6.23', '6.00', '6.23', 'PPLi', '1', 'To Jetty'),
+(1835, 'JV00035', 'IC001295', '241', '2020-10-31 15:32:19', '1500036198', 1, 'Cutting Skip SN.LCK 754\r\n', '6.23', '5.00', '6.23', 'PPLi', '1', 'To Jetty'),
+(1836, 'JV00035', 'IC001294', '241', '2020-10-31 15:35:47', '1500036198', 1, 'Cutting Skip SN.LCK 770\r\n', '6.23', '5.00', '6.23', 'PPLi', '1', 'To Jetty'),
+(1837, 'JV00035', 'IC001296', '241', '2020-10-31 15:39:51', '1500036200', 1, 'Cutting Skip SN.LCK 134\r\n', '6.23', '3.00', '6.23', 'PPLi', '1', 'To Jetty'),
+(1838, 'JV00035', 'IC001292', '241', '2020-10-31 15:44:05', '1500036198', 1, 'Cutting Skip SN.LCK 389\r\n', '6.23', '5.00', '6.23', 'PPLi', '1', 'To Jetty'),
+(1839, 'JV00035', 'IC001298', '241', '2020-10-31 15:47:59', '1500036200', 1, 'Cutting Skip SN.CMS 0586\r\n', '6.23', '5.00', '6.23', 'PPLi', '1', 'To Jetty'),
+(1840, 'JV00035', 'IC001300', '241', '2020-10-31 19:54:03', '1500036200', 1, 'Cutting Skip SN.CMS 0180\r\n', '6.23', '5.00', '6.23', 'PPLi', '1', 'To Jetty'),
+(1841, 'JV00035', 'IC001293', '241', '2020-10-31 19:57:15', '1500036198', 1, 'Cutting Skip SN.LCK 539\r\n', '6.23', '5.00', '6.23', 'PPLi', '1', 'To Jetty'),
+(1842, 'JV00035', 'IC001299', '241', '2020-10-31 19:59:40', '1500036200', 1, 'Cutting Skip SN.CMS 0525\r\n', '6.23', '5.00', '6.23', 'PPLi', '1', 'To Jetty'),
+(1843, 'JV00035', 'IC001287', '211', '2020-10-31 20:06:12', '1500036198', 1, '20FT Opentop Container SN , PPLi 9725\r\n', '38.44', '16.00', '38.44', 'PPLi', '1', 'To Jetty'),
+(1844, 'JV00035', 'IC001289', '211', '2020-10-31 20:09:45', '1500036198', 1, '20FT Opentop Container SN , PPLi 9731\r\n', '38.44', '10.00', '38.44', 'PPLi', '1', 'To Jetty'),
+(1845, 'JV00035', 'IC001286', '211', '2020-10-31 20:13:47', '1500036198', 1, '20FT Opentop Container SN , PPLi 9730\r\n', '38.44', '12.00', '38.44', 'PPLi', '1', 'To Jetty'),
+(1846, 'JV00035', 'IC001288', '211', '2020-10-31 20:17:56', '1500036198', 1, '20FT Opentop Container SN , PPLi 9719\r\n', '38.44', '10.00', '38.44', 'PPLi', '1', 'To Jetty'),
+(1847, 'JV00035', 'IC001257', '371', '2020-10-31 20:28:06', 'XXX', 1, 'Concreate Block For Balancing\r\n', '5.18', '12.00', '12.00', 'Medco Energi', '1', 'To Jetty'),
+(1848, 'JV00035', 'IC001257', '371', '2020-10-31 20:30:34', 'XXX', 1, 'Concreate Block For Balancing\r\n', '5.18', '12.00', '12.00', 'Medco Energi', '1', 'To Jetty'),
+(1849, 'JV00035', 'IC001257', '371', '2020-10-31 20:37:56', 'XXX', 1, 'Concreate Block For Balancing\r\n', '5.18', '12.00', '12.00', 'Medco Energi', '1', 'To Jetty'),
+(1850, 'JV00035', 'IC001257', '371', '2020-10-31 20:41:40', 'XXX', 1, 'Concreate Block For Balancing\r\n', '5.18', '12.00', '12.00', 'Medco Energi', '1', 'To Jetty'),
+(1851, 'JV00035', 'IC001257', '371', '2020-10-31 20:50:20', 'XXX', 1, 'Concreate Block For Balancing\r\n', '5.18', '12.00', '12.00', 'Medco Energi', '1', 'To Jetty'),
+(1852, 'JV00035', 'IC001257', '371', '2020-10-31 20:53:13', 'XXX', 1, 'Concreate Block For Balancing\r\n', '5.18', '12.00', '12.00', 'Medco Energi', '1', 'To Jetty'),
+(1853, 'JV00035', 'IC001312', '27', '2020-10-31 20:59:08', '1500036134', 1, '20FT Opentop Container AORU 3600723\r\n', '39.92', '10.00', '39.92', 'Halliburton', '1', 'To Jetty'),
+(1854, 'JV00035', 'IC001285', '211', '2020-10-31 21:01:14', '1500036198', 1, '20FT Opentop Container SN , BSLU 9203309\r\n', '38.44', '17.00', '38.44', 'PPLi', '1', 'To Jetty'),
+(1855, 'JV00035', 'IC001290', '211', '2020-10-31 21:06:46', '1500036198', 1, '20FT Opentop Container SN , BSLU 9204310\r\n', '38.44', '9.00', '38.44', 'PPLi', '1', 'To Jetty'),
+(1856, 'JV00035', 'IC001283', '211', '2020-10-31 21:10:47', '1500036198', 1, '20FT Opentop Container SN , BSLU 9203490\r\n', '38.44', '13.00', '38.44', 'PPLi', '1', 'To Jetty'),
+(1857, 'JV00035', 'IC001284', '211', '2020-10-31 21:15:18', '1500036198', 1, '20FT Opentop Container SN , BSLU 9204141\r\n', '38.44', '17.00', '38.44', 'PPLi', '1', 'To Jetty'),
+(1858, 'JV00035', 'IC001256', '370', '2020-10-31 21:23:50', '1500036240', 1, 'Diesel Genset SN.TN WMB 05\r\n\r\n', '2.40', '1.20', '2.40', 'Medco Energi', '1', 'To Trucking'),
+(1859, 'JV00035', 'IC001302', '373', '2020-10-31 21:26:27', '1500036427', 1, 'Break Out Vise SN.AX-119295 /AP-043\r\n', '3.46', '1.50', '3.46', 'Nabors', '1', 'To Trucking'),
+(1860, 'JV00035', 'IC001234', '316', '2020-10-31 21:27:27', '1500036175', 1, 'Welding Machine c/w frame SEU-52-FWM001-24\r\n', '3.88', '1.20', '3.88', 'Sarku', '1', 'To Yard'),
+(1861, 'JV00035', 'IC001303', '374', '2020-10-31 21:28:54', '1500036427', 1, 'Frame Spider SN.C-TSF-350001\r\n', '3.53', '4.00', '4.00', 'Nabors', '1', 'To Trucking'),
+(1862, 'JV00035', 'IC001307', '378', '2020-10-31 21:31:09', '1500036427', 1, 'Hyd Power Unit , CDS , 5.5GPM,2500PSI\r\n', '4.49', '1.20', '4.49', 'Nabors', '1', 'To Yard'),
+(1863, 'JV00035', 'IC001228', '45', '2020-10-31 21:32:57', '1500036159', 1, 'Empty Tote Tank Ex Chemical , S-9282 , TT-550-013\r\n', '5.05', '0.30', '5.05', 'Medco Energi', '1', 'To Yard'),
+(1864, 'JV00035', 'IC001225', '61', '2020-10-31 21:33:22', '1500035867', 1, 'Empty Tote Tank Ex Chemical , S-965ND , LBU-2019-109\r\n', '2.39', '0.30', '2.39', 'LBU', '1', 'To Yard'),
+(1865, 'JV00035', 'IC001254', '204', '2020-10-31 21:36:53', '1500036365', 1, 'Cylinder Rack , MOCW-OXY-06\r\n', '4.21', '1.50', '4.21', 'Medco Energi', '1', 'To Yard'),
+(1866, 'JV00035', 'IC001255', '204', '2020-10-31 21:37:36', '1500036230', 1, 'Cylinder Rack SN , SEU-53-ROX016-07\r\n', '4.21', '2.00', '4.21', 'Sarku', '1', 'To Yard'),
+(1867, 'JV00035', 'IC001255', '204', '2020-10-31 21:38:41', '1500036230', 1, 'Cylinder Rack SN , SEU-53-ROX016-07\r\n', '4.21', '2.00', '4.21', 'Sarku', '1', 'To Yard'),
+(1868, 'JV00035', 'IC001301', '372', '2020-10-31 21:40:49', '1500036427', 1, 'Rig up Stand CDS 13-3/8\" SN.AX-120384 / RS-023\r\n', '6.54', '2.50', '6.54', 'Nabors', '1', 'To Yard'),
+(1869, 'JV00035', 'IC001306', '377', '2020-10-31 21:42:42', '1500036427', 1, 'Skid Frame TSK 39\r\n', '0.91', '2.00', '2.00', 'Nabors', '1', 'To Yard'),
+(1870, 'JV00035', 'IC001305', '376', '2020-10-31 21:43:12', '1500036427', 1, 'Skid SN.AX-512800 / SK-025\r\n', '0.93', '2.00', '2.00', 'Nabors', '1', 'To Yard'),
+(1871, 'JV00035', 'IC001280', '321', '2020-10-31 22:02:02', '1500036151', 1, 'D 256 (265 gal)\r\n', '1.51', '1.00', '1.51', 'Dowell Schlumberger', '1', 'To Trucking'),
+(1872, 'JV00035', 'IC001229', '61', '2020-10-31 22:12:53', '1500036159', 1, 'Empty Tote Tank Ex Chemical , S-9282 , TT-244\r\n', '2.39', '0.30', '2.39', 'Medco Energi', '1', 'To Yard'),
+(1873, 'JV00035', 'IC001265', '321', '2020-10-31 22:15:44', '1500035802', 2, 'D230 (530 gal)\r\n', '3.02', '2.00', '3.02', 'Dowell Anadrill', '1', 'To Trucking'),
+(1874, 'JV00035', 'IC001281', '321', '2020-10-31 22:17:23', '1500036151', 4, 'D 620 (506 gal)\r\n', '6.04', '4.00', '6.04', 'Dowell Schlumberger', '1', 'To Trucking'),
+(1875, 'JV00035', 'IC001277', '321', '2020-10-31 22:21:16', '1500036149', 5, 'D-155 (530 gal)\r\n', '7.55', '5.00', '7.55', 'Dowell Schlumberger', '1', 'To Trucking'),
+(1876, 'JV00035', 'IC001227', '108', '2020-10-31 22:25:45', '1300016123', 1, 'Coolant , Ultra 20L ,CCN38459582 , Ingersoll\r\n', '1.00', '0.30', '1.00', 'Medco Energi', '1', 'To Yard'),
+(1877, 'JV00035', 'IC001274', '321', '2020-10-31 22:31:08', '1500036149', 1, 'D-182\r\n', '1.51', '1.00', '1.51', 'Dowell Schlumberger', '1', 'To Trucking'),
+(1878, 'JV00035', 'IC001282', '321', '2020-10-31 22:38:01', '1500036151', 1, 'D 145A (212 gal)\r\n', '1.51', '1.00', '1.51', 'Dowell Schlumberger', '1', 'To Trucking'),
+(1879, 'JV00035', 'IC001279', '321', '2020-10-31 22:42:35', '1500036151', 2, 'B 367 (440 gal)\r\n', '3.02', '2.00', '3.02', 'Dowell Schlumberger', '1', 'To Trucking'),
+(1880, 'JV00035', 'IC001275', '321', '2020-10-31 22:43:06', '1500036149', 1, 'D-182\r\n', '1.51', '1.00', '1.51', 'Dowell Schlumberger', '1', 'To Trucking'),
+(1881, 'JV00035', 'IC001278', '321', '2020-10-31 22:44:16', '1500036149', 3, 'U 066 (440 gal)\r\n', '4.53', '3.00', '4.53', 'Dowell Schlumberger', '1', 'To Trucking'),
+(1882, 'JV00035', 'IC001273', '321', '2020-10-31 22:47:34', '1500036149', 3, 'D-124 (8800)\r\n', '4.53', '3.00', '4.53', 'Dowell Schlumberger', '1', 'To Yard'),
+(1883, 'JV00035', 'IC001276', '321', '2020-10-31 22:55:39', '1500036149', 1, 'D-182\r\n', '1.51', '1.00', '1.51', 'Dowell Schlumberger', '1', 'To Trucking'),
+(1884, 'JV00035', 'IC001268', '321', '2020-10-31 22:57:45', '1500035802', 2, 'D095 (1500 lbs)\r\n', '3.02', '2.00', '3.02', 'Dowell Anadrill', '1', 'To Trucking'),
+(1885, 'JV00035', 'IC001272', '321', '2020-10-31 22:59:17', '1500036137', 4, 'Baracarb 50\r\n', '6.04', '4.00', '6.04', 'Baroid', '1', 'To Trucking'),
+(1886, 'JV00035', 'IC001271', '321', '2020-10-31 23:02:28', '1500036137', 2, 'Baracarb 5 \r\n', '3.02', '2.00', '3.02', 'Baroid', '1', 'To Trucking'),
+(1887, 'JV00035', 'IC001270', '321', '2020-10-31 23:05:43', '1500036137', 5, 'Baracarb 5 (BigBag)\r\n', '7.55', '5.00', '7.55', 'Baroid', '1', 'To Yard'),
+(1888, 'JV00035', 'IC001267', '321', '2020-10-31 23:07:11', '1500035802', 1, 'D182 (1000 lbs)\r\n', '1.51', '1.00', '1.51', 'Dowell Anadrill', '1', 'To Trucking'),
+(1889, 'JV00035', 'IC001270', '321', '2020-10-31 23:12:13', '1500036137', 5, 'Baracarb 5 (BigBag)\r\n', '7.55', '5.00', '7.55', 'Baroid', '1', 'To Yard'),
+(1890, 'JV00035', 'IC001235', '109', '2020-10-31 23:19:12', '1500036171', 1, 'Canopus Equipment\r\n', '1.10', '0.20', '1.10', 'PT.Canopus', '1', 'To Yard'),
+(1891, 'JV00035', 'IC001270', '321', '2020-10-31 23:19:52', '1500036137', 5, 'Baracarb 5 (BigBag)\r\n', '7.55', '5.00', '7.55', 'Baroid', '1', 'To Yard'),
+(1892, 'JV00035', 'IC001230', '367', '2020-10-31 23:22:03', '1500036175', 1, 'Dyer , Portbale quivert and air hose\r\n', '0.42', '0.30', '0.42', 'Sarku', '1', 'To Yard'),
+(1893, 'JV00035', 'IC001231', '368', '2020-10-31 23:22:27', '1500036171', 1, 'Hydrolic torque pump , hydrolic hose\r\n', '0.99', '0.20', '0.99', 'Sarku', '1', 'To Yard'),
+(1894, 'JV00035', 'IC001252', '369', '2020-10-31 23:31:50', '1500036356', 1, 'Sparepart Hailey Princes\r\n', '0.00', '0.20', '0.20', 'PT.Limin Marine', '1', 'To Yard'),
+(1895, 'JV00035', 'IC001224', '45', '2020-10-31 23:38:43', '1500035867', 1, 'Empty Tote Tank Ex Chemical , S-9653 , TT-550-037\r\n', '5.05', '1.00', '5.05', 'LBU', '1', 'To Yard'),
+(1896, 'JV00035', 'IC001270', '321', '2020-10-31 23:41:44', '1500036137', 5, 'Baracarb 5 (BigBag)\r\n', '7.55', '5.00', '7.55', 'Baroid', '1', 'To Yard'),
+(1897, 'JV00035', 'IC001270', '321', '2020-10-31 23:42:23', '1500036137', 5, 'Baracarb 5 (BigBag)\r\n', '7.55', '5.00', '7.55', 'Baroid', '1', 'To Yard'),
+(1898, 'JV00035', 'IC001270', '321', '2020-10-31 23:47:44', '1500036137', 5, 'Baracarb 5 (BigBag)\r\n', '7.55', '5.00', '7.55', 'Baroid', '1', 'To Yard'),
+(1899, 'JV00035', 'IC001266', '321', '2020-10-31 23:49:16', '1500035802', 2, 'D080 (505 gal)\r\n', '3.02', '2.00', '3.02', 'Dowell Anadrill', '1', 'To Yard'),
+(1900, 'JV00035', 'IC001223', '61', '2020-10-31 23:52:08', '1500035867', 1, 'Empty Tote Tank Ex Chemical , S-965N , TT-2019-0083\r\n', '2.39', '0.30', '2.39', 'LBU', '1', 'To Yard'),
+(1901, 'JV00035', 'IC001232', '61', '2020-11-01 00:03:12', '1500036082', 2, 'MT Tote Tank Ex Chemical , Methanol\r\n', '4.78', '0.60', '4.78', 'LBU', '1', 'To Yard'),
+(1902, 'JV00035', 'IC001233', '61', '2020-11-01 00:04:39', '1500036306', 6, 'MT Tote Tank Ex Chemical , MEG\r\n', '14.34', '1.80', '14.34', 'LBU', '1', 'To Yard'),
+(1903, 'JV00035', 'IC001226', '29', '2020-11-01 00:05:03', '1500035994', 1, 'W/Box , Tools Ex Diamond Wraping\r\n', '1.44', '0.30', '1.44', 'Ade Budiono', '1', 'To Jetty'),
+(1904, 'JV00035', 'IC001219', '61', '2020-11-01 00:09:19', '1500035448', 1, 'Empty T/Tank S-965N LBU-2019-0035\r\n', '2.39', '0.30', '2.39', 'LBU', '1', 'To Yard'),
+(1905, 'JV00035', 'IC001221', '61', '2020-11-01 00:09:34', '1500035876', 1, 'Empty Tote Tank Ex Chemical , S-965ND , TT-113\r\n', '2.39', '0.30', '2.39', 'LBU', '1', 'To Yard'),
+(1906, 'JV00035', 'IC001222', '61', '2020-11-01 00:10:02', '15000867', 1, 'Empty Tote Tank Ex Chemical , S-9282 , TT-009\r\n', '2.39', '0.30', '2.39', 'LBU', '1', 'To Trucking'),
+(1907, 'JV00035', 'IC001220', '61', '2020-11-01 00:35:40', '1500035446', 2, 'Empty Tote Tank and Empty IBC Tank\r\n', '4.78', '0.50', '4.78', 'LBU', '1', 'To Yard'),
+(1908, 'JV00036', 'IC001324', '387', '2020-11-02 13:44:44', 'OEG-696643', 1, 'Davit Winch Ovalangga', '8.75', '1.60', '8.75', 'Ovalangga', '1', 'To Yard'),
+(1909, 'JV00036', 'IC001323', '387', '2020-11-02 13:46:52', 'OEG-690220', 1, 'Vapour Blast Machine MMP-1-016-0215', '8.75', '1.80', '8.75', 'Mesitech', '1', 'To Yard'),
+(1910, 'JV00036', 'IC001320', '384', '2020-11-02 13:49:03', 'PR-1201-NS', 1, 'PCE Rack 3.5\" PR-1201-NST-PR33', '8.07', '3.00', '8.07', 'Nesitor', '1', 'To Yard'),
+(1911, 'JV00036', 'IC001325', '387', '2020-11-02 13:50:50', 'OEG-697625', 1, 'Winch CH170A-23120-01P SN.0401416', '8.75', '1.50', '8.75', 'Premier Oil', '1', 'To Yard'),
+(1912, 'JV00036', 'IC001322', '386', '2020-11-02 13:52:53', 'WU-2021-NS', 1, 'Winch Unit Double Drum Cabin', '9.88', '5.00', '9.88', 'Nesitor', '1', 'To Yard'),
+(1913, 'JV00036', 'IC001319', '193', '2020-11-02 13:56:03', 'PR-1201-NS', 1, 'PCE Rack 5.5\" PR-1201-NST-PR32', '7.70', '4.00', '7.70', 'Nesitor', '1', 'To Yard'),
+(1914, 'JV00036', 'IC001321', '385', '2020-11-02 14:01:11', 'TC-0801-NS', 1, 'Tool Container TC-0801-NST-TC13', '9.02', '6.00', '9.02', 'Nesitor', '1', 'To Yard'),
+(1915, 'JV00010', 'IC001328', '244', '2020-11-19 16:15:06', '0001', 1, 'Drip pipe', '0.20', '0.50', '0.50', 'Indocaten', '1', 'To Jetty'),
+(1916, 'JV00010', 'IC001327', '228', '2020-11-19 16:15:52', '0001', 1, '20 FT Container', '36.32', '3.00', '36.32', 'Close  Container', '1', 'Not Available'),
+(1917, 'JV00010', 'IC001326', '21', '2020-11-19 16:16:13', '150034284', 1, 'Tote Tank HSD', '4.64', '2.00', '4.64', 'Tote Tank', '1', 'To Jetty'),
+(1918, 'JV00010', 'IC001328', '244', '2020-11-19 16:16:18', '0001', 2, 'Drip pipe', '0.40', '1.00', '1.00', 'Indocaten', '1', 'To Jetty');
 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `alat_berat`
+-- Table structure for table `alat_berat`
 --
 
-CREATE TABLE IF NOT EXISTS `alat_berat` (
-`id_alatberat` int(11) NOT NULL,
+CREATE TABLE `alat_berat` (
+  `id_alatberat` int NOT NULL,
   `nm_alatberat` varchar(30) NOT NULL,
+  `kapasitas_alat` decimal(6,2) DEFAULT NULL,
   `jns_alatberat` varchar(30) NOT NULL,
   `area_alatberat` varchar(20) NOT NULL,
   `status_alatberat` varchar(20) NOT NULL DEFAULT '0'
-) ENGINE=InnoDB AUTO_INCREMENT=25 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `alat_berat`
+-- Dumping data for table `alat_berat`
 --
 
-INSERT INTO `alat_berat` (`id_alatberat`, `nm_alatberat`, `jns_alatberat`, `area_alatberat`, `status_alatberat`) VALUES
-(1, 'CRANE KATO R-32 70 TON', 'CRANE', 'KJ4', '0'),
-(2, 'CRANE KATO R-33 70 TON', 'CRANE', 'KJ4', '0'),
-(3, 'CRANE KATO R-35 70 TON', 'CRANE', 'KJ4', '0'),
-(4, 'FORKLIFT KALMAR F-19 15 TON', 'FORKLIFT', 'KJ4', '0'),
-(5, 'FORKLIFT F-35  8 TON', 'FORKLIFT', 'KJ4', '0'),
-(6, 'FORKLIFT F-33  3,5 TON', 'FORKLIFT', 'KJ4', '0'),
-(7, 'FORKLIFT F-32  3,5 TON', 'FORKLIFT', 'KJ4', '0'),
-(8, 'FORKLIFT F-31 3,5 TON', 'FORKLIFT', 'KJ4', '0'),
-(9, 'TRAILER 40 FT B.9239 IL', 'TRAILER', 'KJ4', '0'),
-(10, 'TRUCK 3/4 B.9136 IT', 'TRUCK', 'KJ4', '0'),
-(11, 'FORKLIFT F-34  8 TON', 'FORKLIFT', 'KJ4', '0'),
-(12, 'Tambah CRANE KATO R-32 70 TON', 'CRANE', 'KJ4', '0'),
-(13, 'CRANE TEREX DEMAG', 'CRANE', 'KJ4', '0'),
-(14, 'CRANE TADANO', 'CRANE', 'KJ4', '0'),
-(15, 'Crane R34 cap 60 Ton', 'CRANE', 'KJ1', '0'),
-(16, 'Crane R36 cap 110 Ton', 'CRANE', 'KJ1', '0'),
-(17, 'Forklift F08 cap 2,5 Ton', 'FORKLIFT', 'KJ1', '0'),
-(18, 'Forklift F10 cap 3,5 Ton', 'FORKLIFT', 'KJ1', '0'),
-(19, 'Forklift F14 cap 3 Ton', 'FORKLIFT', 'KJ1', '0'),
-(20, 'Forklift F15 cap 3 Ton', 'FORKLIFT', 'KJ1', '0'),
-(21, 'Forklift F18 cap 8 Ton', 'FORKLIFT', 'KJ1', '0'),
-(22, 'Crane kato R32 70 ton', 'CRANE', 'KJ4', '0'),
-(23, 'F10', 'FORKLIFT', 'KJ1', '0'),
-(24, 'F10', 'FORKLIFT', 'KJ1', '0');
+INSERT INTO `alat_berat` (`id_alatberat`, `nm_alatberat`, `kapasitas_alat`, `jns_alatberat`, `area_alatberat`, `status_alatberat`) VALUES
+(1, 'CRANE KATO R-32 70 TON', '70.00', 'CRANE', 'KJ4', '0'),
+(2, 'CRANE KATO R-33 70 TON', '70.00', 'CRANE', 'KJ4', '0'),
+(3, 'CRANE KATO R-35 70 TON', '70.00', 'CRANE', 'KJ4', '0'),
+(4, 'FORKLIFT KALMAR F-19 15 TON', '15.00', 'FORKLIFT', 'KJ4', '0'),
+(5, 'FORKLIFT F-35  8 TON', '8.00', 'FORKLIFT', 'KJ4', '0'),
+(6, 'FORKLIFT F-33  3,5 TON', '3.50', 'FORKLIFT', 'KJ4', '0'),
+(7, 'FORKLIFT F-32  3,5 TON', '3.50', 'FORKLIFT', 'KJ4', '0'),
+(8, 'FORKLIFT F-31 3,5 TON', '3.50', 'FORKLIFT', 'KJ4', '0'),
+(9, 'TRAILER 40 FT B.9239 IL', NULL, 'TRAILER', 'KJ4', '0'),
+(10, 'TRUCK 3/4 B.9136 IT', NULL, 'TRUCK', 'KJ4', '0'),
+(11, 'FORKLIFT F-34  8 TON', '8.00', 'FORKLIFT', 'KJ4', '0'),
+(12, 'Tambah CRANE KATO R-32 70 TON', '70.00', 'CRANE', 'KJ4', '0'),
+(13, 'CRANE TEREX DEMAG', NULL, 'CRANE', 'KJ4', '0'),
+(14, 'CRANE TADANO', NULL, 'CRANE', 'KJ4', '0'),
+(15, 'Crane R34 cap 60 Ton', '60.00', 'CRANE', 'KJ1', '0'),
+(16, 'Crane R36 cap 110 Ton', '110.00', 'CRANE', 'KJ1', '0'),
+(17, 'Forklift F08 cap 2,5 Ton', '2.50', 'FORKLIFT', 'KJ1', '0'),
+(18, 'Forklift F10 cap 3,5 Ton', '3.50', 'FORKLIFT', 'KJ1', '0'),
+(19, 'Forklift F14 cap 3 Ton', '3.00', 'FORKLIFT', 'KJ1', '0'),
+(20, 'Forklift F15 cap 3 Ton', '3.00', 'FORKLIFT', 'KJ1', '0'),
+(21, 'Forklift F18 cap 8 Ton', '8.00', 'FORKLIFT', 'KJ1', '0'),
+(22, 'Crane kato R32 70 ton', '70.00', 'CRANE', 'KJ4', '0'),
+(23, 'F10', NULL, 'FORKLIFT', 'KJ1', '0'),
+(24, 'F10', NULL, 'FORKLIFT', 'KJ1', '0'),
+(25, 'Crane Baru', NULL, 'CRANE', 'KJ4', '0'),
+(26, 'Crane Baru', NULL, 'CRANE', 'KJ4', '0'),
+(27, 'Crane Baru', NULL, 'CRANE', 'KJ1', '0'),
+(28, 'Crane Baru', NULL, 'CRANE', 'KJ1', '0'),
+(29, 'Crane Baru', NULL, 'CRANE', 'KJ1', '0');
 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `bkk`
+-- Table structure for table `client`
 --
 
-CREATE TABLE IF NOT EXISTS `bkk` (
-`id_bkk` int(11) NOT NULL,
-  `nm_vendor` varchar(50) NOT NULL,
-  `no_bkk` varchar(30) DEFAULT NULL,
-  `tgl_pengajuan` date DEFAULT NULL,
-  `tgl_pengajuankasir` date DEFAULT NULL,
-  `tgl_verifikasimanager` date DEFAULT NULL,
-  `tgl_verifikasidireksi` date DEFAULT NULL,
-  `tgl_bkk` date NOT NULL,
-  `terbilang_bkk` varchar(100) NOT NULL,
-  `nocek_bkk` varchar(20) DEFAULT NULL,
-  `keterangan` varchar(200) NOT NULL,
-  `nilai_bkk` int(10) NOT NULL,
-  `ppn_bkk` int(10) NOT NULL DEFAULT '0',
-  `bll_bkk` int(10) NOT NULL,
-  `jml_bkk` decimal(10,0) NOT NULL,
-  `bank_tujuan` varchar(20) NOT NULL,
-  `norek_tujuan` varchar(20) NOT NULL,
-  `invoice` varchar(100) NOT NULL,
-  `id_divisi` varchar(15) NOT NULL,
-  `id_pemohon` varchar(15) NOT NULL,
-  `id_manager` varchar(15) DEFAULT NULL,
-  `id_gm` varchar(15) DEFAULT NULL,
-  `id_direktur` varchar(15) DEFAULT NULL,
-  `dari_bank` varchar(15) DEFAULT NULL,
-  `dari_rekening` varchar(15) DEFAULT NULL,
-  `doc_lpj` varchar(100) NOT NULL DEFAULT '0',
-  `status_bkk` varchar(10) NOT NULL DEFAULT '0'
-) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=latin1;
-
---
--- Dumping data untuk tabel `bkk`
---
-
-INSERT INTO `bkk` (`id_bkk`, `nm_vendor`, `no_bkk`, `tgl_pengajuan`, `tgl_pengajuankasir`, `tgl_verifikasimanager`, `tgl_verifikasidireksi`, `tgl_bkk`, `terbilang_bkk`, `nocek_bkk`, `keterangan`, `nilai_bkk`, `ppn_bkk`, `bll_bkk`, `jml_bkk`, `bank_tujuan`, `norek_tujuan`, `invoice`, `id_divisi`, `id_pemohon`, `id_manager`, `id_gm`, `id_direktur`, `dari_bank`, `dari_rekening`, `doc_lpj`, `status_bkk`) VALUES
-(1, 'PT.Hipernet Indota', '016/BKK/EN/IX/19', '2019-09-26', '2019-09-26', '2019-09-26', '2019-09-26', '2019-09-26', 'Enam Juta Lima Ratus Enam Ribu ', '-', 'PEMBAYARAN INTERNET KJ4 PRIODE AGUSTUS 2019', 5909091, 10, 6000, '6506000', 'BCA', '00086002954', 'PT_EKA_NURI-2019-09.pdf', '2', '24', '31', NULL, '32', 'MANDIRI', '1408', 'contohlpj.pdf', '7'),
-(2, 'PT. REMALA ABADI', NULL, '2019-10-01', NULL, NULL, NULL, '0000-00-00', 'Lima Juta Lima Ratus  Ribu ', NULL, 'Pembayaran Internet Hayam Wuruk Priode Oktober', 5000000, 10, 0, '5500000', 'BCA', '2303003614', 'INV_RA01-5746_01_10.19.pdf', '2', '24', NULL, NULL, NULL, NULL, NULL, '0', '3'),
-(3, 'indihome', NULL, '2019-10-07', NULL, NULL, NULL, '0000-00-00', 'Tiga Ratus Sebelas Ribu ', NULL, 'Internet KJ5', 280000, 10, 3000, '311000', 'Virtual Account Mand', '90000000123', 'indihome_9014009006304201906.pdf', '2', '24', NULL, NULL, NULL, NULL, NULL, '0', '1'),
-(4, 'PT. REMALA ABADI', NULL, '2019-10-01', '2019-10-08', '2019-10-08', '2019-10-08', '0000-00-00', 'Lima Juta Lima Ratus  Ribu ', NULL, 'Pembayaran Internet KJ4 Bandwith 10 Mbps', 5000000, 10, 0, '5500000', 'BCA', '2303003614', 'INV_RA01-5746_01_10.19.pdf', '2', '24', '31', NULL, '32', NULL, NULL, '0', '6'),
-(8, 'INDIHOME', NULL, '2019-10-01', NULL, NULL, NULL, '0000-00-00', 'Tiga Ratus Sebelas Ribu ', NULL, 'Pembayaran Internet KJ5 ', 280000, 10, 3000, '311000', 'BCA', '2303003614', 'indihome_9014009006304201910.pdf', '2', '24', NULL, NULL, NULL, NULL, NULL, '0', '1');
-
--- --------------------------------------------------------
-
---
--- Struktur dari tabel `client`
---
-
-CREATE TABLE IF NOT EXISTS `client` (
-`id_client` int(15) NOT NULL,
+CREATE TABLE `client` (
+  `id_client` int NOT NULL,
   `kd_client` varchar(10) DEFAULT NULL,
   `nm_client` varchar(50) NOT NULL,
   `nm_client2` varchar(50) DEFAULT NULL,
@@ -2490,10 +2023,10 @@ CREATE TABLE IF NOT EXISTS `client` (
   `tgl_awal` datetime DEFAULT NULL,
   `tgl_akhir` datetime DEFAULT NULL,
   `logo_client` varchar(255) DEFAULT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `client`
+-- Dumping data for table `client`
 --
 
 INSERT INTO `client` (`id_client`, `kd_client`, `nm_client`, `nm_client2`, `no_kontrak`, `deskripsi_kontrak`, `tgl_awal`, `tgl_akhir`, `logo_client`) VALUES
@@ -2508,16 +2041,16 @@ INSERT INTO `client` (`id_client`, `kd_client`, `nm_client`, `nm_client2`, `no_k
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `detail_joborder`
+-- Table structure for table `detail_joborder`
 --
 
-CREATE TABLE IF NOT EXISTS `detail_joborder` (
+CREATE TABLE `detail_joborder` (
   `id_cargo` varchar(15) NOT NULL,
-  `id_joborder` varchar(15) CHARACTER SET latin1 NOT NULL,
+  `id_joborder` varchar(15) CHARACTER SET latin1 COLLATE latin1_swedish_ci NOT NULL,
   `id_jenis` varchar(15) NOT NULL,
   `timeCargo` time DEFAULT NULL,
   `doc_no` varchar(10) NOT NULL,
-  `qty_cargo` int(5) NOT NULL,
+  `qty_cargo` int NOT NULL,
   `rincian_cargo` varchar(250) NOT NULL,
   `m3_cargo` decimal(6,2) NOT NULL,
   `ton_cargo` decimal(6,2) NOT NULL,
@@ -2530,10 +2063,11 @@ CREATE TABLE IF NOT EXISTS `detail_joborder` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data untuk tabel `detail_joborder`
+-- Dumping data for table `detail_joborder`
 --
 
 INSERT INTO `detail_joborder` (`id_cargo`, `id_joborder`, `id_jenis`, `timeCargo`, `doc_no`, `qty_cargo`, `rincian_cargo`, `m3_cargo`, `ton_cargo`, `revton_cargo`, `remarks_cargo`, `status_cargo`, `cargo_final`, `row_version`, `keterangan`) VALUES
+('', '', '', NULL, '', 0, '', '0.00', '0.00', '0.00', '', '1', '0', '1', NULL),
 ('IC000039', 'JV00001', '7', NULL, '15998', 0, 'Food STUFF  PT.STM', '0.00', '0.00', '0.00', 'Inco', '1', '0', '1', NULL),
 ('IC000040', 'JV00001', '7', NULL, '15999', 0, 'Food STUFF  PT.INDOCATEN', '0.00', '0.00', '0.00', 'Indocaten', '1', '0', '1', NULL),
 ('IC000041', 'JV00001', '6', NULL, '123', 0, 'Food Stuff', '0.00', '0.00', '0.00', 'Indocaten', '1', '0', '1', NULL),
@@ -2661,7 +2195,7 @@ INSERT INTO `detail_joborder` (`id_cargo`, `id_joborder`, `id_jenis`, `timeCargo
 ('IC000167', 'JV00011', '81', NULL, '00000', 0, 'De Press 10592470', '0.00', '0.00', '0.00', 'Baroid', '1', '0', '1', NULL),
 ('IC000168', 'JV00011', '82', NULL, '00000', 0, 'Screw Conveyor Motor Drive ', '0.00', '0.00', '0.00', 'Baroid', '1', '0', '1', NULL),
 ('IC000169', 'JV00011', '83', NULL, '00000', 0, 'Housing Auger , Greeting 3 Ea', '0.00', '0.00', '0.00', 'Baroid', '1', '0', '1', NULL),
-('IC000170', 'JV00011', '84', NULL, '00000', 0, 'Pipe Casing 10"x 2.5M , 4 Joint', '0.00', '0.00', '0.00', 'Baroid', '1', '0', '1', NULL),
+('IC000170', 'JV00011', '84', NULL, '00000', 0, 'Pipe Casing 10\"x 2.5M , 4 Joint', '0.00', '0.00', '0.00', 'Baroid', '1', '0', '1', NULL),
 ('IC000171', 'JV00011', '89', NULL, '00000', 0, 'Feed Pump , Red Colour 13426444', '0.00', '0.00', '0.00', 'Baroid', '1', '0', '1', NULL),
 ('IC000172', 'JV00011', '85', NULL, '00000', 0, 'Feed Pump , Red Colour 13426445', '0.00', '0.00', '0.00', 'Baroid', '1', '0', '1', NULL),
 ('IC000173', 'JV00011', '86', NULL, '00000', 0, 'Twin Pod 11566506', '0.00', '0.00', '0.00', 'Baroid', '1', '0', '1', NULL),
@@ -2713,7 +2247,7 @@ INSERT INTO `detail_joborder` (`id_cargo`, `id_joborder`, `id_jenis`, `timeCargo
 ('IC000220', 'JV00012', '113', NULL, '1500032849', 0, 'Material Gas Booster 1Bh/Box', '0.00', '0.00', '0.00', 'Sembodo Suroso', '1', '0', '1', NULL),
 ('IC000221', 'JV00012', '100', NULL, '1500032342', 0, 'White Container Consist Of Pick Up Box', '0.00', '0.00', '0.00', 'PT.CHAS', '1', '0', '1', NULL),
 ('IC000222', 'JV00012', '100', NULL, '1500033435', 0, '20FT Close TOP ISO Container OEGU 000604-6', '0.00', '0.00', '0.00', 'Medco Energi', '1', '0', '1', NULL),
-('IC000223', 'JV00012', '115', NULL, '1300014948', 0, 'Connector 3/8" Tube OD X 1/2" MNPT 316', '0.00', '0.00', '0.00', 'Medco Energi', '1', '0', '1', NULL),
+('IC000223', 'JV00012', '115', NULL, '1300014948', 0, 'Connector 3/8\" Tube OD X 1/2\" MNPT 316', '0.00', '0.00', '0.00', 'Medco Energi', '1', '0', '1', NULL),
 ('IC000224', 'JV00012', '106', NULL, '1500033435', 0, '10FT Close TOP ISO Container OEGU 0006133', '0.00', '0.00', '0.00', 'Medco Energi', '1', '0', '1', NULL),
 ('IC000225', 'JV00012', '10', NULL, '1500033433', 0, 'Argon For Refill', '0.00', '0.00', '0.00', 'Medco Energi', '1', '0', '1', NULL),
 ('IC000226', 'JV00012', '100', NULL, '1500033386', 0, 'Empty Opentop Container 20FT SN.OEGU 2501861', '0.00', '0.00', '0.00', 'Medco Energi', '1', '0', '1', NULL),
@@ -2734,11 +2268,11 @@ INSERT INTO `detail_joborder` (`id_cargo`, `id_joborder`, `id_jenis`, `timeCargo
 ('IC000241', 'JV00012', '100', NULL, '1034331', 0, '20FT Container CCLU 1034331', '0.00', '0.00', '0.00', 'Vantage Drilling', '1', '0', '1', NULL),
 ('IC000242', 'JV00012', '125', NULL, '00002', 0, 'Mini Container c/o Coring Equipment', '0.00', '0.00', '0.00', 'NOV', '1', '0', '1', NULL),
 ('IC000243', 'JV00012', '126', NULL, '1500033441', 0, 'Basket TD-CB-8-006', '0.00', '0.00', '0.00', 'Schlumberger', '1', '0', '1', NULL),
-('IC000244', 'JV00012', '127', NULL, '1703790', 0, 'Drilling JAR 7" SN.1703790-1', '0.00', '0.00', '0.00', 'Baker Huges', '1', '0', '1', NULL),
-('IC000245', 'JV00012', '127', NULL, '34934421', 0, 'Drilling JAR 7" SN.3493442-1', '0.00', '0.00', '0.00', 'Baker Huges', '1', '0', '1', NULL),
+('IC000244', 'JV00012', '127', NULL, '1703790', 0, 'Drilling JAR 7\" SN.1703790-1', '0.00', '0.00', '0.00', 'Baker Huges', '1', '0', '1', NULL),
+('IC000245', 'JV00012', '127', NULL, '34934421', 0, 'Drilling JAR 7\" SN.3493442-1', '0.00', '0.00', '0.00', 'Baker Huges', '1', '0', '1', NULL),
 ('IC000246', 'JV00012', '128', NULL, '1500033358', 0, 'Wooden Box COnsist off : Lifting Beam ID.SLB 17093', '0.00', '0.00', '0.00', 'Heru Wicaksono', '1', '0', '1', NULL),
 ('IC000247', 'JV00012', '6', NULL, 'Star energ', 0, 'Kontener', '0.00', '0.00', '0.00', 'Star energy', '1', '0', '2', NULL),
-('IC000248', 'JV00013', '133', NULL, '00001', 0, 'Conductor 30"', '0.00', '0.00', '0.00', 'SAKA', '1', '0', '1', NULL),
+('IC000248', 'JV00013', '133', NULL, '00001', 0, 'Conductor 30\"', '0.00', '0.00', '0.00', 'SAKA', '1', '0', '1', NULL),
 ('IC000249', 'JV00013', '134', NULL, '00002', 0, 'OST Basket', '0.00', '0.00', '0.00', 'Testing', '1', '0', '1', NULL),
 ('IC000250', 'JV00013', '135', NULL, '00003', 0, 'Propane Rack', '0.00', '0.00', '0.00', 'Testing', '1', '0', '1', NULL),
 ('IC000251', 'JV00013', '93', NULL, '00004', 0, 'Offshore basket , 2 Ea Telescope', '0.00', '0.00', '0.00', 'Anadril', '1', '0', '1', NULL),
@@ -2746,14 +2280,14 @@ INSERT INTO `detail_joborder` (`id_cargo`, `id_joborder`, `id_jenis`, `timeCargo
 ('IC000253', 'JV00013', '93', NULL, '00006', 0, 'Offshore Basket 2Ea Mud Motor', '0.00', '0.00', '0.00', 'Anadril', '1', '0', '1', NULL),
 ('IC000254', 'JV00013', '93', NULL, '00007', 0, 'Offshore Basket , Dump Irom', '0.00', '0.00', '0.00', 'Anadril', '1', '0', '1', NULL),
 ('IC000255', 'JV00013', '137', NULL, '00008', 0, 'Cutting Skip', '0.00', '0.00', '0.00', 'PPLi', '1', '0', '1', NULL),
-('IC000256', 'JV00013', '138', NULL, '00009', 0, 'Casing 13-3/8"', '0.00', '0.00', '0.00', 'PPLi', '1', '0', '1', NULL),
-('IC000257', 'JV00013', '139', NULL, '00010', 0, 'Casing 9-5/8"', '0.00', '0.00', '0.00', 'PPLi', '1', '0', '3', NULL),
-('IC000258', 'JV00013', '140', NULL, '00011', 0, 'Pup Joint 4-1/2" TS Blue', '0.00', '0.00', '0.00', 'Terubuk', '1', '0', '1', NULL),
-('IC000259', 'JV00013', '142', NULL, '00012', 0, 'Pup Joint 4-1/2" Vam Top', '0.00', '0.00', '0.00', 'Terubuk', '1', '0', '1', NULL),
+('IC000256', 'JV00013', '138', NULL, '00009', 0, 'Casing 13-3/8\"', '0.00', '0.00', '0.00', 'PPLi', '1', '0', '1', NULL),
+('IC000257', 'JV00013', '139', NULL, '00010', 0, 'Casing 9-5/8\"', '0.00', '0.00', '0.00', 'PPLi', '1', '0', '3', NULL),
+('IC000258', 'JV00013', '140', NULL, '00011', 0, 'Pup Joint 4-1/2\" TS Blue', '0.00', '0.00', '0.00', 'Terubuk', '1', '0', '1', NULL),
+('IC000259', 'JV00013', '142', NULL, '00012', 0, 'Pup Joint 4-1/2\" Vam Top', '0.00', '0.00', '0.00', 'Terubuk', '1', '0', '1', NULL),
 ('IC000260', 'JV00013', '141', NULL, '00013', 0, 'Tubing Claim Protector', '0.00', '0.00', '0.00', 'Terubuk', '1', '0', '1', NULL),
 ('IC000261', 'JV00013', '144', NULL, '00014', 0, 'RE-Entry Guide\r\n\r\n\r\n', '0.00', '0.00', '0.00', 'Terubuk', '1', '0', '1', NULL),
 ('IC000262', 'JV00013', '145', NULL, '00015', 0, 'W/O Replacement DTD', '0.00', '0.00', '0.00', 'Terubuk', '1', '0', '1', NULL),
-('IC000263', 'JV00013', '146', NULL, '00016', 0, 'Assy 4-1/2" ', '0.00', '0.00', '0.00', 'Terubuk', '1', '0', '1', NULL),
+('IC000263', 'JV00013', '146', NULL, '00016', 0, 'Assy 4-1/2\" ', '0.00', '0.00', '0.00', 'Terubuk', '1', '0', '1', NULL),
 ('IC000264', 'JV00013', '148', NULL, '00017', 0, 'Packer VGP ', '0.00', '0.00', '0.00', 'Terubuk', '1', '0', '1', NULL),
 ('IC000265', 'JV00013', '149', NULL, '00018', 0, 'Offshore Basket 13.3 SNTBA', '0.00', '0.00', '0.00', 'Terubuk', '1', '0', '1', NULL),
 ('IC000266', 'JV00013', '150', NULL, '00019', 0, 'Sea Container , Jack Baker + Fishing Tools', '0.00', '0.00', '0.00', 'Terubuk', '1', '0', '1', NULL),
@@ -2896,9 +2430,9 @@ INSERT INTO `detail_joborder` (`id_cargo`, `id_joborder`, `id_jenis`, `timeCargo
 ('IC000403', 'JV00017', '38', NULL, '282', 0, 'Waste Skip  NO FEL 282', '0.00', '0.00', '0.00', 'Premier Oil', '1', '0', '1', NULL),
 ('IC000404', 'JV00017', '38', NULL, '283', 0, 'Waste Skip ID FEL 283', '0.00', '0.00', '0.00', 'Premier Oil', '1', '0', '1', NULL),
 ('IC000405', 'JV00017', '38', NULL, '287', 0, 'Waste Skip  NO FEL 287', '0.00', '0.00', '0.00', 'Premier Oil', '1', '0', '1', NULL),
-('IC000406', 'JV00017', '38', NULL, '295', 0, 'Waste Skip  NO FEL 295', '0.00', '0.00', '0.00', 'Premier Oil', '1', '0', '1', NULL),
-('IC000407', 'JV00017', '38', NULL, '297', 0, 'Waste Skip ID FEL 297', '0.00', '0.00', '0.00', 'Premier Oil', '1', '0', '1', NULL);
+('IC000406', 'JV00017', '38', NULL, '295', 0, 'Waste Skip  NO FEL 295', '0.00', '0.00', '0.00', 'Premier Oil', '1', '0', '1', NULL);
 INSERT INTO `detail_joborder` (`id_cargo`, `id_joborder`, `id_jenis`, `timeCargo`, `doc_no`, `qty_cargo`, `rincian_cargo`, `m3_cargo`, `ton_cargo`, `revton_cargo`, `remarks_cargo`, `status_cargo`, `cargo_final`, `row_version`, `keterangan`) VALUES
+('IC000407', 'JV00017', '38', NULL, '297', 0, 'Waste Skip ID FEL 297', '0.00', '0.00', '0.00', 'Premier Oil', '1', '0', '1', NULL),
 ('IC000408', 'JV00017', '132', NULL, '271', 0, 'Waste Skip NO FEL 271', '0.00', '0.00', '0.00', 'Premier Oil', '1', '0', '1', NULL),
 ('IC000409', 'JV00017', '132', NULL, '272', 0, 'Waste Skip FEL 272', '0.00', '0.00', '0.00', 'Premier Oil', '1', '0', '1', NULL),
 ('IC000410', 'JV00017', '132', NULL, '281', 0, 'Waste Skip FEL 281', '0.00', '0.00', '0.00', 'Premier Oil', '1', '0', '1', NULL),
@@ -3010,10 +2544,10 @@ INSERT INTO `detail_joborder` (`id_cargo`, `id_joborder`, `id_jenis`, `timeCargo
 ('IC000517', 'JV00019', '172', NULL, '1500034032', 0, 'Transporter Basket 0214-18-PE-TRB', '0.00', '0.00', '0.00', 'Prowell', '1', '0', '1', NULL),
 ('IC000518', 'JV00019', '108', NULL, '1500034064', 0, 'Liferaft Ex Belanak SN : 2045601500278', '0.00', '0.00', '0.00', 'Segara Permai', '1', '0', '1', NULL),
 ('IC000519', 'JV00019', '108', NULL, '1500034064', 0, 'Liferaft Ex Belanak SN : 4582700300037', '0.00', '0.00', '0.00', 'Segara Permai', '1', '0', '1', NULL),
-('IC000520', 'JV00019', '173', NULL, '1500034148', 0, 'Gun Clamp Consist : 2-7/8" 30FT', '0.00', '0.00', '0.00', 'Heru Wicaksono', '1', '0', '1', NULL),
-('IC000521', 'JV00019', '174', NULL, '1500034148', 0, 'Gun 1.56" 10FT , GUn 2-7/8" 1FT', '0.00', '0.00', '0.00', 'Heru Wicaksono', '1', '0', '1', NULL),
+('IC000520', 'JV00019', '173', NULL, '1500034148', 0, 'Gun Clamp Consist : 2-7/8\" 30FT', '0.00', '0.00', '0.00', 'Heru Wicaksono', '1', '0', '1', NULL),
+('IC000521', 'JV00019', '174', NULL, '1500034148', 0, 'Gun 1.56\" 10FT , GUn 2-7/8\" 1FT', '0.00', '0.00', '0.00', 'Heru Wicaksono', '1', '0', '1', NULL),
 ('IC000522', 'JV00020', '175', NULL, '1500033669', 0, 'Material Retrofit Ex Battery Charger', '0.00', '0.00', '0.00', 'Shaftindo Jkt', '1', '0', '1', NULL),
-('IC000523', 'JV00020', '177', NULL, '1500034136', 0, '1.6"3 Way Control Valve 8-TCV-7005', '0.00', '0.00', '0.00', 'Dnow', '1', '0', '1', NULL),
+('IC000523', 'JV00020', '177', NULL, '1500034136', 0, '1.6\"3 Way Control Valve 8-TCV-7005', '0.00', '0.00', '0.00', 'Dnow', '1', '0', '1', NULL),
 ('IC000524', 'JV00020', '102', NULL, '1500034116', 0, 'Cylinder Rack SN SEU-53-ROX016-7', '0.00', '0.00', '0.00', 'Sarku', '1', '0', '1', NULL),
 ('IC000525', 'JV00020', '178', NULL, '1500034116', 0, 'Cylinder Rack SN KWS GBR 41', '0.00', '0.00', '0.00', 'Sarku', '1', '0', '1', NULL),
 ('IC000526', 'JV00020', '178', NULL, '1500034116', 0, 'Cylinder Rack SN KWS GBR 74', '0.00', '0.00', '0.00', 'Sarku', '1', '0', '1', NULL),
@@ -3067,13 +2601,13 @@ INSERT INTO `detail_joborder` (`id_cargo`, `id_joborder`, `id_jenis`, `timeCargo
 ('IC000574', 'JV00020', '24', NULL, '3165', 0, '10FT Container c/w lifting set', '0.00', '0.00', '0.00', 'Vantage Drilling', '1', '0', '1', NULL),
 ('IC000575', 'JV00020', '24', NULL, '3167', 0, 'Empty 10FT Container c/w lifting set', '0.00', '0.00', '0.00', 'Vantage Drilling', '1', '0', '1', NULL),
 ('IC000576', 'JV00020', '65', NULL, '1511593', 0, 'Empty 20FT Dry Container ', '0.00', '0.00', '0.00', 'Vantage Drilling', '1', '0', '1', NULL),
-('IC000577', 'JV00020', '186', NULL, '1300015464', 0, 'Casing 13-3/8" ', '0.00', '0.00', '0.00', 'Medco', '1', '0', '1', NULL),
+('IC000577', 'JV00020', '186', NULL, '1300015464', 0, 'Casing 13-3/8\" ', '0.00', '0.00', '0.00', 'Medco', '1', '0', '1', NULL),
 ('IC000578', 'JV00020', '65', NULL, '1021376', 0, 'Empty 20FT Container CCLU 1021376', '0.00', '0.00', '0.00', 'Vantage Drilling', '1', '0', '1', NULL),
 ('IC000579', 'JV00020', '187', NULL, '4603223', 0, '6M Half Height Basket ', '0.00', '0.00', '0.00', 'SLB', '1', '0', '1', NULL),
 ('IC000580', 'JV00020', '162', NULL, '003 / 1594', 0, 'Schl E-Line Dog House', '0.00', '0.00', '0.00', 'SLB', '1', '0', '1', NULL),
 ('IC000581', 'JV00020', '188', NULL, '3301466', 0, '6M Opentop Container for grease', '0.00', '0.00', '0.00', 'SLB', '1', '0', '1', NULL),
-('IC000582', 'JV00020', '189', NULL, '0003', 0, 'Petroguard Adv Mesh 2-3/8" 13 Jts', '0.00', '0.00', '0.00', 'Halliburton', '1', '0', '1', NULL),
-('IC000583', 'JV00020', '189', NULL, '0004', 0, 'Petroguard 2-3/8" 13 Jts', '0.00', '0.00', '0.00', 'Halliburton', '1', '0', '1', NULL),
+('IC000582', 'JV00020', '189', NULL, '0003', 0, 'Petroguard Adv Mesh 2-3/8\" 13 Jts', '0.00', '0.00', '0.00', 'Halliburton', '1', '0', '1', NULL),
+('IC000583', 'JV00020', '189', NULL, '0004', 0, 'Petroguard 2-3/8\" 13 Jts', '0.00', '0.00', '0.00', 'Halliburton', '1', '0', '1', NULL),
 ('IC000584', 'JV00021', '190', NULL, '4900197', 0, 'AORU-4900197', '0.00', '0.00', '0.00', 'PMB', '1', '0', '1', NULL),
 ('IC000585', 'JV00021', '132', NULL, '274', 0, 'FEL-274', '0.00', '0.00', '0.00', 'Wastec', '1', '0', '1', NULL),
 ('IC000586', 'JV00021', '132', NULL, '275', 0, 'FEL-275', '0.00', '0.00', '0.00', 'Wastec', '1', '0', '1', NULL),
@@ -3255,9 +2789,9 @@ INSERT INTO `detail_joborder` (`id_cargo`, `id_joborder`, `id_jenis`, `timeCargo
 ('IC000762', 'JV00025', '232', NULL, '2441150', 0, '20FT Half Opentop Container OEGU-2441150', '0.00', '0.00', '0.00', 'PMB', '1', '0', '1', NULL),
 ('IC000763', 'JV00025', '231', NULL, '2437063', 0, '20FT Half Opentop Container OEGU-2437063', '0.00', '0.00', '0.00', 'PMB', '1', '0', '1', NULL),
 ('IC000764', 'JV00025', '232', NULL, '2445710', 0, '20FT Half Opentop Container OEGU-2445710', '0.00', '0.00', '0.00', 'PMB', '1', '0', '1', NULL),
-('IC000765', 'JV00025', '232', NULL, '2445768', 0, '20FT Half Opentop COntainer OEGU-2445768', '0.00', '0.00', '0.00', 'PMB', '1', '0', '1', NULL),
-('IC000766', 'JV00025', '232', NULL, '2447164', 0, '20FT Half Opentop Container OEGU-2447164', '0.00', '0.00', '0.00', 'PMB', '1', '0', '1', NULL);
+('IC000765', 'JV00025', '232', NULL, '2445768', 0, '20FT Half Opentop COntainer OEGU-2445768', '0.00', '0.00', '0.00', 'PMB', '1', '0', '1', NULL);
 INSERT INTO `detail_joborder` (`id_cargo`, `id_joborder`, `id_jenis`, `timeCargo`, `doc_no`, `qty_cargo`, `rincian_cargo`, `m3_cargo`, `ton_cargo`, `revton_cargo`, `remarks_cargo`, `status_cargo`, `cargo_final`, `row_version`, `keterangan`) VALUES
+('IC000766', 'JV00025', '232', NULL, '2447164', 0, '20FT Half Opentop Container OEGU-2447164', '0.00', '0.00', '0.00', 'PMB', '1', '0', '1', NULL),
 ('IC000767', 'JV00025', '228', NULL, '900084', 0, '20FT Closed Container RSTU 900084', '0.00', '0.00', '0.00', 'Conbit', '1', '0', '1', NULL),
 ('IC000768', 'JV00025', '233', NULL, 'WMES12', 0, 'Welding Machine WMES 12 , Skid : SKWM 12', '0.00', '0.00', '0.00', 'Mesitech', '1', '0', '1', NULL),
 ('IC000769', 'JV00025', '233', NULL, 'WMES13', 0, 'Welding Machine WMES 13 , Skid : SKWM 13', '0.00', '0.00', '0.00', 'Mesitech', '1', '0', '1', NULL),
@@ -3300,7 +2834,7 @@ INSERT INTO `detail_joborder` (`id_cargo`, `id_joborder`, `id_jenis`, `timeCargo
 ('IC000806', 'JV00027', '211', NULL, '1500034992', 0, '20FT Opentop Container SN.PPLi 9731', '0.00', '0.00', '0.00', 'PPLi', '1', '0', '1', NULL),
 ('IC000807', 'JV00027', '211', NULL, '1500034992', 0, '20FT Opentop Container SN.PPLi 9719', '0.00', '0.00', '0.00', 'PPLi', '1', '0', '1', NULL),
 ('IC000808', 'JV00027', '187', NULL, '1500034954', 0, '20FT Basket AORU 4602398', '0.00', '0.00', '0.00', 'Solar Alert', '1', '0', '1', NULL),
-('IC000809', 'JV00027', '240', NULL, '1500034935', 0, 'Tubing Seamselss 4-1/2"', '0.00', '0.00', '0.00', 'Medco Energi', '1', '0', '1', NULL),
+('IC000809', 'JV00027', '240', NULL, '1500034935', 0, 'Tubing Seamselss 4-1/2\"', '0.00', '0.00', '0.00', 'Medco Energi', '1', '0', '1', NULL),
 ('IC000810', 'JV00027', '241', NULL, '1500034990', 0, 'Empty Cutting Skip 11 Ton c/w Lifting Set CMS 0458', '0.00', '0.00', '0.00', 'PPLi', '1', '0', '1', NULL),
 ('IC000811', 'JV00027', '241', NULL, '1500034990', 0, 'Empty Cutting Skip 11 Ton c/w Lifting Set CMS 0559', '0.00', '0.00', '0.00', 'PPLi', '1', '0', '1', NULL),
 ('IC000812', 'JV00027', '241', NULL, '1500034990', 0, 'Empty Cutting Skip 11 Ton c/w Lifting Set LCK 127', '0.00', '0.00', '0.00', 'PPLi', '1', '0', '1', NULL),
@@ -3320,7 +2854,7 @@ INSERT INTO `detail_joborder` (`id_cargo`, `id_joborder`, `id_jenis`, `timeCargo
 ('IC000826', 'JV00027', '45', NULL, '1500034998', 0, 'Empty Tote Tank SN : TD-TT-550-041', '0.00', '0.00', '0.00', 'Dowel Schlumberger', '1', '0', '1', NULL),
 ('IC000827', 'JV00027', '242', NULL, '1500035012', 0, 'D080 (1035 Gal)', '0.00', '0.00', '0.00', 'Dowel Schlumberger', '1', '0', '1', NULL),
 ('IC000828', 'JV00027', '242', NULL, '1500035012', 0, 'D193 (275 Gal)', '0.00', '0.00', '0.00', 'Dowel Schlumberger', '1', '0', '1', NULL),
-('IC000829', 'JV00027', '244', NULL, '1500035027', 0, 'Drill Pipe 5-1/2"  Inches For Inspect (36 joint)', '0.00', '0.00', '0.00', 'Vantage  ', '1', '0', '1', NULL),
+('IC000829', 'JV00027', '244', NULL, '1500035027', 0, 'Drill Pipe 5-1/2\"  Inches For Inspect (36 joint)', '0.00', '0.00', '0.00', 'Vantage  ', '1', '0', '1', NULL),
 ('IC000830', 'JV00027', '245', NULL, '1500034453', 0, 'RR Expansion Valve Chiller LQ unit B Comp A1', '0.00', '0.00', '0.00', 'Spectra Solusindo', '1', '0', '1', NULL),
 ('IC000831', 'JV00027', '246', NULL, '1500034649', 0, 'Tools PSV (PT.PJ-TEK Mandiri)', '0.00', '0.00', '0.00', 'Spectra Solusindo', '1', '0', '1', NULL),
 ('IC000832', 'JV00027', '203', NULL, '1500034891', 0, 'Rck No.MACRK - 204 c/w Lifting set ', '0.00', '0.00', '0.00', 'Medco Energi', '1', '0', '1', NULL),
@@ -3341,7 +2875,7 @@ INSERT INTO `detail_joborder` (`id_cargo`, `id_joborder`, `id_jenis`, `timeCargo
 ('IC000847', 'JV00027', '252', NULL, '1500034974', 0, 'Primary Box  Explosive (Empty)', '0.00', '0.00', '0.00', 'Halliburton', '1', '0', '1', NULL),
 ('IC000848', 'JV00027', '253', NULL, '1500034974', 0, 'Secondary Box Explosive (Empty) SBY-EB-03', '0.00', '0.00', '0.00', 'Halliburton', '1', '0', '1', NULL),
 ('IC000849', 'JV00027', '254', NULL, '1500034974', 0, 'Secondary Box Explosive (Empty) EWS-EB-01', '0.00', '0.00', '0.00', 'Halliburton', '1', '0', '1', NULL),
-('IC000850', 'JV00028', '255', NULL, '1300015663', 0, 'Tubing 2-7/8" , 6-5# , GR-J-55 , EUE,R2 (3 Rack)', '0.00', '0.00', '0.00', 'PT.Selaraya Merangin Dua', '1', '0', '1', NULL),
+('IC000850', 'JV00028', '255', NULL, '1300015663', 0, 'Tubing 2-7/8\" , 6-5# , GR-J-55 , EUE,R2 (3 Rack)', '0.00', '0.00', '0.00', 'PT.Selaraya Merangin Dua', '1', '0', '1', NULL),
 ('IC000851', 'JV00028', '27', NULL, 'H-378', 0, '20FT Opentop Container H-378 ', '0.00', '0.00', '0.00', 'Sarku', '1', '0', '1', NULL),
 ('IC000852', 'JV00028', '27', NULL, 'H-384', 0, '20FT Opentop Container H-384', '0.00', '0.00', '0.00', 'Sarku', '1', '0', '1', NULL),
 ('IC000853', 'JV00028', '27', NULL, 'H-341', 0, '20FT Opentop Container H-341', '0.00', '0.00', '0.00', 'Sarku', '1', '0', '1', NULL),
@@ -3404,8 +2938,8 @@ INSERT INTO `detail_joborder` (`id_cargo`, `id_joborder`, `id_jenis`, `timeCargo
 ('IC000910', 'JV00028', '281', NULL, '1500035359', 0, 'Empty Propane Rack SN.STE PR 05', '0.00', '0.00', '0.00', 'Halliburton', '1', '0', '1', NULL),
 ('IC000911', 'JV00028', '281', NULL, '1500035359', 0, 'Empty Propane Rack SN STE PR 03', '0.00', '0.00', '0.00', 'Halliburton', '1', '0', '1', NULL),
 ('IC000912', 'JV00028', '282', NULL, '1500035359', 0, 'DST Basket SN XJK-TB-09', '0.00', '0.00', '0.00', 'Halliburton', '1', '0', '1', NULL),
-('IC000913', 'JV00028', '283', NULL, '1500035401', 0, 'Tenda GCI 1388 13-3/8" CTU Conductor', '0.00', '0.00', '0.00', 'Altus', '1', '0', '1', NULL),
-('IC000914', 'JV00028', '284', NULL, '1500035401', 0, 'Tenda 13-3/8" CTU Insert Bushing', '0.00', '0.00', '0.00', 'Altus', '1', '0', '1', NULL),
+('IC000913', 'JV00028', '283', NULL, '1500035401', 0, 'Tenda GCI 1388 13-3/8\" CTU Conductor', '0.00', '0.00', '0.00', 'Altus', '1', '0', '1', NULL),
+('IC000914', 'JV00028', '284', NULL, '1500035401', 0, 'Tenda 13-3/8\" CTU Insert Bushing', '0.00', '0.00', '0.00', 'Altus', '1', '0', '1', NULL),
 ('IC000915', 'JV00028', '272', NULL, '1500035420', 0, '20FT Opentop Container SN BSLU 9204162', '0.00', '0.00', '0.00', 'PPLi', '1', '0', '1', NULL),
 ('IC000916', 'JV00028', '272', NULL, '1500035420', 0, '20FT Opentop Container SN BSLU 9202940', '0.00', '0.00', '0.00', 'PPLi', '1', '0', '1', NULL),
 ('IC000917', 'JV00028', '108', NULL, '0001', 0, 'Barablend 65740', '0.00', '0.00', '0.00', 'Halliburton', '1', '0', '1', NULL),
@@ -3421,7 +2955,7 @@ INSERT INTO `detail_joborder` (`id_cargo`, `id_joborder`, `id_jenis`, `timeCargo
 ('IC000927', 'JV00028', '285', NULL, '1500035470', 0, 'Offshore Box SN TB Copi 003', '0.00', '0.00', '0.00', 'HOT HED', '1', '0', '1', NULL),
 ('IC000928', 'JV00028', '286', NULL, '1500035470', 0, 'Oxygen Rack SN AR Copi 001', '0.00', '0.00', '0.00', 'HOT HED', '1', '0', '1', NULL),
 ('IC000929', 'JV00028', '286', NULL, '1500035470', 0, 'Acetylene', '0.00', '0.00', '0.00', 'HOT HED', '1', '0', '1', NULL),
-('IC000930', 'JV00028', '287', NULL, '4303376', 0, '9-5/8" DHT Basket AORU 4303376', '0.00', '0.00', '0.00', 'Dowell', '1', '0', '1', NULL),
+('IC000930', 'JV00028', '287', NULL, '4303376', 0, '9-5/8\" DHT Basket AORU 4303376', '0.00', '0.00', '0.00', 'Dowell', '1', '0', '1', NULL),
 ('IC000931', 'JV00028', '29', NULL, '0010', 0, 'D 081', '0.00', '0.00', '0.00', 'Dowell', '1', '0', '1', NULL),
 ('IC000932', 'JV00028', '24', NULL, '1500035287', 0, 'Empty N2 Tank', '0.00', '0.00', '0.00', 'Halliburton', '1', '0', '1', NULL),
 ('IC000933', 'JV00028', '288', NULL, 'KES-APS-00', 0, 'MT Basket APS-', '0.00', '0.00', '0.00', 'APS', '1', '0', '1', NULL),
@@ -3610,9 +3144,9 @@ INSERT INTO `detail_joborder` (`id_cargo`, `id_joborder`, `id_jenis`, `timeCargo
 ('IC001116', 'JV00031', '333', NULL, '1500035904', 0, 'Baroid BBS Panel', '0.00', '0.00', '0.00', 'Baroid', '1', '0', '1', NULL),
 ('IC001117', 'JV00031', '334', NULL, '1500035904', 0, 'Baroid BBS Holding Tank', '0.00', '0.00', '0.00', 'Baroid', '1', '0', '1', NULL),
 ('IC001118', 'JV00031', '335', NULL, '1500035904', 0, 'Baroid Cutting Dryer', '0.00', '0.00', '0.00', 'Baroid', '1', '0', '1', NULL),
-('IC001119', 'JV00031', '336', NULL, '1500035919', 0, 'MLWD Logging unit', '0.00', '0.00', '0.00', 'Dowell Anadrill', '1', '0', '1', NULL),
-('IC001120', 'JV00031', '337', NULL, '1500035919', 0, '12.3M Cargo Basket SN AORU 1230065', '0.00', '0.00', '0.00', 'Dowell Anadrill', '1', '0', '1', NULL);
+('IC001119', 'JV00031', '336', NULL, '1500035919', 0, 'MLWD Logging unit', '0.00', '0.00', '0.00', 'Dowell Anadrill', '1', '0', '1', NULL);
 INSERT INTO `detail_joborder` (`id_cargo`, `id_joborder`, `id_jenis`, `timeCargo`, `doc_no`, `qty_cargo`, `rincian_cargo`, `m3_cargo`, `ton_cargo`, `revton_cargo`, `remarks_cargo`, `status_cargo`, `cargo_final`, `row_version`, `keterangan`) VALUES
+('IC001120', 'JV00031', '337', NULL, '1500035919', 0, '12.3M Cargo Basket SN AORU 1230065', '0.00', '0.00', '0.00', 'Dowell Anadrill', '1', '0', '1', NULL),
 ('IC001121', 'JV00031', '337', NULL, '1500035919', 0, '12.3M Cargo Basket SN.TD-CB-12-003', '0.00', '0.00', '0.00', 'Dowell Anadrill', '1', '0', '1', NULL),
 ('IC001122', 'JV00031', '43', NULL, '1500035919', 0, 'Halft Container 10 SN OEGU 1438661', '0.00', '0.00', '0.00', 'Dowell Anadrill', '1', '0', '1', NULL),
 ('IC001123', 'JV00031', '338', NULL, 'BSL 16694', 0, 'Gas Transport Rack', '0.00', '0.00', '0.00', 'Vantage', '1', '0', '1', NULL),
@@ -3627,794 +3161,645 @@ INSERT INTO `detail_joborder` (`id_cargo`, `id_joborder`, `id_jenis`, `timeCargo
 ('IC001132', 'JV00031', '342', NULL, '1500035840', 0, 'Basket Baker SN : TD-CB -3-006', '0.00', '0.00', '0.00', 'Baker  ', '1', '0', '1', NULL),
 ('IC001133', 'JV00031', '257', NULL, '1500035842', 0, 'Empty Basket SN : TD-DB-4-002', '0.00', '0.00', '0.00', 'Interwell', '1', '0', '1', NULL),
 ('IC001134', 'JV00031', '201', NULL, '1500035844', 0, '4 Jts RMT Tools ex Belanak', '0.00', '0.00', '0.00', 'Hall E', '1', '0', '1', NULL),
-('IC001135', 'JV00031', '343', NULL, '1500035844', 0, 'Container MAST unit 13237922', '0.00', '0.00', '0.00', 'Hall E', '1', '0', '1', NULL);
+('IC001135', 'JV00031', '343', NULL, '1500035844', 0, 'Container MAST unit 13237922', '0.00', '0.00', '0.00', 'Hall E', '1', '0', '1', NULL),
+('IC001136', 'JV00032', '344', NULL, '0001', 0, 'Container 20FT PBL', '0.00', '0.00', '0.00', 'Petrogas', '1', '0', '1', NULL),
+('IC001137', 'JV00032', '345', NULL, '0002', 0, 'Kompon', '0.00', '0.00', '0.00', 'Petrogas', '1', '0', '1', NULL),
+('IC001138', 'JV00032', '346', NULL, '0003', 0, 'Tubing Head', '0.00', '0.00', '0.00', 'Petrogas', '1', '0', '1', NULL),
+('IC001139', 'JV00032', '347', NULL, '0004', 0, 'Tubing Head', '0.00', '0.00', '0.00', 'Petrogas', '1', '0', '1', NULL),
+('IC001140', 'JV00032', '348', NULL, '0005', 0, 'Tubing Head', '0.00', '0.00', '0.00', 'Petrogas', '1', '0', '1', NULL),
+('IC001141', 'JV00032', '349', NULL, '0006', 0, 'Reel cable', '0.00', '0.00', '0.00', 'Petrogas', '1', '0', '1', NULL),
+('IC001142', 'JV00032', '350', NULL, '0007', 0, 'Reel Cable', '0.00', '0.00', '0.00', 'Petrogas', '1', '0', '1', NULL),
+('IC001143', 'JV00032', '351', NULL, '0008', 0, 'Vacum Circuit Braker', '0.00', '0.00', '0.00', 'Petrogas', '1', '0', '1', NULL),
+('IC001144', 'JV00032', '352', NULL, '0009', 0, 'X Maxtree', '0.00', '0.00', '0.00', 'Petrogas', '1', '0', '1', NULL),
+('IC001145', 'JV00032', '353', NULL, '0010', 0, 'X Maxtree', '0.00', '0.00', '0.00', 'Petrogas', '1', '0', '1', NULL),
+('IC001146', 'JV00032', '354', NULL, '0011', 0, 'Cable Clamp Protector', '0.00', '0.00', '0.00', 'Petrogas', '1', '0', '1', NULL),
+('IC001147', 'JV00032', '355', NULL, '0012', 0, 'Cable Clamp Protector', '0.00', '0.00', '0.00', 'Petrogas', '1', '0', '1', NULL),
+('IC001148', 'JV00032', '356', NULL, '0013', 0, 'Cable Clamp Protector ', '0.00', '0.00', '0.00', 'Petrogas', '1', '0', '1', NULL),
+('IC001149', 'JV00032', '344', NULL, '0014', 0, 'Dry Container 20FT', '0.00', '0.00', '0.00', 'Petrogas', '1', '0', '1', NULL),
+('IC001150', 'JV00032', '344', NULL, '0015', 0, 'Reefeer Container 20FT', '0.00', '0.00', '0.00', 'Petrogas', '1', '0', '1', NULL),
+('IC001151', 'JV00032', '245', NULL, '0040', 0, 'Tong sampah', '0.00', '0.00', '0.00', 'Petrogas', '1', '0', '2', NULL),
+('IC001152', 'JV00032', '103', NULL, '00039', 0, 'Acrilix ', '0.00', '0.00', '0.00', 'Petrogas', '1', '0', '2', NULL),
+('IC001153', 'JV00033', '359', NULL, '04-12-28-7', 0, 'Casing', '0.00', '0.00', '0.00', 'Premier Oil', '1', '0', '1', NULL),
+('IC001154', 'JV00033', '360', NULL, '00001', 0, 'Casing1', '0.00', '0.00', '0.00', 'Premier Oil', '1', '0', '1', NULL),
+('IC001155', 'JV00033', '360', NULL, '00002', 0, 'Casing2', '0.00', '0.00', '0.00', 'Premier Oil', '1', '0', '1', NULL),
+('IC001156', 'JV00033', '132', NULL, 'FEL-278', 0, 'Waste Skip ', '0.00', '0.00', '0.00', 'Premier Oil', '1', '0', '1', NULL),
+('IC001157', 'JV00033', '364', NULL, 'ID 05', 0, 'Cylinder Rack ID 05 ', '0.00', '0.00', '0.00', 'Premier Oil', '1', '0', '1', NULL),
+('IC001158', 'JV00033', '362', NULL, 'OEG 690573', 0, 'Empty Mini Container OEG 630573', '0.00', '0.00', '0.00', 'Premier Oil', '1', '0', '1', NULL),
+('IC001159', 'JV00033', '362', NULL, 'OEG 690582', 0, 'Empty Mini Container OEG 690582', '0.00', '0.00', '0.00', 'Premier Oil', '1', '0', '1', NULL),
+('IC001160', 'JV00033', '362', NULL, 'OEG 690592', 0, 'Mini Container OEG 690592', '0.00', '0.00', '0.00', 'Premier Oil', '1', '0', '1', NULL),
+('IC001161', 'JV00033', '362', NULL, 'OEG 690597', 0, 'Mini Container OEG 690597', '0.00', '0.00', '0.00', 'Premier Oil', '1', '0', '1', NULL),
+('IC001162', 'JV00033', '362', NULL, 'OEG 690602', 0, 'Mini Container OEG 690602', '0.00', '0.00', '0.00', 'Premier Oil', '1', '0', '1', NULL),
+('IC001163', 'JV00033', '362', NULL, 'OEG 690605', 0, 'Mini Container OEG 690605', '0.00', '0.00', '0.00', 'Premier Oil', '1', '0', '1', NULL),
+('IC001164', 'JV00033', '362', NULL, 'OEG 696968', 0, 'Mini Container OEG 696968', '0.00', '0.00', '0.00', 'Premier Oil', '1', '0', '1', NULL),
+('IC001165', 'JV00033', '362', NULL, 'OEG 696999', 0, 'Empty Mini Container OEG 696999', '0.00', '0.00', '0.00', 'Premier Oil', '1', '0', '1', NULL),
+('IC001166', 'JV00033', '362', NULL, 'OEG 697008', 0, 'Empty Mini Container OEG 697008', '0.00', '0.00', '0.00', 'Premier Oil', '1', '0', '1', NULL),
+('IC001167', 'JV00033', '362', NULL, 'OEG 697025', 0, 'Empty Mini Container OEG 697008', '0.00', '0.00', '0.00', 'Premier Oil', '1', '0', '1', NULL),
+('IC001168', 'JV00033', '362', NULL, 'OEG 697610', 0, 'Mini Container OEG 697610', '0.00', '0.00', '0.00', 'Premier Oil', '1', '0', '1', NULL),
+('IC001169', 'JV00033', '362', NULL, 'OEG 697628', 0, 'Mini Container 697628', '0.00', '0.00', '0.00', 'Premier Oil', '1', '0', '1', NULL),
+('IC001170', 'JV00033', '362', NULL, 'OEG 697655', 0, 'Mini Container OEG 697655', '0.00', '0.00', '0.00', 'Premier Oil', '1', '0', '1', NULL),
+('IC001171', 'JV00033', '232', NULL, 'OEG 244437', 0, '20FT Half Opentop Container ', '0.00', '0.00', '0.00', 'PMB', '1', '0', '1', NULL),
+('IC001172', 'JV00033', '362', NULL, 'OEG 690575', 0, 'Mini Container OEG 690575', '0.00', '0.00', '0.00', 'PMB', '1', '0', '1', NULL),
+('IC001173', 'JV00033', '362', NULL, 'OEG 690594', 0, 'Mini Container OEG 690594', '0.00', '0.00', '0.00', 'PMB', '1', '0', '1', NULL),
+('IC001174', 'JV00033', '362', NULL, 'OEG 690600', 0, 'Mini Container OEG 690600', '0.00', '0.00', '0.00', 'PMB', '1', '0', '1', NULL),
+('IC001175', 'JV00033', '362', NULL, 'OEG 696997', 0, 'MIni Container OEG 696997', '0.00', '0.00', '0.00', 'PMB', '1', '0', '1', NULL),
+('IC001176', 'JV00033', '188', NULL, 'OEG 143663', 0, 'Opentop Container OEGU 1436632', '0.00', '0.00', '0.00', 'PMB', '1', '0', '1', NULL),
+('IC001177', 'JV00033', '232', NULL, 'OEG 244571', 0, '20FT Half Opentop COntainer OEGU 2445710', '0.00', '0.00', '0.00', 'PMB', '1', '0', '1', NULL),
+('IC001178', 'JV00033', '43', NULL, 'OEGU 14362', 0, '10FT Half Opentop Container OEGU 1436231', '0.00', '0.00', '0.00', 'PMB', '1', '0', '1', NULL),
+('IC001179', 'JV00032', '251', NULL, '00039', 0, 'Mesin compresor', '0.00', '0.00', '0.00', 'Slickbar', '1', '0', '2', NULL),
+('IC001180', 'JV00033', '230', NULL, 'OEGU 14366', 0, '10FT Half Opentop Container OEGU 1436648', '0.00', '0.00', '0.00', 'PMB', '1', '0', '1', NULL),
+('IC001181', 'JV00033', '230', NULL, 'OEGU 14374', 0, '10FT Half Opentop Container', '0.00', '0.00', '0.00', 'PMB', '1', '0', '1', NULL),
+('IC001182', 'JV00033', '188', NULL, 'OEGU 14389', 0, 'Opentop Container  OEGU 1438980', '0.00', '0.00', '0.00', 'Premier Oil', '1', '0', '1', NULL),
+('IC001183', 'JV00033', '188', NULL, 'OEGU 14419', 0, 'Empty From FPSO OEGU 1441921', '0.00', '0.00', '0.00', 'Premier Oil', '1', '0', '1', NULL),
+('IC001184', 'JV00033', '188', NULL, 'OEGU 14421', 0, 'Cable Ex MERU For Junk', '0.00', '0.00', '0.00', 'Premier Oil', '1', '0', '1', NULL),
+('IC001185', 'JV00033', '43', NULL, 'OEGU 14421', 0, '10FT Half Opentop Container OEGU 1442147', '0.00', '0.00', '0.00', 'PMB', '1', '0', '1', NULL),
+('IC001186', 'JV00033', '188', NULL, 'OEGU 14421', 0, 'Cable Ex MERU For Junk', '0.00', '0.00', '0.00', 'Premier Oil', '1', '0', '1', NULL),
+('IC001187', 'JV00033', '232', NULL, 'OEGU 24441', 0, '20FT Half Opentop Container OEGU 2444165', '0.00', '0.00', '0.00', 'PMB', '1', '0', '1', NULL),
+('IC001188', 'JV00033', '232', NULL, 'OEGU 24457', 0, '20FT Half Opentop Container OEGU 2445768', '0.00', '0.00', '0.00', 'Premier Oil', '1', '0', '1', NULL),
+('IC001189', 'JV00033', '232', NULL, 'OEGU 24471', 0, '20FT Half Opentop Container OEGU 2447164', '0.00', '0.00', '0.00', 'PMB', '1', '0', '1', NULL),
+('IC001190', 'JV00033', '365', NULL, 'OEGU 28800', 0, '28 Half Opentop Container OEGU 288002', '0.00', '0.00', '0.00', 'PMB', '1', '0', '1', NULL),
+('IC001191', 'JV00033', '45', NULL, 'OHF 1213', 0, 'Empty Tote Tank OHF - 1213', '0.00', '0.00', '0.00', 'Premier Oil', '1', '0', '1', NULL),
+('IC001192', 'JV00033', '364', NULL, 'R POI-16-0', 0, 'Cylinder Rack R POI-16-010', '0.00', '0.00', '0.00', 'Premier Oil', '1', '0', '1', NULL),
+('IC001193', 'JV00033', '22', NULL, 'R-16-19', 0, 'Cylinder Rack Nitrogen R-16-19', '0.00', '0.00', '0.00', 'Arkadia', '1', '0', '1', NULL),
+('IC001194', 'JV00033', '22', NULL, 'R-POI-16-1', 0, 'Cylinder Rack R-POI-16-13', '0.00', '0.00', '0.00', 'Premier Oil', '1', '0', '1', NULL),
+('IC001195', 'JV00033', '22', NULL, 'R-POI-16-1', 0, 'Cylinder Rack R-POI-16-15', '0.00', '0.00', '0.00', 'Premier Oil', '1', '0', '1', NULL),
+('IC001196', 'JV00033', '366', NULL, 'KWS-GBR-12', 0, 'Cylinder Rack ID : KWS-GBR-122', '0.00', '0.00', '0.00', 'Arkadia', '1', '0', '1', NULL),
+('IC001197', 'JV00034', '344', NULL, 'TRDU 55287', 0, 'Dry Container 20FT', '0.00', '0.00', '0.00', 'Baasithu Boga Service', '1', '0', '1', NULL),
+('IC001198', 'JV00034', '344', NULL, 'ZONA 31579', 0, 'Reefer Container 20FT', '0.00', '0.00', '0.00', 'Baasithu Boga Service', '1', '0', '1', NULL),
+('IC001199', 'JV00034', '344', NULL, 'ZONA 28949', 0, 'Reefer Container 20FT', '0.00', '0.00', '0.00', 'Baasithu Boga Service', '1', '0', '1', NULL),
+('IC001200', 'JV00034', '344', NULL, 'ZONA 31653', 0, 'Dry Container 20FT', '0.00', '0.00', '0.00', 'Baasithu Boga Service', '1', '0', '1', NULL),
+('IC001201', 'JV00034', '177', NULL, 'R - 6C - 5', 0, 'Empty Oxygen Bottle : 008 031', '0.00', '0.00', '0.00', 'Duta Marine', '1', '0', '1', NULL),
+('IC001202', 'JV00034', '177', NULL, 'R - C6 - 3', 0, 'Empty Oxygen Bottle : 001 017', '0.00', '0.00', '0.00', 'Duta Marine', '1', '0', '1', NULL),
+('IC001203', 'JV00034', '177', NULL, 'R - 4C - 4', 0, 'Empty Argo & Nitrogen', '0.00', '0.00', '0.00', 'Duta Marine', '1', '0', '1', NULL),
+('IC001204', 'JV00034', '177', NULL, 'R - 6C - 2', 0, 'Empty CO2 & Argon ', '0.00', '0.00', '0.00', 'Duta Marine', '1', '0', '1', NULL),
+('IC001205', 'JV00034', '54', NULL, 'SE - 12', 0, 'Half Opentop Container 10FT', '0.00', '0.00', '0.00', 'Star Energy', '1', '0', '1', NULL),
+('IC001206', 'JV00032', '36', NULL, '0022', 0, 'Demulsifier', '0.00', '0.00', '0.00', 'Eon chemical', '1', '0', '2', NULL),
+('IC001207', 'JV00032', '96', NULL, '0040', 0, 'Sparepart', '0.00', '0.00', '0.00', 'Petrogas', '1', '0', '2', NULL),
+('IC001208', 'JV00032', '96', NULL, '0040', 0, 'Consumable', '0.00', '0.00', '0.00', 'Silo maritim', '1', '0', '2', NULL),
+('IC001209', 'JV00032', '200', NULL, '0022', 0, 'Sparepart', '0.00', '0.00', '0.00', 'Petrogas', '1', '0', '2', NULL),
+('IC001210', 'JV00032', '251', NULL, '0040', 0, 'Compresor', '0.00', '0.00', '0.00', 'Petrogas', '1', '0', '2', NULL),
+('IC001211', 'JV00032', '89', NULL, '0040', 0, 'BOP', '0.00', '0.00', '0.00', 'Petrogas', '1', '0', '2', NULL),
+('IC001212', 'JV00032', '313', NULL, '0040', 0, 'Sparepart', '0.00', '0.00', '0.00', 'Petrogas', '1', '0', '2', NULL),
+('IC001213', 'JV00032', '84', NULL, '0040', 0, 'Pipa ', '0.00', '0.00', '0.00', 'Petrogas', '1', '0', '2', NULL),
+('IC001214', 'JV00032', '84', NULL, '0040', 0, 'Pipa', '0.00', '0.00', '0.00', 'PIL', '1', '0', '2', NULL),
+('IC001215', 'JV00032', '352', NULL, '0040', 0, 'BOP', '0.00', '0.00', '0.00', 'Petrogas', '1', '0', '2', NULL),
+('IC001216', 'JV00032', '96', NULL, '0040', 0, 'Consumable', '0.00', '0.00', '0.00', 'Petrogas', '1', '0', '2', NULL),
+('IC001217', 'JV00032', '195', NULL, '0040', 0, 'Scafolding', '0.00', '0.00', '0.00', 'Petrogas', '1', '0', '2', NULL),
+('IC001218', 'JV00032', '142', NULL, '0040', 0, 'Oxygen , acetylene', '0.00', '0.00', '0.00', 'Aneka gas', '1', '0', '2', NULL),
+('IC001219', 'JV00035', '61', NULL, '1500035448', 0, 'Empty T/Tank S-965N LBU-2019-0035\r\n', '0.00', '0.00', '0.00', 'LBU', '1', '0', '1', NULL),
+('IC001220', 'JV00035', '61', NULL, '1500035446', 0, 'Empty Tote Tank and Empty IBC Tank\r\n', '0.00', '0.00', '0.00', 'LBU', '1', '0', '1', NULL),
+('IC001221', 'JV00035', '61', NULL, '1500035876', 0, 'Empty Tote Tank Ex Chemical , S-965ND , TT-113\r\n', '0.00', '0.00', '0.00', 'LBU', '1', '0', '1', NULL),
+('IC001222', 'JV00035', '61', NULL, '15000867', 0, 'Empty Tote Tank Ex Chemical , S-9282 , TT-009\r\n', '0.00', '0.00', '0.00', 'LBU', '1', '0', '1', NULL),
+('IC001223', 'JV00035', '61', NULL, '1500035867', 0, 'Empty Tote Tank Ex Chemical , S-965N , TT-2019-0083\r\n', '0.00', '0.00', '0.00', 'LBU', '1', '0', '1', NULL),
+('IC001224', 'JV00035', '45', NULL, '1500035867', 0, 'Empty Tote Tank Ex Chemical , S-9653 , TT-550-037\r\n', '0.00', '0.00', '0.00', 'LBU', '1', '0', '1', NULL),
+('IC001225', 'JV00035', '61', NULL, '1500035867', 0, 'Empty Tote Tank Ex Chemical , S-965ND , LBU-2019-109\r\n', '0.00', '0.00', '0.00', 'LBU', '1', '0', '1', NULL),
+('IC001226', 'JV00035', '29', NULL, '1500035994', 0, 'W/Box , Tools Ex Diamond Wraping\r\n', '0.00', '0.00', '0.00', 'Ade Budiono', '1', '0', '1', NULL),
+('IC001227', 'JV00035', '108', NULL, '1300016123', 0, 'Coolant , Ultra 20L ,CCN38459582 , Ingersoll\r\n', '0.00', '0.00', '0.00', 'Medco Energi', '1', '0', '1', NULL),
+('IC001228', 'JV00035', '45', NULL, '1500036159', 0, 'Empty Tote Tank Ex Chemical , S-9282 , TT-550-013\r\n', '0.00', '0.00', '0.00', 'Medco Energi', '1', '0', '1', NULL),
+('IC001229', 'JV00035', '61', NULL, '1500036159', 0, 'Empty Tote Tank Ex Chemical , S-9282 , TT-244\r\n', '0.00', '0.00', '0.00', 'Medco Energi', '1', '0', '1', NULL),
+('IC001230', 'JV00035', '367', NULL, '1500036175', 0, 'Dyer , Portbale quivert and air hose\r\n', '0.00', '0.00', '0.00', 'Sarku', '1', '0', '1', NULL),
+('IC001231', 'JV00035', '368', NULL, '1500036171', 0, 'Hydrolic torque pump , hydrolic hose\r\n', '0.00', '0.00', '0.00', 'Sarku', '1', '0', '1', NULL),
+('IC001232', 'JV00035', '61', NULL, '1500036082', 0, 'MT Tote Tank Ex Chemical , Methanol\r\n', '0.00', '0.00', '0.00', 'LBU', '1', '0', '1', NULL),
+('IC001233', 'JV00035', '61', NULL, '1500036306', 0, 'MT Tote Tank Ex Chemical , MEG\r\n', '0.00', '0.00', '0.00', 'LBU', '1', '0', '1', NULL),
+('IC001234', 'JV00035', '316', NULL, '1500036175', 0, 'Welding Machine c/w frame SEU-52-FWM001-24\r\n', '0.00', '0.00', '0.00', 'Sarku', '1', '0', '1', NULL),
+('IC001235', 'JV00035', '109', NULL, '1500036171', 0, 'Canopus Equipment\r\n', '0.00', '0.00', '0.00', 'PT.Canopus', '1', '0', '1', NULL),
+('IC001236', 'JV00035', '108', NULL, '1500036367', 0, '150 Jumbo Bag\r\n', '0.00', '0.00', '0.00', 'PPLi', '1', '0', '1', NULL),
+('IC001237', 'JV00035', '201', NULL, '1500036354', 0, '20FT Close TOP Iso Container OEGU 0006033\r\n', '0.00', '0.00', '0.00', 'PPLi', '1', '0', '1', NULL),
+('IC001238', 'JV00035', '201', NULL, '1500036354', 0, '20FT Close TOP Iso Container OEGU 0005965\r\n', '0.00', '0.00', '0.00', 'PPLi', '1', '0', '1', NULL),
+('IC001239', 'JV00035', '7', NULL, '1500036367', 0, '10FT Close TOP Iso Container OEGU 0006180\r\n', '0.00', '0.00', '0.00', 'PPLi', '1', '0', '1', NULL),
+('IC001240', 'JV00035', '7', NULL, '1500036367', 0, '10FT Close TOP Iso Container OEGU 0005986\r\n', '0.00', '0.00', '0.00', 'PPLi', '1', '0', '1', NULL),
+('IC001241', 'JV00035', '7', NULL, '1500036367', 0, '10FT Close TOP DNV Container OEGU 1201113\r\n', '0.00', '0.00', '0.00', 'PPLi', '1', '0', '1', NULL),
+('IC001242', 'JV00035', '201', NULL, 'DVRU 57527', 0, 'Empty Food Stuff Container DVRU 5752702\r\n', '0.00', '0.00', '0.00', 'GDSK', '1', '0', '1', NULL),
+('IC001243', 'JV00035', '201', NULL, 'CCLU 10278', 0, 'Empty Food Stuff Container CCLU 1027862\r\n', '0.00', '0.00', '0.00', 'GDSK', '1', '0', '1', NULL),
+('IC001244', 'JV00035', '201', NULL, 'FSCU 52050', 0, 'Empty Food Stuff Container FSCU 5205070\r\n', '0.00', '0.00', '0.00', 'GDSK', '1', '0', '1', NULL),
+('IC001245', 'JV00035', '201', NULL, 'NYKU 75466', 0, 'Empty Food Stuff Container NYKU 7546651\r\n', '0.00', '0.00', '0.00', 'GDSK', '1', '0', '1', NULL),
+('IC001246', 'JV00035', '201', NULL, 'TAHU 70206', 0, 'Empty Food Stuff Container TAHU 7020699\r\n', '0.00', '0.00', '0.00', 'GDSK', '1', '0', '1', NULL),
+('IC001247', 'JV00035', '201', NULL, 'TAHU 70206', 0, 'Empty Food Stuff Container TAHU 7020662\r\n', '0.00', '0.00', '0.00', 'GDSK', '1', '0', '1', NULL),
+('IC001248', 'JV00035', '7', NULL, 'CNHU 80288', 0, 'Empty Food Stuff Container CNHU 8028890\r\n', '0.00', '0.00', '0.00', 'GDSK', '1', '0', '1', NULL),
+('IC001249', 'JV00035', '201', NULL, 'NYKU 75410', 0, 'Empty Food Stuff Container NYKU 7541095\r\n', '0.00', '0.00', '0.00', 'GDSK', '1', '0', '1', NULL),
+('IC001250', 'JV00035', '201', NULL, 'CNHU 80260', 0, 'Empty Food Stuff Container CNHU 8026028\r\n', '0.00', '0.00', '0.00', 'GDSK', '1', '0', '1', NULL),
+('IC001251', 'JV00035', '211', NULL, 'FSOT 6077', 0, 'Empty 20FT Container FSOT 6077\r\n', '0.00', '0.00', '0.00', 'Mesitech Mitra', '1', '0', '1', NULL),
+('IC001252', 'JV00035', '369', NULL, '1500036356', 0, 'Sparepart Hailey Princes\r\n', '0.00', '0.00', '0.00', 'PT.Limin Marine', '1', '0', '1', NULL),
+('IC001253', 'JV00035', '201', NULL, '1500036415', 0, '20FT opentop Container OEGU 2502765\r\n', '0.00', '0.00', '0.00', 'PMB', '1', '0', '1', NULL),
+('IC001254', 'JV00035', '204', NULL, '1500036365', 0, 'Cylinder Rack , MOCW-OXY-06\r\n', '0.00', '0.00', '0.00', 'Medco Energi', '1', '0', '1', NULL),
+('IC001255', 'JV00035', '204', NULL, '1500036230', 0, 'Cylinder Rack SN , SEU-53-ROX016-07\r\n', '0.00', '0.00', '0.00', 'Sarku', '1', '0', '1', NULL),
+('IC001256', 'JV00035', '370', NULL, '1500036240', 0, 'Diesel Genset SN.TN WMB 05\r\n\r\n', '0.00', '0.00', '0.00', 'Medco Energi', '1', '0', '1', NULL),
+('IC001257', 'JV00035', '371', NULL, 'XXX', 0, 'Concreate Block For Balancing\r\n', '0.00', '0.00', '0.00', 'Medco Energi', '1', '0', '1', NULL),
+('IC001258', 'JV00035', '27', NULL, '1500036238', 0, '20FT Half Container AORU 4600163\r\n', '0.00', '0.00', '0.00', 'PT.Aneka Gas', '1', '0', '1', NULL),
+('IC001259', 'JV00035', '27', NULL, '1500036192', 0, '20FT Opentop Container H 272\r\n', '0.00', '0.00', '0.00', 'Sarku', '1', '0', '1', NULL),
+('IC001260', 'JV00035', '27', NULL, '1500036192', 0, '20FT Opentop Container H 340\r\n', '0.00', '0.00', '0.00', 'Sarku', '1', '0', '1', NULL),
+('IC001261', 'JV00035', '43', NULL, '1500036196', 0, '10FT Half Container SN , HOP-03/C10/08/09\r\n', '0.00', '0.00', '0.00', 'Sarku', '1', '0', '1', NULL),
+('IC001262', 'JV00035', '61', NULL, '1500036401', 0, 'Empty Tote Tank Ex Chemical , S-965ND , LBU-2019-0021\r\n', '0.00', '0.00', '0.00', 'LBU', '1', '0', '1', NULL),
+('IC001263', 'JV00035', '45', NULL, '1500036401', 0, 'Empty Tote Tank Ex Chemical , S-9653 , TD-TT-550-045\r\n', '0.00', '0.00', '0.00', 'LBU', '1', '0', '1', NULL),
+('IC001264', 'JV00035', '190', NULL, 'OEGU 24440', 0, '20FT HH Basket OEGU 2444041\r\n', '0.00', '0.00', '0.00', 'Solar Energy', '1', '0', '1', NULL),
+('IC001265', 'JV00035', '321', NULL, '1500035802', 0, 'D230 (530 gal)\r\n', '0.00', '0.00', '0.00', 'Dowell Anadrill', '1', '0', '1', NULL),
+('IC001266', 'JV00035', '321', NULL, '1500035802', 0, 'D080 (505 gal)\r\n', '0.00', '0.00', '0.00', 'Dowell Anadrill', '1', '0', '1', NULL),
+('IC001267', 'JV00035', '321', NULL, '1500035802', 0, 'D182 (1000 lbs)\r\n', '0.00', '0.00', '0.00', 'Dowell Anadrill', '1', '0', '1', NULL),
+('IC001268', 'JV00035', '321', NULL, '1500035802', 0, 'D095 (1500 lbs)\r\n', '0.00', '0.00', '0.00', 'Dowell Anadrill', '1', '0', '1', NULL),
+('IC001269', 'JV00035', '287', NULL, 'AORU 43004', 0, 'Basket AORU 4300459\r\n', '0.00', '0.00', '0.00', 'Dowell Schlumberger', '1', '0', '1', NULL),
+('IC001270', 'JV00035', '321', NULL, '1500036137', 0, 'Baracarb 5 (BigBag)\r\n', '0.00', '0.00', '0.00', 'Baroid', '1', '0', '1', NULL),
+('IC001271', 'JV00035', '321', NULL, '1500036137', 0, 'Baracarb 5 \r\n', '0.00', '0.00', '0.00', 'Baroid', '1', '0', '1', NULL),
+('IC001272', 'JV00035', '321', NULL, '1500036137', 0, 'Baracarb 50\r\n', '0.00', '0.00', '0.00', 'Baroid', '1', '0', '1', NULL),
+('IC001273', 'JV00035', '321', NULL, '1500036149', 0, 'D-124 (8800)\r\n', '0.00', '0.00', '0.00', 'Dowell Schlumberger', '1', '0', '1', NULL),
+('IC001274', 'JV00035', '321', NULL, '1500036149', 0, 'D-182\r\n', '0.00', '0.00', '0.00', 'Dowell Schlumberger', '1', '0', '1', NULL),
+('IC001275', 'JV00035', '321', NULL, '1500036149', 0, 'D-182\r\n', '0.00', '0.00', '0.00', 'Dowell Schlumberger', '1', '0', '1', NULL),
+('IC001276', 'JV00035', '321', NULL, '1500036149', 0, 'D-182\r\n', '0.00', '0.00', '0.00', 'Dowell Schlumberger', '1', '0', '1', NULL),
+('IC001277', 'JV00035', '321', NULL, '1500036149', 0, 'D-155 (530 gal)\r\n', '0.00', '0.00', '0.00', 'Dowell Schlumberger', '1', '0', '1', NULL),
+('IC001278', 'JV00035', '321', NULL, '1500036149', 0, 'U 066 (440 gal)\r\n', '0.00', '0.00', '0.00', 'Dowell Schlumberger', '1', '0', '1', NULL),
+('IC001279', 'JV00035', '321', NULL, '1500036151', 0, 'B 367 (440 gal)\r\n', '0.00', '0.00', '0.00', 'Dowell Schlumberger', '1', '0', '1', NULL),
+('IC001280', 'JV00035', '321', NULL, '1500036151', 0, 'D 256 (265 gal)\r\n', '0.00', '0.00', '0.00', 'Dowell Schlumberger', '1', '0', '1', NULL),
+('IC001281', 'JV00035', '321', NULL, '1500036151', 0, 'D 620 (506 gal)\r\n', '0.00', '0.00', '0.00', 'Dowell Schlumberger', '1', '0', '1', NULL),
+('IC001282', 'JV00035', '321', NULL, '1500036151', 0, 'D 145A (212 gal)\r\n', '0.00', '0.00', '0.00', 'Dowell Schlumberger', '1', '0', '1', NULL),
+('IC001283', 'JV00035', '211', NULL, '1500036198', 0, '20FT Opentop Container SN , BSLU 9203490\r\n', '0.00', '0.00', '0.00', 'PPLi', '1', '0', '1', NULL),
+('IC001284', 'JV00035', '211', NULL, '1500036198', 0, '20FT Opentop Container SN , BSLU 9204141\r\n', '0.00', '0.00', '0.00', 'PPLi', '1', '0', '1', NULL),
+('IC001285', 'JV00035', '211', NULL, '1500036198', 0, '20FT Opentop Container SN , BSLU 9203309\r\n', '0.00', '0.00', '0.00', 'PPLi', '1', '0', '1', NULL),
+('IC001286', 'JV00035', '211', NULL, '1500036198', 0, '20FT Opentop Container SN , PPLi 9730\r\n', '0.00', '0.00', '0.00', 'PPLi', '1', '0', '1', NULL),
+('IC001287', 'JV00035', '211', NULL, '1500036198', 0, '20FT Opentop Container SN , PPLi 9725\r\n', '0.00', '0.00', '0.00', 'PPLi', '1', '0', '1', NULL),
+('IC001288', 'JV00035', '211', NULL, '1500036198', 0, '20FT Opentop Container SN , PPLi 9719\r\n', '0.00', '0.00', '0.00', 'PPLi', '1', '0', '1', NULL),
+('IC001289', 'JV00035', '211', NULL, '1500036198', 0, '20FT Opentop Container SN , PPLi 9731\r\n', '0.00', '0.00', '0.00', 'PPLi', '1', '0', '1', NULL),
+('IC001290', 'JV00035', '211', NULL, '1500036198', 0, '20FT Opentop Container SN , BSLU 9204310\r\n', '0.00', '0.00', '0.00', 'PPLi', '1', '0', '1', NULL),
+('IC001291', 'JV00035', '241', NULL, '1500036198', 0, 'Cutting Skip SN.LCK 141\r\n', '0.00', '0.00', '0.00', 'PPLi', '1', '0', '1', NULL),
+('IC001292', 'JV00035', '241', NULL, '1500036198', 0, 'Cutting Skip SN.LCK 389\r\n', '0.00', '0.00', '0.00', 'PPLi', '1', '0', '1', NULL),
+('IC001293', 'JV00035', '241', NULL, '1500036198', 0, 'Cutting Skip SN.LCK 539\r\n', '0.00', '0.00', '0.00', 'PPLi', '1', '0', '1', NULL),
+('IC001294', 'JV00035', '241', NULL, '1500036198', 0, 'Cutting Skip SN.LCK 770\r\n', '0.00', '0.00', '0.00', 'PPLi', '1', '0', '1', NULL),
+('IC001295', 'JV00035', '241', NULL, '1500036198', 0, 'Cutting Skip SN.LCK 754\r\n', '0.00', '0.00', '0.00', 'PPLi', '1', '0', '1', NULL),
+('IC001296', 'JV00035', '241', NULL, '1500036200', 0, 'Cutting Skip SN.LCK 134\r\n', '0.00', '0.00', '0.00', 'PPLi', '1', '0', '1', NULL),
+('IC001297', 'JV00035', '241', NULL, '1500036200', 0, 'Cutting Skip SN.CMS 0051\r\n', '0.00', '0.00', '0.00', 'PPLi', '1', '0', '1', NULL),
+('IC001298', 'JV00035', '241', NULL, '1500036200', 0, 'Cutting Skip SN.CMS 0586\r\n', '0.00', '0.00', '0.00', 'PPLi', '1', '0', '1', NULL),
+('IC001299', 'JV00035', '241', NULL, '1500036200', 0, 'Cutting Skip SN.CMS 0525\r\n', '0.00', '0.00', '0.00', 'PPLi', '1', '0', '1', NULL),
+('IC001300', 'JV00035', '241', NULL, '1500036200', 0, 'Cutting Skip SN.CMS 0180\r\n', '0.00', '0.00', '0.00', 'PPLi', '1', '0', '1', NULL),
+('IC001301', 'JV00035', '372', NULL, '1500036427', 0, 'Rig up Stand CDS 13-3/8\" SN.AX-120384 / RS-023\r\n', '0.00', '0.00', '0.00', 'Nabors', '1', '0', '1', NULL),
+('IC001302', 'JV00035', '373', NULL, '1500036427', 0, 'Break Out Vise SN.AX-119295 /AP-043\r\n', '0.00', '0.00', '0.00', 'Nabors', '1', '0', '1', NULL),
+('IC001303', 'JV00035', '374', NULL, '1500036427', 0, 'Frame Spider SN.C-TSF-350001\r\n', '0.00', '0.00', '0.00', 'Nabors', '1', '0', '1', NULL),
+('IC001304', 'JV00035', '375', NULL, '1500036427', 0, 'Transport Frame SN.HPS-001\r\n', '0.00', '0.00', '0.00', 'Nabors', '1', '0', '1', NULL),
+('IC001305', 'JV00035', '376', NULL, '1500036427', 0, 'Skid SN.AX-512800 / SK-025\r\n', '0.00', '0.00', '0.00', 'Nabors', '1', '0', '1', NULL),
+('IC001306', 'JV00035', '377', NULL, '1500036427', 0, 'Skid Frame TSK 39\r\n', '0.00', '0.00', '0.00', 'Nabors', '1', '0', '1', NULL),
+('IC001307', 'JV00035', '378', NULL, '1500036427', 0, 'Hyd Power Unit , CDS , 5.5GPM,2500PSI\r\n', '0.00', '0.00', '0.00', 'Nabors', '1', '0', '1', NULL),
+('IC001308', 'JV00035', '7', NULL, 'AORU 23000', 0, '10FT Container AORU 23000207\r\n', '0.00', '0.00', '0.00', 'Vantage', '1', '0', '1', NULL),
+('IC001309', 'JV00035', '379', NULL, 'BSL 405', 0, 'Tank BSL 405\r\n', '0.00', '0.00', '0.00', 'Vantage', '1', '0', '1', NULL),
+('IC001310', 'JV00035', '7', NULL, '1500036479', 0, 'Half Basket 20FT , OEGU 2438645\r\n', '0.00', '0.00', '0.00', 'Solar Energy', '1', '0', '1', NULL),
+('IC001311', 'JV00035', '201', NULL, 'CCLU 10381', 0, '20\" Reef Container SN.CCLU 1038152\r\n', '0.00', '0.00', '0.00', 'Vantage', '1', '0', '1', NULL),
+('IC001312', 'JV00035', '27', NULL, '1500036134', 0, '20FT Opentop Container AORU 3600723\r\n', '0.00', '0.00', '0.00', 'Halliburton', '1', '0', '1', NULL),
+('IC001313', 'JV00035', '380', NULL, '1500036134', 0, 'Combo Winch Unit SN.12365542\r\n', '0.00', '0.00', '0.00', 'Halliburton', '1', '0', '1', NULL),
+('IC001314', 'JV00035', '380', NULL, '1500036134', 0, 'Multi Split C Long cabin SN.103386 SAP 12611497\r\n', '0.00', '0.00', '0.00', 'Halliburton', '1', '0', '1', NULL),
+('IC001315', 'JV00035', '381', NULL, '1500036134', 0, 'Container 8FT Doghouse SN.109461464\r\n', '0.00', '0.00', '0.00', 'Halliburton', '1', '0', '1', NULL),
+('IC001316', 'JV00035', '382', NULL, '1500036134', 0, '10FT Opentop Container SN.AORU 3301492\r\n', '0.00', '0.00', '0.00', 'Halliburton', '1', '0', '1', NULL),
+('IC001317', 'JV00035', '108', NULL, '1500036134', 0, 'Basket TB 1134 04\r\n', '0.00', '0.00', '0.00', 'Halliburton', '1', '0', '1', NULL),
+('IC001318', 'JV00035', '383', NULL, '1500036134', 0, 'Power Pack SN.103238 SAP 12611498\r\n', '0.00', '0.00', '0.00', 'Halliburton', '1', '0', '1', NULL),
+('IC001319', 'JV00036', '193', NULL, 'PR-1201-NS', 0, 'PCE Rack 5.5\" PR-1201-NST-PR32', '0.00', '0.00', '0.00', 'Nesitor', '1', '0', '1', NULL),
+('IC001320', 'JV00036', '384', NULL, 'PR-1201-NS', 0, 'PCE Rack 3.5\" PR-1201-NST-PR33', '0.00', '0.00', '0.00', 'Nesitor', '1', '0', '1', NULL),
+('IC001321', 'JV00036', '385', NULL, 'TC-0801-NS', 0, 'Tool Container TC-0801-NST-TC13', '0.00', '0.00', '0.00', 'Nesitor', '1', '0', '1', NULL),
+('IC001322', 'JV00036', '386', NULL, 'WU-2021-NS', 0, 'Winch Unit Double Drum Cabin', '0.00', '0.00', '0.00', 'Nesitor', '1', '0', '1', NULL),
+('IC001323', 'JV00036', '387', NULL, 'OEG-690220', 0, 'Vapour Blast Machine MMP-1-016-0215', '0.00', '0.00', '0.00', 'Mesitech', '1', '0', '1', NULL),
+('IC001324', 'JV00036', '387', NULL, 'OEG-696643', 0, 'Davit Winch Ovalangga', '0.00', '0.00', '0.00', 'Ovalangga', '1', '0', '1', NULL),
+('IC001325', 'JV00036', '387', NULL, 'OEG-697625', 0, 'Winch CH170A-23120-01P SN.0401416', '0.00', '0.00', '0.00', 'Premier Oil', '1', '0', '1', NULL),
+('IC001326', 'JV00010', '21', NULL, '150034284', 0, 'Tote Tank HSD', '0.00', '0.00', '0.00', 'Tote Tank', '1', '0', '1', NULL),
+('IC001327', 'JV00010', '228', NULL, '0001', 0, '20 FT Container', '0.00', '0.00', '0.00', 'Close  Container', '1', '0', '1', NULL),
+('IC001328', 'JV00010', '244', NULL, '0001', 0, 'Drip pipe', '0.00', '0.00', '0.00', 'Indocaten', '1', '0', '1', NULL),
+('IC001329', 'JV00037', '137', NULL, '0001', 10, 'Container poi', '95.60', '15.00', '95.60', 'Indocaten', '1', '0', '1', NULL),
+('IC001330', 'JV00037', '296', NULL, '0002', 3, 'Mini Container', '48.39', '5.00', '48.39', 'Elnusa', '1', '0', '1', NULL),
+('IC001331', 'JV00037', '340', NULL, '0003', 20, 'Container 20 FT', '384.40', '50.00', '384.40', 'UNTR', '1', '0', '1', NULL);
 
 --
--- Trigger `detail_joborder`
+-- Triggers `detail_joborder`
 --
-DELIMITER //
-CREATE TRIGGER `progres_jo` AFTER INSERT ON `detail_joborder`
- FOR EACH ROW BEGIN
+DELIMITER $$
+CREATE TRIGGER `progres_jo` AFTER INSERT ON `detail_joborder` FOR EACH ROW BEGIN
 	UPDATE job_order SET progres_jo =progres_jo+NEW.ton_cargo
     WHERE id_joborder=NEW.id_joborder;
 END
-//
+$$
 DELIMITER ;
 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `detail_jobordertruck`
+-- Table structure for table `jenis_barang`
 --
 
-CREATE TABLE IF NOT EXISTS `detail_jobordertruck` (
-`id_djotruck` int(12) NOT NULL,
-  `id_jobordertruck` varchar(15) NOT NULL,
-  `nm_company` varchar(50) DEFAULT NULL,
-  `nm_barang` varchar(50) DEFAULT NULL,
-  `nm_kegiatan` varchar(15) DEFAULT NULL,
-  `production` varchar(15) DEFAULT NULL,
-  `no_po` varchar(15) DEFAULT NULL,
-  `p_cargo` decimal(6,2) NOT NULL,
-  `l_cargo` decimal(6,2) NOT NULL,
-  `t_cargo` decimal(6,2) NOT NULL,
-  `volume_satuan` decimal(6,2) DEFAULT NULL,
-  `ton_satuan` decimal(6,2) DEFAULT NULL,
-  `volume_cargo` decimal(6,2) NOT NULL,
-  `ton_cargo` decimal(6,2) NOT NULL,
-  `revton_cargo` decimal(6,2) NOT NULL,
-  `qty_cargo` int(11) NOT NULL,
-  `satuan_cargo` varchar(15) DEFAULT NULL,
-  `deskripsi_cargo` text,
-  `status_cargo` int(11) DEFAULT '1'
-) ENGINE=InnoDB AUTO_INCREMENT=222 DEFAULT CHARSET=latin1;
-
---
--- Dumping data untuk tabel `detail_jobordertruck`
---
-
-INSERT INTO `detail_jobordertruck` (`id_djotruck`, `id_jobordertruck`, `nm_company`, `nm_barang`, `nm_kegiatan`, `production`, `no_po`, `p_cargo`, `l_cargo`, `t_cargo`, `volume_satuan`, `ton_satuan`, `volume_cargo`, `ton_cargo`, `revton_cargo`, `qty_cargo`, `satuan_cargo`, `deskripsi_cargo`, `status_cargo`) VALUES
-(1, 'JT00002', 'PT.ASW', 'Chemical', 'OFFLOADING', 'Production', '', '1.22', '1.25', '1.26', NULL, NULL, '0.00', '0.00', '0.00', 0, 'Unit', 'Offloading Medco', NULL),
-(2, 'JT00002', 'PT. Labror', 'Pallet', 'OFFLOADING', 'Production', '', '1.25', '1.25', '0.50', NULL, NULL, '0.00', '0.00', '0.00', 0, 'Unit', 'Offloading Medco', NULL),
-(3, 'JT00002', 'PT.ABC', 'Pallet', 'OFFLOADING', 'Production', '', '1.22', '1.23', '1.24', NULL, NULL, '0.00', '0.00', '0.00', 0, 'Unit', 'Offloading Medco', 1),
-(4, 'JT00002', 'PT.ABC', 'Pallet', 'OFFLOADING', 'Production', '0001', '1.22', '1.21', '1.22', NULL, NULL, '0.00', '0.00', '0.00', 0, 'Unit', 'Offloading Medco', 1),
-(5, 'JT00003', 'PT.ASW', 'Pallet', 'OFFLOADING', 'Production', '0001', '1.23', '1.20', '1.20', NULL, NULL, '0.00', '0.00', '0.00', 0, 'Unit', 'Offloading Premier', 1),
-(6, 'JT00001', 'PT.ASW', 'Pallet', 'OFFLOADING', 'Production', '0002', '1.22', '1.33', '1.44', NULL, NULL, '0.00', '0.00', '0.00', 0, 'Unit', 'Offloading Medco', 1),
-(7, 'JT00001', 'PT.ASW', 'Chemical', 'LOADING', 'Production', '0001', '1.50', '1.50', '1.50', NULL, NULL, '0.00', '0.00', '0.00', 0, 'Unit', 'Loading Medco', 1),
-(8, 'JT00001', 'PT.ABC', 'Chemical', 'OFFLOADING', 'Production', '0003', '1.22', '1.22', '1.22', NULL, NULL, '0.00', '0.00', '0.00', 0, 'Unit', 'Offloading Medco', 1),
-(9, 'JT00001', 'PT.ABC', 'Chemical Drum', 'OFFLOADING', 'Production', '0001', '1.20', '1.20', '1.20', NULL, NULL, '0.00', '0.00', '0.00', 0, 'Pallet', 'Offloading Medco', 1),
-(10, 'JT00001', 'PT.ABC', 'Chemical', 'OFFLOADING', 'Production', '0002', '1.20', '1.20', '1.20', '1.73', '1.40', '0.00', '0.00', '0.00', 0, 'Pallet', 'Loading Medco', 1),
-(11, 'JT00004', 'PT.ABC', 'Chemical Drum', 'OFFLOADING', 'Production', '0001', '1.20', '1.20', '1.20', '1.73', '1.30', '0.00', '0.00', '0.00', 0, 'Pallet', 'Offloading Premier', 1),
-(12, 'JT00004', 'PT.ABC', 'Chemical Drum', 'OFFLOADING', 'Production', '0001', '1.20', '1.20', '1.20', '1.73', '1.30', '0.00', '0.00', '0.00', 0, 'Pallet', 'Offloading Premier', 1),
-(13, 'JT00005', 'Segara Permai', 'Liferaft', 'OFFLOADING', '', '001', '1.20', '1.20', '1.00', '1.44', '0.30', '0.00', '0.00', '0.00', 0, 'Palet', 'Offloading Truck', 1),
-(14, 'JT00006', 'Pt elnusa petrofin', 'Meditran oil', 'OFFLOADING', 'Production', '4400002054', '1.00', '1.00', '1.00', '1.00', '4.00', '0.00', '0.00', '0.00', 0, 'Pallet', 'Offloading truck', 1),
-(15, 'JT00007', 'Pt sulindo jaya abadi', 'Sparepart', 'OFFLOADING', 'Production', '12506/01/00010', '0.00', '0.00', '0.00', '0.00', '0.61', '0.00', '0.00', '0.00', 0, 'Wooden box', 'Offloading truck', 1),
-(16, 'JT00008', 'PT Shentek Teknika Indonesia', 'Plate mild steel', 'OFFLOADING', 'Production', '12490/01/00010', '2.00', '1.00', '0.00', '0.00', '0.70', '0.00', '0.00', '0.00', 0, 'Losse', 'Offloading truck', 1),
-(17, 'JT00009', 'PT Shentek Teknika Indonesia', 'Beam steel', 'OFFLOADING', 'Production', '12490/01/00010', '12.00', '0.00', '0.00', '0.00', '0.50', '0.00', '0.00', '0.00', 0, 'Losse', 'Offloading truck', 1),
-(18, 'JT00010', 'PT Gearindo', 'Wodden box', 'OFFLOADING', 'Production', '0001', '0.00', '0.00', '0.00', '0.00', '0.20', '0.00', '0.00', '0.00', 0, '', 'Off loading truck', 1),
-(19, 'JT00011', 'Gearindo', 'W/Box', 'OFFLOADING', 'Production', '002', '0.62', '0.62', '0.83', '0.32', '0.20', '0.00', '0.00', '0.00', 0, 'W/Box', 'Offloading Truck Premier Oil', 1),
-(20, 'JT00012', 'PT.Pusuma', 'Pallet flang', 'OFFLOADING', 'Production', '003', '0.20', '0.15', '0.10', '0.00', '0.35', '0.00', '0.00', '0.00', 0, 'Pallet', 'Off loading truck premier oil', 1),
-(21, 'JT00012', 'PT Pusuma', 'Pallet Flang', 'OFFLOADING', 'Production', '004', '0.15', '0.12', '0.06', '0.00', '0.20', '0.00', '0.00', '0.00', 0, 'Pallet', 'Off loading truck premier oil', 1),
-(22, 'JT00012', 'PT. Eskimo', 'Wodden box', 'OFFLOADING', 'Production', '005', '1.00', '0.50', '0.50', '0.25', '0.85', '0.00', '0.00', '0.00', 0, 'Boks', 'Off loading ttuck premier oil', 1),
-(23, 'JT00012', 'PT.Wira trans', 'Wodden box', 'OFFLOADING', 'Production', '006', '1.00', '1.00', '0.50', '0.50', '0.09', '0.00', '0.00', '0.00', 0, 'Boks', 'Off loading truck premier oil', 1),
-(24, 'JT00013', 'PT.Mesitrch', 'Welding machine', 'OFFLOADING', '', '007', '2.00', '1.20', '1.80', '4.32', '1.30', '0.00', '0.00', '0.00', 0, 'Unit', 'Off loading truck premier oil', 1),
-(25, 'JT00014', 'PT.Mesitech', 'Compressor', 'OFFLOADING', 'Production', '008', '2.57', '1.80', '1.83', '8.47', '1.70', '0.00', '0.00', '0.00', 0, 'Unit', 'Off loading truck premier oil', 1),
-(26, 'JT00016', 'PT Ekajaya', 'Demulsifier', 'OFFLOADING', 'Production', '12531/01/00010', '1.00', '1.00', '1.00', '1.00', '0.80', '0.00', '0.00', '0.00', 0, 'Pallet', 'Offloading truck', 1),
-(27, 'JT00017', 'PT Stainless steel primavalve', 'Gate valve', 'OFFLOADING', 'Production', 'CO-20-05-0048', '1.00', '1.00', '1.00', '1.00', '1.00', '1.00', '1.00', '1.00', 0, 'Wooden box', 'Offloading truck', 1),
-(28, 'JT00018', 'PT Ardico pratama energi', 'H2S Scavenger', 'OFFLOADING', 'Production', '12495/01/00010', '1.00', '1.00', '1.00', '1.00', '0.80', '0.00', '0.00', '0.00', 0, 'Pallet', 'Offloading truck', 1),
-(29, 'JT00019', 'PT Shaftindo energi ', 'Spool', 'LOADING', 'Production', '4500004603', '4.00', '2.00', '0.00', '0.00', '1.20', '0.00', '0.00', '0.00', 0, 'Pallet', 'Loading truck', 1),
-(30, 'JT00019', 'PT Shaftindo energi ', 'Flange', 'OFFLOADING', 'Production', '4500004603', '0.00', '0.00', '0.00', '0.00', '0.33', '0.00', '0.00', '0.00', 0, 'Wooden box', 'Loading truck', 1),
-(31, 'JT00019', 'PT Shaftindo energi ', 'Ball valve', 'OFFLOADING', 'Production', '4500004603', '0.00', '0.00', '0.00', '0.00', '0.30', '0.00', '0.00', '0.00', 0, 'Wooden box', 'Loading truck', 1),
-(32, 'JT00019', 'PT Shaftindo energi ', 'Empty oxygen bottle', 'LOADING', 'Production', '4500004603', '1.00', '0.00', '2.00', '0.00', '0.80', '0.00', '0.00', '0.00', 0, 'Rack', 'Loading truck', 1),
-(33, 'JT00020', 'PT Ida era baru', 'Sparepart', 'OFFLOADING', 'Production', '12464', '0.00', '0.00', '0.00', '0.00', '0.10', '0.00', '0.00', '0.00', 0, 'Wooden box', 'Offloading truck', 1),
-(34, 'JT00021', 'PT Benvors sarana utama', 'Wellhead penetrator ', 'OFFLOADING', 'Production', '3000005', '1.00', '1.00', '0.00', '0.00', '0.65', '0.00', '0.00', '0.00', 0, 'Wooden box', 'Offloading truck', 1),
-(35, 'JT00022', 'PT Sucofindo', 'Kompresor', 'OFFLOADING', 'Production', '420000266', '3.00', '2.00', '2.00', '12.00', '0.60', '0.00', '0.00', '0.00', 0, 'Unit', 'Offloading truck', 1),
-(36, 'JT00015', 'a', 'a', 'OFFLOADING', 'a', 'a', '2.00', '1.00', '1.00', '2.00', '3.00', '0.00', '0.00', '0.00', 0, 'Pallet', 'Offloading Premier', 1),
-(37, 'JT00023', 'Champions', 'IBC Tank', 'OFFLOADING', 'Production', '1500033333', '0.35', '0.35', '2.00', '0.24', '2.00', '0.00', '0.00', '0.00', 0, 'Unit', 'Offloading', 1),
-(38, 'JT00024', 'PPLI', 'Chemical Drum', 'LOADING', 'Drilling', '002', '1.22', '1.22', '1.00', '1.49', '0.80', '0.00', '0.00', '0.00', 0, 'pallet', 'Loading Chemical drum PPLI', 1),
-(41, 'JT00025', 'Pt elnusa petrofin', 'Meditran oil', 'OFFLOADING', 'Production', '4400002059', '1.17', '1.17', '1.10', '1.51', '0.80', '0.00', '0.00', '0.00', 0, 'Pallet', 'Offloading truck', 1),
-(45, 'JT00027', 'PT Anugerah inti mulia ', 'Ethylene glycol', 'OFFLOADING', 'Production', '4400002060', '1.17', '1.17', '1.10', '1.51', '0.90', '0.00', '0.00', '0.00', 0, 'Pallet', 'Offloading truck', 1),
-(46, 'JT00028', 'PT Petrolio Travolta', 'Toluene', 'OFFLOADING', 'Production', '4300007998', '1.17', '1.17', '1.10', '1.51', '0.80', '0.00', '0.00', '0.00', 0, 'Pallet', 'Offloading truck', 1),
-(47, 'JT00028', 'PT Shaftindo energi ', 'Cradle gas bottle', 'OFFLOADING', 'Production', 'Si 191 ctr 121', '1.18', '0.82', '2.01', '1.94', '0.30', '0.00', '0.00', '0.00', 0, 'Rack', 'Offloading truck', 1),
-(48, 'JT00028', 'PT Shaftindo energi ', 'Cradle gas bottle', 'OFFLOADING', 'Production', 'Si 191 ctr 121', '0.63', '0.63', '1.91', '0.76', '0.37', '0.00', '0.00', '0.00', 0, 'Rack', 'Offloading truck', 1),
-(49, 'JT00028', 'PT Shaftindo energi ', 'Cradle gas bottle', 'OFFLOADING', 'Production', 'Si 191 ctr 121', '1.13', '0.82', '2.01', '1.86', '0.70', '0.00', '0.00', '0.00', 0, 'Rack', 'Offloading truck', 1),
-(50, 'JT00029', 'PT.PMB', 'Waste skipe', 'LOADING', 'Production', '007', '2.06', '1.60', '1.60', '5.27', '1.00', '0.00', '0.00', '0.00', 0, '', 'Loading truck eks KM Sokka', 1),
-(52, 'JT00029', 'PT.PMB', 'Half Open Top 20 ft', 'LOADING', 'Production', '007', '6.00', '2.50', '1.60', '24.00', '1.70', '0.00', '0.00', '0.00', 0, 'Unit', 'Loading truck eks KM Sokka', 1),
-(53, 'JT00029', 'PT.PMB', 'Container 10 ft', 'OFFLOADING', 'Production', '007', '3.00', '2.50', '2.70', '20.25', '1.70', '0.00', '0.00', '0.00', 0, 'Unit', 'Off loading truck', 1),
-(54, 'JT00029', 'PT.PMB', 'Waste skipe', 'LOADING', 'Production', '007', '2.10', '1.60', '1.60', '5.38', '1.00', '0.00', '0.00', '0.00', 0, 'Unit', 'Loading truck eks KM Sokka', 1),
-(55, 'JT00029', 'PT.Defriwangga', 'Wodden box', 'OFFLOADING', 'Production', '004', '1.20', '1.20', '0.55', '0.79', '0.30', '0.00', '0.00', '0.00', 0, 'Boks', 'Off loading truck', 1),
-(56, 'JT00029', 'PT.Defriwangga', 'Wodden box', 'OFFLOADING', 'Production', '004', '1.20', '1.20', '0.55', '0.79', '0.30', '0.00', '0.00', '0.00', 0, 'Boks', 'Off loading truck', 1),
-(57, 'JT00029', 'PT Conbit', 'Container 20 ft', 'OFFLOADING', 'Production', '005', '6.00', '2.50', '2.80', '42.00', '10.00', '0.00', '0.00', '0.00', 0, 'Unit', 'Off loading truck', 1),
-(58, 'JT00031', 'PT Citra duasejati', 'Reclosser', 'OFFLOADING', 'Production', '110000096', '0.85', '0.50', '1.00', '0.42', '0.83', '0.00', '0.00', '0.00', 0, 'Wooden box', 'Offloading truck', 1),
-(59, 'JT00031', 'PT Citra duasejati', 'Reclosser', 'OFFLOADING', 'Production', '110000096', '1.35', '1.10', '1.52', '2.26', '3.52', '0.00', '0.00', '0.00', 0, 'Wooden box', 'Offloading truck', 1),
-(60, 'JT00032', 'PT Citra duasejati', 'Reclosser', 'LOADING', '', '110000096', '0.85', '0.50', '1.00', '0.42', '0.83', '0.00', '0.00', '0.00', 0, 'Wooden box', 'Loading truck', 1),
-(61, 'JT00032', 'PT Citra duasejati', 'Reclosser', 'LOADING', 'Production', '110000096', '1.35', '1.10', '1.52', '2.26', '3.52', '0.00', '0.00', '0.00', 0, 'Wooden box', 'Loading truck', 1),
-(62, 'JT00033', 'PT Warso darma utama', 'Oli', 'OFFLOADING', 'Production', '005', '1.20', '1.20', '1.00', '1.44', '0.20', '0.00', '0.00', '0.00', 0, 'Pallet', 'Off loading truck 2 pallet drum oli', 1),
-(63, 'JT00034', 'Pt Arindo surya global', 'fitting', 'OFFLOADING', 'production', '12584/01/010', '1.10', '0.90', '0.75', '0.74', '0.80', '0.00', '0.00', '0.00', 0, 'box', 'offloading truck', 1),
-(64, 'JT00034', 'Pt Arindo surya global', 'fitting', 'OFFLOADING', 'production', '12584/01/010', '0.80', '0.60', '1.75', '0.84', '0.36', '0.00', '0.00', '0.00', 0, 'box', 'offloading truck', 1),
-(65, 'JT00034', 'Pt Arindo surya global', 'fitting', 'OFFLOADING', 'production', '12584/01/010', '0.80', '0.60', '0.35', '0.17', '0.11', '0.00', '0.00', '0.00', 0, 'pallet', 'offloading truck', 1),
-(66, 'JT00029', 'PT.ABC', 'Chemical Drum', 'OFFLOADING', 'Production', '0001', '1.00', '2.00', '2.00', '4.00', '3.00', '4.00', '3.00', '4.00', 1, 'Unit', 'Offloading Star', 1),
-(67, 'JT00029', 'PT.ABC', 'Chemical Drum', 'OFFLOADING', 'Production', '0001', '1.00', '2.00', '2.00', '4.00', '5.00', '4.00', '5.00', '5.00', 1, 'Pallet', 'Offloading Star', 1),
-(68, 'JT00035', 'Pt duta marine', 'plat', 'OFFLOADING', 'production', 'Sj-0095', '1.50', '0.20', '0.40', '0.12', '0.30', '0.00', '0.00', '0.00', 0, 'pallet', 'offloading truck', 1),
-(69, 'JT00036', 'Benvors', 'sparepart', 'OFFLOADING', 'production', '078', '1.20', '0.80', '0.65', '0.62', '0.35', '0.00', '0.00', '0.00', 0, 'box', 'offloading truck', 1),
-(70, 'JT00036', 'Benvors', 'Cable', 'OFFLOADING', '', '079', '1.20', '1.20', '0.90', '1.30', '0.15', '0.00', '0.00', '0.00', 0, 'pallet', 'offloading truck', 1),
-(71, 'JT00036', 'PT Optima S Energi', 'pipa', 'OFFLOADING', 'production', '080', '6.00', '0.03', '0.03', '0.00', '0.30', '0.00', '0.00', '0.00', 0, 'joint', 'offloading truck', 1),
-(72, 'JT00036', 'PT Optima S Energi', 'pipa', 'OFFLOADING', 'production', '080', '6.00', '0.01', '0.01', '0.00', '0.08', '0.00', '0.00', '0.00', 0, 'joint', 'offloading truck', 1),
-(73, 'JT00037', 'PT.Schlumberger', '', 'OFFLOADING', '', '4200002636 (KH-', '2.43', '0.83', '0.35', '0.71', '0.41', '0.00', '0.00', '0.00', 0, 'Boks', 'Off loading truck', 1),
-(74, 'JT00037', 'PT.Schlumberger', 'Wodden box', 'OFFLOADING', 'Production', '4200002636 (KH-', '5.60', '0.45', '0.52', '1.31', '0.13', '0.00', '0.00', '0.00', -1, 'Boks', 'Off loading truck', 1),
-(75, 'JT00037', 'PT.Schlumberger', 'Wodden box', 'OFFLOADING', 'Production', '4200002636 (KH-', '1.80', '0.40', '0.50', '0.36', '0.22', '0.00', '0.00', '0.00', -3, 'Boks', 'Loading truck', 1),
-(76, 'JT00037', 'PT.Multi Karya Logam', 'Wodden box', 'OFFLOADING', 'Production', '430008002', '0.72', '0.42', '0.56', '0.17', '0.08', '0.00', '0.00', '0.00', 0, 'Boks', 'Off loading truck', 1),
-(77, 'JT00037', 'PT.Multi Karya Logam', 'AC', 'OFFLOADING', 'Production', '430008002', '0.78', '0.54', '0.50', '0.21', '0.06', '0.00', '0.00', '0.00', 0, 'Unit', 'Off loading truck', 1),
-(78, 'JT00038', 'PT Warso darma utama', 'Drum oli', 'OFFLOADING', 'Production', '004', '1.20', '1.20', '1.00', '1.44', '0.60', '0.00', '0.00', '0.00', 0, '', 'Off loading truck premier oil', 1),
-(79, 'JT00037', 'PT.Schlumberger', 'Wodden box', 'OFFLOADING', 'Drilling', '4200002636 (KH-', '4.56', '0.43', '0.47', '0.92', '0.13', '0.00', '0.00', '0.00', 0, 'Boks', 'Off loading truck', 1),
-(80, 'JT00037', 'PT.Schlumberger', '', 'OFFLOADING', '', '4200002636 (KH-', '6.00', '1.10', '0.40', '2.64', '0.60', '0.00', '0.00', '0.00', 0, 'Pallet', 'Off loading truck', 1),
-(81, 'JT00037', 'PT.Schlumberger', 'Wodden box', 'OFFLOADING', '', '4200002636 (KH-', '2.60', '0.96', '0.75', '1.87', '0.20', '0.00', '0.00', '0.00', 0, 'Boks', 'Off loading truck', 1),
-(82, 'JT00037', 'PT.Schlumberger', 'Tubing', 'OFFLOADING', 'Drilling', '4200002636 (KH-', '4.70', '1.10', '0.40', '2.07', '0.40', '0.00', '0.00', '0.00', 0, 'Pallet', 'Off loading truck', 1),
-(83, 'JT00037', 'PT.Schlumberger', 'Wodden box', 'OFFLOADING', 'Drilling', '4200002636 (KH-', '1.00', '0.78', '0.55', '0.43', '0.12', '0.00', '0.00', '0.00', 0, 'Boks', 'Off loading truck', 1),
-(84, 'JT00038', 'PT.Karya Energy', 'Wodden box', 'OFFLOADING', 'Production', '007', '1.20', '0.60', '0.90', '0.65', '0.95', '0.00', '0.00', '0.00', 0, 'Boks', 'Off loading truck premier oil', 1),
-(85, 'JT00038', 'PT.Karya Energy', 'Sling wire', 'OFFLOADING', 'Production', '007', '1.00', '0.60', '0.60', '0.36', '0.08', '0.00', '0.00', '0.00', 0, 'Pallet', 'Off loading truck premier oil', 1),
-(86, 'JT00038', 'PT.Karya Energy', 'Wodden box', 'OFFLOADING', 'Production', '007', '0.50', '0.50', '0.80', '0.20', '0.05', '0.00', '0.00', '0.00', 0, 'Boks', 'Off loading truck premier oil', 1),
-(87, 'JT00038', 'PT.Karya Energy', 'Majun', 'OFFLOADING', 'Production', '007', '1.20', '1.20', '0.80', '1.15', '0.20', '0.00', '0.00', '0.00', 0, 'Pallet', 'Off loading truck premier oil', 1),
-(88, 'JT00039', 'Eskimo', 'sparepart', 'OFFLOADING', 'production', '0001', '1.25', '1.07', '1.00', '1.34', '0.03', '0.00', '0.00', '0.00', 0, 'box', 'offloading truck', 1),
-(89, 'JT00039', 'Eskimo', 'sparepart', 'OFFLOADING', 'production', '0001', '1.00', '1.00', '0.09', '0.09', '0.23', '0.00', '0.00', '0.00', 0, 'pallet', 'offloading truck', 1),
-(90, 'JT00039', 'Eskimo', 'sparepart', 'OFFLOADING', 'production', '0001', '0.10', '0.05', '0.05', '0.00', '0.30', '0.00', '0.00', '0.00', 0, 'box', 'offloading truck', 1),
-(91, 'JT00039', 'Eskimo', 'sparepart', 'OFFLOADING', '', '0001', '3.13', '0.41', '0.04', '0.06', '0.18', '0.00', '0.00', '0.00', 0, 'box', 'offloading truck', 1),
-(92, 'JT00039', 'Eskimo', 'sparepart', 'OFFLOADING', 'production', '0001', '3.00', '0.03', '0.04', '0.00', '0.12', '0.00', '0.00', '0.00', 0, 'box', 'offloading truck', 1),
-(93, 'JT00039', 'Eskimo', 'sparepart', 'OFFLOADING', 'production', '0001', '1.27', '1.15', '0.55', '0.80', '0.30', '0.00', '0.00', '0.00', 0, 'box', 'offloading truck', 1),
-(94, 'JT00039', 'Eskimo', 'sparepart', 'OFFLOADING', '', '0001', '1.27', '1.10', '0.07', '0.10', '0.02', '0.00', '0.00', '0.00', 0, 'box', 'offloading truck', 1),
-(95, 'JT00039', 'PT Tekindomas niagatama', 'majun', 'OFFLOADING', 'production', '03', '1.20', '1.20', '0.07', '0.09', '0.05', '0.00', '0.00', '0.00', 0, 'pallet', 'offloading truck', 1),
-(96, 'JT00039', 'PT Tekindomas niagatama', 'OIL ', 'OFFLOADING', 'production', '03', '1.20', '1.20', '1.10', '1.58', '0.80', '0.00', '0.00', '0.00', 0, 'pallet', 'offloading truck', 1),
-(97, 'JT00039', 'PT Tekindomas niagatama', 'Oil ', 'OFFLOADING', '', '03', '1.20', '0.06', '0.06', '0.00', '0.40', '0.00', '0.00', '0.00', 0, 'pallet', 'offloading truck', 1),
-(98, 'JT00040', 'PT EON chemical', 'chemical', 'OFFLOADING', 'production', '02/12', '1.20', '1.20', '1.10', '1.58', '0.65', '0.00', '0.00', '0.00', 0, 'pallet', 'offloading truck', 1),
-(99, 'JT00041', 'PT Firtech inti karya', 'Black pipe', 'OFFLOADING', 'Production', '12599', '6.00', '0.08', '0.08', '0.03', '0.01', '-0.33', '-0.10', '-0.33', -10, 'Joint', 'Offloading truck', 1),
-(100, 'JT00041', 'PT Firtech inti karya', 'Black pipe', 'OFFLOADING', 'Production', '12599', '6.00', '0.01', '0.01', '0.00', '0.04', '0.00', '0.00', '0.00', 0, 'Joint', 'Offloading truck', 1),
-(101, 'JT00041', 'PT mesindo', 'Generator rotor', 'LOADING', 'Production', '12', '2.00', '1.00', '0.09', '0.18', '1.50', '0.00', '0.00', '0.00', 0, 'Wooden box', 'Loading truck', 1),
-(102, 'JT00041', 'PT EON chemical', 'chemical', 'OFFLOADING', 'Production', '45', '1.20', '1.20', '0.07', '0.10', '0.80', '0.00', '0.00', '0.00', 0, 'Pallet', 'Offloading truck', 1),
-(103, 'JT00042', 'PT linto', 'Filter', 'OFFLOADING', 'Production', '420043830', '1.20', '1.20', '1.40', '2.02', '0.05', '0.00', '0.00', '0.00', 0, 'Pallet', 'Offloading truck', 1),
-(104, 'JT00042', 'PT linto', 'Filter', 'OFFLOADING', 'Production', '4210043832', '1.20', '1.20', '1.40', '2.02', '0.05', '0.00', '0.00', '0.00', 0, 'Pallet', 'Offloading truck', 1),
-(105, 'JT00042', 'Pt aft', 'Sparepart', 'OFFLOADING', 'Production', '4410045905', '0.80', '0.80', '1.15', '0.74', '0.07', '0.00', '0.00', '0.00', 0, 'Woden box', 'Offloading truck', 1),
-(106, 'JT00042', 'PT luas birus', 'To tank', 'OFFLOADING', 'Production', '4210043889', '1.25', '1.10', '1.90', '2.61', '2.60', '0.00', '0.00', '0.00', 0, 'Unit', 'Offloading truck', 1),
-(107, 'JT00042', 'PT indo cool', 'Sparepart', 'OFFLOADING', 'Production', 'So', '2.55', '2.00', '0.65', '3.31', '2.41', '0.00', '0.00', '0.00', 0, 'Box', 'Offloading truck', 1),
-(108, 'JT00042', 'Pt pgp', 'Cassing 9 5/8', 'OFFLOADING', 'Production', 'So', '3.00', '0.80', '0.80', '1.92', '0.45', '0.00', '0.00', '0.00', 0, 'Bendel', 'Offloading truck', 1),
-(109, 'JT00042', 'Pt pgp', 'Cassing 9 5/8', 'OFFLOADING', 'Production', 'So', '6.00', '0.27', '0.27', '0.44', '0.30', '0.00', '0.00', '0.00', 0, 'Batang', 'Offloading truck', 1),
-(110, 'JT00042', 'Pt pgp', 'Cassing 9 5/8', 'OFFLOADING', '', 'So', '3.00', '0.27', '0.27', '0.22', '0.15', '0.00', '0.00', '0.00', 0, 'Batang', 'Offloading truck', 1),
-(111, 'JT00042', 'Pt pgp', 'Cassing 9 5/8', 'OFFLOADING', '', 'So', '4.00', '0.27', '0.27', '0.29', '0.20', '0.00', '0.00', '0.00', 0, 'Batang', 'Offloading truck', 1),
-(112, 'JT00042', 'Pt trias', 'Batre', 'LOADING', 'Production', 'Rijek', '1.15', '1.15', '0.95', '1.26', '0.00', '0.00', '0.00', '0.00', 0, 'Peti', 'Loading truk', 1),
-(113, 'JT00042', 'Pt trias', 'Batre', 'LOADING', 'Production', 'Rijek', '1.15', '1.15', '0.95', '1.26', '1.25', '0.00', '0.00', '0.00', 0, 'Peti', 'Loading truk', 1),
-(114, 'JT00042', 'Pt segara permai', 'Afar', 'LOADING', 'Production', '1500034761', '0.95', '0.95', '1.50', '1.35', '0.10', '0.00', '0.00', '0.00', 0, 'Woden crat', 'Loading truk', 1),
-(115, 'JT00042', 'Pt segara permai', 'Liferaft', 'OFFLOADING', 'Production', '1500031150', '1.70', '0.80', '0.90', '1.22', '0.05', '0.00', '0.00', '0.00', 0, 'Woden crat', 'Loading truk', 1),
-(116, 'JT00044', 'PT Dwiprangga', 'sparepart', 'OFFLOADING', 'production', '11', '1.10', '1.10', '0.06', '0.07', '0.30', '0.00', '0.00', '0.00', 0, 'pallet', 'offloading truck', 1),
-(117, 'JT00044', 'PT Titian', 'sparepart', 'OFFLOADING', 'production', '12', '1.20', '1.00', '1.00', '1.20', '0.50', '0.00', '0.00', '0.00', 0, 'pallet', 'offloading truck', 1),
-(118, 'JT00044', 'PT Mesitech', 'sparepart', 'OFFLOADING', 'production', '56', '0.71', '0.71', '0.60', '0.30', '0.08', '0.00', '0.00', '0.00', 0, 'box', 'offloading truck', 1),
-(119, 'JT00044', 'PT Mesitech', 'sparepart', 'OFFLOADING', 'production', '57', '1.00', '1.00', '0.60', '0.60', '0.30', '0.00', '0.00', '0.00', 0, 'box', 'offloading truck', 1),
-(120, 'JT00044', 'PT Mesitech', 'sparepart', 'OFFLOADING', 'production', '58', '2.41', '0.82', '0.94', '1.86', '0.23', '0.00', '0.00', '0.00', 0, 'box', 'offloading truck', 1),
-(121, 'JT00044', 'PT Mesitech', 'sparepart', 'OFFLOADING', 'production', '59', '2.41', '0.92', '0.95', '2.11', '0.33', '0.00', '0.00', '0.00', 0, 'box', 'offloading truck', 1),
-(122, 'JT00044', 'PT Mesitech', 'sparepart', 'OFFLOADING', '', '60', '3.24', '0.92', '0.98', '2.92', '0.31', '0.00', '0.00', '0.00', 0, 'box', 'offloading truck', 1),
-(123, 'JT00044', 'PT Mesitech', 'sparepart', 'OFFLOADING', '', '61', '3.30', '1.23', '1.35', '5.48', '0.59', '0.00', '0.00', '0.00', 0, 'box', 'offloading truck', 1),
-(124, 'JT00044', 'PT Mesitech', 'welding machine', 'OFFLOADING', 'production', '62', '1.20', '2.00', '2.00', '4.80', '0.50', '0.00', '0.00', '0.00', 0, 'unit', 'offloading truck', 1),
-(125, 'JT00045', 'PT Trafindo', 'Trafo ', 'OFFLOADING', 'Production', 'Voy 21', '1.35', '1.75', '1.60', '3.78', '2.50', '0.00', '0.00', '0.00', 0, 'Unit', 'Loading truck', 1),
-(126, 'JT00045', 'PT Wanda jumbo cable ', 'Flat esp cable', 'OFFLOADING', 'Production', '124', '2.13', '2.06', '2.00', '8.78', '4.00', '0.00', '0.00', '0.00', 0, 'Unit', 'Offloading truck', 1),
-(127, 'JT00045', 'PT Wanda jumbo cable ', 'Flat esp cable', 'OFFLOADING', 'Production', '2', '0.90', '1.30', '1.22', '1.43', '1.00', '0.00', '0.00', '0.00', 0, 'Unit', 'Offloading truck', 1),
-(128, 'JT00046', 'PT EON chemical', 'chemical', 'OFFLOADING', 'Production', '21', '1.20', '1.20', '1.15', '1.66', '0.80', '0.00', '0.00', '0.00', 0, 'Pallet', 'Offloading truck', 1),
-(129, 'JT00046', 'PT mesindo', 'Generator rotor', 'OFFLOADING', 'Production', '12490/01/00010', '1.30', '1.00', '1.20', '1.56', '2.00', '0.00', '0.00', '0.00', 0, 'Wooden box', 'Loading truck', 1),
-(130, 'JT00047', 'PT ASABA', 'Mesin fotocopy', 'OFFLOADING', 'Production', '32', '0.81', '0.72', '1.17', '0.68', '0.15', '0.00', '0.00', '0.00', 0, 'Pallet', 'Offloading truck', 1),
-(131, 'JT00047', 'PT ASABA', 'Sparepart', 'OFFLOADING', 'Production', '33', '0.76', '0.68', '1.50', '0.78', '0.20', '0.00', '0.00', '0.00', 0, 'Wooden box', 'Offloading truck', 1),
-(132, 'JT00048', 'PT.Pakarti Tirto Agung', 'KG COS Pump', 'OFFLOADING', 'Production', '415/PTA/DO/X/20', '4.80', '0.50', '0.70', '1.68', '0.80', '0.00', '0.00', '0.00', 0, 'Boks', 'Off loading truck', 1),
-(133, 'JT00049', 'PT Gatra kilang persada', 'sparepart', 'OFFLOADING', 'production', '006', '2.35', '0.75', '0.75', '1.32', '1.00', '0.00', '0.00', '0.00', 0, 'box', 'offloading truck', 1),
-(134, 'JT00049', 'PT Optima sumber energi', 'Pipa ', 'OFFLOADING', 'Production', '34', '6.00', '0.45', '0.45', '1.22', '1.50', '0.00', '0.00', '0.00', 0, 'Bandle', 'Offloading truck', 1),
-(135, 'JT00050', 'PT maste jaya jakarta', 'Apar', 'OFFLOADING', 'production', '54', '1.07', '0.80', '1.45', '1.24', '0.25', '0.00', '0.00', '0.00', 0, 'box', 'offloading truck', 1),
-(136, 'JT00050', 'PT maste jaya jakarta', 'Apar', 'OFFLOADING', 'production', '54', '1.07', '0.80', '1.45', '1.24', '0.25', '0.00', '0.00', '0.00', 0, 'box', 'offloading truck', 1),
-(137, 'JT00049', 'PT Sillo Maritime perdana', 'Consumable', 'OFFLOADING', 'Production', '217', '1.13', '1.03', '2.06', '2.40', '0.20', '0.00', '0.00', '0.00', 0, 'Pallet', 'Offloading truck', 1),
-(138, 'JT00049', 'PT Sillo Maritime perdana', 'Consumable', 'OFFLOADING', 'Production', '712', '1.13', '1.13', '0.95', '1.21', '0.20', '0.00', '0.00', '0.00', 0, 'Pallet', 'Offloading truck', 1),
-(139, 'JT00051', 'PT Shell Indonesia', 'OIL  drum', 'OFFLOADING', 'production', '4210043923', '1.22', '1.22', '1.05', '1.56', '0.55', '0.00', '0.00', '0.00', 0, 'pallet', 'offloading truck', 1),
-(140, 'JT00051', 'PT Altus logistic servis indonesia', 'sparepart', 'OFFLOADING', 'production', '21', '0.90', '0.50', '0.60', '0.27', '0.05', '0.00', '0.00', '0.00', 0, 'box', 'offloading truck', 1),
-(141, 'JT00051', 'PT Luas birus utama', 'Totank', 'OFFLOADING', 'production', '4210043883', '1.25', '1.10', '1.92', '2.64', '2.50', '0.00', '0.00', '0.00', 0, 'unit', 'offloading truck', 1),
-(142, 'JT00052', 'PT cakra', 'Sparepart', 'OFFLOADING', 'Production', '4410045949', '6.00', '0.40', '0.35', '0.84', '0.08', '0.00', '0.00', '0.00', 0, 'Woden box', 'Offloading truck', 1),
-(143, 'JT00052', 'PT prima', 'Sparepart', 'LOADING', 'Production', '1500033669', '1.30', '0.62', '0.60', '0.48', '0.10', '0.00', '0.00', '0.00', 0, 'Box', 'Loading truk', 1),
-(144, 'JT00053', 'PT pao', 'Container 20" Open top ', 'LOADING', 'Production', 'Aoru 3600913', '6.00', '2.50', '2.50', '37.50', '5.00', '0.00', '0.00', '0.00', 0, 'Unit', 'Loading truk', 1),
-(145, 'JT00053', 'PT pao', 'Basket', 'OFFLOADING', 'Production', 'Oegu 2437063', '6.00', '2.50', '1.30', '19.50', '3.00', '0.00', '0.00', '0.00', 0, 'Unit', 'Offloading truck', 1),
-(146, 'JT00054', 'PT Shaftindo Energi', 'spool', 'OFFLOADING', 'production', '082', '5.33', '2.05', '1.05', '11.47', '1.20', '0.00', '0.00', '0.00', 0, 'pallet', 'offloading truck', 1),
-(147, 'JT00054', 'PT Shaftindo Energi', 'spool', 'OFFLOADING', 'production', '082', '1.90', '1.20', '0.95', '2.17', '0.43', '0.00', '0.00', '0.00', 0, 'pallet', 'offloading truck', 1),
-(148, 'JT00054', 'PT Shaftindo Energi', 'sparepart', 'OFFLOADING', 'production', '082', '0.82', '0.82', '0.78', '0.52', '0.36', '0.00', '0.00', '0.00', 0, 'box', 'offloading truck', 1),
-(149, 'JT00053', 'PT pao', 'Container 20" Open top ', 'LOADING', 'Production', 'Oegu 2501882', '6.00', '2.50', '2.50', '37.50', '3.45', '0.00', '0.00', '0.00', 0, 'Unit', 'Loading truk', 1),
-(150, 'JT00054', 'Pt sepetra', 'Preon gajah', 'OFFLOADING', 'Production', '4410045920', '1.22', '1.22', '1.99', '2.96', '1.18', '0.00', '0.00', '0.00', 0, 'Unit', 'Offloading truck', 1),
-(151, 'JT00054', 'Pt segara permai', 'Afar', 'OFFLOADING', 'Production', '1', '1.50', '0.70', '0.80', '0.84', '0.35', '0.00', '0.00', '0.00', 0, 'Woden crat', 'Offloading truck', 1),
-(152, 'JT00054', 'Pt depriwaga', 'Sling', 'OFFLOADING', 'Production', 'So', '1.20', '1.20', '0.40', '0.58', '0.04', '0.00', '0.00', '0.00', 0, 'Pallet', 'Offloading truck', 1),
-(153, 'JT00056', 'PT PSU', 'Dry container', 'LOADING', 'Production', '124', '6.05', '2.42', '2.58', '37.77', '3.50', '0.00', '0.00', '0.00', -2, 'Unit', 'Loading truck', 1),
-(154, 'JT00055', 'Pt Pacific Asianindo Offshore', 'Opentop con-20ft', 'LOADING', 'Production', 'So', '6.00', '2.50', '2.50', '37.50', '2.50', '0.00', '0.00', '0.00', 0, 'Unit', 'Loading truk', 1),
-(155, 'JT00057', 'Pt Sempana', 'Tangga', 'OFFLOADING', 'Production', '128', '4.10', '1.07', '0.85', '3.73', '1.74', '0.00', '0.00', '0.00', 0, 'Wooden box', 'Offloading truck', 1),
-(156, 'JT00057', 'Pt Sempana', 'Tangga', 'OFFLOADING', 'Production', '23', '1.01', '0.56', '0.67', '0.38', '0.31', '0.00', '0.00', '0.00', 0, 'Wooden box', 'Offloading truck', 1),
-(157, 'JT00057', 'Pt Sempana', 'Tangga', 'OFFLOADING', '', '129', '4.10', '1.07', '0.68', '2.98', '1.44', '0.00', '0.00', '0.00', 0, 'Wooden box', 'Offloading truck', 1),
-(158, 'JT00056', 'PT PSU', 'Container 20 feet', 'OFFLOADING', 'Production', '237', '6.05', '2.42', '2.42', '35.43', '3.50', '0.00', '0.00', '0.00', 0, 'Unit', 'Loading truck', 1),
-(159, 'JT00056', 'PT Benvors sarana utama', 'Bop', 'OFFLOADING', 'Production', '321', '0.60', '0.90', '0.80', '0.43', '0.80', '0.00', '0.00', '0.00', 0, 'Unit', 'Offloading truck', 1),
-(160, 'JT00056', 'PT Benvors sarana utama', 'Bop', 'OFFLOADING', 'Production', '23', '0.90', '0.90', '1.05', '0.85', '0.90', '0.00', '0.00', '0.00', 0, 'Unit', 'Offloading truck', 1),
-(161, 'JT00056', 'PT COSL', 'Basket tubing', 'OFFLOADING', 'Production', '76', '6.50', '0.90', '0.85', '4.97', '3.80', '0.00', '0.00', '0.00', 0, 'Unit', 'Loading truck', 1),
-(162, 'JT00056', 'PT COSL', 'Drum sling', 'OFFLOADING', 'Production', '344', '1.00', '0.85', '0.95', '0.81', '3.00', '0.00', '0.00', '0.00', 0, 'Unit', 'Loading truck', 1),
-(163, 'JT00056', 'PT COSL', 'Basket oil drum', 'OFFLOADING', 'Production', '89', '1.40', '1.40', '0.95', '1.86', '1.50', '0.00', '0.00', '0.00', 0, 'Unit', 'Loading truck', 1),
-(164, 'JT00056', 'PT COSL', 'Compresor', 'OFFLOADING', 'Production', '231', '1.40', '0.50', '0.98', '0.69', '1.00', '0.00', '0.00', '0.00', 0, 'Unit', 'Loading truck', 1),
-(165, 'JT00056', 'PT COSL', 'Steel box', 'LOADING', 'Production', '65', '2.20', '0.97', '0.99', '2.11', '1.30', '0.00', '0.00', '0.00', 0, 'Unit', 'Loading truck', 1),
-(166, 'JT00056', 'PT PSU', 'Container 20 feet', 'LOADING', 'Production', '21', '6.00', '2.42', '2.58', '37.46', '3.50', '0.00', '0.00', '0.00', 0, 'Unit', 'Loading truck', 1),
-(167, 'JT00056', 'PT COSL', 'Bunker explosive', 'LOADING', 'Production', '67', '0.95', '0.87', '2.00', '1.65', '0.50', '0.00', '0.00', '0.00', 0, 'Unit', 'Loading truck', 1),
-(168, 'JT00059', 'PT COSL', 'Batch mixer', 'LOADING', 'Production', '236', '6.00', '2.56', '2.70', '41.47', '15.00', '0.00', '0.00', '0.00', 0, 'Unit', 'Loading truck', 1),
-(171, 'JT00059', 'PT COSL', 'Container 20 feet', 'LOADING', 'Production', '328', '6.00', '2.42', '2.56', '37.17', '8.00', '0.00', '0.00', '0.00', 0, 'Unit', 'Loading truck', 1),
-(172, 'JT00059', 'PT COSL', 'Air compresor', 'LOADING', 'Production', '34', '6.21', '2.00', '2.80', '34.78', '7.00', '0.00', '0.00', '0.00', 0, 'Unit', 'Loading truck', 1),
-(173, 'JT00058', 'PT Shaftindo energi ', 'Spool', 'OFFLOADING', 'Production', '109', '4.70', '1.96', '1.45', '13.36', '0.40', '0.00', '0.00', '0.00', 0, 'Pallet', 'Offloading truck', 1),
-(174, 'JT00058', 'PT Shaftindo energi ', 'Spool', 'OFFLOADING', 'Production', '124', '1.17', '1.17', '0.85', '1.16', '0.45', '0.00', '0.00', '0.00', 0, 'Pallet', 'Offloading truck', 1),
-(175, 'JT00055', 'PT Wifgasindo Dinamika', 'Sparepart', 'OFFLOADING', 'Production', '4210043108', '0.70', '0.60', '0.60', '0.25', '0.37', '0.00', '0.00', '0.00', 0, 'Box', 'Offloading truck', 1),
-(176, 'JT00055', 'PT Wifgasindo Dinamika', 'Sparepart', 'OFFLOADING', 'Production', '4210043142', '100.00', '0.73', '0.63', '45.99', '0.40', '0.00', '0.00', '0.00', 0, 'Box', 'Offloading truck', 1),
-(177, 'JT00056', 'PT PSU', 'Container 20 feet', 'LOADING', 'Production', '712', '6.00', '2.42', '2.56', '37.17', '3.50', '0.00', '0.00', '0.00', -1, 'Unit', 'Loading truck', 1),
-(178, 'JT00060', 'PT wiguna', 'Wayer sling', 'OFFLOADING', 'Production', '4210043483', '1.20', '1.20', '0.95', '1.37', '0.65', '0.00', '0.00', '0.00', 0, 'Pallet', 'Offloading truck', 1),
-(179, 'JT00060', 'PT mandala', 'Cemical', 'OFFLOADING', 'Production', '4210043878', '1.40', '1.80', '0.80', '2.02', '0.10', '0.00', '0.00', '0.00', 0, 'Woden crat', 'Offloading truck', 1),
-(180, 'JT00060', 'PT mitra', 'Besi siku', 'OFFLOADING', 'Production', '4410045972', '6.00', '0.10', '0.15', '0.09', '0.03', '0.00', '0.00', '0.00', 0, 'Pallet', 'Offloading truck', 1),
-(181, 'JT00060', 'PT luas birus', 'To tank', 'OFFLOADING', 'Production', '4210043930', '1.25', '1.10', '1.90', '2.61', '2.03', '0.00', '0.00', '0.00', 0, 'Unit', 'Offloading truck', 1),
-(182, 'JT00060', 'PT luas birus', 'To tank', 'LOADING', 'Production', 'Lbu 2019- 0010', '1.25', '1.10', '1.90', '2.61', '0.30', '0.00', '0.00', '0.00', 0, 'Unit', 'Loading truk', 1),
-(183, 'JT00060', 'PT luas birus', 'To tank', 'LOADING', 'Production', 'Lbu TT 224', '1.25', '1.10', '1.90', '2.61', '0.30', '0.00', '0.00', '0.00', 0, 'Unit', 'Loading truk', 1),
-(184, 'JT00060', 'PT luas birus', 'To tank', 'LOADING', 'Production', 'Ohf 723', '1.25', '1.10', '1.90', '2.61', '0.30', '0.00', '0.00', '0.00', 0, 'Unit', 'Loading truk', 1),
-(185, 'JT00060', 'PT luas birus', 'To tank', 'LOADING', 'Production', 'Tb  TT 078', '1.25', '1.10', '1.90', '2.61', '0.30', '0.00', '0.00', '0.00', 0, 'Unit', 'Loading truk', 1),
-(186, 'JT00061', 'PT ppli', 'Container 20"', 'OFFLOADING', 'Driling', 'OEGU 0006046', '6.00', '2.50', '2.50', '37.50', '2.50', '0.00', '0.00', '0.00', 0, 'Unit', 'Offloading truck', 1),
-(187, 'JT00061', 'PT ppli', 'Container 10"', 'OFFLOADING', 'Driling', 'OEGU 0006133', '3.00', '2.50', '2.50', '18.75', '1.25', '0.00', '0.00', '0.00', 0, 'Unit', 'Offloading truck', 1),
-(188, 'JT00062', 'Pt yuvaika esa', 'Sparepart', 'OFFLOADING', 'Production', '4410045493', '0.65', '0.65', '0.75', '0.32', '0.07', '0.00', '0.00', '0.00', 0, 'Woden box', 'Offloading truck', 1),
-(189, 'JT00062', 'Pt panah jaya', 'Claim', 'LOADING', 'Production', '1300014716', '1.20', '1.20', '0.85', '1.22', '1.00', '0.00', '0.00', '0.00', 0, 'Pallet', 'Loading truk', 1),
-(190, 'JT00062', 'Pt kwality', 'Kabel', 'OFFLOADING', 'Production', '4410045973', '1.00', '1.00', '0.70', '0.70', '0.50', '0.00', '0.00', '0.00', 0, 'Pallet', 'Offloading truck', 1),
-(191, 'JT00062', 'PT Akral', 'Tambang', 'OFFLOADING', 'Production', '4410045991', '1.20', '1.20', '1.10', '1.58', '0.05', '0.00', '0.00', '0.00', 0, 'Pallet', 'Offloading truck', 1),
-(192, 'JT00063', 'PT Devriwangga', 'Countainer 10 ft', 'LOADING', 'Production', '0002', '3.00', '2.50', '2.80', '21.00', '4.50', '0.00', '0.00', '0.00', 0, 'Unit', 'Loading truck eks KM Sokka', 1),
-(193, 'JT00064', 'Pt wintermar', 'Oli', 'OFFLOADING', 'Production', '1', '1.20', '1.20', '1.10', '1.58', '1.00', '0.00', '0.00', '0.00', 0, 'Pallet', 'Offloading truck', 1),
-(194, 'JT00064', 'Pt sincerty', 'Sparepart', 'OFFLOADING', 'Production', '4410046013', '1.32', '0.70', '0.75', '0.69', '0.33', '0.00', '0.00', '0.00', 0, 'Woden box', 'Offloading truck', 1),
-(195, 'JT00065', 'PT Serena', 'Bak sampah', 'LOADING', 'Production', '0001', '7.00', '2.50', '1.25', '21.88', '3.50', '0.00', '0.00', '0.00', 0, 'Unit', 'Loading truck', 1),
-(196, 'JT00064', 'PT somba', 'Terpal', 'OFFLOADING', 'Production', '4210043455', '1.20', '1.20', '0.60', '0.86', '0.50', '0.00', '0.00', '0.00', 0, 'Pallet', 'Offloading truck', 1),
-(197, 'JT00063', 'PT PMB', 'Countainer 10 ft', 'LOADING', 'Production', '0001', '3.00', '2.50', '2.80', '21.00', '2.40', '0.00', '0.00', '0.00', 0, 'Unit', 'Loading truck eks KM Sokka', 1),
-(198, 'JT00064', 'Pt buntur raja', 'Terpal', 'OFFLOADING', 'Production', '4210043819', '1.20', '1.20', '0.80', '1.15', '0.30', '0.00', '0.00', '0.00', 0, 'Pallet', 'Offloading truck', 1),
-(199, 'JT00064', 'Pt trias', 'Sparepart', 'OFFLOADING', 'Production', '4410042510', '4.50', '0.90', '1.05', '4.25', '1.80', '0.00', '0.00', '0.00', 0, 'Box', 'Offloading truck', 1),
-(200, 'JT00064', 'Pt trias', 'Sparepart', 'OFFLOADING', 'Production', '4410042510', '1.30', '0.70', '0.75', '0.68', '0.50', '0.00', '0.00', '0.00', 0, 'Box', 'Offloading truck', 1),
-(201, 'JT00063', 'PT Kota Minyak', 'W/ box', 'OFFLOADING', 'Production', '0001', '2.50', '1.40', '1.25', '4.38', '0.30', '-43.75', '-3.00', '-43.75', -10, 'Box', 'Off loading truck', 1),
-(202, 'JT00063', 'PT Kota Minyak', 'W/ box', 'OFFLOADING', 'Production', '0001', '1.40', '1.40', '1.00', '1.96', '0.14', '0.00', '0.00', '0.00', 0, 'Box', 'Off loading truck', 1),
-(203, 'JT00064', 'Pt sepetra', 'Preon gajah', 'OFFLOADING', 'Production', '4210043976', '1.22', '1.22', '1.99', '2.96', '1.19', '0.00', '0.00', '0.00', 0, 'Unit', 'Offloading truck', 1),
-(204, 'JT00064', 'Pt ckb', 'Ban', 'OFFLOADING', 'Production', '1', '0.95', '0.80', '0.85', '0.65', '0.10', '0.00', '0.00', '0.00', 0, 'Woden crat', 'Offloading truck', 1),
-(205, 'JT00066', 'PT aneka gas', 'Cradle gas bottle', 'LOADING', 'Production', '23', '1.05', '1.05', '2.10', '2.32', '1.00', '0.00', '0.00', '0.00', 0, 'Rack', 'Loading truck', 1),
-(206, 'JT00066', 'PT aneka gas', 'Cradle gas bottle', 'LOADING', 'Production', '34', '1.20', '1.15', '1.85', '2.55', '1.00', '0.00', '0.00', '0.00', 0, 'Rack', 'Loading truck', 1),
-(207, 'JT00067', 'Pt Schlumberger', 'Reda pump', 'LOADING', 'Production', '45', '10.00', '0.32', '0.30', '0.96', '1.00', '0.00', '0.00', '0.00', 0, 'Unit', 'Loading truck', 1),
-(208, 'JT00067', 'Pt Schlumberger', 'Reda pump', 'LOADING', 'Production', '76', '7.00', '0.32', '0.30', '0.67', '0.50', '0.00', '0.00', '0.00', 0, 'Unit', 'Loading truck', 1),
-(209, 'JT00067', 'Pt Schlumberger', 'Reda pump', 'LOADING', 'Production', '21', '4.00', '0.32', '0.30', '0.38', '0.25', '0.00', '0.00', '0.00', 0, 'Unit', 'Loading truck', 1),
-(210, 'JT00068', 'PT Samoedera', 'My sella oil', 'OFFLOADING', 'Production', '4400002063', '1.17', '1.17', '1.10', '1.51', '0.80', '0.00', '0.00', '0.00', 0, 'Pallet', 'Offloading truck', 1),
-(211, 'JT00068', 'PT Samoedera', 'My sella oil', 'OFFLOADING', 'Production', '4400002063', '1.17', '1.17', '1.10', '1.51', '0.80', '0.00', '0.00', '0.00', 0, 'Pallet', 'Offloading truck', 1),
-(212, 'JT00070', 'PT manggala', 'Sparepart', 'OFFLOADING', 'Production', '44100448341', '1.30', '0.90', '0.40', '0.47', '0.13', '0.00', '0.00', '0.00', 0, 'Peti', 'Offloading truck', 1),
-(213, 'JT00070', 'Pt segara permai', 'Liferaft', 'OFFLOADING', 'Production', '1', '1.70', '0.70', '0.80', '0.95', '0.25', '0.00', '0.00', '0.00', 0, 'Woden crat', 'Loading truk', 1),
-(214, 'JT00070', 'PT manggala', 'Sparepart', 'OFFLOADING', '', '4410044401', '1.30', '0.90', '0.80', '0.94', '0.13', '0.00', '0.00', '0.00', 0, 'Peti', 'Offloading truck', 1),
-(215, 'JT00069', 'PT ATW', 'W/ box', 'OFFLOADING', 'Production', '0004', '1.13', '1.00', '1.43', '1.62', '0.23', '0.00', '0.00', '0.00', 0, 'Box', 'Off loading truck', 1),
-(216, 'JT00069', 'PT ATW', 'W/ box', 'OFFLOADING', 'Production', '0004', '1.24', '1.00', '0.54', '0.67', '0.09', '0.00', '0.00', '0.00', 0, 'Box', 'Off loading truck', 1),
-(217, 'JT00069', 'PT ATW', 'W/ box', 'OFFLOADING', 'Production', '0004', '0.70', '0.70', '0.70', '0.34', '0.09', '0.00', '0.00', '0.00', 0, 'Box', 'Off loading truck', 1),
-(218, 'JT00069', 'PT Muramah', 'W/ box', 'OFFLOADING', 'Production', '0005', '1.85', '1.05', '0.60', '1.17', '0.09', '0.00', '0.00', '0.00', 0, 'Box', 'Off loading truck', 1),
-(219, 'JT00071', 'Pt Schlumberger', 'Roll Cable', 'LOADING', 'Production', '12', '2.00', '1.95', '1.95', '7.60', '11.00', '0.00', '0.00', '0.00', 0, 'Unit', 'Loading truck', 1),
-(220, 'JT00069', 'PT Champion', 'To tank', 'LOADING', 'Production', '0004', '1.40', '1.40', '2.60', '5.10', '1.25', '0.00', '0.00', '0.00', 0, 'Unit', 'Loading truck eks KM Sokka', 1),
-(221, 'JT00073', 'PT.PMB', 'Half Open Top 10 ft', 'LOADING', 'Production', '007', '3.00', '2.50', '1.25', '9.38', '1.25', '0.00', '0.00', '0.00', 0, 'Unit', 'Off loading truck premier oil', 1);
-
--- --------------------------------------------------------
-
---
--- Struktur dari tabel `detail_moving`
---
-
-CREATE TABLE IF NOT EXISTS `detail_moving` (
-`id_cargo` int(12) NOT NULL,
-  `id_moving` varchar(15) NOT NULL,
-  `nm_company` varchar(50) DEFAULT NULL,
-  `nm_barang` varchar(50) DEFAULT NULL,
-  `nm_kegiatan` varchar(15) DEFAULT NULL,
-  `production` varchar(15) DEFAULT NULL,
-  `no_po` varchar(15) DEFAULT NULL,
-  `p_cargo` decimal(6,2) NOT NULL,
-  `l_cargo` decimal(6,2) NOT NULL,
-  `t_cargo` decimal(6,2) NOT NULL,
-  `volume_satuan` decimal(6,2) DEFAULT NULL,
-  `ton_satuan` decimal(6,2) DEFAULT NULL,
-  `volume_cargo` decimal(6,2) NOT NULL,
-  `ton_cargo` decimal(6,2) NOT NULL,
-  `revton_cargo` decimal(6,2) NOT NULL,
-  `qty_cargo` int(11) NOT NULL,
-  `satuan_cargo` varchar(15) DEFAULT NULL,
-  `deskripsi_cargo` text,
-  `created_on_cargo` datetime DEFAULT NULL,
-  `status_cargo` int(11) DEFAULT '1'
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
-
---
--- Dumping data untuk tabel `detail_moving`
---
-
-INSERT INTO `detail_moving` (`id_cargo`, `id_moving`, `nm_company`, `nm_barang`, `nm_kegiatan`, `production`, `no_po`, `p_cargo`, `l_cargo`, `t_cargo`, `volume_satuan`, `ton_satuan`, `volume_cargo`, `ton_cargo`, `revton_cargo`, `qty_cargo`, `satuan_cargo`, `deskripsi_cargo`, `created_on_cargo`, `status_cargo`) VALUES
-(5, 'TR00001', 'PT.ABC', 'Chemical Drum', NULL, 'Production', '0001', '1.20', '1.20', '1.20', '1.73', '1.30', '0.00', '0.00', '0.00', 0, 'Unit', 'Internal Moving PHE', NULL, 1),
-(6, 'TR00002', 'PT.ABC', 'Chemical Drum', NULL, 'Production', '0001', '1.20', '1.20', '1.20', '1.73', '1.30', '0.00', '0.00', '0.00', 0, 'Pallet', 'Internal Moving Star Energy', NULL, 1);
-
--- --------------------------------------------------------
-
---
--- Struktur dari tabel `detail_stacking`
---
-
-CREATE TABLE IF NOT EXISTS `detail_stacking` (
-`id_cargo` int(12) NOT NULL,
-  `id_stacking` varchar(15) NOT NULL,
-  `nm_company` varchar(50) DEFAULT NULL,
-  `nm_barang` varchar(50) DEFAULT NULL,
-  `nm_kegiatan` varchar(15) DEFAULT NULL,
-  `production` varchar(15) DEFAULT NULL,
-  `no_po` varchar(15) DEFAULT NULL,
-  `p_cargo` decimal(6,2) NOT NULL,
-  `l_cargo` decimal(6,2) NOT NULL,
-  `t_cargo` decimal(6,2) NOT NULL,
-  `volume_satuan` decimal(6,2) DEFAULT NULL,
-  `ton_satuan` decimal(6,2) DEFAULT NULL,
-  `volume_cargo` decimal(6,2) NOT NULL,
-  `ton_cargo` decimal(6,2) NOT NULL,
-  `revton_cargo` decimal(6,2) NOT NULL,
-  `qty_cargo` int(11) NOT NULL,
-  `satuan_cargo` varchar(15) DEFAULT NULL,
-  `deskripsi_cargo` text,
-  `created_on_cargo` datetime DEFAULT NULL,
-  `status_cargo` int(11) DEFAULT '1'
-) ENGINE=InnoDB AUTO_INCREMENT=57 DEFAULT CHARSET=latin1;
-
---
--- Dumping data untuk tabel `detail_stacking`
---
-
-INSERT INTO `detail_stacking` (`id_cargo`, `id_stacking`, `nm_company`, `nm_barang`, `nm_kegiatan`, `production`, `no_po`, `p_cargo`, `l_cargo`, `t_cargo`, `volume_satuan`, `ton_satuan`, `volume_cargo`, `ton_cargo`, `revton_cargo`, `qty_cargo`, `satuan_cargo`, `deskripsi_cargo`, `created_on_cargo`, `status_cargo`) VALUES
-(1, 'ST00001', 'PT.ASW', 'Chemical Drum', NULL, 'Production', '0002', '1.20', '1.20', '1.20', '1.73', '1.30', '0.00', '0.00', '0.00', 0, 'Pallet', 'Stacking Medco', NULL, 1),
-(2, 'ST00001', 'PT.ABC', 'Chemical Drum', NULL, 'Production', '0001', '1.20', '1.20', '1.20', '1.73', '1.30', '0.00', '0.00', '0.00', 0, 'Pallet', 'Stacking Medco', NULL, 1),
-(3, 'ST00001', 'PT.ABC', 'Chemical Drum', NULL, 'Production', '0001', '1.20', '1.20', '1.20', '1.73', '1.20', '0.00', '0.00', '0.00', 0, 'Pallet', 'Stacking Medco', NULL, 1),
-(4, 'ST00002', 'PT.ABC', 'Chemical Drum', NULL, 'Production', '0001', '1.20', '1.20', '1.20', '1.73', '1.50', '0.00', '0.00', '0.00', 0, 'Unit', 'Stacking Star Energy', NULL, 1),
-(5, 'ST00003', 'Pt elnusa petrofin', 'Meditran oil', NULL, 'Production', '4400002054', '1.00', '1.00', '1.00', '1.00', '0.80', '0.00', '0.00', '0.00', 0, 'Pallet', 'Stacking material', NULL, 1),
-(6, 'ST00004', 'PT Premier Oil', 'Half Open Top 20 ft', NULL, 'Production', '004', '6.00', '2.50', '1.30', '19.50', '3.50', '0.00', '0.00', '0.00', 0, 'Unit', 'Segergasi material eks KM Sokka', NULL, 1),
-(7, 'ST00004', 'PT.Mesitech', 'Compressor', NULL, 'Production', '0001', '2.50', '1.50', '1.60', '6.00', '2.80', '0.00', '0.00', '0.00', 0, 'Unit', 'Loading truck', NULL, 1),
-(8, 'ST00004', 'PT.BennLine', 'Half Open Top 20 ft', NULL, 'Production', '0001', '6.00', '2.50', '1.30', '19.50', '3.50', '0.00', '0.00', '0.00', 0, 'Unit', 'Loading truck', NULL, 1),
-(9, 'ST00004', 'PT.Mesitech', 'Compressor', NULL, 'Production', '0001', '2.50', '1.50', '1.60', '6.00', '2.80', '0.00', '0.00', '0.00', 0, 'Unit', 'Loading truck', NULL, 1),
-(10, 'ST00004', 'PT.Premier Oil', 'Half Open Top 20 ft', NULL, 'Production', '0001', '6.00', '2.50', '1.30', '19.50', '2.70', '0.00', '0.00', '0.00', 0, 'Unit', 'Segergasi material eks KM Sokka', NULL, 1),
-(11, 'ST00005', 'PT Premier Oil', 'Countainer 6 ft', NULL, 'Production', '0001', '1.90', '1.60', '2.80', '8.51', '1.50', '119.17', '21.00', '119.17', 14, 'Unit', 'Segergasi n stacking material eks KM Sokka', NULL, 1),
-(12, 'ST00006', 'Petrogas', 'chemical', NULL, 'production', '01/100', '1.20', '1.20', '1.10', '1.58', '0.80', '0.00', '0.00', '0.00', 0, 'pallet', 'stacking material', NULL, 1),
-(13, 'ST00006', 'Petrogas', 'cable roll', NULL, 'production', '02/20', '2.05', '2.05', '2.00', '8.40', '4.00', '0.00', '0.00', '0.00', 0, 'pallet', 'stacking material', NULL, 1),
-(14, 'ST00007', 'Petrogas', 'Generator', NULL, 'production', '03/02', '1.30', '0.95', '1.10', '1.36', '1.50', '0.00', '0.00', '0.00', 0, 'box', 'stacking material', NULL, 1),
-(15, 'ST00008', 'Petrogas', 'BOP', NULL, 'production', '04/02', '2.00', '1.00', '1.00', '2.00', '5.30', '0.00', '0.00', '0.00', 0, 'unit', 'stacking material', NULL, 1),
-(16, 'ST00008', 'Petrogas', 'container 20 feet', NULL, 'production', '05/02', '6.00', '2.50', '2.50', '37.50', '2.50', '0.00', '0.00', '0.00', 0, 'unit', 'stacking material', NULL, 1),
-(17, 'ST00007', 'Petrogas', 'chemical', NULL, 'production', '06/02', '1.20', '1.20', '1.10', '1.58', '0.80', '0.00', '0.00', '0.00', 0, 'pallet', 'stacking material', NULL, 1),
-(18, 'ST00009', 'Petrogas', 'chemical', NULL, 'production', '07/20', '1.20', '1.20', '1.10', '1.58', '0.35', '0.00', '0.00', '0.00', 0, 'pallet', 'stacking material', NULL, 1),
-(19, 'ST00009', 'Petrogas', 'freek', NULL, 'production', '08/20', '1.20', '1.20', '0.80', '1.15', '0.25', '0.00', '0.00', '0.00', 0, 'pallet', 'stacking material', NULL, 1),
-(20, 'ST00010', 'Petrogas', 'Sparepart', NULL, 'Production', 'Voy 21', '1.20', '1.20', '0.09', '0.13', '0.45', '0.00', '0.00', '0.00', 0, 'Wooden box', 'Stacking material', NULL, 1),
-(21, 'ST00011', 'Premier Oil', 'open top 10 ft', NULL, 'production', '01', '3.00', '2.42', '1.30', '9.44', '1.30', '0.00', '0.00', '0.00', 0, 'unit', 'stacking material', NULL, 1),
-(22, 'ST00011', 'Premier Oil', 'Half open top 20 ft', NULL, 'production', '02', '6.00', '2.42', '1.30', '18.88', '1.50', '0.00', '0.00', '0.00', 0, 'unit', 'stacking material', NULL, 1),
-(23, 'ST00011', 'Premier Oil', 'sparepart', NULL, 'production', '03', '1.10', '1.10', '0.09', '0.11', '0.50', '0.00', '0.00', '0.00', 0, 'box', 'stacking material', NULL, 1),
-(24, 'ST00011', 'Premier Oil', 'open top 10 ft', NULL, 'production', '0001', '3.00', '2.40', '1.30', '9.36', '2.00', '0.00', '0.00', '0.00', 0, 'unit', 'stacking material', NULL, 1),
-(25, 'ST00011', 'Premier Oil', 'Half open top 20 ft', NULL, 'production', '02', '6.00', '2.40', '1.30', '18.72', '3.00', '0.00', '0.00', '0.00', 0, 'unit', 'stacking material', NULL, 1),
-(26, 'ST00011', 'Premier Oil', 'Half open top 20 ft', NULL, 'production', '02', '6.00', '2.42', '1.30', '18.88', '2.50', '0.00', '0.00', '0.00', 0, 'unit', 'stacking material', NULL, 1),
-(27, 'ST00011', 'Premier Oil', 'open top 10 ft', NULL, 'production', '03', '3.00', '2.40', '1.30', '9.36', '1.50', '0.00', '0.00', '0.00', 0, 'unit', 'stacking material', NULL, 1),
-(28, 'ST00012', 'Star energi', 'Oxygen, acetylene', NULL, 'Production', '140', '0.80', '0.60', '2.00', '0.96', '1.50', '0.00', '0.00', '0.00', -1, 'Rack', 'Stacking material', NULL, 1),
-(29, 'ST00012', 'Star energi', 'half open top 10 feet', NULL, 'production', '09', '3.00', '2.42', '1.30', '9.44', '3.00', '0.00', '0.00', '0.00', 0, 'unit', 'stacking material', NULL, 1),
-(30, 'ST00013', 'PT.Schlumberger', 'Tubing', NULL, 'Drilling', '430008002', '1.85', '1.20', '1.00', '2.22', '0.80', '0.00', '0.00', '0.00', 0, 'Boks', 'Stacking material', NULL, 1),
-(31, 'ST00013', 'PT.Schlumberger', 'Tubing', NULL, 'Drilling', '430008002', '2.90', '1.10', '1.00', '3.19', '0.90', '0.00', '0.00', '0.00', 0, 'Boks', 'Stacking material star energy', NULL, 1),
-(32, 'ST00013', 'PT.Schlumberger', 'Tubing', NULL, 'Drilling', '430008002', '2.40', '0.88', '0.35', '0.74', '0.40', '0.00', '0.00', '0.00', 0, 'Boks', 'Stacking material star energy', NULL, 1),
-(33, 'ST00013', 'PT.Schlumberger', 'Tubing', NULL, 'Drilling', '430008002', '1.40', '0.51', '0.32', '0.23', '0.32', '0.00', '0.00', '0.00', 0, 'Boks', 'Stacking material star energy', NULL, 1),
-(34, 'ST00013', 'PT.Schlumberger', 'Tubing', NULL, 'Drilling', '430008002', '1.52', '0.39', '0.26', '0.15', '0.13', '0.00', '0.00', '0.00', 0, 'Boks', 'Stacking material star energy', NULL, 1),
-(35, 'ST00013', 'PT.Schlumberger', 'Tubing', NULL, 'Drilling', '430008002', '1.07', '0.77', '0.53', '0.44', '0.23', '0.00', '0.00', '0.00', 0, 'Boks', 'Stacking material star energy', NULL, 1),
-(36, 'ST00013', 'PT.Schlumberger', 'Tubing', NULL, 'Drilling', '430008002', '1.80', '0.40', '0.46', '0.33', '0.30', '0.00', '0.00', '0.00', 0, 'Boks', 'Stacking material star energy', NULL, 1),
-(37, 'ST00014', 'Pt star energi', 'Life raft ', NULL, 'Production', '081', '1.20', '0.90', '0.80', '0.86', '0.40', '0.00', '0.00', '0.00', 0, 'Pallet', 'Stacking material', NULL, 1),
-(38, 'ST00014', 'Pt star energi', 'Cooler', NULL, 'Production', '2308', '7.40', '1.10', '1.20', '9.77', '6.50', '0.00', '0.00', '0.00', 0, 'Unit', 'Stacking material', NULL, 1),
-(39, 'ST00015', 'Pt star energi', 'Open top 10 feet', NULL, 'Production', '457', '3.00', '2.42', '1.30', '9.44', '1.50', '0.00', '0.00', '0.00', 0, 'Unit', 'Stacking material', NULL, 1),
-(40, 'ST00015', 'Pt star energi', 'SE 7 ,container 20 feet', NULL, 'Production', '34', '6.05', '2.42', '2.58', '37.77', '3.00', '0.00', '0.00', '0.00', 0, 'Unit', 'Stacking material', NULL, 1),
-(41, 'ST00015', 'Pt star energi', 'Spool', NULL, 'Production', '073', '2.40', '1.20', '0.56', '1.61', '3.00', '0.00', '0.00', '0.00', 0, 'Pallet', 'Stacking material', NULL, 1),
-(42, 'ST00016', 'Premier oil', 'Half open top 10 ft', NULL, 'Production', '001', '3.00', '2.50', '125.00', '937.50', '1.30', '0.00', '0.00', '0.00', 0, 'Unit', 'Stacking material/ segregasi material eks KM Sokka', NULL, 1),
-(43, 'ST00016', 'Premier oil', 'Half open top 20 ft', NULL, 'Production', '001', '6.00', '2.50', '1.20', '18.00', '2.20', '0.00', '0.00', '0.00', 0, 'Unit', 'Stacking material/ segregasi material eks KM Sokka', NULL, 1),
-(44, 'ST00017', 'Star energy', 'Half open top 20 ft', NULL, 'Production', '0002', '6.00', '2.50', '1.25', '18.75', '2.30', '0.00', '0.00', '0.00', 0, 'Unit', 'Stacking material/ segregasi material eks KM Sokka', NULL, 1),
-(45, 'ST00017', 'Star energy', 'Half open top 10 ft', NULL, 'Production', '001', '3.00', '2.50', '1.20', '9.00', '1.30', '0.00', '0.00', '0.00', 0, 'Unit', 'Stacking material/ segregasi material eks KM Sokka', NULL, 1),
-(46, 'ST00016', 'Premier oil', 'Half open top 20 ft', NULL, 'Production', '0001', '3.00', '2.50', '1.25', '9.38', '2.30', '0.00', '0.00', '0.00', 0, 'Unit', 'Stacking material/ segregasi material eks KM Sokka', NULL, 1),
-(47, 'ST00017', 'Star energy', 'Compressor', NULL, 'Production', '0001', '2.70', '2.00', '1.60', '8.64', '2.30', '0.00', '0.00', '0.00', 0, 'Unit', 'Stacing material', NULL, 1),
-(48, 'ST00018', 'PT Petrogas', 'Container 20 feet', NULL, 'Production', '213', '6.00', '2.45', '2.45', '36.02', '4.00', '0.00', '0.00', '0.00', 0, 'Unit', 'Stacking material', NULL, 1),
-(49, 'ST00019', 'Premier oil', 'Oli', NULL, 'Production', '0001', '1.20', '1.20', '1.00', '1.44', '0.80', '0.00', '0.00', '0.00', 0, 'Pallet', 'Stacking n shifting material premier oil', NULL, 1),
-(50, 'ST00020', 'PT Petrogas', 'Container 20 feet', NULL, 'Production', '21', '6.00', '2.42', '2.50', '36.30', '4.50', '0.00', '0.00', '0.00', 0, 'Unit', 'Stacking material', NULL, 1),
-(51, 'ST00019', 'Premier oil', 'Half open top 20 ft', NULL, 'Production', '0001', '6.00', '2.00', '1.20', '14.40', '2.80', '0.00', '0.00', '0.00', 0, 'Unit', 'Stuffing material ,prepare cargo KM Sokka', NULL, 1),
-(52, 'ST00021', 'Medco', 'Container 20"', NULL, '', 'OEGU 0006046', '6.00', '2.50', '2.50', '37.50', '6.00', '0.00', '0.00', '0.00', 0, 'Unit', 'Stufing', NULL, 1),
-(53, 'ST00021', 'Medco', 'Container 10"', NULL, '', 'OEGU 0006133', '3.00', '2.50', '2.50', '18.75', '4.00', '0.00', '0.00', '0.00', 0, 'Unit', 'Stufing', NULL, 1),
-(54, 'ST00019', 'Premier oil', 'Container 6 ft', NULL, 'Production', '0001', '1.90', '1.60', '2.80', '8.51', '1.45', '0.00', '0.00', '0.00', 0, 'Unit', 'Stacking material/ segregasi material eks KM Sokka', NULL, 1),
-(55, 'ST00022', 'PT Petrogas', 'Container 20 feet', NULL, 'Production', '32', '6.05', '2.42', '2.58', '37.77', '2.00', '0.00', '0.00', '0.00', 0, 'Unit', 'Stacking material', NULL, 1),
-(56, 'ST00023', 'Premier oil', 'Chemical', NULL, 'Production', '0006', '1.20', '1.20', '1.10', '1.58', '0.80', '0.00', '0.00', '0.00', 0, 'Pallet', 'Stacking n shifting material premier oil', NULL, 1);
-
--- --------------------------------------------------------
-
---
--- Struktur dari tabel `doc_lo`
---
-
-CREATE TABLE IF NOT EXISTS `doc_lo` (
-`idDocLo` int(30) NOT NULL,
-  `id_joborder` varchar(15) NOT NULL,
-  `nmDoc` varchar(200) NOT NULL,
-  `docLo` varchar(100) NOT NULL,
-  `statusDoc` int(10) NOT NULL DEFAULT '0'
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
-
---
--- Dumping data untuk tabel `doc_lo`
---
-
-INSERT INTO `doc_lo` (`idDocLo`, `id_joborder`, `nmDoc`, `docLo`, `statusDoc`) VALUES
-(1, '0', 'JR KM Sejahtera 35', 'ALAT BERAT CRANE (1st ) 6 Oct to 6 Nov 18  JC 011.jpg', 0),
-(2, '0', 'JR KM.SEJAHTERA 35', 'Contoh dok Manifest.pdf', 0),
-(3, '0', 'JR KM.SEJAHTERA 35', 'Dok Job Report Kapal.docx', 0),
-(4, '0', 'JR JV00002', 'INV_RA01-5746_01_10.19.pdf', 0);
-
--- --------------------------------------------------------
-
---
--- Struktur dari tabel `invoice`
---
-
-CREATE TABLE IF NOT EXISTS `invoice` (
-`id_invoice` int(30) NOT NULL,
-  `id_joborder` varchar(15) DEFAULT NULL,
-  `doc_jolo` varchar(100) DEFAULT NULL,
-  `doc_tslo` varchar(100) DEFAULT NULL,
-  `doc_manifeslo` varchar(100) DEFAULT NULL,
-  `status_invoice` int(10) DEFAULT '0'
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
--- --------------------------------------------------------
-
---
--- Struktur dari tabel `jenis_barang`
---
-
-CREATE TABLE IF NOT EXISTS `jenis_barang` (
-`id_jenis` int(11) NOT NULL,
+CREATE TABLE `jenis_barang` (
+  `id_jenis` int NOT NULL,
   `nm_jenis` varchar(255) NOT NULL,
   `p` decimal(6,2) NOT NULL,
   `l` decimal(6,2) NOT NULL,
   `t` decimal(6,2) NOT NULL,
   `satuan_jenis` varchar(50) DEFAULT NULL,
-  `volume_jenis` decimal(6,2) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=344 DEFAULT CHARSET=latin1;
+  `volume_jenis` decimal(6,2) NOT NULL,
+  `area` varchar(15) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `jenis_barang`
+-- Dumping data for table `jenis_barang`
 --
 
-INSERT INTO `jenis_barang` (`id_jenis`, `nm_jenis`, `p`, `l`, `t`, `satuan_jenis`, `volume_jenis`) VALUES
-(6, 'CONTAINER 20 FT', '6.06', '2.44', '2.90', 'UNIT', '42.88'),
-(7, 'CONTAINER 10 FT', '2.99', '2.44', '2.59', 'UNIT', '18.90'),
-(9, 'TOTE THANK POI', '1.82', '1.82', '2.75', 'UNIT', '9.11'),
-(10, 'IBC Tank', '1.50', '1.50', '1.80', 'UNIT', '4.05'),
-(12, 'Iso Container PMB 10FT', '3.00', '2.50', '2.50', 'UNIT', '18.75'),
-(13, 'Empty Gas Helium Cylinder', '1.50', '1.50', '1.60', 'Rack', '3.60'),
-(14, 'Empty Tote Tank', '1.50', '1.50', '1.80', 'UNIT', '4.05'),
-(15, 'Offshore Basket SN-SLB-08897', '12.00', '1.20', '1.43', 'Basket', '20.59'),
-(16, 'Rack Cylinder BRA', '2.00', '2.00', '2.20', 'Rack', '8.80'),
-(17, 'NItrogen Tank , Halliburton', '3.00', '2.50', '2.60', 'UNIT', '19.50'),
-(18, 'Iron Basket , Halliburton', '6.70', '1.20', '1.20', 'UNIT', '9.65'),
-(19, 'Waste Skip', '3.00', '1.22', '1.40', 'UNIT', '5.12'),
-(20, 'Open Top Container 30FT', '9.20', '2.45', '1.49', 'UNIT', '33.58'),
-(21, 'Tote Tank HSD', '1.48', '1.38', '2.27', 'UNIT', '4.64'),
-(22, 'Cylinder Rack Nitrogen POI', '1.18', '1.18', '2.14', 'Rack', '2.98'),
-(24, 'Dry Container 10FT', '2.99', '2.44', '2.60', 'UNIT', '18.97'),
-(25, 'Chiller Container ', '2.99', '2.44', '2.60', 'UNIT', '18.97'),
-(26, 'Half Container 10FT SN-FSHH', '2.99', '2.44', '1.22', 'UNIT', '8.90'),
-(27, 'Open Top Container 20FT ME', '6.06', '2.44', '2.70', 'UNIT', '39.92'),
-(28, 'Cylinder Rack', '1.37', '0.89', '2.20', 'UNIT', '2.68'),
-(29, 'Chemical Barite', '1.20', '1.20', '1.00', 'Palet', '1.44'),
-(30, 'Oli Drum', '1.20', '1.20', '1.15', 'Palet', '1.66'),
-(31, 'Chemical Bentonite', '1.20', '1.20', '1.10', 'Palet', '1.58'),
-(32, 'Chemical MI Swaco', '1.20', '1.20', '1.50', 'UNIT', '2.16'),
-(34, 'Offshore Basket SNI', '13.00', '1.20', '1.20', 'UNIT', '18.72'),
-(36, 'Chemical Drum', '1.20', '1.20', '1.20', 'Palet', '1.73'),
-(37, 'Liferaft Viking', '1.70', '1.00', '1.00', 'W/Box', '1.70'),
-(38, 'Waste Skip POI ', '2.06', '1.51', '1.61', 'UNIT', '5.01'),
-(39, 'Mini Container POI', '1.91', '1.67', '2.76', 'UNIT', '8.80'),
-(40, 'Food Container 10FT POI 1', '3.05', '2.45', '2.56', 'UNIT', '19.13'),
-(41, 'Food Container 10FT POI', '3.00', '2.45', '2.45', 'UNIT', '18.01'),
-(42, 'Food Container 10FT', '3.00', '2.44', '2.74', 'UNIT', '20.06'),
-(43, 'Half Open Top Container 10FT SN  ME', '2.99', '2.44', '1.28', 'UNIT', '9.34'),
-(44, 'Half Open Top Container 20FT POI', '6.00', '2.45', '1.30', 'UNIT', '19.11'),
-(45, 'Tote Tank OFH', '1.43', '1.43', '2.47', 'UNIT', '5.05'),
-(46, 'Cyinder Rack Nitrogen R-POI-14', '1.50', '0.80', '1.46', 'UNIT', '1.75'),
-(47, 'Cylinder Rack R-POI-16-11', '1.17', '1.17', '2.04', 'UNIT', '2.79'),
-(49, 'Chiller Container 20FT', '6.05', '2.42', '2.58', 'UNIT', '37.77'),
-(50, 'Cylinder rack Oxygen SE', '1.13', '0.82', '2.01', 'UNIT', '1.86'),
-(51, 'Cylinder Rack Acetylene SE', '0.92', '0.62', '1.43', 'UNIT', '0.82'),
-(52, 'Cylinder Rack Hellium SE', '0.93', '0.55', '1.26', 'UNIT', '0.64'),
-(53, 'Cylinder Rack Freon SE', '0.94', '0.64', '0.13', 'UNIT', '0.08'),
-(54, 'Half Open Top Container 10FT SE', '3.00', '2.42', '1.30', 'UNIT', '9.44'),
-(55, 'Half Open Top Container 20FT SE', '6.00', '2.42', '1.30', 'UNIT', '18.88'),
-(56, 'Crude Oil Sample SE', '0.60', '0.25', '0.20', 'Bag', '0.03'),
-(57, 'Crude Oil Sample ME', '0.50', '0.50', '0.50', 'Box', '0.13'),
-(58, 'Crude Oil Sample POI', '0.40', '0.30', '0.30', 'Carton', '0.04'),
-(59, 'Firex Dry Powder', '0.70', '0.50', '0.60', 'W/Box', '0.21'),
-(60, 'Liferaft', '1.20', '1.20', '0.50', 'Palet', '0.72'),
-(61, 'Tote Tank Starpol ', '1.20', '1.05', '1.90', 'T/T', '2.39'),
-(63, 'IBC Tank Staraid', '1.60', '1.30', '1.50', 'UNIT', '3.12'),
-(64, 'Tote Tank Starbreak', '1.60', '1.36', '1.50', 'T/T', '3.26'),
-(65, 'Dry Container 20FT ME', '6.06', '2.44', '2.59', 'UNIT', '38.30'),
-(66, 'Domestic Waste', '1.20', '1.20', '1.00', 'Bag', '1.44'),
-(68, 'Lifting Gear Box', '0.90', '0.60', '0.40', 'W/Box', '0.22'),
-(69, 'Lifting Gear Junk', '1.20', '1.20', '0.50', 'Palet', '0.72'),
-(70, 'Part Junk', '1.00', '1.00', '1.00', 'Palet', '1.00'),
-(71, 'Cylinder Rack MOWC', '1.10', '1.10', '2.00', 'UNIT', '2.42'),
-(72, 'Cylinder Rack Nitrogen ME ', '1.10', '1.05', '2.18', 'Rack', '2.52'),
-(73, 'Cylinder Rack Nitrogen Blue ME', '1.10', '1.05', '2.13', 'Rack', '2.46'),
-(74, 'Half height Basket Rig 4.5', '6.06', '2.44', '1.22', 'UNIT', '18.04'),
-(75, 'Half height Basket Rig 3', '2.74', '2.44', '1.22', 'UNIT', '8.16'),
-(76, 'Half Opentop Container 10FT POI 3', '2.99', '2.45', '1.28', 'UNIT', '9.38'),
-(77, 'Gas Bottle Rack TD', '1.45', '1.24', '2.25', 'Rack', '4.05'),
-(78, 'Gas Bottle Rack BSL', '1.27', '1.15', '2.28', 'Rack', '3.33'),
-(79, 'Centrfuge DE-1000 ', '2.93', '1.90', '1.50', 'UNIT', '8.35'),
-(80, 'Stand Centrifuge ', '3.00', '1.93', '0.90', 'UNIT', '5.21'),
-(81, 'De Press', '6.26', '2.37', '2.45', 'UNIT', '36.35'),
-(82, 'Screw Conveyor ', '1.40', '0.90', '0.70', 'UNIT', '0.88'),
-(83, 'Housing  Auger', '2.80', '0.70', '0.80', 'Bundel', '1.57'),
-(84, 'Pipe Casing 10"', '2.90', '0.70', '0.70', 'Bundel', '1.42'),
-(85, 'Feed Pump PSI', '2.50', '0.62', '0.84', 'UNIT', '1.30'),
-(86, 'Twin Pod', '2.25', '1.20', '2.20', 'UNIT', '5.94'),
-(87, 'Slurry Skid', '2.50', '1.45', '1.75', 'UNIT', '6.34'),
-(88, 'Filtration Tool Box', '1.20', '1.00', '1.10', 'UNIT', '1.32'),
-(89, 'Feed Pump ', '2.50', '0.60', '0.80', 'UNIT', '1.20'),
-(90, 'Effluent Tank', '1.50', '1.20', '1.20', 'UNIT', '2.16'),
-(91, 'Hose Basket', '7.00', '1.35', '1.11', 'UNIT', '10.49'),
-(92, 'Offshore Basket SN-B-1403', '14.30', '1.20', '1.20', 'UNIT', '20.59'),
-(93, 'Offshore Basket SN Auro', '13.30', '1.20', '1.40', 'UNIT', '22.34'),
-(94, 'Cargo Basket', '12.30', '1.20', '1.20', 'UNIT', '17.71'),
-(95, 'Offshore Basket SN.CPS', '15.40', '2.01', '1.60', 'UNIT', '49.53'),
-(96, 'Clamp', '0.50', '0.50', '0.70', 'W/Box', '0.18'),
-(97, 'Clamp For As', '0.80', '0.60', '0.60', 'Box', '0.29'),
-(98, 'TAS', '1.10', '0.20', '0.20', 'Box', '0.04'),
-(99, '30FT Basket AORA', '9.20', '2.40', '1.40', 'UNIT', '30.91'),
-(100, 'DNV Container 20FT', '6.00', '2.50', '2.50', 'UNIT', '37.50'),
-(101, 'Half Open Top Container 10FT ME', '3.00', '2.50', '1.50', 'UNIT', '11.25'),
-(102, 'Cylinder Rack SN SEU-53', '1.00', '1.00', '2.00', 'UNIT', '2.00'),
-(103, 'W/Box ME', '1.20', '1.20', '1.20', 'W/Box', '1.73'),
-(104, 'Tote Tank S ME', '1.20', '1.20', '1.50', 'UNIT', '2.16'),
-(105, 'Liferaft ME', '2.00', '1.00', '1.00', 'UNIT', '2.00'),
-(106, 'Food Container 10FT ME', '3.00', '2.50', '2.50', 'UNIT', '18.75'),
-(107, 'Container Biru', '3.00', '2.44', '2.50', 'UNIT', '18.30'),
-(108, 'Cradle Kwr', '1.00', '1.00', '1.00', 'UNIT', '1.00'),
-(109, 'D-066', '1.10', '1.10', '1.00', 'Palet', '1.21'),
-(110, 'ISO Container 20FT ME', '6.06', '2.44', '2.50', 'UNIT', '36.97'),
-(111, 'Material Cylinder ', '1.20', '1.20', '1.90', 'Rack', '2.74'),
-(112, 'Liferaft Plt', '1.20', '1.20', '1.00', 'Palet', '1.44'),
-(113, 'Gas Booster', '3.00', '3.00', '1.50', 'UNIT', '13.50'),
-(114, 'Handa Carry ME', '0.10', '0.10', '0.10', 'Carton', '0.00'),
-(115, 'Handa Carry ME', '0.10', '0.10', '0.10', 'Carton', '0.00'),
-(116, 'Rack Argon', '1.50', '1.50', '1.80', 'Rack', '4.05'),
-(117, 'Offshore Basket SN Top', '6.28', '1.19', '1.21', 'UNIT', '9.04'),
-(118, 'Logging Unit ME', '4.88', '2.44', '2.60', 'UNIT', '30.96'),
-(119, 'Mud Logging Mini Container ME', '1.60', '1.60', '1.00', 'UNIT', '2.56'),
-(120, 'Sparepart Basket', '3.00', '2.43', '1.29', 'UNIT', '9.40'),
-(121, 'Sparepart Basket', '3.00', '2.43', '1.29', 'UNIT', '9.40'),
-(122, 'Batch Mixer', '6.50', '2.50', '1.50', 'UNIT', '24.38'),
-(123, 'Completion Tool Box ME', '3.14', '1.00', '0.93', 'UNIT', '2.92'),
-(124, 'Empty Basket TD-CB 10', '10.00', '1.20', '1.40', 'Unit', '16.80'),
-(125, 'Mini Container ME', '2.50', '2.50', '2.80', 'UNIT', '17.50'),
-(126, 'Basket TD-CB', '8.30', '1.20', '1.40', 'UNIT', '13.94'),
-(127, 'Drilling JAR 7"', '9.14', '0.18', '0.18', 'Ea', '0.30'),
-(128, 'Cylinder Rack POI Argon', '0.80', '2.11', '2.04', 'UNIT', '3.44'),
-(130, 'Basket SN TD-CB-14', '14.30', '1.20', '1.43', 'UNIT', '24.54'),
-(131, 'Basket SN TD-CB-13', '13.30', '1.20', '1.43', 'UNIT', '22.82'),
-(132, 'Waste Skip POI 1', '2.06', '1.57', '1.61', 'UNIT', '5.21'),
-(134, 'Mini Container POI 1', '1.82', '2.45', '1.82', 'UNIT', '8.12'),
-(137, '10Ft Half Opentop Container POI', '3.00', '2.45', '1.30', 'UNIT', '9.56'),
-(138, '20FT Opentop H-270', '6.06', '2.44', '2.80', 'UNIT', '41.40'),
-(140, '20FT Opentop POI 1', '6.00', '2.45', '1.50', 'UNIT', '22.05'),
-(141, 'Plastic Box POI', '2.06', '1.57', '1.51', 'UNIT', '4.88'),
-(142, 'Rack Bottle Gas', '0.75', '0.75', '1.80', 'Rack', '1.01'),
-(143, 'Mini Container POI 2', '1.91', '1.67', '2.78', 'UNIT', '8.87'),
-(144, 'Half Opentop 10FT POI', '3.00', '2.45', '1.50', 'UNIT', '11.03'),
-(145, 'Half Opentop 10FT POI 1', '3.05', '2.45', '1.28', 'UNIT', '9.56'),
-(146, '6FT Container SE ', '1.82', '1.82', '2.58', 'UNIT', '8.55'),
-(147, 'Power Pack', '1.47', '0.93', '1.16', 'Unit', '1.59'),
-(148, 'PC Mex Lenovo', '0.90', '0.20', '0.50', 'W/Box', '0.09'),
-(149, 'Welding Habitat', '1.20', '1.20', '1.60', 'W/Box', '2.30'),
-(150, 'Seatel Antena', '3.00', '3.00', '2.80', 'Unit', '25.20'),
-(151, 'Empty Basket 6 Mtr', '6.00', '2.44', '1.43', 'Unit', '20.94'),
-(152, 'Stand Dryer ', '3.70', '2.90', '1.50', 'Unit', '16.10'),
-(153, 'Propane Rack SN', '1.06', '1.06', '1.67', 'Unit', '1.88'),
-(154, 'Hammer Basket', '10.00', '1.00', '1.71', 'Unit', '17.10'),
-(155, 'Skid Frame', '3.50', '1.54', '2.50', 'Unit', '13.48'),
-(156, 'Basket YAP', '1.83', '1.72', '1.20', 'Unit', '3.78'),
-(157, 'Basket YAP 01', '1.82', '1.52', '1.10', 'Unit', '3.04'),
-(158, 'Half Height', '3.00', '2.40', '1.40', 'Unit', '10.08'),
-(159, 'Auro ', '3.00', '2.00', '0.97', 'Unit', '5.82'),
-(160, 'Basket MOOU', '4.58', '2.44', '1.43', 'Unit', '15.98'),
-(161, 'Sarku Container', '6.00', '2.40', '2.50', 'Unit', '36.00'),
-(162, 'E-Line Dog House', '6.06', '2.44', '2.44', 'UNIT', '36.08'),
-(163, 'Line Basket', '6.20', '1.10', '1.20', 'UNIT', '8.18'),
-(164, 'Varley', '1.20', '0.90', '1.70', 'UNIT', '1.84'),
-(165, 'Steel Box MEPN', '3.00', '1.20', '1.40', 'UNIT', '5.04'),
-(166, 'Prowell PCE', '3.50', '1.80', '1.50', 'UNIT', '9.45'),
-(167, 'Prowell Single Drum', '2.30', '1.20', '1.50', 'UNIT', '4.14'),
-(168, 'Prowell Power Pack', '2.30', '1.20', '1.60', 'UNIT', '4.42'),
-(169, 'Single RAM', '1.80', '0.50', '1.40', 'UNIT', '1.26'),
-(170, 'Lubricator Basket', '3.00', '1.20', '0.90', 'UNIT', '3.24'),
-(171, 'Lubricator Basket', '3.00', '1.20', '0.90', 'UNIT', '3.24'),
-(172, 'Transporter Basket', '2.40', '1.60', '1.30', 'UNIT', '4.99'),
-(173, 'Gun Clamp', '10.00', '1.00', '0.30', 'Clamp', '3.00'),
-(174, 'Gun Clamp 01', '1.00', '1.00', '0.50', 'Palet', '0.50'),
-(175, 'Battery Charger', '0.80', '0.50', '0.50', 'W/Box', '0.20'),
-(176, 'Offshore Container POI', '3.05', '2.45', '2.45', 'UNIT', '18.31'),
-(177, 'Empty Bottle  Oxygen SE', '1.00', '0.70', '2.00', 'UNIT', '1.40'),
-(178, 'Cylinder Rack SN KWS GBR', '1.20', '1.20', '2.00', 'UNIT', '2.88'),
-(179, 'IBC Tank Methanol', '1.43', '1.42', '1.50', 'UNIT', '3.05'),
-(180, 'Pass Ring Key', '0.80', '0.50', '0.40', 'Bundel', '0.16'),
-(181, 'Flow Meter', '0.10', '0.10', '0.20', 'Can', '0.00'),
-(182, 'Dump Truck Loses', '6.02', '2.02', '1.07', 'UNIT', '13.01'),
-(183, 'Cylinder Rack TD-GB', '1.45', '1.24', '2.25', 'UNIT', '4.05'),
-(184, 'Cylinder Rack BSSL', '1.27', '1.15', '2.28', 'UNIT', '3.33'),
-(185, 'Offshore Basket FSHH', '4.57', '2.44', '1.22', 'UNIT', '13.60'),
-(186, 'Casing 13-3/8"', '12.00', '0.50', '0.33', 'Bundel', '1.98'),
-(187, '6M Half Height Basket', '6.06', '2.44', '1.43', 'UNIT', '21.14'),
-(188, '3M Open Top Container', '2.99', '2.45', '1.28', 'UNIT', '9.38'),
-(189, 'Petroguard', '8.00', '0.50', '0.50', 'W/Box', '2.00'),
-(190, '30FT Half Opentop Container', '6.05', '2.45', '1.28', 'UNIT', '18.97'),
-(191, 'ISO Tank MEG POI', '3.00', '2.45', '2.60', 'UNIT', '19.11'),
-(192, 'Cylinder Rack Acetylene POI', '1.35', '0.72', '1.60', 'UNIT', '1.56'),
-(193, 'Cylinder Rack Acetylene POI', '1.35', '0.72', '1.60', 'UNIT', '1.56'),
-(194, 'Container Waste POI', '6.00', '2.45', '1.28', 'UNIT', '18.82'),
-(195, 'Pipe Spool USM', '2.10', '1.00', '1.00', 'Box', '2.10'),
-(196, 'Pipe Spool USM 01', '4.00', '1.00', '1.00', 'Box', '4.00'),
-(197, 'Rack TKC 12', '2.55', '1.40', '1.64', 'UNIT', '5.85'),
-(198, 'LIFE RAFT ME', '1.50', '0.80', '1.00', 'Crate', '1.20'),
-(199, 'Motor Electric', '1.20', '1.00', '0.50', 'Crate', '0.60'),
-(200, 'Motor Electric', '1.20', '1.00', '0.50', 'Crate', '0.60'),
-(201, 'ISO Container 20FT ME 01', '6.06', '2.44', '2.59', 'UNIT', '38.30'),
-(202, 'Rack Argon 01', '1.04', '1.06', '2.02', 'UNIT', '2.23'),
-(203, 'Rack Argon 01', '1.04', '1.06', '2.02', 'UNIT', '2.23'),
-(204, 'Rack N2', '1.41', '1.37', '2.18', 'UNIT', '4.21'),
-(205, 'Offshore Basket 14M', '14.26', '1.20', '1.24', 'UNIT', '21.22'),
-(206, 'Offshore Basket 40FT', '12.00', '1.20', '1.24', 'UNIT', '17.86'),
-(207, 'Offshore Basket 003', '6.30', '1.20', '1.30', 'UNIT', '9.83'),
-(208, 'Basket 12.3 ME', '12.30', '1.20', '1.30', 'UNIT', '19.19'),
-(209, 'Basket 12.2 ME', '12.20', '1.20', '1.43', 'UNIT', '20.94'),
-(210, 'Tolls Box', '2.40', '0.50', '0.50', 'S/Box', '0.60'),
-(211, 'Container PPLi', '6.06', '2.44', '2.60', 'UNIT', '38.44'),
-(212, 'Mini Container ME 02 ', '1.59', '1.85', '2.92', 'UNIT', '8.59'),
-(213, 'Baracarb', '1.10', '1.05', '1.00', 'Palet', '1.16'),
-(214, 'D620', '1.10', '1.10', '1.10', 'Palet', '1.33'),
-(215, 'D252', '1.10', '1.05', '1.10', 'Palet', '1.27'),
-(216, 'Cargo Basket 01 ME', '8.30', '1.10', '1.40', 'UNIT', '12.78'),
-(217, 'Sample Terubuk', '0.20', '0.30', '0.40', 'Box', '0.02'),
-(218, 'TCP Tool Box', '2.44', '0.98', '0.99', 'S/Box', '2.37'),
-(219, 'Basket 10.3 ME', '10.30', '1.20', '1.43', 'UNIT', '17.67'),
-(220, 'Container DNV', '6.10', '2.40', '2.90', 'UNIT', '42.46'),
-(221, 'Sample Sea Water', '1.20', '1.20', '0.50', 'Palet', '0.72'),
-(222, 'Slickline', '1.20', '0.70', '0.60', 'UNIT', '0.50'),
-(223, 'Slickline', '1.20', '0.70', '0.60', 'UNIT', '0.50'),
-(224, 'Winch Cable', '2.34', '2.14', '2.14', 'UNIT', '10.72'),
-(225, 'CLC Frame', '2.30', '2.15', '2.85', 'UNIT', '14.09'),
-(226, 'DAPS', '2.44', '2.44', '2.61', 'UNIT', '15.54'),
-(227, 'Half Opentop Container 20FT POI 01', '6.30', '2.45', '1.28', 'UNIT', '19.76'),
-(228, '20FT Closed Container ', '6.05', '2.45', '2.45', 'UNIT', '36.32'),
-(229, 'AirMan Compressor', '3.70', '1.80', '2.23', 'UNIT', '14.85'),
-(230, 'Half Opentop 10FT POI 2', '3.05', '2.45', '1.28', 'UNIT', '9.56'),
-(231, 'Container POI', '6.58', '2.43', '1.28', 'UNIT', '20.47'),
-(232, '20FT Opentop POI 2', '6.05', '2.45', '1.28', 'UNIT', '18.97'),
-(233, 'Welding Machine POI', '2.05', '1.80', '1.82', 'UNIT', '6.72'),
-(234, 'Yellow Basket SE', '6.30', '1.15', '1.43', 'UNIT', '10.36'),
-(235, 'Reffer Container 10FT SE', '3.00', '2.42', '2.58', 'UNIT', '18.73'),
-(236, 'Rack CO2 SE', '0.80', '1.50', '1.50', 'Rack', '1.80'),
-(237, 'Diving Lars', '4.10', '2.25', '2.65', 'UNIT', '24.45'),
-(238, '6M Half Height Basket', '6.06', '2.43', '1.43', 'UNIT', '21.06'),
-(239, 'Tubing Seamselss', '9.60', '0.11', '0.11', 'Bundel', '0.12'),
-(240, 'Tubing Seamselss', '9.60', '0.11', '0.11', 'Bundel', '0.12'),
-(241, 'Cutting Skip ME', '2.20', '1.84', '1.54', 'UNIT', '6.23'),
-(242, 'D080', '1.20', '1.00', '1.44', 'Palet', '1.73'),
-(243, 'D110', '1.20', '1.20', '0.60', 'Palet', '0.86'),
-(244, 'Drill Pipe', '12.00', '0.13', '0.13', 'Bundel', '0.20'),
-(245, 'Expansion Valve', '1.00', '0.35', '0.85', 'Box', '0.30'),
-(246, 'Tools PSV', '0.90', '0.30', '0.75', 'PKGS', '0.20'),
-(247, 'Rack SEU', '1.02', '1.05', '1.90', 'UNIT', '2.03'),
-(248, 'Diesel Brushless', '3.30', '1.40', '2.44', 'UNIT', '11.27'),
-(249, 'Firex Dry Powder', '1.00', '1.00', '1.30', 'Carton', '1.30'),
-(250, 'Sertification', '1.50', '0.80', '1.00', 'Carton', '1.20'),
-(251, 'Air Compressor', '0.70', '0.40', '0.37', 'W/Box', '0.10'),
-(252, 'Primary Box', '1.20', '1.20', '1.47', 'UNIT', '2.12'),
-(253, 'Secondary Box 01', '1.60', '1.10', '2.14', 'UNIT', '3.77'),
-(254, 'Second Box 02', '1.15', '1.15', '2.10', 'UNIT', '2.78'),
-(255, 'Tubing 2-7/8"', '9.14', '0.07', '0.07', 'Batang', '0.04'),
-(256, 'Open Top PMB 20FT', '6.06', '2.44', '2.90', 'UNIT', '42.88'),
-(257, 'Basket BSL', '4.20', '2.07', '1.89', 'Skid', '16.43'),
-(258, 'Camera Radiography', '0.60', '0.40', '0.40', 'Box', '0.10'),
-(259, 'Hot Hed Box', '2.99', '1.44', '1.74', 'UNIT', '7.49'),
-(260, 'Hot Hed ToolBox', '1.62', '1.51', '1.04', 'UNIT', '2.54'),
-(261, 'Rack Gas Cylinder', '1.38', '1.11', '2.44', 'UNIT', '3.74'),
-(262, 'Aircraft', '1.93', '1.05', '0.48', 'Palet', '0.97'),
-(263, 'Cable GPU', '0.65', '0.65', '0.46', 'W/Box', '0.19'),
-(264, 'Aircraft Battery', '0.95', '0.52', '0.33', 'W/Box', '0.16'),
-(265, 'DGS', '0.30', '0.30', '0.30', 'Box', '0.03'),
-(266, 'Electric Motor Water', '1.00', '1.00', '0.50', 'Box', '0.50'),
-(267, 'Coupling Adapter', '0.60', '0.40', '0.58', 'Box', '0.14'),
-(268, 'Hedrogen', '1.38', '1.11', '2.44', 'UNIT', '3.74'),
-(269, 'Habitat Box', '2.99', '1.44', '1.74', 'UNIT', '7.49'),
-(270, 'Tool Box SN', '1.62', '1.51', '1.04', 'UNIT', '2.54'),
-(271, 'Air Compressor ACF', '2.65', '1.70', '1.53', 'UNIT', '6.89'),
-(272, 'Container Cutting', '6.00', '2.50', '2.60', 'UNIT', '39.00'),
-(273, 'Offshore Basket 6.3', '6.30', '1.20', '1.36', 'UNIT', '10.28'),
-(274, 'Cable Skid', '2.05', '1.57', '1.65', 'UNIT', '5.31'),
-(275, 'Cable Skid', '2.05', '1.57', '1.65', 'UNIT', '5.31'),
-(276, 'Cable Skid SLB', '2.20', '1.70', '1.80', 'UNIT', '6.73'),
-(277, 'Basket TCP', '8.00', '1.15', '1.05', 'UNIT', '9.66'),
-(278, 'TCP - TB', '2.44', '1.00', '1.00', 'UNIT', '2.44'),
-(279, 'Offshore Basket SCEK-TBAS', '13.30', '1.20', '1.30', 'UNIT', '20.75'),
-(280, 'Air Compressor Atlas Copco', '4.25', '2.44', '2.74', 'UNIT', '28.41'),
-(281, 'Propane Rack', '1.06', '1.06', '1.67', 'Rack', '1.88'),
-(282, 'DST Basket', '8.15', '1.39', '0.93', 'T/Box', '10.54'),
-(283, 'Tensa GCI', '1.10', '1.10', '0.60', 'Palet', '0.73'),
-(284, 'Tensa CTU', '1.20', '1.20', '0.50', 'Palet', '0.72'),
-(285, 'Offshore Box', '1.27', '0.91', '1.00', 'UNIT', '1.16'),
-(286, 'Rack COPI', '1.25', '0.89', '2.17', 'UNIT', '2.41'),
-(287, 'DHT Basket', '2.99', '2.44', '1.43', 'UNIT', '10.43'),
-(288, 'Basket APS', '4.00', '1.00', '1.00', 'UNIT', '4.00'),
-(289, 'Habitat Box ME', '2.28', '1.19', '1.85', 'UNIT', '5.02'),
-(290, 'Tool Box TB Copi', '1.60', '1.47', '1.02', 'UNIT', '2.40'),
-(291, 'Compresseor 190CFM POI', '2.40', '1.45', '1.82', 'UNIT', '6.33'),
-(292, 'Closed Container 10FT', '2.99', '2.43', '2.76', 'UNIT', '20.05'),
-(293, 'Liferaft DSB POI', '3.05', '2.45', '1.28', 'UNIT', '9.56'),
-(294, 'Wooden Pallet Waste POI', '1.90', '1.66', '2.76', 'UNIT', '8.71'),
-(295, 'Food Container 10FT POI 2', '3.00', '2.45', '2.56', 'UNIT', '18.82'),
-(296, '10FT Mini Container', '2.51', '2.51', '2.56', 'UNIT', '16.13'),
-(297, 'Cylinder Rack POI  16-11', '1.77', '1.77', '2.04', 'UNIT', '6.39'),
-(298, 'Nitrogen Manifold POI', '1.18', '1.18', '2.15', 'UNIT', '2.99'),
-(299, 'Skid SKW POI', '1.10', '1.80', '1.82', 'UNIT', '3.60'),
-(300, 'Steel Tool Box SE', '1.60', '1.20', '0.80', 'UNIT', '1.54'),
-(301, 'DDC Container 20FT SE', '6.00', '2.40', '2.59', 'UNIT', '37.30'),
-(302, 'Water Jet SE', '2.60', '1.45', '1.68', 'UNIT', '6.33'),
-(303, 'Air Comperssor SE', '3.76', '1.90', '2.26', 'UNIT', '16.15'),
-(304, 'Cylinder Rack 02 SE', '1.24', '1.24', '2.60', 'UNIT', '4.00'),
-(305, 'Cylinder Rack 02 SE', '1.24', '1.24', '2.60', 'UNIT', '4.00'),
-(306, 'Diving Launch SE', '6.58', '2.48', '2.60', 'UNIT', '42.43'),
-(307, 'Food Container 10FT POI 3', '3.05', '2.45', '2.45', 'UNIT', '18.31'),
-(308, 'IBC Tank POI', '1.61', '1.67', '2.90', 'UNIT', '7.80'),
-(309, 'IBC Tank SZB', '1.43', '1.23', '1.51', 'UNIT', '2.66'),
-(310, 'Liferaft Viking 01', '1.50', '1.00', '1.00', 'Crt', '1.50'),
-(311, 'Motor Pump ME', '0.80', '1.13', '0.63', 'UNIT', '0.57'),
-(312, 'Large Water ME', '1.53', '1.22', '0.62', 'UNIT', '1.16'),
-(313, 'Gear Box Valve', '1.00', '1.00', '1.00', 'Box', '1.00'),
-(314, 'Close Container 10FT ME', '3.00', '2.44', '2.60', 'UNIT', '19.03'),
-(315, 'Container PPLi 01', '6.10', '2.44', '2.60', 'UNIT', '38.70'),
-(316, 'Welding Machine ME', '2.08', '1.11', '1.68', 'UNIT', '3.88'),
-(317, 'Offshore Box SN ME', '1.29', '0.91', '1.04', 'Box', '1.22'),
-(318, 'Basket 10.3 ME 01', '10.30', '1.22', '1.43', 'UNIT', '17.97'),
-(319, '20FT Half Height Opentop', '6.06', '2.44', '1.40', 'UNIT', '20.70'),
-(320, 'Secondary Explosive ME', '1.56', '1.23', '2.00', 'UNIT', '3.84'),
-(321, 'D145A', '1.20', '1.20', '1.05', 'Palet', '1.51'),
-(322, 'Cargo Basket SN ME', '3.10', '2.13', '1.40', 'UNIT', '9.24'),
-(323, 'Skid SN ME', '11.30', '1.15', '1.44', 'UNIT', '18.71'),
-(324, 'N2 Rack ME', '0.63', '0.63', '1.90', 'UNIT', '0.75'),
-(325, 'Half Container SN ME', '4.57', '2.43', '1.43', 'UNIT', '15.88'),
-(326, '6M Half HT', '6.00', '2.50', '1.50', 'UNIT', '22.50'),
-(327, 'Acetylene Cylinder ', '1.00', '0.70', '1.20', 'Rack', '0.84'),
-(328, 'Oxygen Cylinder ', '1.10', '1.10', '1.50', 'Rack', '1.82'),
-(329, 'W/Box ME 01', '1.00', '0.50', '0.50', 'W/Box', '0.25'),
-(330, 'Charge unker ME', '1.16', '1.15', '2.10', 'UNIT', '2.80'),
-(331, 'Shape Chrage Bunker ME', '1.00', '1.00', '2.20', 'UNIT', '2.20'),
-(332, 'Hose Cutting Dryer', '1.20', '1.20', '0.50', 'Palet', '0.72'),
-(333, 'Baroid BSS Panel', '1.30', '1.30', '0.50', 'UNIT', '0.85'),
-(334, 'Baroid BSS Holding', '1.50', '1.50', '1.60', 'UNIT', '3.60'),
-(335, 'Baroid BSS Cutting', '2.00', '2.00', '2.30', 'UNIT', '9.20'),
-(336, 'MLWD Logging Unit', '4.60', '3.07', '2.69', 'UNIT', '37.99'),
-(337, 'Basket 12.3 ME 01', '12.30', '1.20', '1.43', 'UNIT', '21.11'),
-(338, 'Gas Transport', '1.45', '1.24', '2.25', 'UNIT', '4.05'),
-(339, '6FT Container  ME 01', '1.59', '1.85', '2.92', 'UNIT', '8.59'),
-(340, '20FT Basket SLB ME', '6.06', '2.44', '1.30', 'UNIT', '19.22'),
-(341, 'Basket Baker ', '4.83', '1.18', '1.08', 'UNIT', '6.16'),
-(342, 'Basket Baker 01', '3.00', '1.10', '1.10', 'UNIT', '3.63'),
-(343, 'Container MAST', '8.00', '1.30', '2.80', 'UNIT', '29.12');
+INSERT INTO `jenis_barang` (`id_jenis`, `nm_jenis`, `p`, `l`, `t`, `satuan_jenis`, `volume_jenis`, `area`) VALUES
+(6, 'CONTAINER 20 FT', '6.06', '2.44', '2.90', 'UNIT', '42.88', 'kj1'),
+(7, 'CONTAINER 10 FT', '2.99', '2.44', '2.59', 'UNIT', '18.90', 'kj1'),
+(9, 'TOTE THANK POI', '1.82', '1.82', '2.75', 'UNIT', '9.11', 'kj1'),
+(10, 'IBC Tank', '1.50', '1.50', '1.80', 'UNIT', '4.05', 'kj1'),
+(12, 'Iso Container PMB 10FT', '3.00', '2.50', '2.50', 'UNIT', '18.75', 'kj1'),
+(13, 'Empty Gas Helium Cylinder', '1.50', '1.50', '1.60', 'Rack', '3.60', 'kj1'),
+(14, 'Empty Tote Tank', '1.50', '1.50', '1.80', 'UNIT', '4.05', 'kj1'),
+(15, 'Offshore Basket SN-SLB-08897', '12.00', '1.20', '1.43', 'Basket', '20.59', 'kj1'),
+(16, 'Rack Cylinder BRA', '2.00', '2.00', '2.20', 'Rack', '8.80', 'kj1'),
+(17, 'NItrogen Tank , Halliburton', '3.00', '2.50', '2.60', 'UNIT', '19.50', 'kj1'),
+(18, 'Iron Basket , Halliburton', '6.70', '1.20', '1.20', 'UNIT', '9.65', 'kj1'),
+(19, 'Waste Skip', '3.00', '1.22', '1.40', 'UNIT', '5.12', 'kj1'),
+(20, 'Open Top Container 30FT', '9.20', '2.45', '1.49', 'UNIT', '33.58', 'kj1'),
+(21, 'Tote Tank HSD', '1.48', '1.38', '2.27', 'UNIT', '4.64', 'kj1'),
+(22, 'Cylinder Rack Nitrogen POI', '1.18', '1.18', '2.15', 'Rack', '2.99', 'kj1'),
+(24, 'Dry Container 10FT', '2.99', '2.44', '2.60', 'UNIT', '18.97', 'kj1'),
+(25, 'Chiller Container ', '2.99', '2.44', '2.60', 'UNIT', '18.97', 'kj1'),
+(26, 'Half Container 10FT SN-FSHH', '2.99', '2.44', '1.22', 'UNIT', '8.90', 'kj1'),
+(27, 'Open Top Container 20FT ME', '6.06', '2.44', '2.70', 'UNIT', '39.92', 'kj1'),
+(28, 'Cylinder Rack', '1.37', '0.89', '2.20', 'UNIT', '2.68', 'kj1'),
+(29, 'Chemical Barite', '1.20', '1.20', '1.00', 'Palet', '1.44', 'kj1'),
+(30, 'Oli Drum', '1.20', '1.20', '1.15', 'Palet', '1.66', 'kj1'),
+(31, 'Chemical Bentonite', '1.20', '1.20', '1.10', 'Palet', '1.58', 'kj1'),
+(32, 'Chemical MI Swaco', '1.20', '1.20', '1.50', 'UNIT', '2.16', 'kj1'),
+(34, 'Offshore Basket SNI', '13.00', '1.20', '1.20', 'UNIT', '18.72', 'kj1'),
+(36, 'Chemical Drum', '1.20', '1.20', '1.20', 'Palet', '1.73', 'kj1'),
+(37, 'Liferaft Viking', '1.70', '1.00', '1.00', 'W/Box', '1.70', 'kj1'),
+(38, 'Waste Skip POI ', '2.06', '1.51', '1.61', 'UNIT', '5.01', 'kj1'),
+(39, 'Mini Container POI', '1.91', '1.67', '2.76', 'UNIT', '8.80', 'kj1'),
+(40, 'Food Container 10FT POI 1', '3.05', '2.45', '2.56', 'UNIT', '19.13', 'kj1'),
+(41, 'Food Container 10FT POI', '3.00', '2.45', '2.45', 'UNIT', '18.01', 'kj1'),
+(42, 'Food Container 10FT', '3.00', '2.44', '2.74', 'UNIT', '20.06', 'kj1'),
+(43, 'Half Opentop Cont 10FT SN  ME', '2.99', '2.44', '1.28', 'UNIT', '9.34', 'kj1'),
+(44, 'Half Open Top Container 20FT POI', '6.00', '2.45', '1.30', 'UNIT', '19.11', 'kj1'),
+(45, 'Tote Tank OFH', '1.43', '1.43', '2.47', 'UNIT', '5.05', 'kj1'),
+(46, 'Cyinder Rack Nitrogen R-POI-14', '1.50', '0.80', '1.46', 'UNIT', '1.75', 'kj1'),
+(47, 'Cylinder Rack R-POI-16-11', '1.17', '1.17', '2.04', 'UNIT', '2.79', 'kj1'),
+(49, 'Chiller Container 20FT', '6.05', '2.42', '2.58', 'UNIT', '37.77', 'kj1'),
+(50, 'Cylinder rack Oxygen SE', '1.13', '0.82', '2.01', 'UNIT', '1.86', 'kj1'),
+(51, 'Cylinder Rack Acetylene SE', '0.92', '0.62', '1.43', 'UNIT', '0.82', 'kj1'),
+(52, 'Cylinder Rack Hellium SE', '0.93', '0.55', '1.26', 'UNIT', '0.64', 'kj1'),
+(53, 'Cylinder Rack Freon SE', '0.94', '0.64', '0.13', 'UNIT', '0.08', 'kj1'),
+(54, 'Half Open Top Container 10FT SE', '3.00', '2.42', '1.30', 'UNIT', '9.44', 'kj1'),
+(55, 'Half Open Top Container 20FT SE', '6.00', '2.42', '1.30', 'UNIT', '18.88', 'kj1'),
+(56, 'Crude Oil Sample SE', '0.60', '0.25', '0.20', 'Bag', '0.03', 'kj1'),
+(57, 'Crude Oil Sample ME', '0.50', '0.50', '0.50', 'Box', '0.13', 'kj1'),
+(58, 'Crude Oil Sample POI', '0.40', '0.30', '0.30', 'Carton', '0.04', 'kj1'),
+(59, 'Firex Dry Powder', '0.70', '0.50', '0.60', 'W/Box', '0.21', 'kj1'),
+(60, 'Liferaft', '1.20', '1.20', '0.50', 'Palet', '0.72', 'kj1'),
+(61, 'Tote Tank Starpol ', '1.20', '1.05', '1.90', 'T/T', '2.39', 'kj1'),
+(63, 'IBC Tank Staraid', '1.60', '1.30', '1.50', 'UNIT', '3.12', 'kj1'),
+(64, 'Tote Tank Starbreak', '1.60', '1.36', '1.50', 'T/T', '3.26', 'kj1'),
+(65, 'Dry Container 20FT ME', '6.06', '2.44', '2.59', 'UNIT', '38.30', 'kj1'),
+(66, 'Domestic Waste', '1.20', '1.20', '1.00', 'Bag', '1.44', 'kj1'),
+(68, 'Lifting Gear Box', '0.90', '0.60', '0.40', 'W/Box', '0.22', 'kj1'),
+(69, 'Lifting Gear Junk', '1.20', '1.20', '0.50', 'Palet', '0.72', 'kj1'),
+(70, 'Part Junk', '1.00', '1.00', '1.00', 'Palet', '1.00', 'kj1'),
+(71, 'Cylinder Rack MOWC', '1.10', '1.10', '2.00', 'UNIT', '2.42', 'kj1'),
+(72, 'Cylinder Rack Nitrogen ME ', '1.10', '1.05', '2.18', 'Rack', '2.52', 'kj1'),
+(73, 'Cylinder Rack Nitrogen Blue ME', '1.10', '1.05', '2.13', 'Rack', '2.46', 'kj1'),
+(74, 'Half height Basket Rig 4.5', '6.06', '2.44', '1.22', 'UNIT', '18.04', 'kj1'),
+(75, 'Half height Basket Rig 3', '2.74', '2.44', '1.22', 'UNIT', '8.16', 'kj1'),
+(76, 'Half Opentop Container 10FT POI 3', '2.99', '2.45', '1.28', 'UNIT', '9.38', 'kj1'),
+(77, 'Gas Bottle Rack TD', '1.45', '1.24', '2.25', 'Rack', '4.05', 'kj1'),
+(78, 'Gas Bottle Rack BSL', '1.27', '1.15', '2.28', 'Rack', '3.33', 'kj1'),
+(79, 'Centrfuge DE-1000 ', '2.93', '1.90', '1.50', 'UNIT', '8.35', 'kj1'),
+(80, 'Stand Centrifuge ', '3.00', '1.93', '0.90', 'UNIT', '5.21', 'kj1'),
+(81, 'De Press', '6.26', '2.37', '2.45', 'UNIT', '36.35', 'kj1'),
+(82, 'Screw Conveyor ', '1.40', '0.90', '0.70', 'UNIT', '0.88', 'kj1'),
+(83, 'Housing  Auger', '2.80', '0.70', '0.80', 'Bundel', '1.57', 'kj1'),
+(84, 'Pipe Casing 10\"', '2.90', '0.70', '0.70', 'Bundel', '1.42', 'kj1'),
+(85, 'Feed Pump PSI', '2.50', '0.62', '0.84', 'UNIT', '1.30', 'kj1'),
+(86, 'Twin Pod', '2.25', '1.20', '2.20', 'UNIT', '5.94', 'kj1'),
+(87, 'Slurry Skid', '2.50', '1.45', '1.75', 'UNIT', '6.34', 'kj1'),
+(88, 'Filtration Tool Box', '1.20', '1.00', '1.10', 'UNIT', '1.32', 'kj1'),
+(89, 'Feed Pump ', '2.50', '0.60', '0.80', 'UNIT', '1.20', 'kj1'),
+(90, 'Effluent Tank', '1.50', '1.20', '1.20', 'UNIT', '2.16', 'kj1'),
+(91, 'Hose Basket', '7.00', '1.35', '1.11', 'UNIT', '10.49', 'kj1'),
+(92, 'Offshore Basket SN-B-1403', '14.30', '1.20', '1.20', 'UNIT', '20.59', 'kj1'),
+(93, 'Offshore Basket SN Auro', '13.30', '1.20', '1.40', 'UNIT', '22.34', 'kj1'),
+(94, 'Cargo Basket', '12.30', '1.20', '1.20', 'UNIT', '17.71', 'kj1'),
+(95, 'Offshore Basket SN.CPS', '15.40', '2.01', '1.60', 'UNIT', '49.53', 'kj1'),
+(96, 'Clamp', '0.50', '0.50', '0.70', 'W/Box', '0.18', 'kj1'),
+(97, 'Clamp For As', '0.80', '0.60', '0.60', 'Box', '0.29', 'kj1'),
+(98, 'TAS', '1.10', '0.20', '0.20', 'Box', '0.04', 'kj1'),
+(99, '30FT Basket AORA', '9.20', '2.40', '1.40', 'UNIT', '30.91', 'kj1'),
+(100, 'DNV Container 20FT', '6.00', '2.50', '2.50', 'UNIT', '37.50', 'kj1'),
+(101, 'Half Open Top Container 10FT ME', '3.00', '2.50', '1.50', 'UNIT', '11.25', 'kj1'),
+(102, 'Cylinder Rack SN SEU-53', '1.00', '1.00', '2.00', 'UNIT', '2.00', 'kj1'),
+(103, 'W/Box ME', '1.20', '1.20', '1.20', 'W/Box', '1.73', 'kj1'),
+(104, 'Tote Tank S ME', '1.20', '1.20', '1.50', 'UNIT', '2.16', 'kj1'),
+(105, 'Liferaft ME', '2.00', '1.00', '1.00', 'UNIT', '2.00', 'kj1'),
+(106, 'Food Container 10FT ME', '3.00', '2.50', '2.50', 'UNIT', '18.75', 'kj1'),
+(107, 'Container Biru', '3.00', '2.44', '2.50', 'UNIT', '18.30', 'kj1'),
+(108, 'Cradle Kwr', '1.00', '1.00', '1.00', 'UNIT', '1.00', 'kj1'),
+(109, 'D-066', '1.10', '1.00', '1.00', 'Palet', '1.10', 'kj1'),
+(110, 'ISO Container 20FT ME', '6.06', '2.44', '2.50', 'UNIT', '36.97', 'kj1'),
+(111, 'Material Cylinder ', '1.20', '1.20', '1.90', 'Rack', '2.74', 'kj1'),
+(112, 'Liferaft Plt', '1.20', '1.20', '1.00', 'Palet', '1.44', 'kj1'),
+(113, 'Gas Booster', '3.00', '3.00', '1.50', 'UNIT', '13.50', 'kj1'),
+(114, 'Handa Carry ME', '0.10', '0.10', '0.10', 'Carton', '0.00', 'kj1'),
+(115, 'Handa Carry ME', '0.10', '0.10', '0.10', 'Carton', '0.00', 'kj1'),
+(116, 'Rack Argon', '1.50', '1.50', '1.80', 'Rack', '4.05', 'kj1'),
+(117, 'Offshore Basket SN Top', '6.28', '1.19', '1.21', 'UNIT', '9.04', 'kj1'),
+(118, 'Logging Unit ME', '4.88', '2.44', '2.60', 'UNIT', '30.96', 'kj1'),
+(119, 'Mud Logging Mini Container ME', '1.60', '1.60', '1.00', 'UNIT', '2.56', 'kj1'),
+(120, 'Sparepart Basket', '3.00', '2.43', '1.29', 'UNIT', '9.40', 'kj1'),
+(121, 'Sparepart Basket', '3.00', '2.43', '1.29', 'UNIT', '9.40', 'kj1'),
+(122, 'Batch Mixer', '6.50', '2.50', '1.50', 'UNIT', '24.38', 'kj1'),
+(123, 'Completion Tool Box ME', '3.14', '1.00', '0.93', 'UNIT', '2.92', 'kj1'),
+(124, 'Empty Basket TD-CB 10', '10.00', '1.20', '1.40', 'Unit', '16.80', 'kj1'),
+(125, 'Mini Container ME', '2.50', '2.50', '2.80', 'UNIT', '17.50', 'kj1'),
+(126, 'Basket TD-CB', '8.30', '1.20', '1.40', 'UNIT', '13.94', 'kj1'),
+(127, 'Drilling JAR 7\"', '9.14', '0.18', '0.18', 'Ea', '0.30', 'kj1'),
+(128, 'Cylinder Rack POI Argon', '0.80', '2.11', '2.04', 'UNIT', '3.44', 'kj1'),
+(130, 'Basket SN TD-CB-14', '14.30', '1.20', '1.43', 'UNIT', '24.54', 'kj1'),
+(131, 'Basket SN TD-CB-13', '13.30', '1.20', '1.43', 'UNIT', '22.82', 'kj1'),
+(132, 'Waste Skip POI 1', '2.06', '1.57', '1.51', 'UNIT', '4.88', 'kj1'),
+(134, 'Mini Container POI 1', '1.82', '2.45', '1.82', 'UNIT', '8.12', 'kj1'),
+(137, '10Ft Half Opentop Container POI', '3.00', '2.45', '1.30', 'UNIT', '9.56', 'kj1'),
+(138, '20FT Opentop H-270', '6.06', '2.44', '2.80', 'UNIT', '41.40', 'kj1'),
+(140, '20FT Opentop POI 1', '6.00', '2.45', '1.50', 'UNIT', '22.05', 'kj1'),
+(141, 'Plastic Box POI', '2.06', '1.57', '1.51', 'UNIT', '4.88', 'kj1'),
+(142, 'Rack Bottle Gas', '0.75', '0.75', '1.80', 'Rack', '1.01', 'kj1'),
+(143, 'Mini Container POI 2', '1.91', '1.67', '2.78', 'UNIT', '8.87', 'kj1'),
+(144, 'Half Opentop 10FT POI', '3.00', '2.45', '1.50', 'UNIT', '11.03', 'kj1'),
+(145, 'Half Opentop 10FT POI 1', '3.05', '2.45', '1.28', 'UNIT', '9.56', 'kj1'),
+(146, '6FT Container SE ', '1.82', '1.82', '2.58', 'UNIT', '8.55', 'kj1'),
+(147, 'Power Pack', '1.47', '0.93', '1.16', 'Unit', '1.59', 'kj1'),
+(148, 'PC Mex Lenovo', '0.90', '0.20', '0.50', 'W/Box', '0.09', 'kj1'),
+(149, 'Welding Habitat', '1.20', '1.20', '1.60', 'W/Box', '2.30', 'kj1'),
+(150, 'Seatel Antena', '3.00', '3.00', '2.80', 'Unit', '25.20', 'kj1'),
+(151, 'Empty Basket 6 Mtr', '6.00', '2.44', '1.43', 'Unit', '20.94', 'kj1'),
+(152, 'Stand Dryer ', '3.70', '2.90', '1.50', 'Unit', '16.10', 'kj1'),
+(153, 'Propane Rack SN', '1.06', '1.06', '1.67', 'Unit', '1.88', 'kj1'),
+(154, 'Hammer Basket', '10.00', '1.00', '1.71', 'Unit', '17.10', 'kj1'),
+(155, 'Skid Frame', '3.50', '1.54', '2.50', 'Unit', '13.48', 'kj1'),
+(156, 'Basket YAP', '1.83', '1.72', '1.20', 'Unit', '3.78', 'kj1'),
+(157, 'Basket YAP 01', '1.82', '1.52', '1.10', 'Unit', '3.04', 'kj1'),
+(158, 'Half Height', '3.00', '2.40', '1.40', 'Unit', '10.08', 'kj1'),
+(159, 'Auro ', '3.00', '2.00', '0.97', 'Unit', '5.82', 'kj1'),
+(160, 'Basket MOOU', '4.58', '2.44', '1.43', 'Unit', '15.98', 'kj1'),
+(161, 'Sarku Container', '6.00', '2.40', '2.50', 'Unit', '36.00', 'kj1'),
+(162, 'E-Line Dog House', '6.06', '2.44', '2.44', 'UNIT', '36.08', 'kj1'),
+(163, 'Line Basket', '6.20', '1.10', '1.20', 'UNIT', '8.18', 'kj1'),
+(164, 'Varley', '1.20', '0.90', '1.70', 'UNIT', '1.84', 'kj1'),
+(165, 'Steel Box MEPN', '3.00', '1.20', '1.40', 'UNIT', '5.04', 'kj1'),
+(166, 'Prowell PCE', '3.50', '1.80', '1.50', 'UNIT', '9.45', 'kj1'),
+(167, 'Prowell Single Drum', '2.30', '1.20', '1.50', 'UNIT', '4.14', 'kj1'),
+(168, 'Prowell Power Pack', '2.30', '1.20', '1.60', 'UNIT', '4.42', 'kj1'),
+(169, 'Single RAM', '1.80', '0.50', '1.40', 'UNIT', '1.26', 'kj1'),
+(170, 'Lubricator Basket', '3.00', '1.20', '0.90', 'UNIT', '3.24', 'kj1'),
+(171, 'Lubricator Basket', '3.00', '1.20', '0.90', 'UNIT', '3.24', 'kj1'),
+(172, 'Transporter Basket', '2.40', '1.60', '1.30', 'UNIT', '4.99', 'kj1'),
+(173, 'Gun Clamp', '10.00', '1.00', '0.30', 'Clamp', '3.00', 'kj1'),
+(174, 'Gun Clamp 01', '1.00', '1.00', '0.50', 'Palet', '0.50', 'kj1'),
+(175, 'Battery Charger', '0.80', '0.50', '0.50', 'W/Box', '0.20', 'kj1'),
+(176, 'Offshore Container POI', '3.05', '2.45', '2.45', 'UNIT', '18.31', 'kj1'),
+(177, 'Empty Bottle  Oxygen SE', '1.00', '0.70', '2.00', 'UNIT', '1.40', 'kj1'),
+(178, 'Cylinder Rack SN KWS GBR', '1.20', '1.20', '2.00', 'UNIT', '2.88', 'kj1'),
+(179, 'IBC Tank Methanol', '1.43', '1.42', '1.50', 'UNIT', '3.05', 'kj1'),
+(180, 'Pass Ring Key', '0.80', '0.50', '0.40', 'Bundel', '0.16', 'kj1'),
+(181, 'Flow Meter', '0.10', '0.10', '0.20', 'Can', '0.00', 'kj1'),
+(182, 'Dump Truck Loses', '6.02', '2.02', '1.07', 'UNIT', '13.01', 'kj1'),
+(183, 'Cylinder Rack TD-GB', '1.45', '1.24', '2.25', 'UNIT', '4.05', 'kj1'),
+(184, 'Cylinder Rack BSSL', '1.27', '1.15', '2.28', 'UNIT', '3.33', 'kj1'),
+(185, 'Offshore Basket FSHH', '4.57', '2.44', '1.22', 'UNIT', '13.60', 'kj1'),
+(186, 'Casing 13-3/8\"', '12.00', '0.50', '0.33', 'Bundel', '1.98', 'kj1'),
+(187, '6M Half Height Basket', '6.06', '2.44', '1.43', 'UNIT', '21.14', 'kj1'),
+(188, '3M Open Top Container', '2.99', '2.45', '1.28', 'UNIT', '9.38', 'kj1'),
+(189, 'Petroguard', '8.00', '0.50', '0.50', 'W/Box', '2.00', 'kj1'),
+(190, '20FT HH Basket ME', '6.06', '2.44', '1.28', 'UNIT', '18.93', 'kj1'),
+(191, 'ISO Tank MEG POI', '3.00', '2.45', '2.60', 'UNIT', '19.11', 'kj1'),
+(192, 'Cylinder Rack Acetylene POI', '1.35', '0.72', '1.60', 'UNIT', '1.56', 'kj1'),
+(193, 'Cylinder Rack PCE POI', '1.85', '1.60', '2.60', 'UNIT', '7.70', 'kj1'),
+(194, 'Container Waste POI', '6.00', '2.45', '1.28', 'UNIT', '18.82', 'kj1'),
+(195, 'Pipe Spool USM', '2.10', '1.00', '1.00', 'Box', '2.10', 'kj1'),
+(196, 'Pipe Spool USM 01', '4.00', '1.00', '1.00', 'Box', '4.00', 'kj1'),
+(197, 'Rack TKC 12', '2.55', '1.40', '1.64', 'UNIT', '5.85', 'kj1'),
+(198, 'LIFE RAFT ME', '1.50', '0.80', '1.00', 'Crate', '1.20', 'kj1'),
+(199, 'Motor Electric', '1.20', '1.00', '0.50', 'Crate', '0.60', 'kj1'),
+(200, 'Motor Electric', '1.20', '1.00', '0.50', 'Crate', '0.60', 'kj1'),
+(201, 'ISO Container 20FT ME 01', '6.06', '2.44', '2.59', 'UNIT', '38.30', 'kj1'),
+(202, 'Rack Argon 01', '1.04', '1.06', '2.02', 'UNIT', '2.23', 'kj1'),
+(203, 'Rack Argon 01', '1.04', '1.06', '2.02', 'UNIT', '2.23', 'kj1'),
+(204, 'Rack N2', '1.41', '1.37', '2.18', 'UNIT', '4.21', 'kj1'),
+(205, 'Offshore Basket 14M', '14.26', '1.20', '1.24', 'UNIT', '21.22', 'kj1'),
+(206, 'Offshore Basket 40FT', '12.00', '1.20', '1.24', 'UNIT', '17.86', 'kj1'),
+(207, 'Offshore Basket 003', '6.30', '1.20', '1.30', 'UNIT', '9.83', 'kj1'),
+(208, 'Basket 12.3 ME', '12.30', '1.20', '1.30', 'UNIT', '19.19', 'kj1'),
+(209, 'Basket 12.2 ME', '12.20', '1.20', '1.43', 'UNIT', '20.94', 'kj1'),
+(210, 'Tolls Box', '2.40', '0.50', '0.50', 'S/Box', '0.60', 'kj1'),
+(211, 'Container PPLi', '6.06', '2.44', '2.60', 'UNIT', '38.44', 'kj1'),
+(212, 'Mini Container ME 02 ', '1.59', '1.85', '2.92', 'UNIT', '8.59', 'kj1'),
+(213, 'Baracarb', '1.10', '1.05', '1.00', 'Palet', '1.16', 'kj1'),
+(214, 'D620', '1.10', '1.10', '1.10', 'Palet', '1.33', 'kj1'),
+(215, 'D252', '1.10', '1.05', '1.10', 'Palet', '1.27', 'kj1'),
+(216, 'Cargo Basket 01 ME', '8.30', '1.10', '1.40', 'UNIT', '12.78', 'kj1'),
+(217, 'Sample Terubuk', '0.20', '0.30', '0.40', 'Box', '0.02', 'kj1'),
+(218, 'TCP Tool Box', '2.44', '0.98', '0.99', 'S/Box', '2.37', 'kj1'),
+(219, 'Basket 10.3 ME', '10.30', '1.20', '1.43', 'UNIT', '17.67', 'kj1'),
+(220, 'Container DNV', '6.10', '2.40', '2.90', 'UNIT', '42.46', 'kj1'),
+(221, 'Sample Sea Water', '1.20', '1.20', '0.50', 'Palet', '0.72', 'kj1'),
+(222, 'Slickline', '1.20', '0.70', '0.60', 'UNIT', '0.50', 'kj1'),
+(223, 'Slickline', '1.20', '0.70', '0.60', 'UNIT', '0.50', 'kj1'),
+(224, 'Winch Cable', '2.34', '2.14', '2.14', 'UNIT', '10.72', 'kj1'),
+(225, 'CLC Frame', '2.30', '2.15', '2.85', 'UNIT', '14.09', 'kj1'),
+(226, 'DAPS', '2.44', '2.44', '2.61', 'UNIT', '15.54', 'kj1'),
+(227, 'Half Opentop Container 20FT POI 01', '6.30', '2.45', '1.28', 'UNIT', '19.76', 'kj1'),
+(228, '20FT Closed Container ', '6.05', '2.45', '2.45', 'UNIT', '36.32', 'kj1'),
+(229, 'AirMan Compressor', '3.70', '1.80', '2.23', 'UNIT', '14.85', 'kj1'),
+(230, 'Half Opentop 10FT POI 2', '3.05', '2.45', '1.28', 'UNIT', '9.56', 'kj1'),
+(231, 'Container POI', '6.58', '2.43', '1.28', 'UNIT', '20.47', 'kj1'),
+(232, '20FT Opentop POI 2', '6.05', '2.45', '1.28', 'UNIT', '18.97', 'kj1'),
+(233, 'Welding Machine POI', '2.05', '1.80', '1.82', 'UNIT', '6.72', 'kj1'),
+(234, 'Yellow Basket SE', '6.30', '1.15', '1.43', 'UNIT', '10.36', 'kj1'),
+(235, 'Reffer Container 10FT SE', '3.00', '2.42', '2.58', 'UNIT', '18.73', 'kj1'),
+(236, 'Rack CO2 SE', '0.80', '1.50', '1.50', 'Rack', '1.80', 'kj1'),
+(237, 'Diving Lars', '4.10', '2.25', '2.65', 'UNIT', '24.45', 'kj1'),
+(238, '6M Half Height Basket', '6.06', '2.43', '1.43', 'UNIT', '21.06', 'kj1'),
+(239, 'Tubing Seamselss', '9.60', '0.11', '0.11', 'Bundel', '0.12', 'kj1'),
+(240, 'Tubing Seamselss', '9.60', '0.11', '0.11', 'Bundel', '0.12', 'kj1'),
+(241, 'Cutting Skip ME', '2.20', '1.84', '1.54', 'UNIT', '6.23', 'kj1'),
+(242, 'D080', '1.20', '1.00', '1.44', 'Palet', '1.73', 'kj1'),
+(243, 'D110', '1.20', '1.20', '0.60', 'Palet', '0.86', 'kj1'),
+(244, 'Drill Pipe', '12.00', '0.13', '0.13', 'Bundel', '0.20', 'kj1'),
+(245, 'Expansion Valve', '1.00', '0.35', '0.85', 'Box', '0.30', 'kj1'),
+(246, 'Tools PSV', '0.90', '0.30', '0.75', 'PKGS', '0.20', 'kj1'),
+(247, 'Rack SEU', '1.02', '1.05', '1.90', 'UNIT', '2.03', 'kj1'),
+(248, 'Diesel Brushless', '3.30', '1.40', '2.44', 'UNIT', '11.27', 'kj1'),
+(249, 'Firex Dry Powder', '1.00', '1.00', '1.30', 'Carton', '1.30', 'kj1'),
+(250, 'Sertification', '1.50', '0.80', '1.00', 'Carton', '1.20', 'kj1'),
+(251, 'Air Compressor', '0.70', '0.40', '0.37', 'W/Box', '0.10', 'kj1'),
+(252, 'Primary Box', '1.20', '1.20', '1.47', 'UNIT', '2.12', 'kj1'),
+(253, 'Secondary Box 01', '1.60', '1.10', '2.14', 'UNIT', '3.77', 'kj1'),
+(254, 'Second Box 02', '1.15', '1.15', '2.10', 'UNIT', '2.78', 'kj1'),
+(255, 'Tubing 2-7/8\"', '9.14', '0.07', '0.07', 'Batang', '0.04', 'kj1'),
+(256, 'Open Top PMB 20FT', '6.06', '2.44', '2.90', 'UNIT', '42.88', 'kj1'),
+(257, 'Basket BSL', '4.20', '2.07', '1.89', 'Skid', '16.43', 'kj1'),
+(258, 'Camera Radiography', '0.60', '0.40', '0.40', 'Box', '0.10', 'kj1'),
+(259, 'Hot Hed Box', '2.99', '1.44', '1.74', 'UNIT', '7.49', 'kj1'),
+(260, 'Hot Hed ToolBox', '1.62', '1.51', '1.04', 'UNIT', '2.54', 'kj1'),
+(261, 'Rack Gas Cylinder', '1.38', '1.11', '2.44', 'UNIT', '3.74', 'kj1'),
+(262, 'Aircraft', '1.93', '1.05', '0.48', 'Palet', '0.97', 'kj1'),
+(263, 'Cable GPU', '0.65', '0.65', '0.46', 'W/Box', '0.19', 'kj1'),
+(264, 'Aircraft Battery', '0.95', '0.52', '0.33', 'W/Box', '0.16', 'kj1'),
+(265, 'DGS', '0.30', '0.30', '0.30', 'Box', '0.03', 'kj1'),
+(266, 'Electric Motor Water', '1.00', '1.00', '0.50', 'Box', '0.50', 'kj1'),
+(267, 'Coupling Adapter', '0.60', '0.40', '0.58', 'Box', '0.14', 'kj1'),
+(268, 'Hedrogen', '1.38', '1.11', '2.44', 'UNIT', '3.74', 'kj1'),
+(269, 'Habitat Box', '2.99', '1.44', '1.74', 'UNIT', '7.49', 'kj1'),
+(270, 'Tool Box SN', '1.62', '1.51', '1.04', 'UNIT', '2.54', 'kj1'),
+(271, 'Air Compressor ACF', '2.65', '1.70', '1.53', 'UNIT', '6.89', 'kj1'),
+(272, 'Container Cutting', '6.00', '2.50', '2.60', 'UNIT', '39.00', 'kj1'),
+(273, 'Offshore Basket 6.3', '6.30', '1.20', '1.36', 'UNIT', '10.28', 'kj1'),
+(274, 'Cable Skid', '2.05', '1.57', '1.65', 'UNIT', '5.31', 'kj1'),
+(275, 'Cable Skid', '2.05', '1.57', '1.65', 'UNIT', '5.31', 'kj1'),
+(276, 'Cable Skid SLB', '2.20', '1.70', '1.80', 'UNIT', '6.73', 'kj1'),
+(277, 'Basket TCP', '8.00', '1.15', '1.05', 'UNIT', '9.66', 'kj1'),
+(278, 'TCP - TB', '2.44', '1.00', '1.00', 'UNIT', '2.44', 'kj1'),
+(279, 'Offshore Basket SCEK-TBAS', '13.30', '1.20', '1.30', 'UNIT', '20.75', 'kj1'),
+(280, 'Air Compressor Atlas Copco', '4.25', '2.44', '2.74', 'UNIT', '28.41', 'kj1'),
+(281, 'Propane Rack', '1.06', '1.06', '1.67', 'Rack', '1.88', 'kj1'),
+(282, 'DST Basket', '8.15', '1.39', '0.93', 'T/Box', '10.54', 'kj1'),
+(283, 'Tensa GCI', '1.10', '1.10', '0.60', 'Palet', '0.73', 'kj1'),
+(284, 'Tensa CTU', '1.20', '1.20', '0.50', 'Palet', '0.72', 'kj1'),
+(285, 'Offshore Box', '1.27', '0.91', '1.00', 'UNIT', '1.16', 'kj1'),
+(286, 'Rack COPI', '1.25', '0.89', '2.17', 'UNIT', '2.41', 'kj1'),
+(287, 'DHT Basket', '2.99', '2.44', '1.43', 'UNIT', '10.43', 'kj1'),
+(288, 'Basket APS', '4.00', '1.00', '1.00', 'UNIT', '4.00', 'kj1'),
+(289, 'Habitat Box ME', '2.28', '1.19', '1.85', 'UNIT', '5.02', 'kj1'),
+(290, 'Tool Box TB Copi', '1.60', '1.47', '1.02', 'UNIT', '2.40', 'kj1'),
+(291, 'Compresseor 190CFM POI', '2.40', '1.45', '1.82', 'UNIT', '6.33', 'kj1'),
+(292, 'Closed Container 10FT', '2.99', '2.43', '2.76', 'UNIT', '20.05', 'kj1'),
+(293, 'Liferaft DSB POI', '3.05', '2.45', '1.28', 'UNIT', '9.56', 'kj1'),
+(294, 'Wooden Pallet Waste POI', '1.90', '1.66', '2.76', 'UNIT', '8.71', 'kj1'),
+(295, 'Food Container 10FT POI 2', '3.00', '2.45', '2.56', 'UNIT', '18.82', 'kj1'),
+(296, '10FT Mini Container', '2.51', '2.51', '2.56', 'UNIT', '16.13', 'kj1'),
+(297, 'Cylinder Rack POI  16-11', '1.77', '1.77', '2.04', 'UNIT', '6.39', 'kj1'),
+(298, 'Nitrogen Manifold POI', '1.18', '1.18', '2.15', 'UNIT', '2.99', 'kj1'),
+(299, 'Skid SKW POI', '1.10', '1.80', '1.82', 'UNIT', '3.60', 'kj1'),
+(300, 'Steel Tool Box SE', '1.60', '1.20', '0.80', 'UNIT', '1.54', 'kj1'),
+(301, 'DDC Container 20FT SE', '6.00', '2.40', '2.59', 'UNIT', '37.30', 'kj1'),
+(302, 'Water Jet SE', '2.60', '1.45', '1.68', 'UNIT', '6.33', 'kj1'),
+(303, 'Air Comperssor SE', '3.76', '1.90', '2.26', 'UNIT', '16.15', 'kj1'),
+(304, 'Cylinder Rack 02 SE', '1.24', '1.24', '2.60', 'UNIT', '4.00', 'kj1'),
+(305, 'Cylinder Rack 02 SE', '1.24', '1.24', '2.60', 'UNIT', '4.00', 'kj1'),
+(306, 'Diving Launch SE', '6.58', '2.48', '2.60', 'UNIT', '42.43', 'kj1'),
+(307, 'Food Container 10FT POI 3', '3.05', '2.45', '2.45', 'UNIT', '18.31', 'kj1'),
+(308, 'IBC Tank POI', '1.61', '1.67', '2.90', 'UNIT', '7.80', 'kj1'),
+(309, 'IBC Tank SZB', '1.43', '1.23', '1.51', 'UNIT', '2.66', 'kj1'),
+(310, 'Liferaft Viking 01', '1.50', '1.00', '1.00', 'Crt', '1.50', 'kj1'),
+(311, 'Motor Pump ME', '0.80', '1.13', '0.63', 'UNIT', '0.57', 'kj1'),
+(312, 'Large Water ME', '1.53', '1.22', '0.62', 'UNIT', '1.16', 'kj1'),
+(313, 'Gear Box Valve', '1.00', '1.00', '1.00', 'Box', '1.00', 'kj1'),
+(314, 'Close Container 10FT ME', '3.00', '2.44', '2.60', 'UNIT', '19.03', 'kj1'),
+(315, 'Container PPLi 01', '6.10', '2.44', '2.60', 'UNIT', '38.70', 'kj1'),
+(316, 'Welding Machine ME', '2.08', '1.11', '1.68', 'UNIT', '3.88', 'kj1'),
+(317, 'Offshore Box SN ME', '1.29', '0.91', '1.04', 'Box', '1.22', 'kj1'),
+(318, 'Basket 10.3 ME 01', '10.30', '1.22', '1.43', 'UNIT', '17.97', 'kj1'),
+(319, '20FT Half Height Opentop', '6.06', '2.44', '1.40', 'UNIT', '20.70', 'kj1'),
+(320, 'Secondary Explosive ME', '1.56', '1.23', '2.00', 'UNIT', '3.84', 'kj1'),
+(321, 'D145A', '1.20', '1.20', '1.05', 'Palet', '1.51', 'kj1'),
+(322, 'Cargo Basket SN ME', '3.10', '2.13', '1.40', 'UNIT', '9.24', 'kj1'),
+(323, 'Skid SN ME', '11.30', '1.15', '1.44', 'UNIT', '18.71', 'kj1'),
+(324, 'N2 Rack ME', '0.63', '0.63', '1.90', 'UNIT', '0.75', 'kj1'),
+(325, 'Half Container SN ME', '4.57', '2.43', '1.43', 'UNIT', '15.88', 'kj1'),
+(326, '6M Half HT', '6.00', '2.50', '1.50', 'UNIT', '22.50', 'kj1'),
+(327, 'Acetylene Cylinder ', '1.00', '0.70', '1.20', 'Rack', '0.84', 'kj1'),
+(328, 'Oxygen Cylinder ', '1.10', '1.10', '1.50', 'Rack', '1.82', 'kj1'),
+(329, 'W/Box ME 01', '1.00', '0.50', '0.50', 'W/Box', '0.25', 'kj1'),
+(330, 'Charge unker ME', '1.16', '1.15', '2.10', 'UNIT', '2.80', 'kj1'),
+(331, 'Shape Chrage Bunker ME', '1.00', '1.00', '2.20', 'UNIT', '2.20', 'kj1'),
+(332, 'Hose Cutting Dryer', '1.20', '1.20', '0.50', 'Palet', '0.72', 'kj1'),
+(333, 'Baroid BSS Panel', '1.30', '1.30', '0.50', 'UNIT', '0.85', 'kj1'),
+(334, 'Baroid BSS Holding', '1.50', '1.50', '1.60', 'UNIT', '3.60', 'kj1'),
+(335, 'Baroid BSS Cutting', '2.00', '2.00', '2.30', 'UNIT', '9.20', 'kj1'),
+(336, 'MLWD Logging Unit', '4.60', '3.07', '2.69', 'UNIT', '37.99', 'kj1'),
+(337, 'Basket 12.3 ME 01', '12.30', '1.20', '1.43', 'UNIT', '21.11', 'kj1'),
+(338, 'Gas Transport', '1.45', '1.24', '2.25', 'UNIT', '4.05', 'kj1'),
+(339, '6FT Container  ME 01', '1.59', '1.85', '2.92', 'UNIT', '8.59', 'kj1'),
+(340, '20FT Basket SLB ME', '6.06', '2.44', '1.30', 'UNIT', '19.22', 'kj1'),
+(341, 'Basket Baker ', '4.83', '1.18', '1.08', 'UNIT', '6.16', 'kj1'),
+(342, 'Basket Baker 01', '3.00', '1.10', '1.10', 'UNIT', '3.63', 'kj1'),
+(343, 'Container MAST', '8.00', '1.30', '2.80', 'UNIT', '29.12', 'kj1'),
+(344, 'Container 20FT PBL', '6.05', '2.42', '2.58', 'UNIT', '37.77', 'kj1'),
+(345, 'Kompon PBL', '1.20', '1.20', '1.10', 'Palet', '1.58', 'kj1'),
+(346, 'Tubing Head PBL', '1.20', '0.74', '0.64', 'Box', '0.57', 'kj1'),
+(347, 'Tubing Head PBL 01', '1.20', '1.02', '0.85', 'Box', '1.04', 'kj1'),
+(348, 'Tubing Head PBL 02', '1.20', '1.02', '1.30', 'Box', '1.59', 'kj1'),
+(349, 'Reel Cable PBL', '2.13', '2.06', '2.00', 'UNIT', '8.78', 'kj1'),
+(350, 'Reel Cable PBL 01', '0.90', '1.30', '1.22', 'UNIT', '1.43', 'kj1'),
+(351, 'Vacum Circuit Braker', '1.86', '2.12', '2.93', 'Box', '11.55', 'kj1'),
+(352, 'X Maxtree PBL', '1.00', '0.95', '0.85', 'Box', '0.81', 'kj1'),
+(353, 'X Maxtree PBL 01', '1.00', '1.00', '2.00', 'Box', '2.00', 'kj1'),
+(354, 'Cable Clamp Protector PBL', '1.07', '0.82', '0.77', 'Box', '0.68', 'kj1'),
+(355, 'Cable Clamp Protector PBL 01', '0.94', '0.83', '0.70', 'Box', '0.55', 'kj1'),
+(356, 'Cable Clamp Protector PBL 02', '0.96', '0.82', '0.85', 'Box', '0.67', 'kj1'),
+(357, 'Empty Bottle  Oxygen SE', '1.00', '0.70', '2.00', 'Rack', '1.40', 'kj1'),
+(358, 'Half Opentop 10FT SE', '3.00', '2.42', '1.30', 'UNIT', '9.44', 'kj1'),
+(359, 'Casing POI ', '12.00', '0.18', '0.18', 'Joints', '0.39', 'kj1'),
+(360, 'Casing POI 01', '12.00', '0.24', '0.24', 'Joints', '0.69', 'kj1'),
+(361, 'Casing POI 01', '12.00', '0.24', '0.24', 'Joints', '0.69', 'kj1'),
+(362, 'Mini Container POI 3', '1.91', '1.66', '2.76', 'UNIT', '8.75', 'kj1'),
+(363, 'Mini Container POI 3', '1.91', '1.66', '2.76', 'UNIT', '8.75', 'kj1'),
+(364, 'Cylinder Rack ID POI', '1.19', '1.19', '2.10', 'UNIT', '2.97', 'kj1'),
+(365, '28FT Half Opentop POI', '8.54', '2.45', '1.28', 'UNIT', '26.78', 'kj1'),
+(366, 'Rack Cylinder KWS-GBR', '0.77', '0.70', '2.10', 'UNIT', '1.13', 'kj1'),
+(367, 'Dryer Portable', '1.00', '0.70', '0.60', 'Box', '0.42', 'kj1'),
+(368, 'Hydrolic Pump', '1.10', '0.90', '1.00', 'W/Box', '0.99', 'kj1'),
+(369, 'Sparepart Hailey ME', '0.20', '0.15', '0.10', 'Box', '0.00', 'kj1'),
+(370, 'Diesel Genset SN ME', '2.00', '1.00', '1.20', 'Unit', '2.40', 'kj1'),
+(371, 'Concreate Block Balancing', '2.40', '2.40', '0.90', 'Ea', '5.18', 'kj1'),
+(372, 'Rig Up Stand ME', '3.09', '0.98', '2.16', 'Unit', '6.54', 'kj1'),
+(373, 'Break Out Vise', '2.40', '1.20', '1.20', 'Unit', '3.46', 'kj1'),
+(374, 'Frame Spreader SN ME', '1.80', '1.51', '1.30', 'Unit', '3.53', 'kj1'),
+(375, 'Transport Frame', '1.80', '1.50', '1.30', 'Unit', '3.51', 'kj1'),
+(376, 'Skid SN ME', '2.05', '0.70', '0.65', 'Unit', '0.93', 'kj1'),
+(377, 'Skid Frame ME', '2.00', '0.70', '0.65', 'Unit', '0.91', 'kj1'),
+(378, 'Hydrolic Power unit', '2.20', '1.20', '1.70', 'Unit', '4.49', 'kj1'),
+(379, 'Tank BSL', '2.28', '2.26', '2.50', 'Unit', '12.88', 'kj1'),
+(380, 'Combo Winch ME', '2.80', '1.90', '2.80', 'Unit', '14.90', 'kj1'),
+(381, '8FT Container Doghouse', '2.40', '2.40', '2.40', 'Unit', '13.82', 'kj1'),
+(382, '10FT Opentop Cont AORU ME', '2.99', '2.44', '2.70', 'Unit', '19.70', 'kj1'),
+(383, 'Power Pack SN ME', '2.00', '1.30', '2.70', 'Unit', '7.02', 'kj1'),
+(384, 'Cylinder Rack PCE POI 01', '3.60', '1.35', '1.66', 'UNIT', '8.07', 'kj1'),
+(385, 'Tool Container POI', '2.60', '2.09', '1.66', 'UNIT', '9.02', 'kj1'),
+(386, 'Winch unit Double', '3.00', '1.42', '2.32', 'UNIT', '9.88', 'kj1'),
+(387, 'Vapour Blast Machine', '1.91', '1.66', '2.76', 'UNIT', '8.75', 'kj1'),
+(388, 'Container 20FT PHE', '6.00', '2.40', '2.60', 'UNIT', '37.44', 'kj4'),
+(389, 'Stand Tubing ', '9.50', '1.00', '3.00', 'Ea', '28.50', 'kj4'),
+(390, 'Tubing 3-1/2\"', '9.00', '0.12', '0.12', 'Joints', '0.13', 'kj4'),
+(391, 'Tubing 5-1/2\"', '9.00', '0.16', '0.16', 'Joints', '0.23', 'kj4'),
+(392, 'Container 10FT PHE', '3.00', '2.40', '2.60', 'UNIT', '18.72', 'kj4'),
+(393, 'Long Basket COSL', '4.85', '1.15', '0.98', 'UNIT', '5.47', 'kj4'),
+(394, 'Long Basket COSL 01', '4.51', '1.21', '0.95', 'UNIT', '5.18', 'kj4'),
+(395, 'Stand Tubing BKI ', '8.54', '0.92', '0.77', 'Ea', '6.05', 'kj4'),
+(396, 'Waste Basket', '1.56', '1.56', '1.65', 'UNIT', '4.02', 'kj4'),
+(397, 'ESP unit Schlumberger', '3.00', '2.20', '2.50', 'UNIT', '16.50', 'kj4'),
+(398, 'ESP unit Schlumberger 01', '3.00', '2.20', '1.26', 'UNIT', '8.32', 'kj4'),
+(399, 'Material Chemical PHE', '1.22', '1.22', '1.07', 'Palet', '1.59', 'kj4'),
+(400, 'Material PGF Powersys', '1.37', '1.37', '1.58', 'Palet', '2.97', 'kj4'),
+(401, 'Material PGF Powersys 01', '1.30', '1.15', '2.05', 'Box', '3.06', 'kj4'),
+(402, 'Tubing 2-7/8\"', '9.00', '0.09', '0.09', 'Joints', '0.07', 'kj4'),
+(403, 'Tubing 4-1/2\"', '9.00', '0.14', '0.14', 'Joints', '0.18', 'kj4'),
+(404, 'B/Tank Luas Birus', '1.20', '1.00', '1.17', 'B/Tank', '1.40', 'kj4'),
+(405, 'Casing 13-3/8\"', '12.00', '0.37', '0.37', 'Joints', '1.64', 'kj4'),
+(406, 'Offshore Basket PHE', '10.14', '1.21', '1.05', 'UNIT', '12.88', 'kj4'),
+(407, 'Offshore Basket PHE 01', '6.15', '1.21', '1.05', 'UNIT', '7.81', 'kj4'),
+(408, 'ESP unit Schlumberger 02', '10.62', '1.18', '0.59', 'UNIT', '7.39', 'kj4'),
+(409, 'ESP unit Schlumberger 03', '2.89', '1.47', '1.27', 'UNIT', '5.40', 'kj4'),
+(410, 'ESP unit Schlumberger 04', '3.10', '2.25', '2.50', 'UNIT', '17.44', 'kj4'),
+(411, 'ESP unit Powerlift', '10.66', '1.13', '0.20', 'Skid', '2.41', 'kj4'),
+(412, 'ESP unit Powerlift 01', '2.70', '2.00', '2.50', 'Reel', '13.50', 'kj4');
 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `jenis_kegiatan`
+-- Table structure for table `jenis_kegiatan`
 --
 
-CREATE TABLE IF NOT EXISTS `jenis_kegiatan` (
-`id_jenis` int(15) NOT NULL,
+CREATE TABLE `jenis_kegiatan` (
+  `id_jenis` int NOT NULL,
   `nm_jenis` varchar(50) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `jenis_kegiatan`
+-- Dumping data for table `jenis_kegiatan`
 --
 
 INSERT INTO `jenis_kegiatan` (`id_jenis`, `nm_jenis`) VALUES
@@ -4429,18 +3814,18 @@ INSERT INTO `jenis_kegiatan` (`id_jenis`, `nm_jenis`) VALUES
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `jetty`
+-- Table structure for table `jetty`
 --
 
-CREATE TABLE IF NOT EXISTS `jetty` (
-`id_jetty` int(12) NOT NULL,
+CREATE TABLE `jetty` (
+  `id_jetty` int NOT NULL,
   `nm_jetty` varchar(50) DEFAULT NULL,
   `area` varchar(15) DEFAULT NULL,
   `status_jetty` varchar(15) DEFAULT '0'
-) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `jetty`
+-- Dumping data for table `jetty`
 --
 
 INSERT INTO `jetty` (`id_jetty`, `nm_jetty`, `area`, `status_jetty`) VALUES
@@ -4456,200 +3841,107 @@ INSERT INTO `jetty` (`id_jetty`, `nm_jetty`, `area`, `status_jetty`) VALUES
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `job_order`
+-- Table structure for table `job_order`
 --
 
-CREATE TABLE IF NOT EXISTS `job_order` (
+CREATE TABLE `job_order` (
   `id_joborder` varchar(15) NOT NULL,
   `kode_jovessel` varchar(15) DEFAULT NULL,
-  `nm_kapal` varchar(20) CHARACTER SET utf8 NOT NULL,
-  `agen_kapal` varchar(20) CHARACTER SET utf8 NOT NULL,
+  `nm_kapal` varchar(20) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
+  `agen_kapal` varchar(20) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
   `tgl_masuk` date NOT NULL,
   `jm_masuk` time NOT NULL,
-  `tgl_keluar` date NOT NULL,
-  `jm_keluar` time NOT NULL,
-  `pelabuhan_asal` varchar(15) CHARACTER SET utf8 NOT NULL,
-  `pelabuhan_tujuan` varchar(15) CHARACTER SET utf8 NOT NULL,
-  `id_jenis` int(11) NOT NULL DEFAULT '1',
-  `nm_kegiatan` varchar(50) CHARACTER SET utf8 DEFAULT NULL,
-  `id_client` int(11) DEFAULT NULL,
-  `document_perintah` varchar(30) CHARACTER SET utf8 NOT NULL,
+  `tgl_keluar` date DEFAULT NULL,
+  `jm_keluar` time DEFAULT NULL,
+  `pelabuhan_asal` varchar(15) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
+  `pelabuhan_tujuan` varchar(15) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
+  `id_jenis` int NOT NULL DEFAULT '1',
+  `nm_kegiatan` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
+  `id_client` int DEFAULT NULL,
+  `document_perintah` varchar(30) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
   `no_wo` varchar(50) DEFAULT NULL,
-  `booking_cargo` decimal(6,0) NOT NULL,
+  `booking_cargo` decimal(6,0) DEFAULT NULL,
   `total_cargo` decimal(6,2) DEFAULT NULL,
-  `sandar_kapal` varchar(20) CHARACTER SET utf8 NOT NULL,
-  `doc_ptw` varchar(100) CHARACTER SET utf8 NOT NULL,
-  `doc_pjsm` varchar(100) CHARACTER SET utf8 NOT NULL,
-  `doc_lsap` varchar(100) CHARACTER SET utf8 NOT NULL,
+  `sandar_kapal` varchar(20) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
+  `doc_ptw` varchar(100) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
+  `doc_pjsm` varchar(100) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
+  `doc_lsap` varchar(100) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
   `alat_berat` varchar(30) NOT NULL,
   `alat_berat2` varchar(30) DEFAULT NULL,
   `alat_berat3` varchar(30) DEFAULT NULL,
   `alat_berat4` varchar(30) DEFAULT NULL,
   `alat_berat5` varchar(30) DEFAULT NULL,
-  `alat_beratsewa` varchar(30) CHARACTER SET utf8 DEFAULT NULL,
-  `area` varchar(20) CHARACTER SET utf8 NOT NULL,
+  `alat_beratsewa` varchar(30) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
+  `area` varchar(20) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
   `progres_jo` decimal(6,2) NOT NULL,
   `mulai_kegiatan` datetime DEFAULT NULL,
   `finish_kegiatan` datetime DEFAULT NULL,
   `durasi` varchar(50) DEFAULT NULL,
-  `status_jo` int(11) NOT NULL DEFAULT '2',
-  `id_checker` int(15) DEFAULT NULL,
-  `komentar` varchar(300) CHARACTER SET utf8 DEFAULT NULL
+  `time` bigint DEFAULT NULL,
+  `status_jo` int NOT NULL DEFAULT '2',
+  `id_checker` int DEFAULT NULL,
+  `komentar` varchar(300) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `job_order`
+-- Dumping data for table `job_order`
 --
 
-INSERT INTO `job_order` (`id_joborder`, `kode_jovessel`, `nm_kapal`, `agen_kapal`, `tgl_masuk`, `jm_masuk`, `tgl_keluar`, `jm_keluar`, `pelabuhan_asal`, `pelabuhan_tujuan`, `id_jenis`, `nm_kegiatan`, `id_client`, `document_perintah`, `no_wo`, `booking_cargo`, `total_cargo`, `sandar_kapal`, `doc_ptw`, `doc_pjsm`, `doc_lsap`, `alat_berat`, `alat_berat2`, `alat_berat3`, `alat_berat4`, `alat_berat5`, `alat_beratsewa`, `area`, `progres_jo`, `mulai_kegiatan`, `finish_kegiatan`, `durasi`, `status_jo`, `id_checker`, `komentar`) VALUES
-('JV00001', 'JV2-00001', 'PAN MARINE', 'KANAYA', '2020-01-08', '20:00:00', '0000-00-00', '00:00:00', 'PAMELOKAN', 'JAKARTA', 1, 'Offloading', 3, 'Email Tanggal 02 Januari 2020', NULL, '0', '577.54', 'JETTY KJ2 A', 'contoh-bukti-pembayaran.pdf', 'contoh-bukti-pembayaran.pdf', 'contoh-bukti-pembayaran.pdf', 'CRANE KATO R-32 70 TON', 'FORKLIFT F-31  3,5 TON', 'FORKLIFT F-32  3,5 TON', 'NULL', 'NULL', 'NULL', 'kj2', '270.20', '2020-01-17 15:07:23', '2020-01-21 15:21:48', '4 hari 0 jam 14 menit ', 6, NULL, NULL),
-('JV00002', 'JV2-00002', 'KM.Sejahtera 35', 'PT.Sinar Pagoda', '2020-01-29', '03:30:00', '0000-00-00', '00:00:00', 'Matak', 'Jakarta', 1, 'Offloading', 3, 'Email tanggal 27 Januari 2020', NULL, '0', '492.46', 'JETTY KJ2 A', 'PTW Medco (1).jpg', 'PJSM Medco.jpg', 'List Personil & HDE New.xlsx', 'Crane R36 cap 110 Ton', 'Forklift F18 cap 8 Ton', 'Forklift F15 cap 3 Ton', 'Forklift F08 cap 2,5 Ton', 'NULL', 'NULL', 'kj2', '83.30', '2020-02-06 14:07:26', '2020-09-04 15:44:26', '29 hari 1 jam 37 menit ', 4, NULL, NULL),
-('JV00003', 'JV2-00003', 'KM.Sejahtera 35', 'PT.Sinar Pagoda', '2020-01-30', '08:00:00', '0000-00-00', '00:00:00', 'Matak', 'Jakarta', 1, 'Offloading', 3, 'Email tanggal 27 Januari 2020', NULL, '0', '551.92', 'JETTY KJ2 A', 'PTW Medco.jpg', 'PJSM Medco.jpg', 'List Personil & HDE New.xlsx', 'Crane R36 cap 110 Ton', 'Forklift F18 cap 8 Ton', 'Forklift F15 cap 3 Ton', 'Forklift F08 cap 2,5 Ton', 'NULL', 'NULL', 'kj2', '163.50', '2020-02-12 14:45:39', '2020-02-12 14:49:17', '3 menit ', 4, NULL, NULL),
-('JV00004', 'JV2-00004', 'KM.Sejahtera 35', 'PT.Sinar Pagoda', '2020-05-21', '23:30:00', '0000-00-00', '00:00:00', 'Matak', 'Jakarta', 1, 'Offloading', 3, 'Email tanggal 18 Mei 2020', NULL, '0', '1119.02', 'JETTY KJ2 A', 'PTW Medco (1).jpg', 'PJSM Medco.jpg', 'List Personil & HDE New.xlsx', 'Crane R36 cap 110 Ton', 'Forklift F15 cap 3 Ton', 'Forklift F18 cap 8 Ton', 'Forklift F08 cap 2,5 Ton', 'NULL', 'NULL', 'kj2', '292.20', '2020-05-28 14:05:29', '2020-05-28 14:23:09', '17 menit ', 4, NULL, NULL),
-('JV00005', 'JV2-00005', 'KM.Sejahtera 36', 'PT.Sinar Pagoda', '2020-06-03', '07:30:00', '0000-00-00', '00:00:00', 'Matak', 'Jakarta', 1, 'Offloading', 3, 'Email tanggal 31 Mei 2020', NULL, '0', '926.79', 'JETTY KJ2 A', 'PTW Medco (1).jpg', 'PJSM Medco.jpg', 'List Personil & HDE New.xlsx', 'Crane R36 cap 110 Ton', 'Forklift F18 cap 8 Ton', 'Forklift F15 cap 3 Ton', 'NULL', 'NULL', 'NULL', 'kj2', '273.50', '2020-07-09 15:59:36', '2020-07-09 16:02:37', '3 menit ', 6, NULL, NULL),
-('JV00006', 'JV1-00001', 'GNA', 'JU', '2020-07-01', '02:01:00', '2020-07-03', '14:12:00', 'MATAK', 'TJ PRIOK', 1, 'Loading', 1, 'TEST/V1/XXX', NULL, '0', '90.00', 'JETTY KJ1', 'ISO2USB.exe', 'ISO2USB.exe', 'ISO2USB.exe', 'CRANE TADANO', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'kj1', '90.00', '2020-07-03 13:45:12', '2020-07-24 10:16:46', '20 hari 20 jam 31 menit ', 4, NULL, NULL),
-('JV00007', 'JV2-00006', 'KM.Sejahtera 35', 'PT.Sinar Pagoda', '2020-06-27', '05:00:00', '0000-00-00', '00:00:00', 'Matak', 'Jakarta', 1, 'Offloading', 3, 'Email tanggal 25 Juni 2020', NULL, '0', '501.38', 'JETTY KJ2 A', 'PTW Medco (1).jpg', 'PJSM Medco.jpg', 'List Personil & HDE New.xlsx', 'Crane R36 cap 110 Ton', 'Forklift F08 cap 2,5 Ton', 'Forklift F15 cap 3 Ton', 'NULL', 'NULL', 'NULL', 'kj2', '228.00', '2020-07-06 08:30:17', '2020-07-06 08:35:02', '4 menit ', 6, NULL, NULL),
-('JV00008', 'JV2-00007', 'KM. Sejahtera 35', 'Sinar Pagoda', '2020-07-06', '05:00:00', '0000-00-00', '00:00:00', 'Matak', 'Jakarta', 1, 'Offloading', 3, 'Email Tanggal 04 Juli 2020', NULL, '0', '286.37', 'JETTY KJ2 A', 'document_pendukung.pdf', 'document_pendukung.pdf', 'document_pendukung.pdf', 'Crane R36 cap 110 Ton', 'Forklift F08 cap 2,5 Ton', 'Forklift F15 cap 3 Ton', 'Forklift F18 cap 8 Ton', 'NULL', 'NULL', 'kj2', '146.30', '2020-07-06 13:47:21', '2020-07-06 14:20:26', '33 menit ', 6, NULL, NULL),
-('JV00009', 'JV1-00002', 'KM.Sokka', 'PT.Global Trans', '2020-07-10', '06:00:00', '0000-00-00', '00:00:00', 'Matak', 'Jakarta', 1, 'Offloading', 2, 'Email tanggal 08 Juli 2020', NULL, '0', '406.76', 'JETTY KJ1', 'PTW Premier Oil New.pdf', 'PTW Premier Oil PJSM.pdf', 'List Personil & HDE New.xlsx', 'Crane R34 cap 60 Ton', 'Forklift F14 cap 3 Ton', 'Forklift F18 cap 8 Ton', 'Forklift F10 cap 3,5 Ton', 'NULL', 'NULL', 'kj1', '91.39', '2020-07-10 09:21:08', '2020-07-10 11:38:21', '2 jam 17 menit ', 4, NULL, NULL),
-('JV00010', 'JV2-00008', 'KM.Sejahtera 36', 'PT.Sinar Pagoda', '2020-07-10', '18:00:00', '0000-00-00', '00:00:00', 'Matak', 'Jakarta', 1, 'Offloading', 3, 'Email tanggal 08 Juli 2020', NULL, '0', NULL, 'JETTY KJ2 A', '1. PTW Cold Work (Legal Size)_BAHASA_13 Sept 2019 rev. (1).pdf', 'PJSM Medco.jpg', 'List Personil & HDE New.xlsx', 'Crane R36 cap 110 Ton', 'Forklift F08 cap 2,5 Ton', 'Forklift F15 cap 3 Ton', 'Forklift F18 cap 8 Ton', 'NULL', 'NULL', 'kj2', '10.00', NULL, NULL, NULL, 1, NULL, NULL),
-('JV00011', 'JV2-00009', 'KM.Sejahtera 36', 'PT.Sinar Pagoda', '2020-07-10', '18:00:00', '0000-00-00', '00:00:00', 'Matak', 'Jakarta', 1, 'Offloading', 3, 'Email tanggal 08 Juli 2020', NULL, '0', '942.19', 'JETTY KJ2 A', '1. PTW Cold Work (Legal Size)_BAHASA_13 Sept 2019 rev. (1).pdf', 'PJSM Medco.jpg', 'List Personil & HDE New.xlsx', 'Crane R36 cap 110 Ton', 'Forklift F08 cap 2,5 Ton', 'Forklift F15 cap 3 Ton', 'Forklift F18 cap 8 Ton', 'NULL', 'NULL', 'kj2', '253.12', '2020-07-11 01:46:01', '2020-07-11 15:19:56', '13 jam 33 menit ', 6, NULL, NULL),
-('JV00012', 'JV2-00010', 'KM.Sejahtera 35', 'PT.Sinar Pagoda', '2020-07-15', '14:00:00', '0000-00-00', '00:00:00', 'Matak', 'Jakarta', 1, 'Offloading', 3, 'Email tanggal 14 Juli 2020', NULL, '0', '1104.33', 'JETTY KJ2 A', 'PTW Cold Work (Legal Size).pdf', 'PJSM Medco.jpg', 'List Personil & HDE New.xlsx', 'Crane R36 cap 110 Ton', 'Forklift F08 cap 2,5 Ton', 'Forklift F15 cap 3 Ton', 'Forklift F18 cap 8 Ton', 'NULL', 'NULL', 'kj2', '178.13', '2020-07-15 19:43:47', '2020-07-16 15:10:34', '19 jam 26 menit ', 6, NULL, NULL),
-('JV00013', 'JV2-00011', 'KM.Sejahtera 36', 'PT.Sinar Pagoda', '2020-07-20', '11:00:00', '0000-00-00', '00:00:00', 'Matak', 'Jakarta', 1, 'Loading', 3, 'Email tanggal 20 Juli 2020', NULL, '0', '1328.12', 'JETTY KJ2 A', '1. PTW Cold Work (Legal Size)_BAHASA_13 Sept 2019 rev. (1).pdf', 'PJSM Medco.jpg', 'List Personil & HDE New.xlsx', 'Crane R36 cap 110 Ton', 'Forklift F08 cap 2,5 Ton', 'Forklift F15 cap 3 Ton', 'Forklift F18 cap 8 Ton', 'NULL', 'NULL', 'kj2', '1195.80', '2020-07-21 19:53:15', '2020-07-29 14:36:22', '7 hari 18 jam 43 menit ', 4, NULL, NULL),
-('JV00014', 'JV1-00003', 'KM. SOKKA', 'Transglobal', '2020-07-24', '07:00:00', '0000-00-00', '00:00:00', 'MATAK', 'JAKARTA', 1, 'Offloading', 2, 'EMAIL tanggal 03 Juli 2020', NULL, '0', '150.54', 'JETTY KJ1', 'document_pendukung.pdf', 'document_pendukung.pdf', 'document_pendukung.pdf', 'Crane R34 cap 60 Ton', 'Forklift F14 cap 3 Ton', 'Forklift F18 cap 8 Ton', 'NULL', 'NULL', 'NULL', 'kj1', '12.00', '2020-07-24 10:39:22', '2020-07-24 10:44:11', '4 menit ', 4, NULL, '@Hartonos :\r\ntes'),
-('JV00015', 'JV1-00004', 'KM. SOKKA', 'Transglobal', '2020-07-24', '07:00:00', '0000-00-00', '00:00:00', 'MATAK', 'JAKARTA', 1, 'Offloading', 4, 'EMAIL tanggal 03 Juli 2020', NULL, '0', '51.28', 'JETTY KJ1', 'document_pendukung.pdf', 'document_pendukung.pdf', 'document_pendukung.pdf', 'Crane R34 cap 60 Ton', 'Forklift F18 cap 8 Ton', 'Forklift F14 cap 3 Ton', 'NULL', 'NULL', 'NULL', 'kj1', '4.40', '2020-07-24 10:39:18', '2020-07-24 10:44:16', '4 menit ', 6, NULL, NULL),
-('JV00016', 'JV2-00012', 'KM.Sejahtera 35', 'PT.Sinar Pagoda', '2020-08-01', '12:00:00', '0000-00-00', '00:00:00', 'Matak', 'Jakarta', 1, 'Offloading', 3, 'Email tanggal 30 Juli 2020', 'WO 008/Medco/08/2020', '0', '1492.88', 'JETTY KJ2 A', '1. PTW Cold Work (Legal Size)_BAHASA_13 Sept 2019 rev. (1).pdf', 'PJSM Medco.jpg', 'List Personil & HDE New.xlsx', 'Crane R36 cap 110 Ton', 'Forklift F08 cap 2,5 Ton', 'Forklift F15 cap 3 Ton', 'Forklift F18 cap 8 Ton', 'NULL', 'NULL', 'kj2', '442.40', '2020-08-01 14:29:50', '2020-08-02 02:46:00', '12 jam 16 menit ', 6, NULL, NULL),
-('JV00017', 'JV1-00005', 'KM.Sokka', 'PT.Global Trans', '2020-08-06', '20:00:00', '0000-00-00', '00:00:00', 'Matak', 'Jakarta', 1, 'Offloading', 2, 'Email tanggal 04 Agustus 2020', 'WO No : 2775/VIII/priok/logistik/2020', '0', '432.95', 'JETTY KJ1', 'PTW Premier.pdf', 'PTW Premier (1).pdf', 'List Personil & HDE New.xlsx', 'Crane R34 cap 60 Ton', 'Forklift F10 cap 3,5 Ton', 'Forklift F14 cap 3 Ton', 'NULL', 'NULL', 'NULL', 'kj1', '111.40', '2020-08-07 08:45:46', '2020-08-07 14:05:34', '5 jam 19 menit ', 6, NULL, NULL),
-('JV00018', 'JV1-00006', 'KM.Sokka', 'PT.Global Trans', '2020-08-06', '20:00:00', '0000-00-00', '00:00:00', 'Matak', 'Jakarta', 1, 'Offloading', 4, 'Email tanggal 04 Agustus 2020', 'WO No : 001/VIII/SE/2020', '0', '159.80', 'JETTY KJ1', 'PTW Premier.pdf', 'PTW Premier (1).pdf', 'List Personil & HDE New.xlsx', 'Crane R34 cap 60 Ton', 'Forklift F14 cap 3 Ton', 'Forklift F10 cap 3,5 Ton', 'NULL', 'NULL', 'NULL', 'kj1', '18.00', '2020-08-07 08:54:10', '2020-08-07 10:48:01', '1 jam 53 menit ', 6, NULL, NULL),
-('JV00019', 'JV2-00013', 'KM.Sejahtera 36', 'PT.Sinar Pagoda', '2020-08-14', '07:00:00', '0000-00-00', '00:00:00', 'Matak', 'Jakarta', 1, 'Offloading', 3, 'Email Tanggal 13 Agustus 2020', 'WO 011/Medco/08/2020', '0', '1252.39', 'JETTY KJ2 A', 'PTW Cold Work (Legal Size).pdf', 'PJSM Medco.jpg', 'List Personil & HDE New.xlsx', 'Crane R36 cap 110 Ton', 'Forklift F08 cap 2,5 Ton', 'Forklift F15 cap 3 Ton', 'Forklift F18 cap 8 Ton', 'NULL', 'NULL', 'kj2', '303.50', '2020-08-14 19:39:16', '2020-08-15 03:15:09', '7 jam 35 menit ', 6, NULL, NULL),
-('JV00020', 'JV2-00014', 'KM..Sejahtera 35', 'PT.Sinar Pagoda', '2020-08-21', '01:30:00', '0000-00-00', '00:00:00', 'Matak', 'Jakarta', 1, 'Offloading', 3, 'Email Tanggal 19 Agustus 2020', 'WO 013/Medco/08/2020', '0', '816.38', 'JETTY KJ2 A', 'IMG-20200820-WA0340.jpg', 'IMG-20200820-WA0341.jpg', 'IMG-20200819-WA0122.jpg', 'Crane R36 cap 110 Ton', 'Forklift F08 cap 2,5 Ton', 'Forklift F15 cap 3 Ton', 'Forklift F18 cap 8 Ton', 'NULL', 'NULL', 'kj2', '187.20', '2020-08-21 01:32:55', '2020-08-21 09:53:10', '8 jam 20 menit ', 6, NULL, NULL),
-('JV00021', 'JV1-00007', 'KM.Sokka', 'PT.Global Trans', '2020-08-22', '23:00:00', '0000-00-00', '00:00:00', 'Matak', 'Jakarta', 1, 'Offloading', 2, 'Email tanggal 19 Agustus 2020', 'WO No : 2804/VIII/priok/logistik/2020', '0', '417.64', 'JETTY KJ1', 'PTW Premier.pdf', 'PTW Premier (1).pdf', 'List Personil & HDE New.xlsx', 'Crane R34 cap 60 Ton', 'Forklift F14 cap 3 Ton', 'Forklift F18 cap 8 Ton', 'Forklift F10 cap 3,5 Ton', 'NULL', 'NULL', 'kj1', '86.10', '2020-08-23 08:32:00', '2020-08-23 10:38:35', '2 jam 6 menit ', 6, NULL, NULL),
-('JV00022', 'JV1-00008', 'KM.Sokka', 'PT.Global Trans', '2020-08-22', '23:00:00', '0000-00-00', '00:00:00', 'Matak', 'Jakarta', 1, 'Offloading', 4, 'Email Tanggal 19 Agustus 2020', 'WO No : 009/VIII/SE/2020', '0', '230.73', 'JETTY KJ1', 'IMG-20200822-WA0449.jpg', 'IMG-20200822-WA0448.jpg', 'IMG-20200822-WA0447.jpg', 'Crane R34 cap 60 Ton', 'Forklift F14 cap 3 Ton', 'Forklift F18 cap 8 Ton', 'Forklift F10 cap 3,5 Ton', 'NULL', 'NULL', 'kj1', '25.06', '2020-08-23 08:32:01', '2020-08-23 10:33:52', '2 jam 1 menit ', 6, NULL, NULL),
-('JV00023', 'JV1-00009', 'KM. SOKKA', 'Global Trans', '2020-09-05', '07:00:00', '0000-00-00', '00:00:00', 'Matak', 'Jakarta', 1, 'Offloading', 2, 'Email tanggal 02 September 202', 'WO/401/IX/2020', '0', '68.95', 'JETTY KJ1', 'ptw.pdf', 'pjsm.pdf', 'lsap.pdf', 'Crane R34 cap 60 Ton', 'Forklift F14 cap 3 Ton', 'Forklift F18 cap 8 Ton', 'NULL', 'NULL', 'NULL', 'kj1', '19.30', '2020-09-04 11:08:49', '2020-09-04 11:26:31', '17 menit ', 6, NULL, NULL),
-('JV00024', 'JV2-00015', 'KM.Sejahtera 36', 'PT.Sinar Pagoda', '2020-09-05', '23:00:00', '0000-00-00', '00:00:00', 'Matak', 'Jakarta', 1, 'Offloading', 3, 'Email tanggal 03 Septmber 2020', 'WO 011/Medco/08/2020', '0', '1261.80', 'JETTY KJ2 A', 'PTW Medco (1).jpg', 'PJSM Medco.jpg', 'List Personil & HDE New.xlsx', 'Crane R36 cap 110 Ton', 'Forklift F15 cap 3 Ton', 'Forklift F18 cap 8 Ton', 'Forklift F08 cap 2,5 Ton', 'NULL', 'NULL', 'kj2', '454.65', '2020-09-05 22:07:36', '2020-09-07 07:38:21', '1 hari 9 jam 30 menit ', 6, NULL, NULL),
-('JV00025', 'JV1-00010', 'KM.Sokka', 'PT.Global Trans', '2020-09-08', '07:00:00', '0000-00-00', '00:00:00', 'Matak', 'Jakarta', 1, 'Offloading', 2, 'Email tanggal 07 September 202', 'WO No : 2834/VIII/priok/logistik/2020', '0', '683.89', 'JETTY KJ1', 'PTW Premier.2.pdf', 'PTW Premier.1.pdf', 'List Personil & HDE New.xlsx', 'Crane R34 cap 60 Ton', 'Forklift F18 cap 8 Ton', 'Forklift F14 cap 3 Ton', 'NULL', 'NULL', 'NULL', 'kj1', '179.09', '2020-09-08 13:37:10', '2020-09-08 17:02:07', '3 jam 24 menit ', 6, NULL, NULL),
-('JV00026', 'JV1-00011', 'KM.Sokka', 'PT.Global Trans', '2020-09-08', '07:00:00', '0000-00-00', '00:00:00', 'Matak', 'Jakarta', 1, 'Offloading', 4, 'Email tanggal 07 September 202', 'WO No : 010/VIII/SE/2020', '0', '162.19', 'JETTY KJ1', 'PTW Premier.2.pdf', 'PTW Premier.1.pdf', 'List Personil & HDE New.xlsx', 'Crane R34 cap 60 Ton', 'Forklift F18 cap 8 Ton', 'Forklift F14 cap 3 Ton', 'NULL', 'NULL', 'NULL', 'kj1', '18.43', '2020-09-08 13:37:59', '2020-09-08 16:27:47', '2 jam 49 menit ', 6, NULL, NULL),
-('JV00027', 'JV2-00016', 'KM.Sejahtera 35', 'PT.Sinar Pagoda', '2020-09-10', '08:00:00', '0000-00-00', '00:00:00', 'Matak', 'Jakarta', 1, 'Offloading', 3, 'Email tanggal 09 September 202', NULL, '0', '1154.97', 'JETTY KJ2 A', '1. PTW Cold Work (Legal Size)_BAHASA_13 Sept 2019 rev. (1).pdf', 'PJSM Medco.jpg', 'List Alat & Kendaraan KJ1 - 2.xlsx', 'Crane R36 cap 110 Ton', 'Forklift F18 cap 8 Ton', 'Forklift F15 cap 3 Ton', 'Forklift F08 cap 2,5 Ton', 'NULL', 'NULL', 'kj2', '301.83', '2020-09-10 09:05:26', '2020-09-10 16:45:06', '7 jam 39 menit ', 4, NULL, NULL),
-('JV00028', 'JV2-00017', 'KM.Sejahtera 35', 'PT.Sinar Pagoda', '2020-09-26', '09:30:00', '0000-00-00', '00:00:00', 'Matak', 'Jakarta', 1, 'Offloading', 3, 'Email tanggal 24 September 202', NULL, '0', '1453.07', 'JETTY KJ2 A', 'PTW Cold Work (Legal Size).pdf', 'PJSM Medco.jpg', 'List Personil & HDE New.xlsx', 'Crane R36 cap 110 Ton', 'Forklift F18 cap 8 Ton', 'Forklift F15 cap 3 Ton', 'Forklift F08 cap 2,5 Ton', 'NULL', 'NULL', 'kj2', '328.35', '2020-09-26 13:33:15', '2020-09-26 22:02:37', '8 jam 29 menit ', 4, 35, NULL),
-('JV00029', 'JV1-00002', 'KM.Sokka', 'PT.Global Trans', '2020-10-08', '07:00:00', '0000-00-00', '00:00:00', 'Matak', 'Jakarta', 1, 'Offloading', 2, 'Email tanggal 07 Oktober 2020', NULL, '0', '714.85', 'JETTY KJ1', 'PTW Premier.1.pdf', 'PTW Premier.2.pdf', 'List Personil & HDE New.xlsx', 'Crane R34 cap 60 Ton', 'Forklift F14 cap 3 Ton', 'Forklift F18 cap 8 Ton', 'Forklift F08 cap 2,5 Ton', 'NULL', 'NULL', 'kj1', '138.77', '2020-10-08 08:52:00', '2020-10-08 15:45:10', '6 jam 53 menit ', 4, 33, NULL),
-('JV00030', 'JV1-00002', 'KM.Sokka', 'PT.Sinar Pagoda', '2020-10-08', '07:00:00', '0000-00-00', '00:00:00', 'Matak', 'Jakarta', 1, 'Offloading', 4, 'Email tanggal 07 Oktober 2020', NULL, '0', '245.68', 'JETTY KJ1', 'PTW Premier.1.pdf', 'PTW Premier.2.pdf', 'List Personil & HDE New.xlsx', 'Crane R34 cap 60 Ton', 'Forklift F08 cap 2,5 Ton', 'Forklift F14 cap 3 Ton', 'Forklift F18 cap 8 Ton', 'NULL', 'NULL', 'kj1', '49.20', '2020-10-08 10:13:50', '2020-10-08 15:04:59', '4 jam 51 menit ', 4, 34, NULL),
-('JV00031', 'JV2-00003', 'KM.Sejahtera 35', 'PT.Sinar Pagoda', '2020-10-13', '13:00:00', '0000-00-00', '00:00:00', 'Matak', 'Jakarta', 1, 'Offloading', 3, 'Email tanggal 12 Oktober 2020', NULL, '0', '1607.18', 'JETTY KJ2 A', '1. PTW Cold Work (Legal Size)_BAHASA_13 Sept 2019 rev. (1).pdf', 'PJSM Medco.jpg', 'List Personil & HDE New.xlsx', 'Crane R36 cap 110 Ton', 'Forklift F08 cap 2,5 Ton', 'Forklift F15 cap 3 Ton', 'Forklift F18 cap 8 Ton', 'NULL', 'NULL', 'kj2', '513.90', '2020-10-13 14:13:05', '2020-10-14 17:12:30', '1 hari 2 jam 59 menit ', 4, 35, NULL);
+INSERT INTO `job_order` (`id_joborder`, `kode_jovessel`, `nm_kapal`, `agen_kapal`, `tgl_masuk`, `jm_masuk`, `tgl_keluar`, `jm_keluar`, `pelabuhan_asal`, `pelabuhan_tujuan`, `id_jenis`, `nm_kegiatan`, `id_client`, `document_perintah`, `no_wo`, `booking_cargo`, `total_cargo`, `sandar_kapal`, `doc_ptw`, `doc_pjsm`, `doc_lsap`, `alat_berat`, `alat_berat2`, `alat_berat3`, `alat_berat4`, `alat_berat5`, `alat_beratsewa`, `area`, `progres_jo`, `mulai_kegiatan`, `finish_kegiatan`, `durasi`, `time`, `status_jo`, `id_checker`, `komentar`) VALUES
+('JV00001', 'JV2-00001', 'PAN MARINE', 'KANAYA', '2020-01-08', '20:00:00', '0000-00-00', '00:00:00', 'PAMELOKAN', 'JAKARTA', 1, 'Offloading', 3, 'Email Tanggal 02 Januari 2020', NULL, '0', '577.54', 'JETTY KJ2 A', 'contoh-bukti-pembayaran.pdf', 'contoh-bukti-pembayaran.pdf', 'contoh-bukti-pembayaran.pdf', 'CRANE KATO R-32 70 TON', 'FORKLIFT F-31  3,5 TON', 'FORKLIFT F-32  3,5 TON', 'NULL', 'NULL', 'NULL', 'kj2', '270.20', '2020-01-17 15:07:23', '2020-01-21 15:21:48', '4 hari 0 jam 14 menit ', NULL, 6, NULL, NULL),
+('JV00002', 'JV2-00002', 'KM.Sejahtera 35', 'PT.Sinar Pagoda', '2020-01-29', '03:30:00', '0000-00-00', '00:00:00', 'Matak', 'Jakarta', 1, 'Offloading', 3, 'Email tanggal 27 Januari 2020', NULL, '0', '492.46', 'JETTY KJ2 A', 'PTW Medco (1).jpg', 'PJSM Medco.jpg', 'List Personil & HDE New.xlsx', 'Crane R36 cap 110 Ton', 'Forklift F18 cap 8 Ton', 'Forklift F15 cap 3 Ton', 'Forklift F08 cap 2,5 Ton', 'NULL', 'NULL', 'kj2', '83.30', '2020-02-06 14:07:26', '2020-09-04 15:44:26', '29 hari 1 jam 37 menit ', NULL, 4, NULL, NULL),
+('JV00003', 'JV2-00003', 'KM.Sejahtera 35', 'PT.Sinar Pagoda', '2020-01-30', '08:00:00', '0000-00-00', '00:00:00', 'Matak', 'Jakarta', 1, 'Offloading', 3, 'Email tanggal 27 Januari 2020', NULL, '0', '551.92', 'JETTY KJ2 A', 'PTW Medco.jpg', 'PJSM Medco.jpg', 'List Personil & HDE New.xlsx', 'Crane R36 cap 110 Ton', 'Forklift F18 cap 8 Ton', 'Forklift F15 cap 3 Ton', 'Forklift F08 cap 2,5 Ton', 'NULL', 'NULL', 'kj2', '163.50', '2020-02-12 14:45:39', '2020-02-12 14:49:17', '3 menit ', NULL, 4, NULL, NULL),
+('JV00004', 'JV2-00004', 'KM.Sejahtera 35', 'PT.Sinar Pagoda', '2020-05-21', '23:30:00', '0000-00-00', '00:00:00', 'Matak', 'Jakarta', 1, 'Offloading', 3, 'Email tanggal 18 Mei 2020', NULL, '0', '1119.02', 'JETTY KJ2 A', 'PTW Medco (1).jpg', 'PJSM Medco.jpg', 'List Personil & HDE New.xlsx', 'Crane R36 cap 110 Ton', 'Forklift F15 cap 3 Ton', 'Forklift F18 cap 8 Ton', 'Forklift F08 cap 2,5 Ton', 'NULL', 'NULL', 'kj2', '292.20', '2020-05-28 14:05:29', '2020-05-28 14:23:09', '17 menit ', NULL, 4, NULL, NULL),
+('JV00005', 'JV2-00005', 'KM.Sejahtera 36', 'PT.Sinar Pagoda', '2020-06-03', '07:30:00', '0000-00-00', '00:00:00', 'Matak', 'Jakarta', 1, 'Offloading', 3, 'Email tanggal 31 Mei 2020', NULL, '0', '926.79', 'JETTY KJ2 A', 'PTW Medco (1).jpg', 'PJSM Medco.jpg', 'List Personil & HDE New.xlsx', 'Crane R36 cap 110 Ton', 'Forklift F18 cap 8 Ton', 'Forklift F15 cap 3 Ton', 'NULL', 'NULL', 'NULL', 'kj2', '273.50', '2020-07-09 15:59:36', '2020-07-09 16:02:37', '3 menit ', NULL, 6, NULL, NULL),
+('JV00006', 'JV1-00001', 'GNA', 'JU', '2020-07-01', '02:01:00', '2020-07-03', '14:12:00', 'MATAK', 'TJ PRIOK', 1, 'Loading', 1, 'TEST/V1/XXX', NULL, '0', '90.00', 'JETTY KJ1', 'ISO2USB.exe', 'ISO2USB.exe', 'ISO2USB.exe', 'CRANE TADANO', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'kj1', '90.00', '2020-07-03 13:45:12', '2020-07-24 10:16:46', '20 hari 20 jam 31 menit ', NULL, 4, NULL, NULL),
+('JV00007', 'JV2-00006', 'KM.Sejahtera 35', 'PT.Sinar Pagoda', '2020-06-27', '05:00:00', '0000-00-00', '00:00:00', 'Matak', 'Jakarta', 1, 'Offloading', 3, 'Email tanggal 25 Juni 2020', NULL, '0', '501.38', 'JETTY KJ2 A', 'PTW Medco (1).jpg', 'PJSM Medco.jpg', 'List Personil & HDE New.xlsx', 'Crane R36 cap 110 Ton', 'Forklift F08 cap 2,5 Ton', 'Forklift F15 cap 3 Ton', 'NULL', 'NULL', 'NULL', 'kj2', '228.00', '2020-07-06 08:30:17', '2020-07-06 08:35:02', '4 menit ', NULL, 6, NULL, NULL),
+('JV00008', 'JV2-00007', 'KM. Sejahtera 35', 'Sinar Pagoda', '2020-07-06', '05:00:00', '0000-00-00', '00:00:00', 'Matak', 'Jakarta', 1, 'Offloading', 3, 'Email Tanggal 04 Juli 2020', NULL, '0', '286.37', 'JETTY KJ2 A', 'document_pendukung.pdf', 'document_pendukung.pdf', 'document_pendukung.pdf', 'Crane R36 cap 110 Ton', 'Forklift F08 cap 2,5 Ton', 'Forklift F15 cap 3 Ton', 'Forklift F18 cap 8 Ton', 'NULL', 'NULL', 'kj2', '146.30', '2020-07-06 13:47:21', '2020-07-06 14:20:26', '33 menit ', NULL, 6, NULL, NULL),
+('JV00009', 'JV1-00002', 'KM.Sokka', 'PT.Global Trans', '2020-07-10', '06:00:00', '0000-00-00', '00:00:00', 'Matak', 'Jakarta', 1, 'Offloading', 2, 'Email tanggal 08 Juli 2020', NULL, '0', '406.76', 'JETTY KJ1', 'PTW Premier Oil New.pdf', 'PTW Premier Oil PJSM.pdf', 'List Personil & HDE New.xlsx', 'Crane R34 cap 60 Ton', 'Forklift F14 cap 3 Ton', 'Forklift F18 cap 8 Ton', 'Forklift F10 cap 3,5 Ton', 'NULL', 'NULL', 'kj1', '91.39', '2020-07-10 09:21:08', '2020-07-10 11:38:21', '2 jam 17 menit ', NULL, 4, NULL, NULL),
+('JV00010', 'JV2-00008', 'KM.Sejahtera 36', 'PT.Sinar Pagoda', '2020-07-10', '18:00:00', '0000-00-00', '00:00:00', 'Matak', 'Jakarta', 1, 'Offloading', 3, 'Email tanggal 08 Juli 2020', NULL, '42', '6.14', 'JETTY KJ2 A', '1. PTW Cold Work (Legal Size)_BAHASA_13 Sept 2019 rev. (1).pdf', 'PJSM Medco.jpg', 'List Personil & HDE New.xlsx', 'Crane R36 cap 110 Ton', 'Forklift F08 cap 2,5 Ton', 'Forklift F15 cap 3 Ton', 'Forklift F18 cap 8 Ton', 'NULL', 'NULL', 'kj2', '16.50', '2020-11-19 16:14:55', '2020-11-19 16:17:30', '2 menit ', 155, 4, 35, NULL),
+('JV00011', 'JV2-00009', 'KM.Sejahtera 36', 'PT.Sinar Pagoda', '2020-07-10', '18:00:00', '0000-00-00', '00:00:00', 'Matak', 'Jakarta', 1, 'Offloading', 3, 'Email tanggal 08 Juli 2020', NULL, '0', '942.19', 'JETTY KJ2 A', '1. PTW Cold Work (Legal Size)_BAHASA_13 Sept 2019 rev. (1).pdf', 'PJSM Medco.jpg', 'List Personil & HDE New.xlsx', 'Crane R36 cap 110 Ton', 'Forklift F08 cap 2,5 Ton', 'Forklift F15 cap 3 Ton', 'Forklift F18 cap 8 Ton', 'NULL', 'NULL', 'kj2', '253.12', '2020-07-11 01:46:01', '2020-07-11 15:19:56', '13 jam 33 menit ', NULL, 6, NULL, NULL),
+('JV00012', 'JV2-00010', 'KM.Sejahtera 35', 'PT.Sinar Pagoda', '2020-07-15', '14:00:00', '0000-00-00', '00:00:00', 'Matak', 'Jakarta', 1, 'Offloading', 3, 'Email tanggal 14 Juli 2020', NULL, '0', '1104.33', 'JETTY KJ2 A', 'PTW Cold Work (Legal Size).pdf', 'PJSM Medco.jpg', 'List Personil & HDE New.xlsx', 'Crane R36 cap 110 Ton', 'Forklift F08 cap 2,5 Ton', 'Forklift F15 cap 3 Ton', 'Forklift F18 cap 8 Ton', 'NULL', 'NULL', 'kj2', '178.13', '2020-07-15 19:43:47', '2020-07-16 15:10:34', '19 jam 26 menit ', NULL, 6, NULL, NULL),
+('JV00013', 'JV2-00011', 'KM.Sejahtera 36', 'PT.Sinar Pagoda', '2020-07-20', '11:00:00', '0000-00-00', '00:00:00', 'Matak', 'Jakarta', 1, 'Loading', 3, 'Email tanggal 20 Juli 2020', NULL, '0', '1328.12', 'JETTY KJ2 A', '1. PTW Cold Work (Legal Size)_BAHASA_13 Sept 2019 rev. (1).pdf', 'PJSM Medco.jpg', 'List Personil & HDE New.xlsx', 'Crane R36 cap 110 Ton', 'Forklift F08 cap 2,5 Ton', 'Forklift F15 cap 3 Ton', 'Forklift F18 cap 8 Ton', 'NULL', 'NULL', 'kj2', '1195.80', '2020-07-21 19:53:15', '2020-07-29 14:36:22', '7 hari 18 jam 43 menit ', NULL, 4, NULL, NULL),
+('JV00014', 'JV1-00003', 'KM. SOKKA', 'Transglobal', '2020-07-24', '07:00:00', '0000-00-00', '00:00:00', 'MATAK', 'JAKARTA', 1, 'Offloading', 2, 'EMAIL tanggal 03 Juli 2020', NULL, '0', '150.54', 'JETTY KJ1', 'document_pendukung.pdf', 'document_pendukung.pdf', 'document_pendukung.pdf', 'Crane R34 cap 60 Ton', 'Forklift F14 cap 3 Ton', 'Forklift F18 cap 8 Ton', 'NULL', 'NULL', 'NULL', 'kj1', '12.00', '2020-07-24 10:39:22', '2020-07-24 10:44:11', '4 menit ', NULL, 4, NULL, '@Hartonos :\r\ntes'),
+('JV00015', 'JV1-00004', 'KM. SOKKA', 'Transglobal', '2020-07-24', '07:00:00', '0000-00-00', '00:00:00', 'MATAK', 'JAKARTA', 1, 'Offloading', 4, 'EMAIL tanggal 03 Juli 2020', NULL, '0', '51.28', 'JETTY KJ1', 'document_pendukung.pdf', 'document_pendukung.pdf', 'document_pendukung.pdf', 'Crane R34 cap 60 Ton', 'Forklift F18 cap 8 Ton', 'Forklift F14 cap 3 Ton', 'NULL', 'NULL', 'NULL', 'kj1', '4.40', '2020-07-24 10:39:18', '2020-07-24 10:44:16', '4 menit ', NULL, 6, NULL, NULL),
+('JV00016', 'JV2-00012', 'KM.Sejahtera 35', 'PT.Sinar Pagoda', '2020-08-01', '12:00:00', '0000-00-00', '00:00:00', 'Matak', 'Jakarta', 1, 'Offloading', 3, 'Email tanggal 30 Juli 2020', 'WO 008/Medco/08/2020', '0', '1492.88', 'JETTY KJ2 A', '1. PTW Cold Work (Legal Size)_BAHASA_13 Sept 2019 rev. (1).pdf', 'PJSM Medco.jpg', 'List Personil & HDE New.xlsx', 'Crane R36 cap 110 Ton', 'Forklift F08 cap 2,5 Ton', 'Forklift F15 cap 3 Ton', 'Forklift F18 cap 8 Ton', 'NULL', 'NULL', 'kj2', '442.40', '2020-08-01 14:29:50', '2020-08-02 02:46:00', '12 jam 16 menit ', NULL, 6, NULL, NULL),
+('JV00017', 'JV1-00005', 'KM.Sokka', 'PT.Global Trans', '2020-08-06', '20:00:00', '0000-00-00', '00:00:00', 'Matak', 'Jakarta', 1, 'Offloading', 2, 'Email tanggal 04 Agustus 2020', 'WO No : 2775/VIII/priok/logistik/2020', '0', '432.95', 'JETTY KJ1', 'PTW Premier.pdf', 'PTW Premier (1).pdf', 'List Personil & HDE New.xlsx', 'Crane R34 cap 60 Ton', 'Forklift F10 cap 3,5 Ton', 'Forklift F14 cap 3 Ton', 'NULL', 'NULL', 'NULL', 'kj1', '111.40', '2020-08-07 08:45:46', '2020-08-07 14:05:34', '5 jam 19 menit ', NULL, 6, NULL, NULL),
+('JV00018', 'JV1-00006', 'KM.Sokka', 'PT.Global Trans', '2020-08-06', '20:00:00', '0000-00-00', '00:00:00', 'Matak', 'Jakarta', 1, 'Offloading', 4, 'Email tanggal 04 Agustus 2020', 'WO No : 001/VIII/SE/2020', '0', '159.80', 'JETTY KJ1', 'PTW Premier.pdf', 'PTW Premier (1).pdf', 'List Personil & HDE New.xlsx', 'Crane R34 cap 60 Ton', 'Forklift F14 cap 3 Ton', 'Forklift F10 cap 3,5 Ton', 'NULL', 'NULL', 'NULL', 'kj1', '18.00', '2020-08-07 08:54:10', '2020-08-07 10:48:01', '1 jam 53 menit ', NULL, 6, NULL, NULL),
+('JV00019', 'JV2-00013', 'KM.Sejahtera 36', 'PT.Sinar Pagoda', '2020-08-14', '07:00:00', '0000-00-00', '00:00:00', 'Matak', 'Jakarta', 1, 'Offloading', 3, 'Email Tanggal 13 Agustus 2020', 'WO 011/Medco/08/2020', '0', '1252.39', 'JETTY KJ2 A', 'PTW Cold Work (Legal Size).pdf', 'PJSM Medco.jpg', 'List Personil & HDE New.xlsx', 'Crane R36 cap 110 Ton', 'Forklift F08 cap 2,5 Ton', 'Forklift F15 cap 3 Ton', 'Forklift F18 cap 8 Ton', 'NULL', 'NULL', 'kj2', '303.50', '2020-08-14 19:39:16', '2020-08-15 03:15:09', '7 jam 35 menit ', NULL, 6, NULL, NULL),
+('JV00020', 'JV2-00014', 'KM..Sejahtera 35', 'PT.Sinar Pagoda', '2020-08-21', '01:30:00', '0000-00-00', '00:00:00', 'Matak', 'Jakarta', 1, 'Offloading', 3, 'Email Tanggal 19 Agustus 2020', 'WO 013/Medco/08/2020', '0', '816.38', 'JETTY KJ2 A', 'IMG-20200820-WA0340.jpg', 'IMG-20200820-WA0341.jpg', 'IMG-20200819-WA0122.jpg', 'Crane R36 cap 110 Ton', 'Forklift F08 cap 2,5 Ton', 'Forklift F15 cap 3 Ton', 'Forklift F18 cap 8 Ton', 'NULL', 'NULL', 'kj2', '187.20', '2020-08-21 01:32:55', '2020-08-21 09:53:10', '8 jam 20 menit ', NULL, 6, NULL, NULL),
+('JV00021', 'JV1-00007', 'KM.Sokka', 'PT.Global Trans', '2020-08-22', '23:00:00', '0000-00-00', '00:00:00', 'Matak', 'Jakarta', 1, 'Offloading', 2, 'Email tanggal 19 Agustus 2020', 'WO No : 2804/VIII/priok/logistik/2020', '0', '417.64', 'JETTY KJ1', 'PTW Premier.pdf', 'PTW Premier (1).pdf', 'List Personil & HDE New.xlsx', 'Crane R34 cap 60 Ton', 'Forklift F14 cap 3 Ton', 'Forklift F18 cap 8 Ton', 'Forklift F10 cap 3,5 Ton', 'NULL', 'NULL', 'kj1', '86.10', '2020-08-23 08:32:00', '2020-08-23 10:38:35', '2 jam 6 menit ', NULL, 6, NULL, NULL),
+('JV00022', 'JV1-00008', 'KM.Sokka', 'PT.Global Trans', '2020-08-22', '23:00:00', '0000-00-00', '00:00:00', 'Matak', 'Jakarta', 1, 'Offloading', 4, 'Email Tanggal 19 Agustus 2020', 'WO No : 009/VIII/SE/2020', '0', '230.73', 'JETTY KJ1', 'IMG-20200822-WA0449.jpg', 'IMG-20200822-WA0448.jpg', 'IMG-20200822-WA0447.jpg', 'Crane R34 cap 60 Ton', 'Forklift F14 cap 3 Ton', 'Forklift F18 cap 8 Ton', 'Forklift F10 cap 3,5 Ton', 'NULL', 'NULL', 'kj1', '25.06', '2020-08-23 08:32:01', '2020-08-23 10:33:52', '2 jam 1 menit ', NULL, 6, NULL, NULL),
+('JV00023', 'JV1-00009', 'KM. SOKKA', 'Global Trans', '2020-09-05', '07:00:00', '0000-00-00', '00:00:00', 'Matak', 'Jakarta', 1, 'Offloading', 2, 'Email tanggal 02 September 202', 'WO/401/IX/2020', '0', '68.95', 'JETTY KJ1', 'ptw.pdf', 'pjsm.pdf', 'lsap.pdf', 'Crane R34 cap 60 Ton', 'Forklift F14 cap 3 Ton', 'Forklift F18 cap 8 Ton', 'NULL', 'NULL', 'NULL', 'kj1', '19.30', '2020-09-04 11:08:49', '2020-09-04 11:26:31', '17 menit ', NULL, 6, NULL, NULL),
+('JV00024', 'JV2-00015', 'KM.Sejahtera 36', 'PT.Sinar Pagoda', '2020-09-05', '23:00:00', '0000-00-00', '00:00:00', 'Matak', 'Jakarta', 1, 'Offloading', 3, 'Email tanggal 03 Septmber 2020', 'WO 011/Medco/08/2020', '0', '1261.80', 'JETTY KJ2 A', 'PTW Medco (1).jpg', 'PJSM Medco.jpg', 'List Personil & HDE New.xlsx', 'Crane R36 cap 110 Ton', 'Forklift F15 cap 3 Ton', 'Forklift F18 cap 8 Ton', 'Forklift F08 cap 2,5 Ton', 'NULL', 'NULL', 'kj2', '454.65', '2020-09-05 22:07:36', '2020-09-07 07:38:21', '1 hari 9 jam 30 menit ', NULL, 6, NULL, NULL),
+('JV00025', 'JV1-00010', 'KM.Sokka', 'PT.Global Trans', '2020-09-08', '07:00:00', '0000-00-00', '00:00:00', 'Matak', 'Jakarta', 1, 'Offloading', 2, 'Email tanggal 07 September 202', 'WO No : 2834/VIII/priok/logistik/2020', '0', '683.89', 'JETTY KJ1', 'PTW Premier.2.pdf', 'PTW Premier.1.pdf', 'List Personil & HDE New.xlsx', 'Crane R34 cap 60 Ton', 'Forklift F18 cap 8 Ton', 'Forklift F14 cap 3 Ton', 'NULL', 'NULL', 'NULL', 'kj1', '179.09', '2020-09-08 13:37:10', '2020-09-08 17:02:07', '3 jam 24 menit ', NULL, 6, NULL, NULL),
+('JV00026', 'JV1-00011', 'KM.Sokka', 'PT.Global Trans', '2020-09-08', '07:00:00', '0000-00-00', '00:00:00', 'Matak', 'Jakarta', 1, 'Offloading', 4, 'Email tanggal 07 September 202', 'WO No : 010/VIII/SE/2020', '0', '162.19', 'JETTY KJ1', 'PTW Premier.2.pdf', 'PTW Premier.1.pdf', 'List Personil & HDE New.xlsx', 'Crane R34 cap 60 Ton', 'Forklift F18 cap 8 Ton', 'Forklift F14 cap 3 Ton', 'NULL', 'NULL', 'NULL', 'kj1', '18.43', '2020-09-08 13:37:59', '2020-09-08 16:27:47', '2 jam 49 menit ', NULL, 6, NULL, NULL),
+('JV00027', 'JV2-00016', 'KM.Sejahtera 35', 'PT.Sinar Pagoda', '2020-09-10', '08:00:00', '0000-00-00', '00:00:00', 'Matak', 'Jakarta', 1, 'Offloading', 3, 'Email tanggal 09 September 202', 'WO 002A/medco/09/2020', '0', '1154.97', 'JETTY KJ2 A', '1. PTW Cold Work (Legal Size)_BAHASA_13 Sept 2019 rev. (1).pdf', 'PJSM Medco.jpg', 'List Alat & Kendaraan KJ1 - 2.xlsx', 'Crane R36 cap 110 Ton', 'Forklift F18 cap 8 Ton', 'Forklift F15 cap 3 Ton', 'Forklift F08 cap 2,5 Ton', 'NULL', 'NULL', 'kj2', '301.83', '2020-09-10 09:05:26', '2020-09-10 16:45:06', '7 jam 39 menit ', NULL, 6, NULL, NULL),
+('JV00028', 'JV2-00017', 'KM.Sejahtera 35', 'PT.Sinar Pagoda', '2020-09-26', '09:30:00', '0000-00-00', '00:00:00', 'Matak', 'Jakarta', 1, 'Offloading', 3, 'Email tanggal 24 September 202', 'WO 003/medco/09/2020', '0', '1453.07', 'JETTY KJ2 A', 'PTW Cold Work (Legal Size).pdf', 'PJSM Medco.jpg', 'List Personil & HDE New.xlsx', 'Crane R36 cap 110 Ton', 'Forklift F18 cap 8 Ton', 'Forklift F15 cap 3 Ton', 'Forklift F08 cap 2,5 Ton', 'NULL', 'NULL', 'kj2', '328.35', '2020-09-26 13:33:15', '2020-09-26 22:02:37', '8 jam 29 menit ', NULL, 6, 35, NULL),
+('JV00029', 'JV1-00002', 'KM.Sokka', 'PT.Global Trans', '2020-10-08', '07:00:00', '0000-00-00', '00:00:00', 'Matak', 'Jakarta', 1, 'Offloading', 2, 'Email tanggal 07 Oktober 2020', 'WO 2898/premier oil/10/2020', '0', '714.85', 'JETTY KJ1', 'PTW Premier.1.pdf', 'PTW Premier.2.pdf', 'List Personil & HDE New.xlsx', 'Crane R34 cap 60 Ton', 'Forklift F14 cap 3 Ton', 'Forklift F18 cap 8 Ton', 'Forklift F08 cap 2,5 Ton', 'NULL', 'NULL', 'kj1', '138.77', '2020-10-08 08:52:00', '2020-10-08 15:45:10', '6 jam 53 menit ', NULL, 6, 33, NULL),
+('JV00030', 'JV1-00002', 'KM.Sokka', 'PT.Sinar Pagoda', '2020-10-08', '07:00:00', '0000-00-00', '00:00:00', 'Matak', 'Jakarta', 1, 'Offloading', 4, 'Email tanggal 07 Oktober 2020', 'WO No : 001/X/SE/2020', '0', '245.68', 'JETTY KJ1', 'PTW Premier.1.pdf', 'PTW Premier.2.pdf', 'List Personil & HDE New.xlsx', 'Crane R34 cap 60 Ton', 'Forklift F08 cap 2,5 Ton', 'Forklift F14 cap 3 Ton', 'Forklift F18 cap 8 Ton', 'NULL', 'NULL', 'kj1', '49.20', '2020-10-08 10:13:50', '2020-11-09 11:08:12', '1 hari 0 jam 54 menit ', 2768062, 4, 34, NULL),
+('JV00031', 'JV2-00003', 'KM.Sejahtera 35', 'PT.Sinar Pagoda', '2020-10-13', '13:00:00', '0000-00-00', '00:00:00', 'Matak', 'Jakarta', 1, 'Offloading', 3, 'Email tanggal 12 Oktober 2020', NULL, '0', '1607.18', 'JETTY KJ2 A', '1. PTW Cold Work (Legal Size)_BAHASA_13 Sept 2019 rev. (1).pdf', 'PJSM Medco.jpg', 'List Personil & HDE New.xlsx', 'Crane R36 cap 110 Ton', 'Forklift F08 cap 2,5 Ton', 'Forklift F15 cap 3 Ton', 'Forklift F18 cap 8 Ton', 'NULL', 'NULL', 'kj2', '513.90', '2020-10-13 14:13:05', '2020-10-14 17:12:30', '1 hari 2 jam 59 menit ', NULL, 4, 35, NULL),
+('JV00032', 'JV2-00003', 'KM.S Faith', 'PT.Kanaya', '2020-10-19', '10:15:00', '0000-00-00', '00:00:00', 'Jakarta', 'Sorong', 1, 'Loading', 5, 'WA Tanggal 20 Oktober 2020', NULL, '0', '894.67', 'JETTY KJ2 B', 'ptw S faith.pdf', 'PTW & PJSM S faith.pdf', 'List Personil & HDE New.xlsx', 'Crane R36 cap 110 Ton', 'Forklift F18 cap 8 Ton', 'Forklift F14 cap 3 Ton', 'NULL', 'NULL', 'NULL', 'kj2', '88.43', '2020-10-21 10:04:44', '2020-10-22 18:29:47', '1 hari 8 jam 25 menit ', NULL, 4, 34, NULL),
+('JV00033', 'JV1-00002', 'KM.Sokka', 'PT.Global Trans', '2020-10-21', '16:00:00', '0000-00-00', '00:00:00', 'Matak', 'Jakarta', 1, 'Offloading', 2, 'Email tanggal 20 Oktober 2020', NULL, '0', '383.33', 'JETTY KJ1', 'PTW Premier.pdf', 'PTW Premier (1).pdf', 'List Personil & HDE New.xlsx', 'Crane R34 cap 60 Ton', 'Forklift F14 cap 3 Ton', 'Forklift F18 cap 8 Ton', 'NULL', 'NULL', 'NULL', 'kj1', '75.07', '2020-10-22 09:08:24', '2020-10-22 11:39:02', '2 jam 30 menit ', NULL, 4, 33, NULL),
+('JV00034', 'JV1-00002', 'KM.Sokka', 'PT.Global Trans', '2020-10-21', '16:00:00', '0000-00-00', '00:00:00', 'Matak', 'Jakarta', 1, 'Offloading', 4, 'Email tanggal 20 Oktober 2020', NULL, '0', '166.12', 'JETTY KJ1', 'PTW Premier (1).pdf', 'PTW Premier.pdf', 'List Personil & HDE New.xlsx', 'Crane R34 cap 60 Ton', 'Forklift F18 cap 8 Ton', 'Forklift F14 cap 3 Ton', 'NULL', 'NULL', 'NULL', 'kj1', '18.90', '2020-10-22 08:42:21', '2020-10-22 11:07:48', '2 jam 25 menit ', NULL, 4, 34, NULL),
+('JV00035', 'JV2-00003', 'KM.Sejahtera 35', 'PT.Sinar Pagoda', '2020-10-31', '19:00:00', '0000-00-00', '00:00:00', 'Matak', 'Jakarta', 1, 'Offloading', 3, 'Email Tanggal 28 Oktober 2020', NULL, '0', '1641.84', 'JETTY KJ2 A', 'PTW Cold Work (Legal Size).pdf', 'PJSM Medco.jpg', 'List Personil & HDE New.xlsx', 'Crane R36 cap 110 Ton', 'Forklift F18 cap 8 Ton', 'Forklift F15 cap 3 Ton', 'Forklift F08 cap 2,5 Ton', 'NULL', 'NULL', 'kj2', '518.30', '2020-10-31 08:07:00', '2020-11-01 01:33:06', '17 jam 26 menit ', NULL, 4, 35, NULL),
+('JV00036', 'JV1-00002', 'CB.Pan Marine', 'PT.Ekspul', '2020-11-02', '12:00:00', '0000-00-00', '00:00:00', 'Matak', 'Jakarta', 1, 'Offloading', 2, 'Email tanggal 02 Nopember 2020', NULL, '0', '60.92', 'JETTY KJ1', 'PTW Premier.1.pdf', 'PTW Premier.2.pdf', 'List Personil & HDE New.xlsx', 'Crane R34 cap 60 Ton', 'Forklift F18 cap 8 Ton', 'Forklift F14 cap 3 Ton', 'NULL', 'NULL', 'NULL', 'kj1', '22.90', '2020-11-02 13:43:03', '2020-11-02 14:13:35', '30 menit ', NULL, 4, 33, NULL),
+('JV00037', 'JV1-00012', 'KM. SOKKA', 'Global Trans', '2021-01-01', '05:00:00', '2021-01-04', '19:00:00', 'MATAK', 'JAKARTA', 1, 'Offloading', 3, 'Email tanggal 01 Januari 2021', NULL, '528', NULL, 'JETTY KJ1', 'document_pendukung.pdf', 'document_pendukung.pdf', 'document_pendukung.pdf', 'CRANE KATO R-32 70 TON', 'FORKLIFT F-35  8 TON', 'NULL', 'NULL', 'NULL', 'NULL', 'kj1', '70.00', NULL, NULL, NULL, NULL, 2, 35, NULL),
+('JV00038', 'JV2-00018', 'KM. Sejahtera', 'Transglobal', '2021-01-01', '05:00:00', '2021-01-04', '07:00:00', 'MATAK', 'JAKARTA', 1, 'Offloading', 2, 'Email tanggal 01 Januari 2021', NULL, NULL, NULL, 'JETTY KJ2 A', 'document_pendukung.pdf', 'document_pendukung.pdf', 'document_pendukung.pdf', 'CRANE KATO R-32 70 TON', 'FORKLIFT F-34  8 TON', 'NULL', 'NULL', 'NULL', 'NULL', 'kj2', '0.00', NULL, NULL, NULL, NULL, 1, NULL, NULL);
 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `job_ordertruck`
+-- Table structure for table `log_system`
 --
 
-CREATE TABLE IF NOT EXISTS `job_ordertruck` (
-  `id_jobordertruck` varchar(15) NOT NULL,
-  `kode_lotruck` varchar(15) DEFAULT NULL,
-  `id_alatberat` int(11) NOT NULL,
-  `id_client` int(11) NOT NULL,
-  `area` varchar(15) DEFAULT NULL,
-  `total_cargo` decimal(6,2) DEFAULT NULL,
-  `created_on` datetime DEFAULT NULL,
-  `mulai_kegiatan` datetime DEFAULT NULL,
-  `finish_kegiatan` datetime DEFAULT NULL,
-  `durasi` varchar(50) DEFAULT NULL,
-  `durasi_jeda` varchar(50) DEFAULT NULL,
-  `no_wo` varchar(50) DEFAULT NULL,
-  `komentar` text,
-  `id_checker` varchar(15) DEFAULT NULL,
-  `status_jotruck` varchar(15) NOT NULL DEFAULT '1'
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data untuk tabel `job_ordertruck`
---
-
-INSERT INTO `job_ordertruck` (`id_jobordertruck`, `kode_lotruck`, `id_alatberat`, `id_client`, `area`, `total_cargo`, `created_on`, `mulai_kegiatan`, `finish_kegiatan`, `durasi`, `durasi_jeda`, `no_wo`, `komentar`, `id_checker`, `status_jotruck`) VALUES
-('JT00001', 'JT2-00001', 8, 3, 'kj2', '50.53', '2020-07-23 14:48:44', '2020-07-23 15:48:44', '2020-07-27 12:49:17', '3 hari 21 jam 0 menit ', NULL, '12345', NULL, NULL, '5'),
-('JT00002', 'JT2-00002', 8, 3, 'kj2', '89.30', '2020-07-22 10:30:51', '2020-07-22 10:49:51', '2020-07-23 13:53:46', '1 hari 3 jam 3 menit ', NULL, NULL, NULL, NULL, '3'),
-('JT00003', 'JT1-00001', 5, 2, 'kj1', '3.54', '2020-07-23 14:42:25', '2020-07-23 14:49:53', '2020-07-23 15:16:55', '27 menit ', NULL, NULL, NULL, NULL, '3'),
-('JT00004', 'JT1-00002', 5, 2, 'kj1', '20.74', '2020-07-27 12:51:03', '2020-08-13 10:11:01', '2020-08-13 10:12:49', '1 menit ', NULL, NULL, NULL, NULL, '3'),
-('JT00005', 'JT1-00003', 18, 2, 'kj1', '7.20', '2020-08-05 11:14:30', '2020-08-05 11:17:08', '2020-08-05 11:18:07', '0 menit ', NULL, '12345', NULL, NULL, '5'),
-('JT00006', 'JT1-00004', 19, 4, 'kj1', '20.00', '2020-08-05 13:42:36', '2020-08-05 13:55:43', '2020-08-05 13:57:41', '1 menit ', NULL, '12345', NULL, NULL, '5'),
-('JT00007', 'JT1-00005', 20, 5, 'kj1', '3.05', '2020-08-07 13:15:29', '2020-08-07 13:20:11', '2020-08-07 13:21:46', '1 menit ', NULL, '12345', NULL, NULL, '5'),
-('JT00008', 'JT1-00006', 17, 5, 'kj1', '7.00', '2020-08-07 15:15:56', '2020-08-07 15:21:13', '2020-08-07 15:23:42', '2 menit ', NULL, NULL, NULL, NULL, '3'),
-('JT00009', 'JT1-00007', 18, 5, 'kj1', '4.00', '2020-08-07 15:26:22', '2020-08-07 17:48:57', '2020-08-07 17:50:47', '1 menit ', NULL, NULL, NULL, NULL, '3'),
-('JT00010', 'JT1-00008', 18, 2, 'kj1', '0.40', '2020-08-10 10:02:09', '2020-09-04 15:07:37', '2020-09-04 15:07:49', '0 menit ', NULL, NULL, NULL, NULL, '3'),
-('JT00011', 'JT1-00009', 18, 2, 'kj1', '0.64', '2020-08-10 10:11:43', '2020-08-10 10:15:42', '2020-08-10 10:16:06', '0 menit ', NULL, NULL, NULL, NULL, '3'),
-('JT00012', 'JT1-00010', 18, 2, 'kj1', '2.80', '2020-08-10 14:42:07', '2020-08-13 14:25:30', '2020-09-04 15:07:26', '22 hari 0 jam 41 menit ', NULL, NULL, NULL, NULL, '3'),
-('JT00013', 'JT1-00011', 18, 2, 'kj1', '43.20', '2020-08-10 17:00:50', '2020-08-13 10:22:43', '2020-09-04 15:06:46', '22 hari 4 jam 44 menit ', NULL, NULL, NULL, NULL, '3'),
-('JT00014', 'JT1-00012', 18, 2, 'kj1', '42.33', '2020-08-10 17:05:43', '2020-08-13 10:13:52', '2020-08-13 10:14:53', '1 menit ', NULL, NULL, NULL, NULL, '3'),
-('JT00015', 'JT1-00013', 18, 2, 'kj1', '15.00', '2020-08-13 10:17:13', '2020-08-28 10:29:57', '2020-09-04 15:06:30', '7 hari 4 jam 36 menit ', NULL, NULL, NULL, NULL, '3'),
-('JT00016', 'JT1-00014', 19, 5, 'kj1', '7.00', '2020-08-14 09:53:01', '2020-08-14 09:56:28', '2020-08-14 10:01:49', '5 menit ', NULL, NULL, NULL, NULL, '3'),
-('JT00017', 'JT1-00015', 19, 5, 'kj1', '1.00', '2020-08-14 11:24:27', '2020-08-14 11:30:50', '2020-08-14 11:31:21', '0 menit ', NULL, NULL, NULL, NULL, '3'),
-('JT00018', 'JT1-00016', 19, 5, 'kj1', '7.00', '2020-08-14 13:23:35', '2020-08-14 14:15:31', '2020-08-14 14:20:56', '5 menit ', NULL, NULL, NULL, NULL, '3'),
-('JT00019', 'JT1-00017', 18, 4, 'kj1', '2.63', '2020-08-18 12:43:20', '2020-08-18 13:40:27', '2020-08-18 14:51:05', '1 jam 10 menit ', NULL, NULL, NULL, NULL, '3'),
-('JT00020', 'JT1-00018', 17, 5, 'kj1', '0.62', '2020-08-18 16:00:31', '2020-08-18 16:04:29', '2020-08-18 16:07:45', '3 menit ', NULL, NULL, NULL, NULL, '3'),
-('JT00021', 'JT1-00019', 19, 5, 'kj1', '3.25', '2020-08-19 15:08:32', '2020-08-19 15:13:38', '2020-08-19 15:17:44', '4 menit ', NULL, NULL, NULL, NULL, '3'),
-('JT00022', 'JT1-00020', 21, 4, 'kj1', '12.00', '2020-08-20 13:51:32', '2020-08-20 13:56:41', '2020-08-20 13:57:01', '0 menit ', NULL, 'WO No : 011/VIII/SE/2020', NULL, NULL, '5'),
-('JT00023', 'JT1-00021', 18, 5, 'kj1', '2.00', '2020-08-24 09:46:35', '2020-09-04 14:18:33', '2020-09-04 15:06:09', '47 menit ', NULL, NULL, NULL, NULL, '3'),
-('JT00024', 'JT2-00003', 8, 3, 'kj2', '5.96', '2020-09-04 14:52:20', '2020-09-04 14:56:24', '2020-09-04 15:03:34', '7 menit ', NULL, NULL, NULL, NULL, '3'),
-('JT00025', 'JT1-00022', 17, 4, 'kj1', '15.10', '2020-09-08 10:13:43', '2020-09-08 10:54:58', '2020-09-08 19:16:42', '8 jam 21 menit ', NULL, NULL, NULL, NULL, '3'),
-('JT00027', 'JT1-00024', 17, 4, 'kj1', '7.55', '2020-09-09 13:03:21', '2020-09-09 13:05:17', '2020-09-09 15:17:10', '2 jam 11 menit ', NULL, NULL, NULL, NULL, '3'),
-('JT00028', 'JT1-00025', 19, 4, 'kj1', '9.09', '2020-09-10 12:56:57', '2020-09-10 13:05:39', '2020-09-10 15:08:37', '2 jam 2 menit ', NULL, NULL, NULL, NULL, '3'),
-('JT00029', 'JT1-00026', 21, 2, 'kj1', '261.31', '2020-09-11 09:56:20', '2020-09-11 09:58:09', '2020-09-11 16:22:57', '6 jam 24 menit ', NULL, NULL, NULL, '18', '3'),
-('JT00031', 'JT2-00004', 19, 5, 'kj2', '34.80', '2020-09-11 18:46:03', '2020-09-11 19:26:00', '2020-09-11 19:48:55', '22 menit ', NULL, NULL, NULL, '18', '3'),
-('JT00032', 'JT2-00005', 19, 5, 'kj2', '34.80', '2020-09-12 11:19:34', '2020-09-12 13:51:44', '2020-09-12 15:08:01', '1 jam 16 menit ', NULL, NULL, NULL, '18', '3'),
-('JT00033', 'JT1-00027', 18, 2, 'kj1', '2.88', '2020-09-15 10:51:43', '2020-09-15 10:54:34', '2020-09-15 15:46:53', '4 jam 52 menit ', NULL, NULL, NULL, '33', '3'),
-('JT00034', 'JT2-00006', 19, 5, 'kj2', '2.61', '2020-09-15 11:26:08', '2020-09-15 14:37:36', '2020-09-15 15:26:34', '48 menit ', NULL, NULL, NULL, '34', '3'),
-('JT00035', 'JT1-00028', 19, 4, 'kj1', '0.30', '2020-09-21 11:01:54', '2020-09-21 11:05:33', '2020-09-21 15:53:46', '4 jam 48 menit ', NULL, NULL, NULL, '34', '3'),
-('JT00036', 'JT2-00007', 18, 5, 'kj2', '48.62', '2020-09-21 13:15:33', '2020-09-21 13:30:43', '2020-09-21 16:01:50', '2 jam 31 menit ', NULL, NULL, NULL, '34', '3'),
-('JT00037', 'JT1-00029', 19, 4, 'kj1', '10.90', '2020-09-22 09:10:35', '2020-09-22 10:19:09', '2020-09-22 15:38:46', '5 jam 19 menit ', NULL, NULL, NULL, '33', '3'),
-('JT00038', 'JT1-00030', 20, 2, 'kj1', '19.65', '2020-09-22 10:30:47', '2020-09-22 10:32:11', '2020-09-22 15:38:33', '5 jam 6 menit ', NULL, NULL, NULL, '33', '3'),
-('JT00039', 'JT1-00031', 17, 2, 'kj1', '11.82', '2020-09-23 09:04:59', '2020-09-23 09:12:45', '2020-09-23 13:34:20', '4 jam 21 menit ', NULL, NULL, NULL, '34', '3'),
-('JT00040', 'JT2-00008', 19, 5, 'kj2', '11.12', '2020-09-23 13:37:18', '2020-09-23 14:27:11', '2020-09-23 14:32:21', '5 menit ', NULL, NULL, NULL, '34', '3'),
-('JT00041', 'JT2-00009', 20, 5, 'kj2', '3.56', '2020-09-24 11:09:31', '2020-09-24 11:21:11', '2020-09-24 14:01:02', '2 jam 39 menit ', NULL, NULL, NULL, '34', '3'),
-('JT00042', 'JT2-00010', 20, 3, 'kj2', '79.18', '2020-09-25 10:40:52', '2020-09-25 10:43:59', '2020-09-25 15:24:58', '4 jam 40 menit ', NULL, NULL, NULL, '34', '3'),
-('JT00043', 'JT2-00011', 21, 3, 'kj2', NULL, '2020-09-25 11:34:37', '2020-09-25 15:25:18', NULL, NULL, NULL, NULL, NULL, '34', '1'),
-('JT00044', 'JT1-00032', 18, 2, 'kj1', '29.47', '2020-09-25 14:45:02', '2020-09-25 14:48:51', '2020-09-25 15:38:10', '49 menit ', NULL, NULL, NULL, '34', '3'),
-('JT00045', 'JT1-00033', 23, 5, 'kj1', '134.59', '2020-09-28 09:34:28', '2020-09-28 09:39:32', '2020-09-28 16:34:54', '1 jam 6 menit', '5 jam 49 menit', NULL, NULL, '34', '3'),
-('JT00046', 'JT2-00012', 19, 5, 'kj2', '12.30', '2020-09-29 11:55:50', '2020-09-29 13:39:21', '2020-09-29 13:49:06', '9 menit', '0 menit', NULL, NULL, '34', '3'),
-('JT00047', 'JT2-00013', 19, 5, 'kj2', '6.04', '2020-10-01 11:04:03', '2020-10-01 11:10:11', '2020-10-01 11:21:51', '11 menit', '0 menit', NULL, NULL, '34', '3'),
-('JT00048', 'JT1-00034', 19, 4, 'kj1', '1.68', '2020-10-01 13:50:25', '2020-10-01 13:53:13', '2020-10-01 13:53:18', '0 menit', '0 menit', NULL, NULL, '33', '3'),
-('JT00049', 'JT2-00014', 20, 5, 'kj2', '12.25', '2020-10-02 09:53:47', '2020-10-02 09:56:09', '2020-10-02 15:09:19', '1 jam 18 menit', '3 jam 54 menit', NULL, NULL, '34', '3'),
-('JT00050', 'JT1-00035', 20, 4, 'kj1', '2.48', '2020-10-02 13:56:47', '2020-10-02 14:02:12', '2020-10-02 14:33:19', '31 menit', '0 menit', NULL, NULL, '34', '3'),
-('JT00051', 'JT2-00015', 20, 3, 'kj2', '7.11', '2020-10-02 15:09:47', '2020-10-02 15:19:04', '2020-10-02 15:29:08', '10 menit', '0 menit', NULL, NULL, '34', '3'),
-('JT00052', 'JT2-00016', 20, 3, 'kj2', '1.82', '2020-10-05 12:03:00', '2020-10-05 12:09:04', '2020-10-05 13:08:38', '59 menit', '0 menit', NULL, NULL, '34', '3'),
-('JT00053', 'JT2-00017', 21, 3, 'kj2', '94.50', '2020-10-05 12:11:31', '2020-10-05 13:01:05', '2020-10-05 14:21:44', '1 jam 20 menit', '0 menit', NULL, NULL, '34', '3'),
-('JT00054', 'JT1-00036', 19, 4, 'kj1', '20.54', '2020-10-05 13:42:24', '2020-10-05 13:47:56', '2020-10-05 15:30:30', '-17 menit', '2 jam 59 menit', NULL, NULL, '34', '3'),
-('JT00055', 'JT2-00018', 20, 3, 'kj2', '83.86', '2020-10-06 08:09:34', '2020-10-06 10:33:01', '2020-10-06 16:30:15', '3 menit', '5 jam 53 menit', NULL, NULL, '34', '3'),
-('JT00056', 'JT2-00019', 23, 5, 'kj2', '461.09', '2020-10-06 09:03:11', '2020-10-06 09:04:45', '2020-10-06 16:29:32', '1 jam 27 menit', '5 jam 57 menit', NULL, NULL, '34', '3'),
-('JT00057', 'JT1-00037', 19, 2, 'kj1', '14.93', '2020-10-06 10:23:38', '2020-10-06 10:26:58', '2020-10-06 10:36:46', '9 menit', '0 menit', NULL, NULL, '34', '3'),
-('JT00058', 'JT1-00038', 19, 4, 'kj1', '14.52', '2020-10-06 10:39:51', '2020-10-06 16:03:36', '2020-10-06 16:05:48', '2 menit', '0 menit', NULL, NULL, '34', '3'),
-('JT00059', 'JT2-00020', 16, 5, 'kj2', '113.42', '2020-10-06 15:19:18', '2020-10-06 15:24:31', '2020-10-06 15:53:19', '28 menit', '0 menit', NULL, NULL, '34', '3'),
-('JT00060', 'JT2-00021', 20, 3, 'kj2', '19.23', '2020-10-07 14:01:42', '2020-10-07 14:09:36', '2020-10-07 14:49:29', '39 menit', '0 menit', NULL, NULL, '35', '3'),
-('JT00061', 'JT2-00022', 21, 3, 'kj2', '56.25', '2020-10-08 11:20:08', '2020-10-08 11:34:04', '2020-10-08 11:34:47', '0 menit', '0 menit', NULL, NULL, '35', '3'),
-('JT00062', 'JT2-00023', 20, 3, 'kj2', '6.66', '2020-10-08 11:45:48', '2020-10-08 13:11:18', '2020-10-08 13:13:35', '2 menit', '0 menit', NULL, NULL, '35', '3'),
-('JT00063', 'JT1-00039', 21, 2, 'kj1', '107.17', '2020-10-09 09:43:18', '2020-10-09 10:10:17', '2020-10-09 14:36:12', '4 jam 25 menit', '0 menit', NULL, NULL, '33', '3'),
-('JT00064', 'JT2-00024', 20, 3, 'kj2', '19.89', '2020-10-09 09:48:08', '2020-10-09 09:55:27', '2020-10-09 14:58:15', '1 jam 33 menit', '3 jam 29 menit', NULL, NULL, '35', '3'),
-('JT00065', 'JT1-00040', 21, 4, 'kj1', '21.88', '2020-10-09 10:27:52', '2020-10-09 10:29:58', '2020-10-09 10:34:05', '4 menit', '0 menit', NULL, NULL, '33', '3'),
-('JT00066', 'JT2-00025', 19, 5, 'kj2', '19.49', '2020-10-10 10:23:49', '2020-10-10 10:27:54', '2020-10-10 19:16:37', '3 menit', '8 jam 45 menit', NULL, NULL, '34', '3'),
-('JT00067', 'JT2-00026', 23, 5, 'kj2', '8.59', '2020-10-12 09:41:47', '2020-10-12 09:45:14', '2020-10-12 14:31:25', '20 menit', '4 jam 26 menit', NULL, NULL, '34', '3'),
-('JT00068', 'JT1-00041', 19, 4, 'kj1', '21.14', '2020-10-12 10:40:01', '2020-10-12 10:44:57', '2020-10-12 15:02:08', '15 menit', '4 jam 1 menit', NULL, NULL, '34', '3'),
-('JT00069', 'JT1-00042', 19, 2, 'kj1', '8.90', '2020-10-12 11:00:50', '2020-10-12 11:03:24', '2020-10-12 14:41:43', '3 jam 38 menit', '0 menit', NULL, NULL, '33', '3'),
-('JT00070', 'JT2-00027', 20, 3, 'kj2', '10.00', '2020-10-12 11:10:36', '2020-10-12 11:18:47', '2020-10-12 13:51:28', '2 jam 32 menit', '0 menit', NULL, NULL, '34', '3'),
-('JT00071', 'JT2-00028', 15, 5, 'kj2', '33.00', '2020-10-12 14:32:04', '2020-10-12 14:35:07', '2020-10-12 14:57:23', '22 menit', '0 menit', NULL, NULL, '34', '3'),
-('JT00072', 'JT2-00029', 15, 5, 'kj2', NULL, '2020-10-15 09:01:25', NULL, NULL, NULL, NULL, NULL, NULL, '34', '1'),
-('JT00073', 'JT1-00043', 21, 2, 'kj1', NULL, '2020-10-15 09:47:49', '2020-10-15 09:49:03', NULL, NULL, NULL, NULL, NULL, '33', '1');
-
--- --------------------------------------------------------
-
---
--- Struktur dari tabel `log_system`
---
-
-CREATE TABLE IF NOT EXISTS `log_system` (
-`id_log` int(11) NOT NULL,
+CREATE TABLE `log_system` (
+  `id_log` int NOT NULL,
   `waktu` datetime NOT NULL,
   `nama_user` varchar(50) NOT NULL,
   `keterangan` text NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=813 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `log_system`
+-- Dumping data for table `log_system`
 --
 
 INSERT INTO `log_system` (`id_log`, `waktu`, `nama_user`, `keterangan`) VALUES
@@ -5464,421 +4756,308 @@ INSERT INTO `log_system` (`id_log`, `waktu`, `nama_user`, `keterangan`) VALUES
 (809, '2020-10-15 07:38:33', 'Admin_opskj1', 'login'),
 (810, '2020-10-15 09:01:05', 'c1_ridwan', 'login'),
 (811, '2020-10-15 09:35:31', 'c1_solihin', 'login'),
-(812, '2020-10-15 09:47:28', 'c1_solihin', 'login');
+(812, '2020-10-15 09:47:28', 'c1_solihin', 'login'),
+(813, '2020-10-15 10:21:57', 'c1_solihin', 'login'),
+(814, '2020-10-15 10:41:47', 'c1_ridwan', 'login'),
+(815, '2020-10-15 11:13:22', 'c1_ridwan', 'login'),
+(816, '2020-10-15 11:29:18', 'c1_ridwan', 'login'),
+(817, '2020-10-15 13:47:18', 'c1_ridwan', 'login'),
+(818, '2020-10-15 15:32:03', 'c1_solihin', 'login'),
+(819, '2020-10-15 15:50:57', 'hartono', 'login'),
+(820, '2020-10-15 15:53:52', 'Hartono', 'logout'),
+(821, '2020-10-15 15:53:57', 'Admin_opskj1', 'login'),
+(822, '2020-10-15 16:14:31', 'Admin OPS KJ1', 'logout'),
+(823, '2020-10-16 08:19:47', 'Admin_opskj1', 'login'),
+(824, '2020-10-16 08:20:37', 'Admin_opskj1', 'login'),
+(825, '2020-10-16 08:39:12', 'c1_solihin', 'login'),
+(826, '2020-10-16 09:09:10', 'hartono', 'login'),
+(827, '2020-10-16 09:11:05', 'hartono', 'login'),
+(828, '2020-10-16 09:24:08', 'hartono', 'login'),
+(829, '2020-10-16 09:34:10', 'Admin_opskj1', 'login'),
+(830, '2020-10-16 09:40:25', 'Admin OPS KJ1', 'logout'),
+(831, '2020-10-16 09:40:32', 'hartono', 'login'),
+(832, '2020-10-16 09:40:52', 'Hartono', 'logout'),
+(833, '2020-10-16 09:40:57', 'Admin_opskj1', 'login'),
+(834, '2020-10-16 10:26:57', 'Admin OPS KJ1', 'logout'),
+(835, '2020-10-16 10:29:23', 'Admin_opskj1', 'login'),
+(836, '2020-10-16 10:38:14', 'c1_ridwan', 'login'),
+(837, '2020-10-16 10:41:32', 'Admin OPS KJ1', 'logout'),
+(838, '2020-10-16 10:41:44', 'c1_ridwan', 'login'),
+(839, '2020-10-16 10:43:54', 'Muhammad RIdwan', 'logout'),
+(840, '2020-10-16 10:44:11', 'Admin_opskj1', 'login'),
+(841, '2020-10-16 11:25:22', 'Admin OPS KJ1', 'logout'),
+(842, '2020-10-16 11:25:29', 'hartono', 'login'),
+(843, '2020-10-16 11:34:52', 'Hartono', 'logout'),
+(844, '2020-10-16 11:50:39', 'Admin_opskj1', 'login'),
+(845, '2020-10-16 13:44:53', 'Admin OPS KJ1', 'logout'),
+(846, '2020-10-16 13:45:11', 'hartono', 'login'),
+(847, '2020-10-16 13:48:46', 'Hartono', 'logout'),
+(848, '2020-10-16 13:48:53', 'Admin_opskj1', 'login'),
+(849, '2020-10-16 14:36:23', 'Admin OPS KJ1', 'logout'),
+(850, '2020-10-16 16:00:16', 'c1_ridwan', 'login'),
+(851, '2020-10-16 16:09:40', 'Admin_opskj1', 'login'),
+(852, '2020-10-16 16:19:23', 'Admin OPS KJ1', 'logout'),
+(853, '2020-10-17 18:19:04', 'checker_kj1', 'login'),
+(854, '2020-10-17 18:19:53', 'Checker KJ1', 'logout'),
+(855, '2020-10-19 08:59:07', 'Admin_opskj1', 'login'),
+(856, '2020-10-19 08:59:25', 'Admin OPS KJ1', 'logout'),
+(857, '2020-10-19 09:01:53', 'Admin_opskj1', 'login'),
+(858, '2020-10-19 09:02:11', 'Admin OPS KJ1', 'logout'),
+(859, '2020-10-19 09:42:52', 'c1_ridwan', 'login'),
+(860, '2020-10-19 09:43:39', 'c1_ridwan', 'login'),
+(861, '2020-10-19 10:32:22', 'c1_solihin', 'login'),
+(862, '2020-10-19 13:26:17', 'c1_ridwan', 'login'),
+(863, '2020-10-19 13:50:14', 'hartono', 'login'),
+(864, '2020-10-19 14:01:35', 'c1_solihin', 'login'),
+(865, '2020-10-19 14:03:14', 'Hartono', 'logout'),
+(866, '2020-10-19 14:04:28', 'c1_ridwan', 'login'),
+(867, '2020-10-19 14:15:33', 'c1_ridwan', 'login'),
+(868, '2020-10-19 15:34:27', 'Admin_opskj1', 'login'),
+(869, '2020-10-19 17:17:26', 'Admin OPS KJ1', 'logout'),
+(870, '2020-10-20 09:26:26', 'c1_ridwan', 'login'),
+(871, '2020-10-20 09:46:03', 'c1_ridwan', 'login'),
+(872, '2020-10-20 10:10:15', 'c1_solihin', 'login'),
+(873, '2020-10-20 13:47:08', 'Admin_opskj1', 'login'),
+(874, '2020-10-20 13:50:08', 'Admin_opskj1', 'login'),
+(875, '2020-10-20 15:24:14', 'c1_ridwan', 'login'),
+(876, '2020-10-20 15:26:16', 'c1_ridwan', 'login'),
+(877, '2020-10-20 15:30:54', 'Admin OPS KJ1', 'logout'),
+(878, '2020-10-20 17:46:04', 'Admin_opskj1', 'login'),
+(879, '2020-10-20 17:58:23', 'Admin OPS KJ1', 'logout'),
+(880, '2020-10-20 17:58:43', 'Admin OPS KJ1', 'logout'),
+(881, '2020-10-21 09:17:40', 'Admin_opskj1', 'login'),
+(882, '2020-10-21 09:19:12', 'Admin OPS KJ1', 'logout'),
+(883, '2020-10-21 10:04:36', 'c1_ridwan', 'login'),
+(884, '2020-10-21 11:02:53', 'c1_ridwan', 'login'),
+(885, '2020-10-21 13:52:50', 'c1_ridwan', 'login'),
+(886, '2020-10-21 13:57:45', 'Admin_opskj1', 'login'),
+(887, '2020-10-21 14:51:34', 'c1_ridwan', 'login'),
+(888, '2020-10-21 16:10:20', 'Admin_opskj1', 'login'),
+(889, '2020-10-21 16:12:53', 'Admin OPS KJ1', 'logout'),
+(890, '2020-10-21 16:13:57', 'Admin_opskj1', 'login'),
+(891, '2020-10-21 16:15:14', 'Admin OPS KJ1', 'logout'),
+(892, '2020-10-21 16:15:20', 'c1_ridwan', 'login'),
+(893, '2020-10-21 16:31:40', 'Muhammad RIdwan', 'logout'),
+(894, '2020-10-21 16:31:46', 'Admin_opskj1', 'login'),
+(895, '2020-10-21 17:46:00', 'hartono', 'login'),
+(896, '2020-10-21 17:46:55', 'Hartono', 'logout'),
+(897, '2020-10-21 17:47:03', 'Admin_opskj1', 'login'),
+(898, '2020-10-21 20:33:54', 'c1_ridwan', 'login'),
+(899, '2020-10-21 21:13:34', 'Admin_opskj1', 'login'),
+(900, '2020-10-21 22:48:26', 'c1_ridwan', 'login'),
+(901, '2020-10-22 03:35:25', 'c1_ridwan', 'login'),
+(902, '2020-10-22 04:57:23', 'Admin_opskj1', 'login'),
+(903, '2020-10-22 08:16:19', 'Admin OPS KJ1', 'logout'),
+(904, '2020-10-22 08:36:54', 'c1_ridwan', 'login'),
+(905, '2020-10-22 08:42:10', 'Admin_opskj1', 'login'),
+(906, '2020-10-22 08:43:31', 'c1_solihin', 'login'),
+(907, '2020-10-22 08:46:26', 'c1_ridwan', 'login'),
+(908, '2020-10-22 08:47:38', 'c1_ridwan', 'login'),
+(909, '2020-10-22 09:51:41', 'Admin_opskj1', 'login'),
+(910, '2020-10-22 10:55:08', 'Muhammad RIdwan', 'logout'),
+(911, '2020-10-22 11:19:52', 'c1_ridwan', 'login'),
+(912, '2020-10-22 11:27:21', 'c1_ridwan', 'login'),
+(913, '2020-10-22 11:45:19', 'c1_ridwan', 'login'),
+(914, '2020-10-22 12:44:21', 'Admin_opskj1', 'login'),
+(915, '2020-10-22 12:46:23', 'Admin OPS KJ1', 'logout'),
+(916, '2020-10-22 13:44:35', 'c1_ridwan', 'login'),
+(917, '2020-10-22 14:00:37', 'Admin_opskj1', 'login'),
+(918, '2020-10-22 18:05:04', 'Admin OPS KJ1', 'logout'),
+(919, '2020-10-22 18:28:57', 'c1_ridwan', 'login'),
+(920, '2020-10-23 14:36:46', 'Admin_opskj1', 'login'),
+(921, '2020-10-23 16:02:57', 'Admin_opskj1', 'login'),
+(922, '2020-10-23 16:03:39', 'Admin OPS KJ1', 'logout'),
+(923, '2020-10-23 16:04:26', 'Admin_opskj1', 'login'),
+(924, '2020-10-24 22:29:50', 'c1_solihin', 'login'),
+(925, '2020-10-26 08:44:34', 'Admin_opskj1', 'login'),
+(926, '2020-10-26 09:32:56', 'c1_solihin', 'login'),
+(927, '2020-10-26 09:33:01', 'c1_solihin', 'login'),
+(928, '2020-10-26 09:33:06', 'c1_solihin', 'login'),
+(929, '2020-10-26 09:53:36', 'Admin_opskj1', 'login'),
+(930, '2020-10-26 09:55:10', 'Admin OPS KJ1', 'logout'),
+(931, '2020-10-26 09:58:00', 'c1_ridwan', 'login'),
+(932, '2020-10-26 13:38:57', 'c1_ridwan', 'login'),
+(933, '2020-10-26 14:56:10', 'c1_ridwan', 'login'),
+(934, '2020-10-26 18:19:38', 'Admin OPS KJ1', 'logout'),
+(935, '2020-10-26 20:57:40', 'c1_ridwan', 'login'),
+(936, '2020-10-27 08:30:53', 'Admin_opskj1', 'login'),
+(937, '2020-10-27 08:43:00', 'Admin_opskj1', 'login'),
+(938, '2020-10-27 09:20:11', 'Admin OPS KJ1', 'logout'),
+(939, '2020-10-27 09:54:26', 'hartono', 'login'),
+(940, '2020-10-27 10:31:10', 'hartono', 'login'),
+(941, '2020-10-27 11:31:21', 'Admin_opskj1', 'login'),
+(942, '2020-10-27 13:50:01', 'hartono', 'login'),
+(943, '2020-10-27 14:43:12', '', 'logout'),
+(944, '2020-10-27 14:43:29', 'Admin_opskj1', 'login'),
+(945, '2020-10-27 16:26:50', 'Hartono', 'logout'),
+(946, '2020-10-27 16:26:56', 'Admin_opskj1', 'login'),
+(947, '2020-10-27 16:27:40', 'Admin OPS KJ1', 'logout'),
+(948, '2020-10-27 16:27:49', 'Admin_opskj1', 'login'),
+(949, '2020-10-27 16:32:13', 'Admin OPS KJ1', 'logout'),
+(950, '2020-10-27 16:32:18', 'c1_ridwan', 'login'),
+(951, '2020-10-27 16:34:42', 'Muhammad RIdwan', 'logout'),
+(952, '2020-10-27 16:34:54', 'Admin_opskj1', 'login'),
+(953, '2020-10-27 16:36:08', 'Admin OPS KJ1', 'logout'),
+(954, '2020-10-27 16:36:19', 'c1_ridwan', 'login'),
+(955, '2020-10-27 16:37:45', 'Muhammad RIdwan', 'logout'),
+(956, '2020-10-27 16:37:51', 'Admin_opskj1', 'login'),
+(957, '2020-10-27 16:48:11', '', 'logout'),
+(958, '2020-10-30 01:13:36', 'Admin_opskj1', 'login'),
+(959, '2020-10-30 14:16:57', 'Admin_opskj1', 'login'),
+(960, '2020-10-30 15:55:10', 'Admin OPS KJ1', 'logout'),
+(961, '2020-10-30 20:00:46', 'Admin_opskj1', 'login');
+INSERT INTO `log_system` (`id_log`, `waktu`, `nama_user`, `keterangan`) VALUES
+(962, '2020-10-30 20:19:56', 'Admin OPS KJ1', 'logout'),
+(963, '2020-10-30 20:21:04', 'Admin_opskj1', 'login'),
+(964, '2020-10-30 22:05:42', 'Admin_opskj1', 'login'),
+(965, '2020-10-31 01:12:52', 'Admin OPS KJ1', 'logout'),
+(966, '2020-10-31 04:06:32', 'Admin_opskj1', 'login'),
+(967, '2020-10-31 04:46:52', 'Admin OPS KJ1', 'logout'),
+(968, '2020-10-31 07:34:34', 'c2_andri', 'login'),
+(969, '2020-10-31 10:22:13', 'Admin_opskj1', 'login'),
+(970, '2020-10-31 10:25:52', 'Admin OPS KJ1', 'logout'),
+(971, '2020-10-31 12:15:18', 'checker_kj1', 'login'),
+(972, '2020-10-31 12:17:22', 'Checker KJ1', 'logout'),
+(973, '2020-10-31 12:17:37', 'Admin_opskj1', 'login'),
+(974, '2020-10-31 12:20:59', 'Admin OPS KJ1', 'logout'),
+(975, '2020-10-31 20:07:43', 'Admin_opskj1', 'login'),
+(976, '2020-10-31 20:09:26', 'Admin OPS KJ1', 'logout'),
+(977, '2020-10-31 23:12:11', 'Admin_opskj1', 'login'),
+(978, '2020-10-31 23:13:47', 'Admin OPS KJ1', 'logout'),
+(979, '2020-11-02 10:00:12', 'Admin_opskj1', 'login'),
+(980, '2020-11-02 10:36:40', 'Admin OPS KJ1', 'logout'),
+(981, '2020-11-02 10:41:58', 'Admin_opskj1', 'login'),
+(982, '2020-11-02 10:42:41', 'Admin OPS KJ1', 'logout'),
+(983, '2020-11-02 10:44:22', 'Admin_opskj4', 'login'),
+(984, '2020-11-02 10:46:04', 'Admin_opskj4', 'login'),
+(985, '2020-11-02 11:47:28', 'Admin OPS KJ4', 'logout'),
+(986, '2020-11-02 11:47:35', 'Admin_opskj1', 'login'),
+(987, '2020-11-02 13:37:23', 'c1_solihin', 'login'),
+(988, '2020-11-02 13:38:59', 'Admin OPS KJ4', 'logout'),
+(989, '2020-11-02 13:39:08', 'Admin_opskj1', 'login'),
+(990, '2020-11-02 13:39:47', 'c1_solihin', 'login'),
+(991, '2020-11-02 13:44:16', 'Admin OPS KJ1', 'logout'),
+(992, '2020-11-02 13:44:28', '', 'logout'),
+(993, '2020-11-02 13:44:40', 'Admin_opskj4', 'login'),
+(994, '2020-11-02 14:45:53', 'Admin OPS KJ1', 'logout'),
+(995, '2020-11-02 14:52:44', 'Admin_opskj1', 'login'),
+(996, '2020-11-02 14:53:27', 'Admin OPS KJ1', 'logout'),
+(997, '2020-11-02 14:53:52', 'Admin OPS KJ4', 'logout'),
+(998, '2020-11-02 14:54:10', 'Admin_opskj1', 'login'),
+(999, '2020-11-02 15:01:55', 'Admin_opskj1', 'login'),
+(1000, '2020-11-02 15:02:20', 'Admin OPS KJ1', 'logout'),
+(1001, '2020-11-02 16:42:45', 'Admin OPS KJ1', 'logout'),
+(1002, '2020-11-03 07:55:01', 'hartono', 'login'),
+(1003, '2020-11-03 08:42:09', 'Admin_opskj1', 'login'),
+(1004, '2020-11-03 08:52:58', 'Admin OPS KJ1', 'logout'),
+(1005, '2020-11-03 13:48:09', 'Admin_opskj4', 'login'),
+(1006, '2020-11-03 13:53:37', 'Admin OPS KJ4', 'logout'),
+(1007, '2020-11-03 13:53:59', 'Admin_opskj4', 'login'),
+(1008, '2020-11-03 13:55:01', 'Admin_opskj4', 'login'),
+(1009, '2020-11-04 11:26:13', 'hartono', 'login'),
+(1010, '2020-11-04 11:32:47', 'Admin_opskj1', 'login'),
+(1011, '2020-11-04 11:33:00', 'Admin OPS KJ1', 'logout'),
+(1012, '2020-11-04 11:33:12', 'Admin_opskj1', 'login'),
+(1013, '2020-11-04 11:33:43', 'Admin OPS KJ1', 'logout'),
+(1014, '2020-11-04 11:33:57', 'Admin_opskj4', 'login'),
+(1015, '2020-11-04 11:46:43', 'Admin OPS KJ4', 'logout'),
+(1016, '2020-11-04 12:29:55', 'c1_ridwan', 'login'),
+(1017, '2020-11-05 16:29:44', 'Admin_opskj1', 'login'),
+(1018, '2020-11-06 14:50:01', 'Admin_opskj1', 'login'),
+(1019, '2020-11-06 14:50:06', 'Admin OPS KJ1', 'logout'),
+(1020, '2020-11-06 14:50:24', 'c1_ridwan', 'login'),
+(1021, '2020-11-06 15:00:16', 'Muhammad RIdwan', 'logout'),
+(1022, '2020-11-06 15:00:21', 'Admin_opskj1', 'login'),
+(1023, '2020-11-09 10:35:20', 'Admin_opskj1', 'login'),
+(1024, '2020-11-09 10:35:25', 'Admin OPS KJ1', 'logout'),
+(1025, '2020-11-09 10:36:07', 'c1_ridwan', 'login'),
+(1026, '2020-11-09 11:30:41', 'Muhammad RIdwan', 'logout'),
+(1027, '2020-11-09 11:30:49', 'c1_ridwan', 'login'),
+(1028, '2020-11-10 14:02:38', 'Admin_opskj1', 'login'),
+(1029, '2020-11-13 10:58:14', 'c1_ridwan', 'login'),
+(1030, '2020-11-13 13:48:14', 'c1_ridwan', 'login'),
+(1031, '2020-11-16 10:50:31', 'Admin_opskj1', 'login'),
+(1032, '2020-11-16 10:50:43', 'Admin OPS KJ1', 'logout'),
+(1033, '2020-11-16 10:50:47', 'Admin_opskj4', 'login'),
+(1034, '2020-11-16 11:11:49', 'Admin_opskj1', 'login'),
+(1035, '2020-11-16 11:15:07', 'Admin OPS KJ1', 'logout'),
+(1036, '2020-11-16 11:17:23', 'c1_ridwan', 'login'),
+(1037, '2020-11-16 11:38:23', 'c1_ridwan', 'login'),
+(1038, '2020-11-16 14:28:33', 'c1_ridwan', 'login'),
+(1039, '2020-11-16 16:56:38', '', 'logout'),
+(1040, '2020-11-17 08:41:57', 'Admin_opskj1', 'login'),
+(1041, '2020-11-17 10:11:22', 'Admin OPS KJ1', 'logout'),
+(1042, '2020-11-17 10:11:43', 'Admin_opskj4', 'login'),
+(1043, '2020-11-17 10:11:53', 'Admin OPS KJ4', 'logout'),
+(1044, '2020-11-17 11:28:48', 'Admin_opskj1', 'login'),
+(1045, '2020-11-19 15:16:58', 'Admin_opskj1', 'login'),
+(1046, '2020-11-19 16:12:53', 'Admin OPS KJ1', 'logout'),
+(1047, '2020-11-19 16:12:59', 'c1_ridwan', 'login'),
+(1048, '2020-11-19 16:13:07', 'Muhammad RIdwan', 'logout'),
+(1049, '2020-11-19 16:14:42', 'c2_andri', 'login'),
+(1050, '2020-11-19 16:17:35', 'Andri Gunawan', 'logout'),
+(1051, '2020-11-19 16:17:43', 'Admin_opskj1', 'login'),
+(1052, '2020-11-21 17:22:56', 'Admin_opskj4', 'login'),
+(1053, '2020-11-21 17:23:11', 'Admin OPS KJ4', 'logout'),
+(1054, '2020-11-21 17:23:19', 'Admin_opskj1', 'login'),
+(1055, '2020-11-21 17:25:11', 'Admin OPS KJ1', 'logout'),
+(1056, '2020-11-21 17:25:18', 'hartono', 'login'),
+(1057, '2020-11-21 17:30:23', 'hartono', 'login'),
+(1058, '2020-11-27 10:14:44', 'hartono', 'login'),
+(1059, '2020-11-30 08:51:33', 'Admin_opskj1', 'login'),
+(1060, '2020-11-30 08:52:24', 'Admin OPS KJ1', 'logout'),
+(1061, '2020-11-30 08:52:33', 'hartono', 'login'),
+(1062, '2020-11-30 13:10:58', 'Admin_opskj1', 'login'),
+(1063, '2020-11-30 13:11:04', 'Admin OPS KJ1', 'logout'),
+(1064, '2020-11-30 13:11:12', 'hartono', 'login'),
+(1065, '2020-11-30 13:11:26', 'hartono', 'login'),
+(1066, '2020-11-30 14:13:44', 'hartono', 'login'),
+(1067, '2020-12-01 09:55:17', 'hartono', 'login'),
+(1068, '2020-12-01 10:57:16', 'hartono', 'login'),
+(1069, '2020-12-01 12:16:05', 'hartono', 'login'),
+(1070, '2020-12-01 14:04:50', 'hartono', 'login'),
+(1071, '2020-12-01 15:45:30', 'hartono', 'login'),
+(1072, '2020-12-02 09:49:53', 'hartono', 'login'),
+(1073, '2020-12-02 13:14:39', 'hartono', 'login'),
+(1074, '2020-12-03 09:14:30', 'hartono', 'login'),
+(1075, '2020-12-03 11:18:14', 'hartono', 'login'),
+(1076, '2020-12-23 14:00:06', 'Admin_opskj1', 'login'),
+(1077, '2020-12-23 14:21:51', 'Admin_opskj4', 'login'),
+(1078, '2020-12-23 14:31:10', 'Admin_opskj4', 'login'),
+(1079, '2020-12-23 14:31:26', 'Admin_opskj1', 'login'),
+(1080, '2020-12-23 15:01:42', 'Admin OPS KJ1', 'logout'),
+(1081, '2020-12-23 15:06:10', 'Admin_opskj1', 'login'),
+(1082, '2021-01-01 21:44:11', 'Admin_opskj1', 'login'),
+(1083, '2021-01-01 21:44:35', 'Admin OPS KJ1', 'logout'),
+(1084, '2021-01-01 21:44:41', 'Admin_opskj1', 'login'),
+(1085, '2021-01-01 21:44:57', 'Admin OPS KJ1', 'logout'),
+(1086, '2021-01-01 21:45:04', 'Admin_opskj1', 'login'),
+(1087, '2021-01-01 21:45:54', 'Admin OPS KJ1', 'logout'),
+(1088, '2021-01-01 21:45:59', 'Admin_opskj4', 'login'),
+(1089, '2021-01-01 21:46:03', 'Admin OPS KJ4', 'logout'),
+(1090, '2021-01-01 21:46:08', 'Admin_opskj1', 'login'),
+(1091, '2021-01-02 08:23:20', 'Admin_opskj1', 'login'),
+(1092, '2021-01-02 10:44:51', 'Admin OPS KJ1', 'logout'),
+(1093, '2021-01-02 10:44:57', 'Admin_opskj1', 'login'),
+(1094, '2021-01-02 13:50:21', '', 'logout'),
+(1095, '2021-01-07 12:54:49', 'Admin_opskj1', 'login');
 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `moving`
+-- Table structure for table `timeline_joborder`
 --
 
-CREATE TABLE IF NOT EXISTS `moving` (
-  `id_moving` varchar(15) NOT NULL,
-  `nm_trailer` varchar(50) DEFAULT NULL,
-  `nm_alatberat` varchar(50) DEFAULT NULL,
-  `id_client` int(11) NOT NULL,
-  `nm_kegiatan` varchar(50) DEFAULT NULL,
-  `area` varchar(15) DEFAULT NULL,
-  `total_cargo` decimal(6,2) DEFAULT NULL,
-  `created_on` datetime DEFAULT NULL,
-  `mulai_kegiatan` datetime DEFAULT NULL,
-  `finish_kegiatan` datetime DEFAULT NULL,
-  `durasi` varchar(50) DEFAULT NULL,
-  `no_wo` text,
-  `komentar` text,
-  `status_moving` varchar(15) NOT NULL DEFAULT '1'
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data untuk tabel `moving`
---
-
-INSERT INTO `moving` (`id_moving`, `nm_trailer`, `nm_alatberat`, `id_client`, `nm_kegiatan`, `area`, `total_cargo`, `created_on`, `mulai_kegiatan`, `finish_kegiatan`, `durasi`, `no_wo`, `komentar`, `status_moving`) VALUES
-('TR00001', 'TRAILER 40 FT B.9239 IL', 'CRANE KATO R-33 70 TON', 1, NULL, 'kj1', '10.37', '2020-07-29 15:18:14', '2020-07-29 16:42:21', '2020-07-29 17:05:42', '23 menit ', '987654321', NULL, '5'),
-('TR00002', 'TRAILER 40 FT B.9239 IL', 'FORKLIFT F-31 3,5 TON', 4, NULL, 'kj1', '10.37', '2020-07-30 09:37:45', '2020-09-04 15:09:19', '2020-09-04 15:09:35', '0 menit ', NULL, NULL, '3');
-
--- --------------------------------------------------------
-
---
--- Struktur dari tabel `pengeluaran`
---
-
-CREATE TABLE IF NOT EXISTS `pengeluaran` (
-`id` int(11) NOT NULL,
-  `unit` varchar(20) NOT NULL,
-  `kode_brg` varchar(5) NOT NULL,
-  `jumlah` int(11) NOT NULL,
-  `tgl_keluar` date NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
-
---
--- Dumping data untuk tabel `pengeluaran`
---
-
-INSERT INTO `pengeluaran` (`id`, `unit`, `kode_brg`, `jumlah`, `tgl_keluar`) VALUES
-(3, 'mekanik', 'BR104', 1, '2019-07-31'),
-(4, 'mekanik', 'BR095', 2, '2019-07-31'),
-(5, 'mekanik', 'BR084', 2, '2019-07-31'),
-(6, 'mekanik', 'BR091', 1, '2019-08-22');
-
---
--- Trigger `pengeluaran`
---
-DELIMITER //
-CREATE TRIGGER `TG_STOK_UPDATE` AFTER INSERT ON `pengeluaran`
- FOR EACH ROW BEGIN
-	update stokbarang SET keluar=keluar + NEW.jumlah, 
-	sisa=stok-keluar WHERE 
-	kode_brg = NEW.kode_brg;
-
-	update permintaan SET status=1 WHERE kode_brg=NEW.kode_brg AND 
-	unit=NEW.unit;
-END
-//
-DELIMITER ;
-
--- --------------------------------------------------------
-
---
--- Struktur dari tabel `permintaan`
---
-
-CREATE TABLE IF NOT EXISTS `permintaan` (
-`id_permintaan` int(100) NOT NULL,
-  `unit` varchar(20) NOT NULL,
-  `kode_brg` varchar(5) NOT NULL,
-  `id_jenis` int(11) NOT NULL,
-  `jumlah` int(11) NOT NULL,
-  `tgl_permintaan` date NOT NULL,
-  `nama_tukang` varchar(20) NOT NULL,
-  `status` int(11) NOT NULL
-) ENGINE=MyISAM AUTO_INCREMENT=10 DEFAULT CHARSET=latin1;
-
---
--- Dumping data untuk tabel `permintaan`
---
-
-INSERT INTO `permintaan` (`id_permintaan`, `unit`, `kode_brg`, `id_jenis`, `jumlah`, `tgl_permintaan`, `nama_tukang`, `status`) VALUES
-(8, 'mekanik', 'BR091', 5, 1, '2019-07-31', 'Anang', 1),
-(4, 'mekanik', 'BR104', 4, 1, '2019-07-31', 'Anang', 1),
-(5, 'mekanik', 'BR091', 5, 1, '2019-07-31', 'Anang', 1),
-(6, 'mekanik', 'BR095', 5, 2, '2019-07-31', 'Anang', 1),
-(7, 'mekanik', 'BR084', 5, 2, '2019-07-31', 'Agus Priyanti', 1),
-(9, 'suleman', 'BR018', 1, 10, '2019-08-02', 'Agus', 0);
-
--- --------------------------------------------------------
-
---
--- Struktur dari tabel `satuan`
---
-
-CREATE TABLE IF NOT EXISTS `satuan` (
-`id_satuan` int(15) NOT NULL,
-  `nm_satuan` varchar(50) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=latin1;
-
---
--- Dumping data untuk tabel `satuan`
---
-
-INSERT INTO `satuan` (`id_satuan`, `nm_satuan`) VALUES
-(1, 'JAM'),
-(2, 'HARI'),
-(3, 'BULAN'),
-(4, 'SIFT'),
-(5, 'ORANG/HARI'),
-(6, 'ORANG/BULAN'),
-(7, 'METER'),
-(8, 'M3/T'),
-(9, 'TON'),
-(10, 'TRIP'),
-(11, 'KWH');
-
--- --------------------------------------------------------
-
---
--- Struktur dari tabel `sementara`
---
-
-CREATE TABLE IF NOT EXISTS `sementara` (
-`id_sementara` int(100) NOT NULL,
-  `unit` varchar(50) NOT NULL,
-  `kode_brg` varchar(5) NOT NULL,
-  `id_jenis` int(11) NOT NULL,
-  `jumlah` int(11) NOT NULL,
-  `tgl_permintaan` date NOT NULL,
-  `nama_tukang` varchar(20) NOT NULL,
-  `status` int(11) NOT NULL DEFAULT '0'
-) ENGINE=MyISAM AUTO_INCREMENT=10 DEFAULT CHARSET=latin1;
-
---
--- Dumping data untuk tabel `sementara`
---
-
-INSERT INTO `sementara` (`id_sementara`, `unit`, `kode_brg`, `id_jenis`, `jumlah`, `tgl_permintaan`, `nama_tukang`, `status`) VALUES
-(9, 'suleman', 'BR018', 1, 10, '2019-08-02', 'Agus', 0);
-
--- --------------------------------------------------------
-
---
--- Struktur dari tabel `stacking`
---
-
-CREATE TABLE IF NOT EXISTS `stacking` (
-  `id_stacking` varchar(15) NOT NULL,
-  `kode_stacking` varchar(15) DEFAULT NULL,
-  `id_alatberat` int(11) NOT NULL,
-  `id_client` int(11) NOT NULL,
-  `nm_kegiatan` varchar(50) DEFAULT NULL,
-  `area` varchar(15) DEFAULT NULL,
-  `total_cargo` decimal(6,2) DEFAULT NULL,
-  `created_on` datetime DEFAULT NULL,
-  `mulai_kegiatan` datetime DEFAULT NULL,
-  `finish_kegiatan` datetime DEFAULT NULL,
-  `durasi` varchar(50) DEFAULT NULL,
-  `durasi_jeda` varchar(50) DEFAULT NULL,
-  `no_wo` text,
-  `komentar` text,
-  `id_checker` varchar(15) DEFAULT NULL,
-  `status_stacking` varchar(15) NOT NULL DEFAULT '1'
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data untuk tabel `stacking`
---
-
-INSERT INTO `stacking` (`id_stacking`, `kode_stacking`, `id_alatberat`, `id_client`, `nm_kegiatan`, `area`, `total_cargo`, `created_on`, `mulai_kegiatan`, `finish_kegiatan`, `durasi`, `durasi_jeda`, `no_wo`, `komentar`, `id_checker`, `status_stacking`) VALUES
-('ST00001', NULL, 8, 3, 'Stacking', 'kj1', '19.02', '2020-07-28 11:29:38', '2020-07-28 11:57:10', '2020-07-28 13:55:12', '1 jam 58 menit ', NULL, '99999', NULL, NULL, '5'),
-('ST00002', NULL, 6, 4, 'Stacking', 'kj1', '5.19', '2020-07-28 14:48:43', '2020-07-28 14:51:14', '2020-09-04 15:08:59', '7 hari 0 jam 17 menit ', NULL, NULL, NULL, NULL, '3'),
-('ST00003', NULL, 19, 4, 'Stacking', 'kj1', '5.00', '2020-08-06 10:21:58', '2020-08-06 10:25:54', '2020-08-06 10:28:34', '2 menit ', NULL, NULL, NULL, NULL, '3'),
-('ST00004', NULL, 21, 2, 'Stacking', 'kj1', NULL, '2020-09-09 10:13:42', '2020-09-17 10:59:22', NULL, NULL, NULL, NULL, NULL, NULL, '1'),
-('ST00005', NULL, 19, 2, 'Stacking', 'kj1', NULL, '2020-09-09 14:26:27', NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1'),
-('ST00006', 'ST2-00001', 19, 5, 'Stacking', 'kj2', '44.28', '2020-09-16 08:48:45', '2020-09-16 08:52:27', '2020-09-16 11:03:16', '2 jam 10 menit ', NULL, NULL, NULL, '34', '3'),
-('ST00007', 'ST2-00002', 18, 5, 'Stacking', 'kj2', '15.36', '2020-09-17 08:57:04', '2020-09-17 09:01:27', '2020-09-17 09:52:11', '50 menit ', NULL, NULL, NULL, '34', '3'),
-('ST00008', 'ST2-00003', 21, 5, 'Stacking', 'kj2', '80.30', '2020-09-17 09:14:02', '2020-09-17 09:25:40', '2020-09-17 09:42:53', '17 menit ', NULL, NULL, NULL, '34', '3'),
-('ST00009', 'ST2-00004', 18, 5, 'Stacking', 'kj2', '8.66', '2020-09-21 09:00:05', '2020-09-21 09:01:39', '2020-09-21 15:53:23', '6 jam 51 menit ', NULL, NULL, NULL, '34', '3'),
-('ST00010', 'ST2-00005', 19, 5, 'Stacking', 'kj2', '1.35', '2020-09-22 10:20:30', '2020-09-22 14:05:23', '2020-09-22 15:01:11', '55 menit ', NULL, NULL, NULL, '34', '3'),
-('ST00011', 'ST1-00001', 21, 2, 'Stacking', 'kj1', '189.08', '2020-09-23 08:15:49', '2020-09-23 08:21:47', '2020-09-23 16:09:04', '7 jam 47 menit ', NULL, NULL, NULL, '34', '3'),
-('ST00012', 'ST1-00002', 17, 4, 'Stacking', 'kj1', '16.94', '2020-09-25 10:27:52', '2020-09-25 10:31:24', '2020-09-25 14:44:29', '4 jam 13 menit ', NULL, NULL, NULL, '34', '3'),
-('ST00013', 'ST1-00003', 19, 4, 'Stacking', 'kj1', '7.39', '2020-10-01 14:14:23', '2020-10-01 14:16:00', '2020-10-01 14:36:06', '20 menit', '0 menit', NULL, NULL, '33', '3'),
-('ST00014', 'ST1-00004', 19, 4, 'Stacking', 'kj1', '13.25', '2020-10-05 17:18:32', '2020-10-05 17:23:10', '2020-10-05 17:49:33', '26 menit', '0 menit', NULL, NULL, '34', '3'),
-('ST00015', 'ST1-00005', 19, 4, 'Stacking', 'kj1', '68.65', '2020-10-06 10:42:00', '2020-10-06 10:43:17', '2020-10-06 16:24:28', '2 jam 47 menit', '2 jam 54 menit', NULL, NULL, '34', '3'),
-('ST00016', 'ST1-00006', 21, 2, 'Stacking', 'kj1', '4714.88', '2020-10-09 09:18:02', '2020-10-09 09:21:44', '2020-10-09 15:51:57', '6 jam 30 menit', '0 menit', NULL, NULL, '33', '3'),
-('ST00017', 'ST1-00007', 21, 4, 'Stacking', 'kj1', '36.39', '2020-10-09 10:12:13', '2020-10-09 10:13:30', '2020-10-09 13:45:19', '3 jam 31 menit', '0 menit', NULL, NULL, '33', '3'),
-('ST00018', 'ST2-00006', 19, 5, 'Stacking', 'kj2', '36.02', '2020-10-10 09:01:12', '2020-10-10 09:03:10', '2020-10-10 09:26:17', '23 menit', '0 menit', NULL, NULL, '34', '3'),
-('ST00019', 'ST1-00008', 19, 2, 'Stacking', 'kj1', '67.18', '2020-10-12 09:06:29', '2020-10-12 09:08:29', '2020-10-12 14:18:36', '2 jam 53 menit', '2 jam 16 menit', NULL, NULL, '33', '3'),
-('ST00020', 'ST2-00007', 23, 5, 'Stacking', 'kj2', '36.30', '2020-10-12 09:38:46', '2020-10-12 09:41:04', '2020-10-12 11:00:03', '1 jam 18 menit', '0 menit', NULL, NULL, '34', '3'),
-('ST00021', 'ST2-00008', 20, 3, 'Stuffing', 'kj2', '56.25', '2020-10-12 11:15:06', '2020-10-12 13:54:03', '2020-10-12 13:56:07', '2 menit', '0 menit', NULL, NULL, '34', '3'),
-('ST00022', 'ST2-00009', 19, 5, 'Stacking', 'kj2', '37.77', '2020-10-13 09:10:12', '2020-10-13 09:11:24', '2020-10-13 10:47:25', '1 jam 36 menit', '0 menit', NULL, NULL, '34', '3'),
-('ST00023', 'ST1-00009', 20, 2, 'Stacking', 'kj1', '31.69', '2020-10-14 10:12:04', '2020-10-14 10:13:17', '2020-10-14 10:45:18', '32 menit', '0 menit', NULL, NULL, '33', '3');
-
--- --------------------------------------------------------
-
---
--- Struktur dari tabel `stokbarang`
---
-
-CREATE TABLE IF NOT EXISTS `stokbarang` (
-  `kode_brg` varchar(5) NOT NULL,
-  `id_jenis` int(2) NOT NULL,
-  `nama_brg` varchar(30) NOT NULL,
-  `satuan` varchar(50) DEFAULT NULL,
-  `stok` int(11) NOT NULL,
-  `keluar` int(11) DEFAULT '0',
-  `sisa` int(11) NOT NULL,
-  `tgl_masuk` date NOT NULL,
-  `suplier` varchar(20) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data untuk tabel `stokbarang`
---
-
-INSERT INTO `stokbarang` (`kode_brg`, `id_jenis`, `nama_brg`, `satuan`, `stok`, `keluar`, `sisa`, `tgl_masuk`, `suplier`) VALUES
-('BR001', 1, 'Pipa Steel  Ã˜ 2"', 'Meter', 180, 0, 180, '2017-01-08', ''),
-('BR002', 1, 'Pipa Steel Ã˜ 4"', 'Meter', 250, 28, 222, '2017-01-15', ''),
-('BR003', 1, 'Pipa Steel Ã˜ 6"', 'Meter', 30, 0, 30, '2017-04-17', ''),
-('BR004', 1, 'Pipa Steel Ã˜ 8"', 'Meter', 120, 0, 120, '2017-02-14', ''),
-('BR005', 1, 'Pipa Steel Ã˜ 12"', 'Meter', 210, 0, 210, '2017-02-14', ''),
-('BR006', 1, 'Pipa GS Ã˜ 1/2"', 'Meter', 468, 10, 458, '2017-03-15', ''),
-('BR007', 1, 'Pipa GS Ã˜ 3/4"', 'Meter', 248, 10, 238, '2017-03-30', ''),
-('BR008', 1, 'Pipa GS Ã˜ 1"', 'Meter', 454, 0, 454, '2017-03-27', ''),
-('BR009', 1, 'Pipa PVC Ã˜ 1/2"', 'Meter', 2316, 0, 2316, '2017-04-20', ''),
-('BR010', 1, 'Pipa PVC Ã˜ 1"', 'Meter', 230, 0, 230, '2017-05-16', ''),
-('BR011', 1, 'Pipa PVC Ã˜ 2"', 'Meter', 350, 0, 350, '2017-05-26', ''),
-('BR012', 1, 'Pipa PVC Ã˜ 4"', 'Meter', 300, 0, 300, '2017-04-18', ''),
-('BR013', 1, 'Pipa PVC Ã˜ 6"', 'Meter', 400, 0, 400, '2017-04-19', ''),
-('BR014', 1, 'Pipa HDPE Ã˜ 25 mm', 'Meter', 4450, 0, 4450, '2017-05-24', ''),
-('BR015', 1, 'Pipa HDPE Ã˜ 90 mm', 'Meter', 5887, 0, 5887, '2017-06-20', ''),
-('BR016', 1, 'Pipa Stenlis Ã˜ 1"', 'Meter', 6, 0, 6, '2017-06-20', ''),
-('BR017', 1, 'Pipa PE Ã˜ 200 mm', 'Meter', 1540, 0, 1540, '2017-06-21', ''),
-('BR018', 1, 'Pipa PE Ã˜ 400 mm', 'Meter', 2300, 0, 2300, '2017-05-25', ''),
-('BR019', 1, 'Pipa PE Ã˜ 500 mm', 'Meter', 116, 0, 116, '2017-05-30', ''),
-('BR020', 1, 'Pipa PE Ã˜ 710 mm', 'Meter', 618, 0, 618, '2017-06-20', ''),
-('BR021', 2, 'Meter Air Itron Ã˜ 1"', 'Set', 5100, 0, 5100, '2017-05-16', ''),
-('BR022', 2, 'Meter Air Drat Ã˜ 3/4"', 'Buah', 20, 4, 16, '2017-06-19', ''),
-('BR023', 2, 'Meter Air Drat Ã˜ 1"', 'Buah', 38, 35, 3, '2017-05-15', ''),
-('BR024', 2, 'Meter Air Drat Ã˜ 2"', 'Buah', 20, 5, 15, '2017-05-23', ''),
-('BR025', 2, 'Meter Air Drat Ã˜ 3"', 'Buah', 50, 42, 8, '2017-05-24', ''),
-('BR026', 2, 'Meter Air Flange Ã˜ 2"', 'Buah', 9, 2, 7, '2017-05-23', ''),
-('BR027', 2, 'Meter Air Flange Ã˜ 4"', 'Buah', 14, 0, 14, '2017-06-22', ''),
-('BR028', 2, 'Meter Air Flange Ã˜ 8"', 'Buah', 30, 0, 30, '2017-06-20', ''),
-('BR029', 2, 'Meter Air Flange Ã˜ 250mm', 'Buah', 30, 8, 22, '2017-05-22', ''),
-('BR030', 2, 'Meter Air Barindo Ã˜ 1/2"', 'Set', 12, 0, 12, '2017-07-02', ''),
-('BR031', 3, 'Dop PVC Ã˜ 3/4"', 'Buah', 1850, 0, 1850, '2017-06-12', ''),
-('BR032', 3, 'Dop PVC Ã˜ 1"', 'Buah', 13, 2, 11, '2017-06-18', ''),
-('BR033', 3, 'Dop PVC Ã˜ 2"', 'Buah', 232, 100, 132, '2017-06-20', ''),
-('BR034', 3, 'Dop PVC Ã˜ 3"', 'Buah', 20, 7, 13, '2017-06-19', ''),
-('BR035', 3, 'Dop PVC Ã˜ 4"', 'Buah', 35, 5, 30, '2017-06-19', ''),
-('BR036', 3, 'Bend PVC RR Ã˜ 2x90"', 'Buah', 50, 10, 40, '2017-06-27', ''),
-('BR037', 3, 'Bend PVC RR Ã˜ 3x90"', 'Buah', 48, 4, 44, '2017-06-26', ''),
-('BR038', 3, 'Bend PVC RR Ã˜ 3x45"', 'Buah', 166, 5, 161, '2017-06-20', ''),
-('BR039', 3, 'Bend PVC RR Ã˜ 6x90"', 'Buah', 144, 0, 144, '2017-06-21', ''),
-('BR040', 3, 'Bend PVC RR Ã˜ 6x45"', 'Buah', 49, 8, 41, '2017-06-28', ''),
-('BR041', 3, 'Faucet Socket PVC Ã˜ 3/4"', 'Buah', 4206, 0, 4206, '2017-06-27', ''),
-('BR042', 3, 'Faucet Socket PVC Ã˜ 1"', 'Buah', 1980, 40, 1940, '2017-06-20', ''),
-('BR043', 3, 'Faucet Socket PVC Ã˜ 2"', 'Buah', 10, 0, 10, '2017-06-27', ''),
-('BR044', 3, 'Faucet Socket PVC Ã˜ 3"', 'Buah', 13, 0, 13, '2017-06-27', ''),
-('BR045', 3, 'Faucet Socket PVC Ã˜ 300"', 'Buah', 77, 0, 77, '2017-06-27', ''),
-('BR046', 3, 'Kopling Pipa PVC Ã˜ 3/4"', 'Buah', 7469, 0, 7469, '2017-06-27', ''),
-('BR047', 3, 'Knee PVC Ã˜ 1/2"', 'Buah', 9187, 0, 9187, '2017-06-25', ''),
-('BR048', 3, 'Knee PVC Ã˜ 3/4"', 'Buah', 3169, 0, 3169, '2017-07-28', ''),
-('BR049', 3, 'Knee PVC Ã˜ 1"', 'Buah', 22, 0, 22, '2017-06-28', ''),
-('BR050', 3, 'Knee PVC Ã˜ 2"', 'Buah', 35, 0, 35, '2017-06-28', ''),
-('BR051', 3, 'Knee SC - PVC Ã˜ 2 1/2x90', 'Buah', 1, 0, 1, '2017-06-28', ''),
-('BR052', 3, 'Reducer PVC Ã˜ 3x2"', 'Buah', 24, 0, 24, '2017-06-28', ''),
-('BR053', 3, 'Reducer PVC Ã˜ 4x2"', 'Buah', 183, 0, 183, '2017-06-28', ''),
-('BR054', 3, 'Reducer PVC Ã˜ 4x3"', 'Buah', 143, 0, 143, '2017-06-28', ''),
-('BR055', 3, 'Reducer PVC Ã˜ 6x2"', 'Buah', 50, 0, 50, '2017-06-28', ''),
-('BR056', 3, 'Reducer PVC Ã˜ 8x6"', 'Buah', 52, 0, 52, '2017-06-30', ''),
-('BR057', 3, 'Reducer PVC Ã˜ 8x4"', 'Buah', 54, 0, 54, '2017-06-30', ''),
-('BR058', 3, 'Repair Socket PVC Ã˜ 3"', 'Buah', 653, 0, 653, '2017-07-03', ''),
-('BR059', 3, 'Repair Socket PVC Ã˜ 4"', 'Buah', 322, 0, 322, '2017-07-04', ''),
-('BR060', 3, 'Repair Socket PVC Ã˜ 6"', 'Buah', 40, 0, 40, '2017-07-04', ''),
-('BR061', 3, 'Repair Socket PVC Ã˜ 12"', 'Buah', 21, 0, 21, '2017-07-05', ''),
-('BR062', 3, 'Sock Reduser Ã˜ 1"', 'Buah', 18, 0, 18, '2017-07-05', ''),
-('BR063', 3, 'Sock PVC Ã˜ 2"', 'Buah', 18, 0, 18, '2017-07-06', ''),
-('BR064', 3, 'Tee PVC RR Ã˜ 4x3"', 'Buah', 163, 0, 163, '2017-07-06', ''),
-('BR065', 3, 'Tee PVC RR Ã˜ 4x4"', 'Buah', 359, 35, 324, '2017-07-03', ''),
-('BR066', 3, 'Tee PVC RR Ã˜ 3x3"', 'Buah', 361, 0, 361, '2017-07-06', ''),
-('BR067', 3, 'Tee PVC RR Ã˜ 4x2"', 'Buah', 155, 0, 155, '2017-07-05', ''),
-('BR068', 3, 'Tee PVC RR Ã˜ 2x2"', 'Buah', 201, 0, 201, '2017-06-30', ''),
-('BR069', 3, 'Tee PVC RR Ã˜ 8x6"', 'Buah', 104, 0, 104, '2017-07-05', ''),
-('BR070', 3, 'Tee PVC Ã˜ 1/2"', 'Buah', 862, 0, 862, '2017-07-05', ''),
-('BR071', 1, 'Pipa Steel Selubung Ã˜ 1100"', 'Meter', 25, 0, 25, '2017-07-03', ''),
-('BR072', 1, 'Pipa STC Leaning Ã˜ 300m', 'Meter', 105, 0, 105, '2017-07-03', ''),
-('BR073', 1, 'Pipa STC Leaning Ã˜ 600m', 'Meter', 138, 0, 138, '2017-07-03', ''),
-('BR074', 1, 'Pipa STC Leaning Ã˜ 200mm', 'Meter', 80, 0, 80, '2017-07-03', ''),
-('BR075', 1, 'Pipa STC Leaning Ã˜ 400m', 'Meter', 326, 0, 326, '2017-07-03', ''),
-('BR076', 1, 'Pipa PE Ã˜ 315 mm', 'Meter', 1641, 0, 1641, '2017-07-03', ''),
-('BR077', 1, 'Pipa PE Ã˜ 160 mm', 'Meter', 5933, 0, 5933, '2017-07-03', ''),
-('BR078', 1, 'Pipa PE Ã˜ 110 mm', 'Meter', 16981, 0, 16981, '2017-07-03', ''),
-('BR079', 1, 'Pipa PVC Ã˜ 3"', 'Meter', 20, 0, 20, '2017-07-03', ''),
-('BR080', 1, 'Pipa PVC Ã˜ 12"', 'Meter', 15, 0, 15, '2017-07-03', ''),
-('BR081', 4, 'Minyak Compressor Ã˜ SAE 30', 'Liter', 12, 0, 12, '2017-07-10', ''),
-('BR082', 4, 'Minyak Hidrolex Ã˜ SAE 10', 'Liter', 68, 0, 68, '2017-07-05', ''),
-('BR083', 5, 'Ampere Meter  800/5A', 'Buah', 9, 0, 9, '2017-07-11', ''),
-('BR084', 5, 'Bohlam Control', 'Buah', 17, 2, 15, '2017-07-12', ''),
-('BR085', 4, 'Minyak Diala Ã˜ C/B', 'Liter', 180, 0, 180, '2017-07-16', ''),
-('BR086', 4, 'Grease Draton', 'Kg', 18, 0, 18, '2017-07-16', ''),
-('BR087', 4, 'Oli Gardan Rored Ã˜ SAE 12', 'Liter', 70, 4, 66, '2017-07-16', ''),
-('BR088', 5, 'Push Button', 'Buah', 5, 0, 5, '2017-07-16', ''),
-('BR089', 5, 'Skun Kabel Ã˜ 50 mm', 'Buah', 95, 0, 95, '2017-07-16', ''),
-('BR090', 5, 'Terminal KB SPB Ã˜ 60', 'Buah', 5, 0, 5, '2017-07-16', ''),
-('BR091', 5, 'Dynamo  Star Yanmar Ã˜ 12V', 'Buah', 4, 1, 3, '2017-07-16', ''),
-('BR092', 5, 'Kabel NYY Ã˜ 2x2,5mm', 'Meter', 100, 0, 100, '2017-07-18', ''),
-('BR093', 5, 'Kabel Ties', 'Bungkus', 1, 0, 1, '2017-07-12', ''),
-('BR094', 5, 'Time Delay Ã˜ 0-30s', 'Buah', 5, 0, 5, '2017-07-11', ''),
-('BR095', 5, 'Konektor Ã˜ 120mm', 'Buah', 8, 2, 6, '2017-07-11', ''),
-('BR096', 5, 'Ballast SON Ã˜ 250 Watt', 'Buah', 4, 0, 4, '2017-07-05', ''),
-('BR097', 5, 'MCB', 'Buah', 12, 0, 12, '2017-07-09', ''),
-('BR098', 5, 'Skun Ã˜ 70', 'Buah', 1500, 0, 1500, '2017-07-10', ''),
-('BR099', 5, 'Timer Omron Ã˜ H3CR', 'Buah', 10, 0, 10, '2017-07-02', ''),
-('BR100', 4, 'Pelumas Mesran Ã˜ SAE 20-50', 'Liter', 30, 0, 30, '2017-07-10', ''),
-('BR101', 4, 'Pelumas Meditran Ã˜ SAE 40', 'Liter', 139, 0, 139, '2017-07-04', ''),
-('BR102', 4, 'Gemuk Biasa', 'Kaleng', 10, 0, 10, '2017-07-11', ''),
-('BR103', 4, 'Grease SKF LGHP Ã˜ 2/1', 'Kg', 3, 0, 3, '2017-06-26', ''),
-('BR104', 4, 'Minyak Oli Ã˜ SAE 90', 'Liter', 10, 1, 9, '2017-07-02', ''),
-('BR105', 4, 'Oli Diesel Ã˜ SAE 15W-40', 'Liter', 45, 0, 45, '2017-07-03', ''),
-('BR106', 1, 'Pipa Galvanis', 'Meter', 35, 0, 35, '2017-07-18', ''),
-('BR107', 2, 'meter air 2002', 'meter', 20, 1, 19, '2017-07-20', 'Adi'),
-('BR108', 1, 'pipa 2002', 'meter', 10, 0, 10, '2017-07-21', 'sukiman'),
-('BR109', 3, 'Vga to Hdmi', 'Pcs', 1, 0, 1, '2019-07-29', 'CMS'),
-('BR110', 3, 'Kabel HDMI 3M', 'unit', 1, 0, 1, '2019-07-31', 'CMS'),
-('BR111', 5, 'Filter ', 'Buah', 3, 0, 3, '1900-12-05', 'Cv. Jaya Teknik'),
-('BR112', 1, 'Tralon', 'Batang', 200, 0, 200, '2019-08-01', 'TB. Aji Kempet');
-
--- --------------------------------------------------------
-
---
--- Struktur dari tabel `tarif_shorebase`
---
-
-CREATE TABLE IF NOT EXISTS `tarif_shorebase` (
-`id_tarif` int(15) NOT NULL,
-  `nm_kegiatan` varchar(50) NOT NULL,
-  `id_jenis` varchar(15) NOT NULL,
-  `id_client` varchar(15) NOT NULL,
-  `nominal_tarif` bigint(50) NOT NULL,
-  `id_satuan` varchar(15) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=latin1;
-
---
--- Dumping data untuk tabel `tarif_shorebase`
---
-
-INSERT INTO `tarif_shorebase` (`id_tarif`, `nm_kegiatan`, `id_jenis`, `id_client`, `nominal_tarif`, `id_satuan`) VALUES
-(1, 'Stevedoring And Cargo Handling (Fixed Cost)', '1', '1', 2702716500, '3'),
-(2, 'Loading', '1', '2', 272000, '8'),
-(3, 'Offloading', '1', '2', 272000, '8'),
-(4, 'Loading', '1', '3', 114500, '8'),
-(5, 'Offloading', '1', '3', 106000, '8'),
-(6, 'Loading', '1', '4', 260000, '8'),
-(7, 'Offloading', '1', '4', 260000, '8');
-
--- --------------------------------------------------------
-
---
--- Struktur dari tabel `timeline_cargo`
---
-
-CREATE TABLE IF NOT EXISTS `timeline_cargo` (
-`id` int(50) NOT NULL,
-  `id_joborder` varchar(15) NOT NULL,
-  `tanggalCargo` date NOT NULL,
-  `startCargo` time NOT NULL,
-  `finishCargo` time NOT NULL,
-  `statusTimeline` int(10) NOT NULL DEFAULT '0'
-) ENGINE=InnoDB AUTO_INCREMENT=28 DEFAULT CHARSET=latin1;
-
---
--- Dumping data untuk tabel `timeline_cargo`
---
-
-INSERT INTO `timeline_cargo` (`id`, `id_joborder`, `tanggalCargo`, `startCargo`, `finishCargo`, `statusTimeline`) VALUES
-(22, 'JV00001', '2019-09-13', '14:00:00', '16:00:00', 0),
-(23, 'JV00001', '2019-09-13', '14:00:00', '16:00:00', 1),
-(24, 'JV00002', '2019-09-05', '08:00:00', '17:30:00', 1),
-(25, 'JV00003', '2019-09-20', '08:20:00', '14:00:00', 1),
-(26, 'JV00004', '2019-09-23', '12:05:00', '12:30:00', 1),
-(27, 'JV00005', '2019-09-27', '14:48:00', '15:08:00', 1);
-
--- --------------------------------------------------------
-
---
--- Struktur dari tabel `timeline_joborder`
---
-
-CREATE TABLE IF NOT EXISTS `timeline_joborder` (
-`id_timeline` int(11) NOT NULL,
-  `id_joborder` varchar(15) CHARACTER SET utf8 NOT NULL,
+CREATE TABLE `timeline_joborder` (
+  `id_timeline` int NOT NULL,
+  `id_joborder` varchar(15) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
   `waktu_stop` datetime NOT NULL,
   `waktu_mulaikembali` datetime DEFAULT NULL,
-  `keterangan_jeda` varchar(200) CHARACTER SET utf8 DEFAULT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=63 DEFAULT CHARSET=latin1;
+  `keterangan_jeda` varchar(200) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `timeline_joborder`
+-- Dumping data for table `timeline_joborder`
 --
 
 INSERT INTO `timeline_joborder` (`id_timeline`, `id_joborder`, `waktu_stop`, `waktu_mulaikembali`, `keterangan_jeda`) VALUES
@@ -5903,7 +5082,7 @@ INSERT INTO `timeline_joborder` (`id_timeline`, `id_joborder`, `waktu_stop`, `wa
 (23, 'JV00013', '2020-07-22 08:30:53', '2020-07-22 08:30:59', 'Istirahat'),
 (24, 'JV00013', '2020-07-22 11:23:09', '2020-07-22 13:20:08', 'Istirahat'),
 (25, 'JV00013', '2020-07-22 17:22:54', '2020-07-22 20:10:59', 'Istirahat..lanjut malam'),
-(26, 'JV00013', '2020-07-22 20:51:43', '2020-07-22 22:17:51', 'Offloading truck Conductor 30" - 9 joint'),
+(26, 'JV00013', '2020-07-22 20:51:43', '2020-07-22 22:17:51', 'Offloading truck Conductor 30\" - 9 joint'),
 (27, 'JV00013', '2020-07-22 23:28:58', '2020-07-23 08:28:51', 'Istirahat..Dinner'),
 (28, 'JV00013', '2020-07-23 11:21:01', '2020-07-23 13:24:59', 'Breake, makan siang'),
 (29, 'JV00013', '2020-07-23 14:47:11', '2020-07-23 15:04:13', 'Crane ngisi solar'),
@@ -5937,618 +5116,224 @@ INSERT INTO `timeline_joborder` (`id_timeline`, `id_joborder`, `waktu_stop`, `wa
 (59, 'JV00030', '2020-10-08 11:57:09', '2020-10-08 14:24:38', 'Break'),
 (60, 'JV00031', '2020-10-13 16:50:13', '2020-10-13 19:52:38', 'Istirahat magrib'),
 (61, 'JV00031', '2020-10-13 23:30:57', '2020-10-14 02:03:20', 'Istirahat'),
-(62, 'JV00031', '2020-10-14 03:46:32', '2020-10-14 13:57:18', 'Istirahat');
+(62, 'JV00031', '2020-10-14 03:46:32', '2020-10-14 13:57:18', 'Istirahat'),
+(63, 'JV00032', '2020-10-21 11:45:51', '2020-10-21 13:53:06', 'Break'),
+(64, 'JV00032', '2020-10-21 17:16:29', '2020-10-21 21:53:41', 'Break'),
+(65, 'JV00032', '2020-10-21 23:58:28', NULL, 'Break'),
+(66, 'JV00032', '2020-10-21 23:58:28', '2020-10-22 03:35:36', 'Break'),
+(67, 'JV00032', '2020-10-22 04:19:38', '2020-10-22 08:47:54', 'Break'),
+(68, 'JV00032', '2020-10-22 11:46:10', '2020-10-22 13:44:53', 'Break'),
+(69, 'JV00035', '2020-10-31 09:36:45', '2020-10-31 13:35:16', 'Buka palka dan tali lassing'),
+(70, 'JV00035', '2020-10-31 15:12:45', '2020-10-31 15:31:32', 'Hujan'),
+(71, 'JV00035', '2020-10-31 15:49:32', '2020-10-31 19:51:51', 'Hujan');
 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `timeline_jobordertruck`
+-- Table structure for table `user`
 --
 
-CREATE TABLE IF NOT EXISTS `timeline_jobordertruck` (
-`id_timeline` int(11) NOT NULL,
-  `id_jobordertruck` varchar(15) NOT NULL,
-  `waktu_stop` datetime NOT NULL,
-  `waktu_mulaikembali` datetime DEFAULT NULL,
-  `keterangan_jeda` varchar(200) CHARACTER SET utf8 DEFAULT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=61 DEFAULT CHARSET=latin1;
-
---
--- Dumping data untuk tabel `timeline_jobordertruck`
---
-
-INSERT INTO `timeline_jobordertruck` (`id_timeline`, `id_jobordertruck`, `waktu_stop`, `waktu_mulaikembali`, `keterangan_jeda`) VALUES
-(1, 'JT00013', '2020-08-13 10:23:36', '2020-08-13 10:25:25', 'istirahat'),
-(2, 'JT00013', '2020-08-13 10:26:20', NULL, 'menunggu trip 2'),
-(3, 'JT00013', '2020-08-13 10:26:22', '2020-09-04 15:06:42', 'menunggu trip 2'),
-(4, 'JT00012', '2020-08-13 14:27:21', '2020-08-13 14:27:47', 'menunggu vendor selanjutnya'),
-(5, 'JT00012', '2020-08-13 14:30:12', '2020-08-13 14:30:23', 'hujan'),
-(6, 'JT00019', '2020-08-18 13:53:04', '2020-08-18 14:51:01', 'Menunggu cargo berikutnya'),
-(7, 'JT00015', '2020-08-28 10:30:47', '2020-09-04 15:06:16', 'Istirahat'),
-(8, 'JT00012', '2020-09-04 11:51:19', '2020-09-04 15:06:52', 'Istirahat'),
-(9, 'JT00024', '2020-09-04 14:58:22', '2020-09-04 14:59:31', 'ban kempes'),
-(10, 'JT00025', '2020-09-08 11:15:24', '2020-09-08 19:16:37', 'Waiting cargo'),
-(11, 'JT00027', '2020-09-09 13:13:52', '2020-09-09 14:13:41', 'Menunggu cargo berikutnya'),
-(12, 'JT00027', '2020-09-09 14:14:08', '2020-09-09 15:17:02', 'Waiting cargo'),
-(13, 'JT00028', '2020-09-10 13:15:53', '2020-09-10 14:04:47', 'Waiting cargo'),
-(14, 'JT00028', '2020-09-10 14:11:32', '2020-09-10 14:28:08', 'Waiting cargo'),
-(15, 'JT00028', '2020-09-10 14:28:20', '2020-09-10 15:08:33', 'Waiting cargo'),
-(16, 'JT00029', '2020-09-11 09:59:00', '2020-09-11 09:59:15', 'Selesai'),
-(19, 'JT00032', '2020-09-12 14:16:17', '2020-09-12 15:07:53', 'Cargo sudah close'),
-(20, 'JT00034', '2020-09-15 14:44:22', '2020-09-15 15:26:28', 'Waiting cargo'),
-(21, 'JT00035', '2020-09-21 11:13:32', '2020-09-21 15:53:41', 'Waiting'),
-(22, 'JT00039', '2020-09-23 09:47:06', '2020-09-23 13:29:15', 'Waiting cargo'),
-(23, 'JT00039', '2020-09-23 13:34:42', '2020-09-23 15:04:39', 'Waiting cargo'),
-(24, 'JT00040', '2020-09-23 15:04:17', '2020-09-23 15:04:23', 'Stop'),
-(25, 'JT00041', '2020-09-24 12:07:48', '2020-09-24 13:51:57', 'Break makan siang'),
-(26, 'JT00041', '2020-09-24 14:01:18', '2020-09-24 15:59:05', 'waiting cargo'),
-(27, 'JT00042', '2020-09-25 11:09:32', '2020-09-25 13:04:33', 'Jam istirahat'),
-(28, 'JT00042', '2020-09-25 13:10:40', '2020-09-25 13:30:54', 'Menunggu barang datang'),
-(29, 'JT00042', '2020-09-25 13:37:18', '2020-09-25 14:16:07', 'Menunggu barang'),
-(30, 'JT00042', '2020-09-25 14:17:16', '2020-09-25 15:23:13', 'Menunggu barang'),
-(31, 'JT00045', '2020-09-28 09:49:26', '2020-09-28 09:59:26', 'Menunggu trucking'),
-(32, 'JT00045', '2020-09-28 10:37:47', '2020-09-28 16:16:50', 'Nunggu cargo berikutnya'),
-(33, 'JT00046', '2020-09-29 13:49:17', '2020-09-29 15:59:40', 'Menunggu cargo'),
-(34, 'JT00047', '2020-10-01 11:22:14', '2020-10-01 15:39:43', 'Break makan siang'),
-(35, 'JT00043', '2020-10-01 15:40:15', '2020-10-01 15:40:21', 'Ya'),
-(36, 'JT00049', '2020-10-02 10:34:43', '2020-10-02 13:44:14', 'Waiting cargo'),
-(37, 'JT00049', '2020-10-02 13:52:45', '2020-10-02 14:37:54', 'Waiting cargo'),
-(40, 'JT00050', '2020-10-02 14:02:49', '2020-10-02 14:33:07', 'finish'),
-(41, 'JT00050', '2020-10-02 14:34:04', '2020-10-02 15:08:42', 'Waiting cargo'),
-(42, 'JT00054', '2020-10-05 14:02:09', '2020-10-05 17:01:16', 'Waiting cargo'),
-(43, 'JT00053', '2020-10-05 14:23:36', '2020-10-05 15:30:49', 'Menunggu barang'),
-(44, 'JT00056', '2020-10-06 09:32:24', '2020-10-06 10:36:17', 'Waiting cargo'),
-(45, 'JT00055', '2020-10-06 10:34:04', '2020-10-06 15:34:08', 'Menunggu pengambilan/penerimaan selanjutnya'),
-(46, 'JT00057', '2020-10-06 10:36:56', '2020-10-06 15:53:33', 'Waiting cargo'),
-(47, 'JT00056', '2020-10-06 10:40:54', '2020-10-06 13:34:12', 'Waiting cargo'),
-(48, 'JT00056', '2020-10-06 13:37:37', '2020-10-06 13:58:51', 'Waiting cargo'),
-(49, 'JT00056', '2020-10-06 14:39:52', '2020-10-06 14:56:54', 'Waiting cargo'),
-(50, 'JT00056', '2020-10-06 15:06:19', '2020-10-06 16:28:21', 'Waiting cargo'),
-(51, 'JT00055', '2020-10-06 15:35:07', '2020-10-06 16:09:05', 'Jam operasional berakhir'),
-(52, 'JT00055', '2020-10-06 16:09:50', '2020-10-06 16:29:47', 'Jam operasional telah berakhir'),
-(53, 'JT00061', '2020-10-08 11:35:18', '2020-10-08 15:10:14', 'Istirahat'),
-(54, 'JT00064', '2020-10-09 09:59:24', '2020-10-09 13:28:25', 'Menunggu barang'),
-(55, 'JT00066', '2020-10-10 10:31:05', '2020-10-10 19:16:20', 'Waiting car .'),
-(56, 'JT00067', '2020-10-12 10:05:12', '2020-10-12 14:31:17', 'Waiting cargo'),
-(57, 'JT00068', '2020-10-12 10:59:01', '2020-10-12 15:00:15', 'Waiting cargo'),
-(58, 'JT00067', '2020-10-12 14:31:37', '2020-10-12 16:58:45', 'Waiting cargo'),
-(59, 'JT00071', '2020-10-12 14:57:33', '2020-10-12 14:59:47', 'Selesai'),
-(60, 'JT00043', '2020-10-12 17:00:13', '2020-10-12 17:00:18', 'Yes');
-
--- --------------------------------------------------------
-
---
--- Struktur dari tabel `timeline_moving`
---
-
-CREATE TABLE IF NOT EXISTS `timeline_moving` (
-`id_timeline` int(11) NOT NULL,
-  `id_moving` varchar(15) NOT NULL,
-  `waktu_stop` datetime NOT NULL,
-  `waktu_mulaikembali` datetime DEFAULT NULL,
-  `keterangan_jeda` varchar(200) CHARACTER SET utf8 DEFAULT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
-
---
--- Dumping data untuk tabel `timeline_moving`
---
-
-INSERT INTO `timeline_moving` (`id_timeline`, `id_moving`, `waktu_stop`, `waktu_mulaikembali`, `keterangan_jeda`) VALUES
-(4, 'TR00001', '2020-07-29 16:44:39', '2020-07-29 16:45:46', 'Test Istirahat');
-
--- --------------------------------------------------------
-
---
--- Struktur dari tabel `timeline_stacking`
---
-
-CREATE TABLE IF NOT EXISTS `timeline_stacking` (
-`id_timeline` int(11) NOT NULL,
-  `id_stacking` varchar(15) NOT NULL,
-  `waktu_stop` datetime NOT NULL,
-  `waktu_mulaikembali` datetime DEFAULT NULL,
-  `keterangan_jeda` varchar(200) CHARACTER SET utf8 DEFAULT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=18 DEFAULT CHARSET=latin1;
-
---
--- Dumping data untuk tabel `timeline_stacking`
---
-
-INSERT INTO `timeline_stacking` (`id_timeline`, `id_stacking`, `waktu_stop`, `waktu_mulaikembali`, `keterangan_jeda`) VALUES
-(1, 'ST00001', '2020-07-28 13:43:58', '2020-07-28 13:48:30', 'Istirahat'),
-(2, 'ST00001', '2020-07-28 13:48:39', '2020-07-28 13:48:46', 'Istirahat 2'),
-(3, 'ST00002', '2020-07-28 15:01:00', '2020-07-29 16:48:38', 'Istirahat'),
-(4, 'ST00002', '2020-07-29 16:53:52', '2020-09-04 15:08:14', 'Istirahat'),
-(5, 'ST00006', '2020-09-16 09:59:58', '2020-09-16 11:03:12', 'Waiting cargo'),
-(6, 'ST00009', '2020-09-21 09:34:58', '2020-09-21 15:53:18', 'waiting '),
-(7, 'ST00010', '2020-09-22 14:08:47', '2020-09-22 15:01:06', 'Pekerjaan selesai'),
-(8, 'ST00011', '2020-09-23 08:47:12', '2020-09-23 10:42:53', 'waiting next activity'),
-(9, 'ST00011', '2020-09-23 10:54:48', '2020-09-23 13:34:55', 'waiting cargo'),
-(10, 'ST00012', '2020-09-25 11:40:36', '2020-09-25 14:44:15', 'Istirahat'),
-(11, 'ST00012', '2020-09-25 14:44:43', '2020-09-25 15:04:59', 'selesai'),
-(12, 'ST00015', '2020-10-06 11:38:09', '2020-10-06 14:32:18', 'Istirahat'),
-(13, 'ST00018', '2020-10-10 09:45:41', '2020-10-12 16:59:07', 'Waiting activati'),
-(14, 'ST00020', '2020-10-12 11:00:12', '2020-10-12 16:59:31', 'Istirahat'),
-(15, 'ST00019', '2020-10-12 11:47:34', '2020-10-12 14:03:49', 'Istirahat'),
-(16, 'ST00022', '2020-10-13 10:47:34', '2020-10-13 17:35:00', 'Waiting cargo'),
-(17, 'ST00023', '2020-10-14 12:36:21', '2020-10-14 17:47:44', 'Istirahat');
-
--- --------------------------------------------------------
-
---
--- Struktur dari tabel `user`
---
-
-CREATE TABLE IF NOT EXISTS `user` (
-`id_user` int(11) NOT NULL,
+CREATE TABLE `user` (
+  `id_user` int NOT NULL,
   `username` varchar(20) NOT NULL,
   `password` varchar(255) NOT NULL,
-  `nama` varchar(40) CHARACTER SET utf8 NOT NULL,
-  `email` varchar(30) CHARACTER SET utf8 NOT NULL,
-  `level` enum('unit_pelayanan','admin_gudang','asisten_manajer','manajer_shorebase','admin_ar','mekanik','kasir','pemohon_kas','tax','supervisor','manager_keuangan','direktur') NOT NULL,
+  `nama` varchar(40) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
+  `email` varchar(30) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
+  `level` enum('checker','admin_ops','manajer_shorebase') NOT NULL,
   `id_divisi` varchar(15) DEFAULT NULL,
   `manajer` varchar(50) NOT NULL,
   `asmen` varchar(50) DEFAULT NULL,
-  `area` varchar(40) CHARACTER SET utf8 NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=41 DEFAULT CHARSET=latin1;
+  `area` varchar(40) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `user`
+-- Dumping data for table `user`
 --
 
 INSERT INTO `user` (`id_user`, `username`, `password`, `nama`, `email`, `level`, `id_divisi`, `manajer`, `asmen`, `area`) VALUES
-(1, 'Admin_opskj4', '827ccb0eea8a706c4c34a16891f84e7b', 'Admin OPS KJ4', 'admin.opskj4@ekanuri.com', 'admin_gudang', NULL, 'Hartono', 'Eman', 'kj4'),
-(2, 'Spv_opskj4', '827ccb0eea8a706c4c34a16891f84e7b', 'Eman Sulaeman', 'eman@ekanuri.com', 'asisten_manajer', NULL, 'Hartono', '', 'kj4'),
+(1, 'Admin_opskj4', '827ccb0eea8a706c4c34a16891f84e7b', 'Admin OPS KJ4', 'admin.opskj4@ekanuri.com', 'admin_ops', NULL, 'Hartono', 'Eman', 'kj4'),
+(2, 'Spv_opskj4', '827ccb0eea8a706c4c34a16891f84e7b', 'Eman Sulaeman', 'eman@ekanuri.com', '', NULL, 'Hartono', '', 'kj4'),
 (14, 'hartono', '8776d72f50bd04f59fedf11fd317d90a', 'Hartono', '', 'manajer_shorebase', NULL, '', '', ''),
-(18, 'checker_kj1', '8776d72f50bd04f59fedf11fd317d90a', 'Checker KJ1', 'checker.kj1@gmail.com', 'unit_pelayanan', NULL, 'Hartono', 'Iwan', 'kj1'),
-(19, 'checker_kj4', '9e3da5af734c9ad2fc92f814fe9c28d5', 'Checker KJ4', 'checker.kj4@gmail.com', 'unit_pelayanan', NULL, 'Hartono', 'Eman', 'kj4'),
-(20, 'Admin_opskj1', '8776d72f50bd04f59fedf11fd317d90a', 'Admin OPS KJ1', 'admin.opskj1@ekanuri.com', 'admin_gudang', NULL, 'Hartono', 'Iwan', 'kj1'),
-(21, 'Spv_opskj1', '8776d72f50bd04f59fedf11fd317d90a', 'Indra Setiawan', 'indra.setiawan@ekanuri.com', 'asisten_manajer', NULL, 'Hartono', '', 'kj1'),
-(22, 'admin_ar', '1080e3413b11d35b96660bbc61adfe93', 'Komarudin', 'komarudin@ekanuri.com', 'admin_ar', NULL, 'Andrioanto', '', 'hw'),
-(23, 'anang', '27fed8cabb9cdcab9791a29cc4d34d4b', 'Anang Murjito', 'anang@ekanuri.com', 'mekanik', NULL, 'Hartono', '', 'KJ2'),
-(24, 'admin_it', '02f238cbb13c9dda80fe1d093f4436a4', 'Admin IT', 'admin.it@ekanuri.com', 'pemohon_kas', '2', '', 'Abdul Rozak', '--Pilih Area--'),
-(25, 'tax', 'fcdeaa31746e5846a5f2ceabb65f25fc', 'Patra Hambora', 'patra@ekanuri.com', 'tax', '', 'Andrianto', 'Etty ', '--Pilih Area--'),
-(26, 'dhika', '0d2fab94da6704708f8eabf28dc68719', 'Dhika', 'dhika@ekanuri.com', 'kasir', '', 'Andrianto', '', '--Pilih Area--'),
-(29, 'rozak', 'b9ac461798926f19cede07dd0ae65ff4', 'Abdul Rozak', 'rozak@ekanuri.com', 'supervisor', '2', '', '', '1'),
-(31, 'andri', '1080e3413b11d35b96660bbc61adfe93', 'Andrianto', 'andrianto@ekanuri.com', 'manager_keuangan', '4', '', '', '1'),
-(32, 'IA', 'b9ac461798926f19cede07dd0ae65ff4', 'Indra Anwar', 'indra@ekanuri.com', 'direktur', ' ', '', '', '1'),
-(33, 'c1_solihin', '8776d72f50bd04f59fedf11fd317d90a', 'Solihin', '', 'unit_pelayanan', NULL, '', NULL, 'kj1'),
-(34, 'c1_ridwan', '8776d72f50bd04f59fedf11fd317d90a', 'Muhammad RIdwan', '', 'unit_pelayanan', NULL, '', NULL, 'kj1'),
-(35, 'c2_andri', '8776d72f50bd04f59fedf11fd317d90a', 'Andri Gunawan', '', 'unit_pelayanan', NULL, '', NULL, 'kj1'),
-(36, 'c4_suryadi', '9e3da5af734c9ad2fc92f814fe9c28d5', 'Suryadi', '', 'unit_pelayanan', NULL, 'Hartono', NULL, 'kj4'),
-(37, 'c4_yahya', '9e3da5af734c9ad2fc92f814fe9c28d5', 'Yahya', '', 'unit_pelayanan', NULL, 'Hartono', NULL, 'kj4'),
-(38, 'c4_soleman', '9e3da5af734c9ad2fc92f814fe9c28d5', 'Soleman', '', 'unit_pelayanan', NULL, 'Hartono', NULL, 'kj4'),
-(39, 'c4_ali', '9e3da5af734c9ad2fc92f814fe9c28d5', 'Ali', '', 'unit_pelayanan', NULL, 'Hartono', NULL, 'kj4'),
-(40, 'c4_kusyani', '9e3da5af734c9ad2fc92f814fe9c28d5', 'Kusyani', '', 'unit_pelayanan', NULL, 'Hartono', NULL, 'kj4');
+(18, 'checker_kj1', '8776d72f50bd04f59fedf11fd317d90a', 'Checker KJ1', 'checker.kj1@gmail.com', 'checker', NULL, 'Hartono', 'Iwan', 'kj1'),
+(19, 'checker_kj4', '9e3da5af734c9ad2fc92f814fe9c28d5', 'Checker KJ4', 'checker.kj4@gmail.com', 'checker', NULL, 'Hartono', 'Eman', 'kj4'),
+(20, 'Admin_opskj1', '8776d72f50bd04f59fedf11fd317d90a', 'Admin OPS KJ1', 'admin.opskj1@ekanuri.com', 'admin_ops', NULL, 'Hartono', 'Iwan', 'kj1'),
+(21, 'Spv_opskj1', '8776d72f50bd04f59fedf11fd317d90a', 'Indra Setiawan', 'indra.setiawan@ekanuri.com', '', NULL, 'Hartono', '', 'kj1'),
+(33, 'c1_solihin', '8776d72f50bd04f59fedf11fd317d90a', 'Solihin', '', 'checker', NULL, '', NULL, 'kj1'),
+(34, 'c1_ridwan', '8776d72f50bd04f59fedf11fd317d90a', 'Muhammad RIdwan', '', 'checker', NULL, '', NULL, 'kj1'),
+(35, 'c2_andri', '8776d72f50bd04f59fedf11fd317d90a', 'Andri Gunawan', '', 'checker', NULL, '', NULL, 'kj1'),
+(36, 'c4_suryadi', '9e3da5af734c9ad2fc92f814fe9c28d5', 'Suryadi', '', 'checker', NULL, 'Hartono', NULL, 'kj4'),
+(37, 'c4_yahya', '9e3da5af734c9ad2fc92f814fe9c28d5', 'Yahya', '', 'checker', NULL, 'Hartono', NULL, 'kj4'),
+(38, 'c4_soleman', '9e3da5af734c9ad2fc92f814fe9c28d5', 'Soleman', '', 'checker', NULL, 'Hartono', NULL, 'kj4'),
+(39, 'c4_ali', '9e3da5af734c9ad2fc92f814fe9c28d5', 'Ali', '', 'checker', NULL, 'Hartono', NULL, 'kj4'),
+(40, 'c4_kusyani', '9e3da5af734c9ad2fc92f814fe9c28d5', 'Kusyani', '', 'checker', NULL, 'Hartono', NULL, 'kj4');
 
 --
 -- Indexes for dumped tables
 --
 
 --
--- Indexes for table `actual_jobordertruck`
---
-ALTER TABLE `actual_jobordertruck`
- ADD PRIMARY KEY (`id_at`), ADD KEY `id_djotruck` (`id_djotruck`), ADD KEY `id_jobordertruck` (`id_jobordertruck`);
-
---
--- Indexes for table `actual_moving`
---
-ALTER TABLE `actual_moving`
- ADD PRIMARY KEY (`id_as`), ADD KEY `id_cargo` (`id_cargo`), ADD KEY `id_moving` (`id_moving`);
-
---
--- Indexes for table `actual_stacking`
---
-ALTER TABLE `actual_stacking`
- ADD PRIMARY KEY (`id_as`), ADD KEY `id_cargo` (`id_cargo`), ADD KEY `id_stacking` (`id_stacking`);
-
---
 -- Indexes for table `actual_stevedoring`
 --
 ALTER TABLE `actual_stevedoring`
- ADD PRIMARY KEY (`id_as`), ADD KEY `id_joborder` (`id_joborder`);
+  ADD PRIMARY KEY (`id_as`),
+  ADD KEY `id_joborder` (`id_joborder`);
 
 --
 -- Indexes for table `alat_berat`
 --
 ALTER TABLE `alat_berat`
- ADD PRIMARY KEY (`id_alatberat`);
-
---
--- Indexes for table `bkk`
---
-ALTER TABLE `bkk`
- ADD PRIMARY KEY (`id_bkk`);
+  ADD PRIMARY KEY (`id_alatberat`);
 
 --
 -- Indexes for table `client`
 --
 ALTER TABLE `client`
- ADD PRIMARY KEY (`id_client`);
+  ADD PRIMARY KEY (`id_client`);
 
 --
 -- Indexes for table `detail_joborder`
 --
 ALTER TABLE `detail_joborder`
- ADD PRIMARY KEY (`id_cargo`), ADD UNIQUE KEY `id_cargo` (`id_cargo`), ADD KEY `id_joborder` (`id_joborder`), ADD KEY `id_joborder_2` (`id_joborder`), ADD KEY `id_joborder_3` (`id_joborder`), ADD KEY `id_joborder_4` (`id_joborder`), ADD KEY `id_joborder_5` (`id_joborder`), ADD KEY `id_joborder_6` (`id_joborder`), ADD KEY `id_joborder_7` (`id_joborder`), ADD KEY `id_joborder_8` (`id_joborder`), ADD KEY `id_joborder_9` (`id_joborder`), ADD KEY `id_joborder_10` (`id_joborder`), ADD KEY `id_joborder_11` (`id_joborder`), ADD KEY `id_joborder_12` (`id_joborder`), ADD KEY `id_joborder_13` (`id_joborder`);
-
---
--- Indexes for table `detail_jobordertruck`
---
-ALTER TABLE `detail_jobordertruck`
- ADD PRIMARY KEY (`id_djotruck`), ADD KEY `id_jobordertruck` (`id_jobordertruck`);
-
---
--- Indexes for table `detail_moving`
---
-ALTER TABLE `detail_moving`
- ADD PRIMARY KEY (`id_cargo`), ADD KEY `id_moving` (`id_moving`);
-
---
--- Indexes for table `detail_stacking`
---
-ALTER TABLE `detail_stacking`
- ADD PRIMARY KEY (`id_cargo`), ADD KEY `id_stacking` (`id_stacking`);
-
---
--- Indexes for table `doc_lo`
---
-ALTER TABLE `doc_lo`
- ADD PRIMARY KEY (`idDocLo`), ADD KEY `id_joborder` (`id_joborder`), ADD KEY `id_joborder_2` (`id_joborder`), ADD KEY `id_joborder_3` (`id_joborder`), ADD KEY `id_joborder_4` (`id_joborder`), ADD KEY `id_joborder_5` (`id_joborder`), ADD KEY `id_joborder_6` (`id_joborder`);
-
---
--- Indexes for table `invoice`
---
-ALTER TABLE `invoice`
- ADD PRIMARY KEY (`id_invoice`);
+  ADD PRIMARY KEY (`id_cargo`),
+  ADD UNIQUE KEY `id_cargo` (`id_cargo`),
+  ADD KEY `id_joborder` (`id_joborder`),
+  ADD KEY `id_joborder_2` (`id_joborder`),
+  ADD KEY `id_joborder_3` (`id_joborder`),
+  ADD KEY `id_joborder_4` (`id_joborder`),
+  ADD KEY `id_joborder_5` (`id_joborder`),
+  ADD KEY `id_joborder_6` (`id_joborder`),
+  ADD KEY `id_joborder_7` (`id_joborder`),
+  ADD KEY `id_joborder_8` (`id_joborder`),
+  ADD KEY `id_joborder_9` (`id_joborder`),
+  ADD KEY `id_joborder_10` (`id_joborder`),
+  ADD KEY `id_joborder_11` (`id_joborder`),
+  ADD KEY `id_joborder_12` (`id_joborder`),
+  ADD KEY `id_joborder_13` (`id_joborder`);
 
 --
 -- Indexes for table `jenis_barang`
 --
 ALTER TABLE `jenis_barang`
- ADD PRIMARY KEY (`id_jenis`);
+  ADD PRIMARY KEY (`id_jenis`);
 
 --
 -- Indexes for table `jenis_kegiatan`
 --
 ALTER TABLE `jenis_kegiatan`
- ADD PRIMARY KEY (`id_jenis`);
+  ADD PRIMARY KEY (`id_jenis`);
 
 --
 -- Indexes for table `jetty`
 --
 ALTER TABLE `jetty`
- ADD PRIMARY KEY (`id_jetty`);
+  ADD PRIMARY KEY (`id_jetty`);
 
 --
 -- Indexes for table `job_order`
 --
 ALTER TABLE `job_order`
- ADD PRIMARY KEY (`id_joborder`), ADD KEY `id_jenis` (`id_jenis`), ADD KEY `id_client` (`id_client`), ADD KEY `id_jenis_2` (`id_jenis`), ADD KEY `id_client_2` (`id_client`), ADD KEY `id_client_3` (`id_client`), ADD KEY `id_client_4` (`id_client`), ADD KEY `id_client_5` (`id_client`), ADD KEY `id_client_6` (`id_client`), ADD KEY `id_alatberat` (`alat_berat`), ADD KEY `id_alatberat2` (`alat_berat2`), ADD KEY `id_alatberat3` (`alat_berat3`), ADD KEY `id_alatberat4` (`alat_berat4`), ADD KEY `id_alatberat5` (`alat_berat5`);
-
---
--- Indexes for table `job_ordertruck`
---
-ALTER TABLE `job_ordertruck`
- ADD PRIMARY KEY (`id_jobordertruck`), ADD KEY `id_alatberat` (`id_alatberat`), ADD KEY `id_client` (`id_client`);
+  ADD PRIMARY KEY (`id_joborder`),
+  ADD KEY `id_jenis` (`id_jenis`),
+  ADD KEY `id_client` (`id_client`),
+  ADD KEY `id_jenis_2` (`id_jenis`),
+  ADD KEY `id_client_2` (`id_client`),
+  ADD KEY `id_client_3` (`id_client`),
+  ADD KEY `id_client_4` (`id_client`),
+  ADD KEY `id_client_5` (`id_client`),
+  ADD KEY `id_client_6` (`id_client`),
+  ADD KEY `id_alatberat` (`alat_berat`),
+  ADD KEY `id_alatberat2` (`alat_berat2`),
+  ADD KEY `id_alatberat3` (`alat_berat3`),
+  ADD KEY `id_alatberat4` (`alat_berat4`),
+  ADD KEY `id_alatberat5` (`alat_berat5`);
 
 --
 -- Indexes for table `log_system`
 --
 ALTER TABLE `log_system`
- ADD PRIMARY KEY (`id_log`);
-
---
--- Indexes for table `moving`
---
-ALTER TABLE `moving`
- ADD PRIMARY KEY (`id_moving`), ADD KEY `id_alatberat` (`nm_alatberat`), ADD KEY `id_client` (`id_client`), ADD KEY `id_client_2` (`id_client`);
-
---
--- Indexes for table `pengeluaran`
---
-ALTER TABLE `pengeluaran`
- ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `permintaan`
---
-ALTER TABLE `permintaan`
- ADD PRIMARY KEY (`id_permintaan`);
-
---
--- Indexes for table `satuan`
---
-ALTER TABLE `satuan`
- ADD PRIMARY KEY (`id_satuan`);
-
---
--- Indexes for table `sementara`
---
-ALTER TABLE `sementara`
- ADD PRIMARY KEY (`id_sementara`);
-
---
--- Indexes for table `stacking`
---
-ALTER TABLE `stacking`
- ADD PRIMARY KEY (`id_stacking`), ADD KEY `id_alatberat` (`id_alatberat`), ADD KEY `id_client` (`id_client`), ADD KEY `id_client_2` (`id_client`);
-
---
--- Indexes for table `stokbarang`
---
-ALTER TABLE `stokbarang`
- ADD PRIMARY KEY (`kode_brg`);
-
---
--- Indexes for table `tarif_shorebase`
---
-ALTER TABLE `tarif_shorebase`
- ADD PRIMARY KEY (`id_tarif`), ADD KEY `id_jenis` (`id_jenis`);
-
---
--- Indexes for table `timeline_cargo`
---
-ALTER TABLE `timeline_cargo`
- ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`id_log`);
 
 --
 -- Indexes for table `timeline_joborder`
 --
 ALTER TABLE `timeline_joborder`
- ADD PRIMARY KEY (`id_timeline`);
-
---
--- Indexes for table `timeline_jobordertruck`
---
-ALTER TABLE `timeline_jobordertruck`
- ADD PRIMARY KEY (`id_timeline`), ADD KEY `id_jobordertruck` (`id_jobordertruck`), ADD KEY `id_jobordertruck_2` (`id_jobordertruck`), ADD KEY `id_jobordertruck_3` (`id_jobordertruck`);
-
---
--- Indexes for table `timeline_moving`
---
-ALTER TABLE `timeline_moving`
- ADD PRIMARY KEY (`id_timeline`), ADD KEY `id_moving` (`id_moving`);
-
---
--- Indexes for table `timeline_stacking`
---
-ALTER TABLE `timeline_stacking`
- ADD PRIMARY KEY (`id_timeline`), ADD KEY `id_stacking` (`id_stacking`);
+  ADD PRIMARY KEY (`id_timeline`);
 
 --
 -- Indexes for table `user`
 --
 ALTER TABLE `user`
- ADD PRIMARY KEY (`id_user`);
+  ADD PRIMARY KEY (`id_user`);
 
 --
 -- AUTO_INCREMENT for dumped tables
 --
 
 --
--- AUTO_INCREMENT for table `actual_jobordertruck`
---
-ALTER TABLE `actual_jobordertruck`
-MODIFY `id_at` int(12) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=518;
---
--- AUTO_INCREMENT for table `actual_moving`
---
-ALTER TABLE `actual_moving`
-MODIFY `id_as` int(12) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=17;
---
--- AUTO_INCREMENT for table `actual_stacking`
---
-ALTER TABLE `actual_stacking`
-MODIFY `id_as` int(12) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=134;
---
 -- AUTO_INCREMENT for table `actual_stevedoring`
 --
 ALTER TABLE `actual_stevedoring`
-MODIFY `id_as` bigint(20) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=1596;
+  MODIFY `id_as` bigint NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1919;
+
 --
 -- AUTO_INCREMENT for table `alat_berat`
 --
 ALTER TABLE `alat_berat`
-MODIFY `id_alatberat` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=25;
---
--- AUTO_INCREMENT for table `bkk`
---
-ALTER TABLE `bkk`
-MODIFY `id_bkk` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=9;
+  MODIFY `id_alatberat` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
+
 --
 -- AUTO_INCREMENT for table `client`
 --
 ALTER TABLE `client`
-MODIFY `id_client` int(15) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=8;
---
--- AUTO_INCREMENT for table `detail_jobordertruck`
---
-ALTER TABLE `detail_jobordertruck`
-MODIFY `id_djotruck` int(12) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=222;
---
--- AUTO_INCREMENT for table `detail_moving`
---
-ALTER TABLE `detail_moving`
-MODIFY `id_cargo` int(12) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=7;
---
--- AUTO_INCREMENT for table `detail_stacking`
---
-ALTER TABLE `detail_stacking`
-MODIFY `id_cargo` int(12) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=57;
---
--- AUTO_INCREMENT for table `doc_lo`
---
-ALTER TABLE `doc_lo`
-MODIFY `idDocLo` int(30) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=5;
---
--- AUTO_INCREMENT for table `invoice`
---
-ALTER TABLE `invoice`
-MODIFY `id_invoice` int(30) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_client` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+
 --
 -- AUTO_INCREMENT for table `jenis_barang`
 --
 ALTER TABLE `jenis_barang`
-MODIFY `id_jenis` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=344;
+  MODIFY `id_jenis` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=413;
+
 --
 -- AUTO_INCREMENT for table `jenis_kegiatan`
 --
 ALTER TABLE `jenis_kegiatan`
-MODIFY `id_jenis` int(15) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=8;
+  MODIFY `id_jenis` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+
 --
 -- AUTO_INCREMENT for table `jetty`
 --
 ALTER TABLE `jetty`
-MODIFY `id_jetty` int(12) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=9;
+  MODIFY `id_jetty` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+
 --
 -- AUTO_INCREMENT for table `log_system`
 --
 ALTER TABLE `log_system`
-MODIFY `id_log` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=813;
---
--- AUTO_INCREMENT for table `pengeluaran`
---
-ALTER TABLE `pengeluaran`
-MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=7;
---
--- AUTO_INCREMENT for table `permintaan`
---
-ALTER TABLE `permintaan`
-MODIFY `id_permintaan` int(100) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=10;
---
--- AUTO_INCREMENT for table `satuan`
---
-ALTER TABLE `satuan`
-MODIFY `id_satuan` int(15) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=12;
---
--- AUTO_INCREMENT for table `sementara`
---
-ALTER TABLE `sementara`
-MODIFY `id_sementara` int(100) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=10;
---
--- AUTO_INCREMENT for table `tarif_shorebase`
---
-ALTER TABLE `tarif_shorebase`
-MODIFY `id_tarif` int(15) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=8;
---
--- AUTO_INCREMENT for table `timeline_cargo`
---
-ALTER TABLE `timeline_cargo`
-MODIFY `id` int(50) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=28;
+  MODIFY `id_log` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1096;
+
 --
 -- AUTO_INCREMENT for table `timeline_joborder`
 --
 ALTER TABLE `timeline_joborder`
-MODIFY `id_timeline` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=63;
---
--- AUTO_INCREMENT for table `timeline_jobordertruck`
---
-ALTER TABLE `timeline_jobordertruck`
-MODIFY `id_timeline` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=61;
---
--- AUTO_INCREMENT for table `timeline_moving`
---
-ALTER TABLE `timeline_moving`
-MODIFY `id_timeline` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=5;
---
--- AUTO_INCREMENT for table `timeline_stacking`
---
-ALTER TABLE `timeline_stacking`
-MODIFY `id_timeline` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=18;
+  MODIFY `id_timeline` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=72;
+
 --
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=41;
+  MODIFY `id_user` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=41;
+
 --
--- Ketidakleluasaan untuk tabel pelimpahan (Dumped Tables)
+-- Constraints for dumped tables
 --
 
 --
--- Ketidakleluasaan untuk tabel `actual_jobordertruck`
---
-ALTER TABLE `actual_jobordertruck`
-ADD CONSTRAINT `actual_jobordertruck_ibfk_1` FOREIGN KEY (`id_djotruck`) REFERENCES `detail_jobordertruck` (`id_djotruck`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-ADD CONSTRAINT `actual_jobordertruck_ibfk_2` FOREIGN KEY (`id_jobordertruck`) REFERENCES `job_ordertruck` (`id_jobordertruck`) ON DELETE CASCADE ON UPDATE CASCADE;
-
---
--- Ketidakleluasaan untuk tabel `actual_moving`
---
-ALTER TABLE `actual_moving`
-ADD CONSTRAINT `actual_moving_ibfk_1` FOREIGN KEY (`id_cargo`) REFERENCES `detail_moving` (`id_cargo`) ON DELETE CASCADE ON UPDATE CASCADE,
-ADD CONSTRAINT `actual_moving_ibfk_2` FOREIGN KEY (`id_moving`) REFERENCES `moving` (`id_moving`) ON DELETE CASCADE ON UPDATE CASCADE;
-
---
--- Ketidakleluasaan untuk tabel `actual_stacking`
---
-ALTER TABLE `actual_stacking`
-ADD CONSTRAINT `actual_stacking_ibfk_1` FOREIGN KEY (`id_cargo`) REFERENCES `detail_stacking` (`id_cargo`) ON DELETE CASCADE ON UPDATE CASCADE,
-ADD CONSTRAINT `actual_stacking_ibfk_2` FOREIGN KEY (`id_stacking`) REFERENCES `stacking` (`id_stacking`) ON DELETE CASCADE ON UPDATE CASCADE;
-
---
--- Ketidakleluasaan untuk tabel `detail_jobordertruck`
---
-ALTER TABLE `detail_jobordertruck`
-ADD CONSTRAINT `detail_jobordertruck_ibfk_1` FOREIGN KEY (`id_jobordertruck`) REFERENCES `job_ordertruck` (`id_jobordertruck`) ON DELETE CASCADE ON UPDATE CASCADE;
-
---
--- Ketidakleluasaan untuk tabel `detail_moving`
---
-ALTER TABLE `detail_moving`
-ADD CONSTRAINT `detail_moving_ibfk_1` FOREIGN KEY (`id_moving`) REFERENCES `moving` (`id_moving`) ON DELETE CASCADE ON UPDATE CASCADE;
-
---
--- Ketidakleluasaan untuk tabel `detail_stacking`
---
-ALTER TABLE `detail_stacking`
-ADD CONSTRAINT `detail_stacking_ibfk_1` FOREIGN KEY (`id_stacking`) REFERENCES `stacking` (`id_stacking`) ON DELETE CASCADE ON UPDATE CASCADE;
-
---
--- Ketidakleluasaan untuk tabel `job_order`
+-- Constraints for table `job_order`
 --
 ALTER TABLE `job_order`
-ADD CONSTRAINT `job_order_ibfk_1` FOREIGN KEY (`id_jenis`) REFERENCES `jenis_kegiatan` (`id_jenis`) ON DELETE NO ACTION ON UPDATE CASCADE,
-ADD CONSTRAINT `job_order_ibfk_2` FOREIGN KEY (`id_client`) REFERENCES `client` (`id_client`) ON DELETE NO ACTION ON UPDATE CASCADE;
-
---
--- Ketidakleluasaan untuk tabel `job_ordertruck`
---
-ALTER TABLE `job_ordertruck`
-ADD CONSTRAINT `job_ordertruck_ibfk_1` FOREIGN KEY (`id_alatberat`) REFERENCES `alat_berat` (`id_alatberat`) ON UPDATE CASCADE,
-ADD CONSTRAINT `job_ordertruck_ibfk_2` FOREIGN KEY (`id_client`) REFERENCES `client` (`id_client`) ON UPDATE CASCADE;
-
---
--- Ketidakleluasaan untuk tabel `moving`
---
-ALTER TABLE `moving`
-ADD CONSTRAINT `moving_ibfk_1` FOREIGN KEY (`id_client`) REFERENCES `client` (`id_client`) ON UPDATE CASCADE;
-
---
--- Ketidakleluasaan untuk tabel `stacking`
---
-ALTER TABLE `stacking`
-ADD CONSTRAINT `stacking_ibfk_1` FOREIGN KEY (`id_client`) REFERENCES `client` (`id_client`) ON UPDATE CASCADE,
-ADD CONSTRAINT `stacking_ibfk_2` FOREIGN KEY (`id_alatberat`) REFERENCES `alat_berat` (`id_alatberat`) ON UPDATE CASCADE;
-
---
--- Ketidakleluasaan untuk tabel `timeline_jobordertruck`
---
-ALTER TABLE `timeline_jobordertruck`
-ADD CONSTRAINT `timeline_jobordertruck_ibfk_1` FOREIGN KEY (`id_jobordertruck`) REFERENCES `job_ordertruck` (`id_jobordertruck`) ON DELETE CASCADE ON UPDATE CASCADE;
-
---
--- Ketidakleluasaan untuk tabel `timeline_moving`
---
-ALTER TABLE `timeline_moving`
-ADD CONSTRAINT `timeline_moving_ibfk_1` FOREIGN KEY (`id_moving`) REFERENCES `moving` (`id_moving`) ON DELETE CASCADE ON UPDATE CASCADE;
-
---
--- Ketidakleluasaan untuk tabel `timeline_stacking`
---
-ALTER TABLE `timeline_stacking`
-ADD CONSTRAINT `timeline_stacking_ibfk_1` FOREIGN KEY (`id_stacking`) REFERENCES `stacking` (`id_stacking`) ON DELETE CASCADE ON UPDATE CASCADE;
+  ADD CONSTRAINT `job_order_ibfk_1` FOREIGN KEY (`id_jenis`) REFERENCES `jenis_kegiatan` (`id_jenis`) ON UPDATE CASCADE,
+  ADD CONSTRAINT `job_order_ibfk_2` FOREIGN KEY (`id_client`) REFERENCES `client` (`id_client`) ON UPDATE CASCADE;
+COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
