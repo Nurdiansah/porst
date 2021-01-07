@@ -1,0 +1,5 @@
+row version di detail job order
+
+1 = cargo sesuai dengan booking cargo
+2 = cargo baru yang di inputkan user
+3 = cargo yang di revisi checker karena berat ton berbeda

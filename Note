@@ -1,0 +1,15 @@
+#2020/08/03
+- Membuat fitur send to finance di admin
+- membuat page approve pada manager shorebase
+- membuat page lihat di admin dan manager shorebase
+    $ membuat field id_cargo pada kolom actual stevedoring (varchar(15)	utf8_general_ci	NULL)
+- perubahan di proses cargo di file add_jv untuk merelasikan id_cargo
+- create navbar kiri atas pada checker 
+- hapus logout pada sidebar checker
+
+#2020/08/04
+- pada akun cheker di buat notif jumlah pekerjaan stevedoring, loading-offloading truck, stacking, internal moving
+- Membuat dasboard checker
+- penambhan notif jumlah pekerjaan stevedoring, loading-offloading truck, stacking, internal moving pada akun admin ops
+
+
