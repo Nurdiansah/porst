@@ -48,14 +48,14 @@ $dataAM = mysqli_fetch_assoc($queryAM);
 
 
 ?>
-
 <!DOCTYPE html>
 <html>
 
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>ENC|OPS</title>
+  <title>PORST</title>
+  <!-- Favicon -->
   <!-- <link rel="shortcut icon" type="image/icon" href="../pv.png"> -->
   <!-- Tell the browser to be responsive to screen width -->
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
@@ -86,221 +86,83 @@ $dataAM = mysqli_fetch_assoc($queryAM);
 
   <script src="../assets/plugins/jQuery/jquery.min.js"></script>
 
-  <!-- Resources -->
-  <script src="https://cdn.amcharts.com/lib/4/core.js"></script>
-  <script src="https://cdn.amcharts.com/lib/4/charts.js"></script>
-  <script src="https://cdn.amcharts.com/lib/4/themes/dark.js"></script>
-  <script src="https://cdn.amcharts.com/lib/4/themes/animated.js"></script>
-  <script src="https://cdn.amcharts.com/lib/4/themes/material.js"></script>
-
   <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/css/select2.min.css" rel="stylesheet" />
   <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/js/select2.min.js"></script>
 
   <style>
     #chartdiv {
-      /* background-color : #DCDCDC; */
-      width: 100%;
-      height: 500px;
-    }
-
-    #chartdiv-vessel {
-      /* background-color : #DCDCDC; */
       width: 100%;
       height: 500px;
     }
   </style>
 
+  <!-- Resources -->
+  <script src="https://cdn.amcharts.com/lib/4/core.js"></script>
+  <script src="https://cdn.amcharts.com/lib/4/charts.js"></script>
+  <script src="https://cdn.amcharts.com/lib/4/themes/material.js"></script>
+  <script src="https://cdn.amcharts.com/lib/4/themes/animated.js"></script>
+
+
 </head>
 
-<body class="hold-transition skin-blue  sidebar-collapse sidebar-mini"">
-<div class=" wrapper">
+<body class="hold-transition skin-red sidebar-collapse sidebar-mini">
+  <!-- <div class="wrapper"> -->
+  <img src="../gambar/pelabuhan.jpeg">
+  <nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="index.php">PORST</a>
+      </div>
 
-  <header class="main-header">
-    <div class="logo">
-      <span class="logo-mini"><b>ENC</b></span>
-      <span class="logo-lg"><b>ENC - OPS</b></span>
-    </div>
-
-    <!-- Header Navbar: style can be found in header.less -->
-    <nav class="navbar navbar-static-top" role="navigation">
-      <!-- Sidebar toggle button-->
-      <a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button">
-        <span class="sr-only">Toggle navigation</span>
-      </a>
-      <div class="navbar-custom-menu">
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
         <ul class="nav navbar-nav">
-
-          <!-- User Account: style can be found in dropdown.less -->
-          <li class="dropdown user user-menu">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-              <img src="../gambar/avatar1.jpg" class="user-image" alt="User Image">
-              <span class="hidden-xs"> <?php echo strtoupper($Nama); ?> </span>
-            </a>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Stevedoring Vessel <span class="caret"></span></a>
             <ul class="dropdown-menu">
-              <!-- User image -->
-              <li class="user-header">
-                <img src="../gambar/avatar1.jpg" class="img-circle" alt="User Image">
-                <p>
-                  <?php echo " $Nama " ?>
-                  <small>- MANAGER SHOREBASE -</small>
-                </p>
-              </li>
-
-              <!-- Menu Footer-->
-              <li class="user-footer">
-                <div class="pull-right">
-                  <a href="../logout.php" class="btn btn-default btn-flat">Sign out</a>
-                </div>
+              <li><a href="index.php?p=proses_jovessel"><i class="fa fa-spinner"></i>Procces <span class="badge label-success"><?php if ($dataPV['jumlah'] >= 1) {
+                                                                                                                                  echo $dataPV['jumlah'];
+                                                                                                                                } ?></span></a></li>
+              <li><a href="index.php?p=data_jovessel"><i class="fa fa-files-o"></i>Approve <span class="badge label-warning"><?php if ($dataAV['jumlah'] >= 1) {
+                                                                                                                                echo $dataAV['jumlah'];
+                                                                                                                              } ?></a></li>
+              <li><a href="index.php?p=lihat_jovessel"><i class="fa fa-list"></i>Transaksi</a></li>
+            </ul>
+          </li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Pengaturan <span class="caret"></span></a>
+            <ul class="dropdown-menu">
+              <!-- <li><a href="#">Action</a></li>
+                <li><a href="#">Another action</a></li>
+                <li><a href="#">Something else here</a></li> -->
+              <li role="separator" class="divider"></li>
+              <li>
+                <a href="../logout.php">Logout</a>
               </li>
             </ul>
           </li>
-          <!-- Control Sidebar Toggle Button -->
         </ul>
-      </div>
-    </nav>
-  </header>
-  <!-- Left side column. contains the logo and sidebar -->
-  <aside class="main-sidebar">
-    <!-- sidebar: style can be found in sidebar.less -->
-    <section class="sidebar">
-      <ul class="sidebar-menu">
-        <li class="active treeview">
-          <a href="index.php">
-            <i class="fa fa-dashboard"></i> <span>Dashboard</span>
-          </a>
-        </li>
-        <!-- Data Alat Berat -->
-        <li class="header">Master Data</li>
-        <li class="treeview">
-          <a href="#">
-            <i class="fa fa-truck"></i>
-            <span>Alat Berat</span>
-          </a>
-          <ul class="treeview-menu">
-            <li><a href="index.php?p=alat_berat"><i class="fa fa-chevron-circle-right"></i>Lihat </a></li>
-          </ul>
-        </li>
-        <li class="header">Job Order</li>
-        <li class="treeview">
-          <a href="index.php?p=datapesanan">
-            <i class="fa fa-anchor"></i>
-            <span>Stevedoring</span><i class="fa fa-angle-left pull-right"></i>
-            <!-- <span class="pull-right-container">
-              <span class="label label-primary pull-right"><?= $data['jumlah']; ?></span>
-            </span> -->
-          </a>
-          <ul class="treeview-menu">
-            <li><a href="index.php?p=proses_jovessel"><i class="fa fa-spinner"></i>Procces <span class="badge label-success"><?php if ($dataPV['jumlah'] >= 1) {
-                                                                                                                                echo $dataPV['jumlah'];
-                                                                                                                              } ?></span></a></li>
-            <li><a href="index.php?p=data_jovessel"><i class="fa fa-files-o"></i>Approve <span class="badge label-warning"><?php if ($dataAV['jumlah'] >= 1) {
-                                                                                                                              echo $dataAV['jumlah'];
-                                                                                                                            } ?></a></li>
-            <li><a href="index.php?p=lihat_jovessel"><i class="fa fa-list"></i>Transaksi</a></li>
-          </ul>
-        </li>
-        <!-- Equipment -->
-        <li class="treeview">
-          <a href="index.php?p=datapesanan">
-            <i class="fa fa-truck"></i>
-            <span>Loading/Offloading Truck</span><i class="fa fa-angle-left pull-right"></i>
-            <!-- <span class="pull-right-container">
-                <span class="label label-primary pull-right"><?= $data['jumlah']; ?></span>
-              </span> -->
-          </a>
-          <ul class="treeview-menu">
-            <li><a href="index.php?p=proses_jotruck"><i class="fa fa-spinner"></i>Process <span class="badge label-success"><?php if ($dataPT['jumlah'] >= 1) {
-                                                                                                                              echo $dataPT['jumlah'];
-                                                                                                                            } ?></span></a></li>
-            <li><a href="index.php?p=approve_jotruck"><i class="fa fa-files-o"></i>Approve <span class="badge label-warning"><?php if ($dataAT['jumlah'] >= 1) {
-                                                                                                                                echo $dataAT['jumlah'];
-                                                                                                                              } ?></span></a></li>
-            <li><a href="index.php?p=lihat_jotruck"><i class="fa fa-bar-chart"></i>Transaksi</a></li>
-          </ul>
-        </li>
+      </div><!-- /.navbar-collapse -->
+    </div><!-- /.container-fluid -->
+  </nav>
 
-        <!-- Stacking -->
-        <li class="treeview">
-          <a href="index.php?p=datapesanan">
-            <i class="fa fa-suitcase"></i>
-            <span>Stacking/Stuffing</span><i class="fa fa-angle-left pull-right"></i>
-            <!-- <span class="pull-right-container">
-                <span class="label label-primary pull-right"><?= $data['jumlah']; ?></span>
-              </span> -->
-          </a>
-          <ul class="treeview-menu">
-            <li><a href="index.php?p=proses_stacking"><i class="fa fa-spinner"></i>Process <span class="badge label-success"><?php if ($dataPS['jumlah'] >= 1) {
-                                                                                                                                echo $dataPS['jumlah'];
-                                                                                                                              } ?></span></a></li>
-            <li><a href="index.php?p=approve_stacking"><i class="fa fa-files-o"></i>Approve <span class="badge label-warning"><?php if ($dataAS['jumlah'] >= 1) {
-                                                                                                                                echo $dataAS['jumlah'];
-                                                                                                                              } ?></span></a></li>
-            <li><a href="index.php?p=lihat_stacking"><i class="fa fa-bar-chart"></i>Transaksi</a></li>
-          </ul>
-        </li>
-
-
-
-        <!-- Internal Moving -->
-        <li class="treeview">
-          <a href="index.php?p=datapesanan">
-            <i class="fa fa-subway"></i>
-            <span>Internal Moving</span><i class="fa fa-angle-left pull-right"></i>
-            <!-- <span class="pull-right-container">
-                <span class="label label-primary pull-right"><?= $data['jumlah']; ?></span>
-              </span> -->
-          </a>
-          <ul class="treeview-menu">
-            <li><a href="index.php?p=proses_moving"><i class="fa fa-spinner"></i>Process <span class="badge label-success"><?php if ($dataPM['jumlah'] >= 1) {
-                                                                                                                              echo $dataPM['jumlah'];
-                                                                                                                            } ?></span></a></li>
-            <li><a href="index.php?p=approve_moving"><i class="fa fa-files-o"></i>Approve <span class="badge label-warning"><?php if ($dataAM['jumlah'] >= 1) {
-                                                                                                                              echo $dataAM['jumlah'];
-                                                                                                                            } ?></span></a></li>
-            <li><a href="index.php?p=lihat_moving"><i class="fa fa-bar-chart"></i>Transaksi</a></li>
-          </ul>
-        </li>
-
-        <!-- Report-->
-        <li class="treeview">
-          <a href="index.php?p=datapesanan">
-            <i class="fa fa-bar-chart"></i>
-            <span>Report</span><i class="fa fa-angle-left pull-right"></i>
-            <!-- <span class="pull-right-container">
-                <span class="label label-primary pull-right"><?= $data['jumlah']; ?></span>
-              </span> -->
-          </a>
-          <ul class="treeview-menu">
-            <li><a href="index.php?p=report_lovessel_monthly"><i class="fa fa-anchor"></i>Grafik Lo Vessel</a></li>
-            <li><a href="index.php?p=report_lotruck_monthly"><i class="fa fa-truck"></i>Grafik Lo Truck</a></li>
-            <li><a href="index.php?p=report_stacking_monthly"><i class="fa fa"></i>Grafik Stacking & Stuffing</a></li>
-            <li><a href="index.php?p=report_moving_monthly"><i class="fa fa"></i>Grafik Internal Moving</a></li>
-          </ul>
-        </li>
-
-      </ul>
-    </section>
-    <!-- /.sidebar -->
-  </aside>
-
-  <!-- Content Wrapper. Contains page content -->
-  <div class="content-wrapper">
-    <!-- Content Header (Page header) -->
-    <?php
-
-    include "page.php";
-    ?>
-
-  </div>
+  <!-- Content Header (Page header) -->
+  <?php include "page.php"; ?>
 
   <footer class="main-footer">
-    <marquee hspace="40" width="full-width">Manager Shorebase Kalijapat</marquee>
-    <strong>Copyright &copy; ENC SYSTEM - OPS 2019 v1.0 </strong>
+    <marquee hspace="40" width="full-width">Admin Operational mengolah data user dan pembuatan Job Order .</marquee>
+    <strong>Copyright &copy; NURDIANSAH - PORST v1.0 </strong>
   </footer>
 
-
-
-  <!-- jQuery 2.2.3 -->
   <!-- jQuery UI 1.11.4 -->
   <script src="../assets/plugins/jQueryUI/jquery-ui.min.js"></script>
   <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
@@ -333,7 +195,6 @@ $dataAM = mysqli_fetch_assoc($queryAM);
 
   <script src="../assets/plugins/datatables/jquery.dataTables.min.js"></script>
   <script src="../assets/plugins/datatables/dataTables.bootstrap.min.js"></script>
-
 </body>
 
 </html>

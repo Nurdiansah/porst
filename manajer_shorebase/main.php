@@ -6,7 +6,7 @@ $arrayTotal[] = 0;
 
 
 for ($i = 1; $i <= 12; $i++) {
-    $queryTotal = mysqli_query($koneksi, "SELECT sum(total_cargo) AS jumlah FROM job_order WHERE month(finish_kegiatan)= $i ");
+    $queryTotal = mysqli_query($koneksi, "SELECT sum(total_cargo) AS jumlah FROM job_order WHERE month(finish_kegiatan)= $i AND year(finish_kegiatan)= '2021' ");
     $dataTotal = mysqli_fetch_assoc($queryTotal);
     $total = $dataTotal['jumlah'];
 
@@ -65,51 +65,51 @@ for ($i = 1; $i <= 12; $i++) {
 
         // Add data
         chart.data = [{
-            "date": "2020-01-01",
+            "date": "2021-01-01",
             "distance": cargoJanuari,
-            "duration": 408
+            "duration": 0
         }, {
-            "date": "2020-02-01",
+            "date": "2021-02-01",
             "distance": cargoFebruari,
-            "duration": 482
+            "duration": 0
         }, {
-            "date": "2020-03-01",
+            "date": "2021-03-01",
             "distance": cargoMaret,
             "duration": 0
         }, {
-            "date": "2020-04-01",
+            "date": "2021-04-01",
             "distance": cargoApril,
             "duration": 0
         }, {
-            "date": "2020-05-01",
+            "date": "2021-05-01",
             "distance": cargoMei,
-            "duration": 501
+            "duration": 0
         }, {
-            "date": "2020-06-01",
+            "date": "2021-06-01",
             "distance": cargoJuni,
             "duration": 0
         }, {
-            "date": "2020-07-01",
+            "date": "2021-07-01",
             "distance": cargoJuli,
-            "duration": 1805
+            "duration": 0
         }, {
-            "date": "2020-08-01",
+            "date": "2021-08-01",
             "distance": cargoAgustus,
             "duration": 0
         }, {
-            "date": "2020-09-01",
+            "date": "2021-09-01",
             "distance": cargoSeptember,
             "duration": 0
         }, {
-            "date": "2020-10-01",
+            "date": "2021-10-01",
             "distance": cargoOktober,
             "duration": 0
         }, {
-            "date": "2020-11-01",
+            "date": "2021-11-01",
             "distance": cargoNovember,
             "duration": 0
         }, {
-            "date": "2020-12-01",
+            "date": "2021-12-01",
             "distance": cargoDesember,
             "duration": 0
         }];

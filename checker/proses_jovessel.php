@@ -24,7 +24,7 @@ $Area = $rowUser['area'];
 $query = mysqli_query($koneksi, "SELECT * FROM job_order jo
                                             JOIN client c
                                             ON c.id_client = jo.id_client
-                                            WHERE jo.id_checker='$id_user' AND jo.status_jo>=2 AND jo.status_jo<=3
+                                            WHERE jo.status_jo>=2 AND jo.status_jo<=3
                                             ORDER BY tgl_masuk DESC  ");
 echo $id_user;
 

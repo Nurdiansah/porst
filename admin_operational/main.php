@@ -35,8 +35,8 @@
            <a href="#" class="list-group-item label-warning">
              Work in Progress
            </a>
-           <a href="index.php?p=proses_jovessel" class="list-group-item"> <i class="fa fa-file"></i> Buat Pekerjaan</a>
-           <a href="index.php?p=proses_jovessel" class="list-group-item"> <i class="fa fa-clipboard"></i> Draf
+           <a href="index.php?p=buat_jovessel" class="list-group-item"> <i class="fa fa-file"></i> Buat Pekerjaan</a>
+           <a href="index.php?p=draf_lo" class="list-group-item"> <i class="fa fa-clipboard"></i> Draf
              <span class="badge label-success">
                <?php if ($dataDV['jumlah'] >= 1) {
                   echo $dataDV['jumlah'];
@@ -57,7 +57,7 @@
                 } ?>
              </span>
            </a>
-           <a href="index.php?p=stf" class="list-group-item"> <i class="fa fa-anchor"></i> Transaksi
+           <a href="index.php?p=lihat_jovessel" class="list-group-item"> <i class="fa fa-anchor"></i> Transaksi
              <span class="badge label-success">
                <?php if ($dataJV['jumlah'] >= 1) {
                   echo $dataJV['jumlah'];

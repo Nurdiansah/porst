@@ -302,7 +302,7 @@ if ($id_cargo) {
                                                 <select id="id_jenis" name="id_jenis" required>
                                                     <option value="">&nbsp;&nbsp;&nbsp;--- Pilih Jenis Barang --- &nbsp;&nbsp;</option>
                                                     <?php
-                                                    $queryJB = mysqli_query($koneksi, "SELECT * FROM jenis_barang WHERE area = '$Area' ORDER BY  nm_jenis  ASC ");
+                                                    $queryJB = mysqli_query($koneksi, "SELECT * FROM jenis_barang ORDER BY  nm_jenis  ASC ");
                                                     if (mysqli_num_rows($queryJB)) {
                                                         while ($rowJB = mysqli_fetch_assoc($queryJB)) :
                                                     ?>
@@ -381,7 +381,7 @@ if ($id_cargo) {
                                 <select name="id_checker" class="form-control" required>
                                     <option value="">--Pilih Checker--</option>
                                     <?php
-                                    $queryChecker = mysqli_query($koneksi, "SELECT * FROM user WHERE level = 'checker' AND area='$Area'");
+                                    $queryChecker = mysqli_query($koneksi, "SELECT * FROM user WHERE level = 'checker'");
                                     if (mysqli_num_rows($queryChecker)) {
                                         while ($rowChecker = mysqli_fetch_assoc($queryChecker)) :
                                     ?>

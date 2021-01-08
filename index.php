@@ -88,7 +88,7 @@ if (isset($_POST['login'])) {
 
 <head>
 	<meta charset="utf-8">
-	<title>OPS KJ</title>
+	<title>PORST</title>
 	<!-- Icon  -->
 	<link rel="shortcut icon" type="image/icon" href="gambar/logoenc.jpg">
 	<meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">

@@ -15,12 +15,15 @@
   <div class="row">
 
 
+
+    <!-- ./col -->
+
     <div class="col-lg-6 col-xs-12 ">
       <!-- small box -->
-      <div class="small-box bg-blue ">
+      <div class="small-box bg-green ">
         <div class="inner ">
           <p>
-            <font size="5px"><b>Stevedoring</b></font>
+            <font size="5px"><b>Proses Stevedoring</b></font>
           </p>
           <p class="text-right"><span class="badge label-warning"> <?php if ($dataJV['jumlah'] >= 1) {
                                                                       echo $dataJV['jumlah'];
@@ -33,68 +36,23 @@
       </div>
     </div>
     <!-- ./col -->
-
     <div class="col-lg-6 col-xs-12 ">
       <!-- small box -->
-      <div class="small-box bg-green ">
+      <div class="small-box bg-blue ">
         <div class="inner ">
           <p>
-            <font size="5px"><b>Loading/Offloading Truck</b></font>
+            <font size="5px"><b>Transaksi Stevedoring</b></font>
           </p>
-          <p class="text-right"><span class="badge label-warning"> <?php if ($dataJT['jumlah'] >= 1) {
-                                                                      echo $dataJT['jumlah'];
+          <p class="text-right"><span class="badge label-warning"> <?php if ($dataTV['jumlah'] >= 1) {
+                                                                      echo $dataTV['jumlah'];
                                                                     } ?> </p>
         </div>
         <div class="icon">
           <i class="ion ion-stats-bars"></i>
         </div>
-        <a href="index.php?p=proses_jotruck" class="small-box-footer">Check <i class="fa fa-arrow-circle-right"></i></a>
+        <a href="index.php?p=lihat_jovessel" class="small-box-footer">Check <i class="fa fa-arrow-circle-right"></i></a>
       </div>
     </div>
-    <!-- ./col -->
-
-  </div>
-
-  <div class="row">
-
-
-    <div class="col-lg-6 col-xs-12 ">
-      <!-- small box -->
-      <div class="small-box bg-red ">
-        <div class="inner ">
-          <p>
-            <font size="5px"><b>Stacking/Stuffing</b></font>
-          </p>
-          <p class="text-right"><span class="badge label-success"> <?php if ($dataST['jumlah'] >= 1) {
-                                                                      echo $dataST['jumlah'];
-                                                                    } ?></p>
-        </div>
-        <div class="icon">
-          <i class="ion ion-stats-bars"></i>
-        </div>
-        <a href="index.php?p=proses_stacking" class="small-box-footer">Check <i class="fa fa-arrow-circle-right"></i></a>
-      </div>
-    </div>
-    <!-- ./col -->
-
-    <div class="col-lg-6 col-xs-12 ">
-      <!-- small box -->
-      <div class="small-box bg-orange ">
-        <div class="inner ">
-          <p>
-            <font size="5px"><b>Internal Moving</b></font>
-          </p>
-          <p class="text-right"><span class="badge label-primary"> <?php if ($dataIM['jumlah'] >= 1) {
-                                                                      echo $dataIM['jumlah'];
-                                                                    } ?> </p>
-        </div>
-        <div class="icon">
-          <i class="ion ion-stats-bars"></i>
-        </div>
-        <a href="index.php?p=proses_moving" class="small-box-footer">Check <i class="fa fa-arrow-circle-right"></i></a>
-      </div>
-    </div>
-    <!-- ./col -->
 
   </div>
 
