@@ -4,8 +4,8 @@ include "koneksi.php";
 
 function host()
 {
-    $host = 'http://localhost/bmi/';
-    // $host = 'http://nurdiansah.codevintek.com/';
+    // $host = 'http://localhost/bmi/';
+    $host = 'http://nurdiansah.codevintek.com/';
 
     return $host;
 }
